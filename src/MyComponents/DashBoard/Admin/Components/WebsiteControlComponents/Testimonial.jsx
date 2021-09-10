@@ -1,60 +1,76 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Alert from "../../../../Components/Alert";
 import { API } from "../../../../../api";
-import { getTestimonial } from "../../../../../helpers/ClientTestimonial";
+import Compressor from "compressorjs";
+import { useFormik } from "formik";
 
-export default function Testimonials() {
+const validate = (values) => {
+  const errors = {};
+  if (!values.client) {
+    errors.client = "Required";
+  }
+  if (!values.description) {
+    errors.description = "Required";
+  }
+  if (!values.company) {
+    errors.company = "Required";
+  }
+  return errors;
+};
+
+export default function Testimonials({ setrefresh }) {
   const [showAlert, setShowAlert] = useState({
     show: false,
     message: "",
     success: false,
   });
-  const [testimonial, setTestimonial] = useState({
-    client: "",
-    description: "",
-    company: "",
-  });
   const [testimonialImg, setTestimonialImg] = useState();
 
-  useEffect(() => {
-    getTestimonial();
-  }, []);
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const formdata = new FormData();
-    formdata.append("name", testimonial.client);
-    formdata.append("description", testimonial.description);
-    formdata.append("role", testimonial.company);
-    formdata.append("photo", testimonialImg);
-    await axios
-      .post(`${API}/testimonial/create`, formdata)
-      .then((res) => {
-        setTestimonial({
-          client: "",
-          description: "",
-          company: "",
-        });
-        setShowAlert({
-          show: true,
-          message: "Testimonial added successfully",
-          success: true,
-        });
-      })
-      .catch((err) => {
-        setTestimonial({
-          client: "",
-          description: "",
-          company: "",
-        });
-        setShowAlert({
-          show: true,
-          message: "Error adding testimonial",
-          success: false,
-        });
-      });
+  const handleCompressedUpload = (e) => {
+    const image = e.target.files[0];
+    new Compressor(image, {
+      quality: 0.5,
+      maxWidth: 2000,
+      success: (compressedResult) => {
+        setTestimonialImg(compressedResult);
+      },
+    });
   };
+
+  const { getFieldProps, handleSubmit, errors } = useFormik({
+    initialValues: {
+      client: "",
+      description: "",
+      company: "",
+    },
+    validate,
+    onSubmit: async (values, { resetForm }) => {
+      resetForm();
+      const formdata = new FormData();
+      formdata.append("name", values.client);
+      formdata.append("description", values.description);
+      formdata.append("role", values.company);
+      formdata.append("photo", testimonialImg);
+      await axios
+        .post(`${API}/testimonial/create`, formdata)
+        .then((res) => {
+          setShowAlert({
+            show: true,
+            message: "Testimonial added successfully",
+            success: true,
+          });
+          setrefresh(res);
+        })
+        .catch((err) => {
+          setShowAlert({
+            show: true,
+            message: "Error adding testimonial",
+            success: false,
+          });
+        });
+    },
+  });
 
   return (
     <div className="mx-8 my-8 p-4 bg-white shadow-lg rounded-xl">
@@ -72,7 +88,7 @@ export default function Testimonials() {
         </svg>
         <h1 className="text-sm font-bold text-black p-2"> Add Testimonial</h1>
       </div>
-      <form className="flex flex-col items-center py-4">
+      <form className="flex flex-col items-center py-4" onSubmit={handleSubmit}>
         {showAlert.show ? (
           <Alert alert={showAlert} rmAlert={setShowAlert} />
         ) : null}
@@ -80,40 +96,32 @@ export default function Testimonials() {
           className="w-full border-b border-black focus:outline-none my-2"
           type="text"
           placeholder="Name of Client"
-          value={testimonial.client}
-          onChange={(e) => {
-            setTestimonial({ ...testimonial, client: e.target.value });
-          }}
+          {...getFieldProps("client")}
         />
+        {errors.client ? <div>{errors.client}</div> : null}
         <textarea
           className="w-full border-b border-black focus:outline-none my-2"
           type="text"
-          placeholder="Write Testimonial by the clien."
-          value={testimonial.description}
-          onChange={(e) => {
-            setTestimonial({ ...testimonial, description: e.target.value });
-          }}
+          placeholder="Write Testimonial by the client."
+          {...getFieldProps("description")}
         />
+        {errors.description ? <div>{errors.description}</div> : null}
         <input
           className="w-full border-b border-black focus:outline-none my-2"
           type="text"
           placeholder="Name of Company client is from"
-          value={testimonial.company}
-          onChange={(e) => {
-            setTestimonial({ ...testimonial, company: e.target.value });
-          }}
+          {...getFieldProps("company")}
         />
+        {errors.company ? <div>{errors.company}</div> : null}
         <lable className="text-gray-2">Upload Image of the Client</lable>
         <input
           className="p-4 my-4 border border-black"
           type="file"
           accept="image/png, image/jpeg"
-          onChange={(e) => {
-            setTestimonialImg(e.target.files[0]);
-          }}
+          onChange={(e) => handleCompressedUpload(e)}
         />
         <button
-          onClick={handleSubmit}
+          type="submit"
           className="w-2/3 mx-auto p-4 border text-white bg-red-700 hover:bg-white hover:text-red-700 hover:border-red-700"
         >
           Add

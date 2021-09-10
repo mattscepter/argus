@@ -11,7 +11,6 @@ class SideBar extends Component {
       message: "",
     };
   }
-
   handleNameChange = (event) => {
     this.setState({
       name: event.target.value,

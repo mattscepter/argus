@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { Link } from "react-router-dom";
@@ -20,15 +20,21 @@ import MobileHeader from "../Partials/MobileHeader";
 import EmployeeMonth from "../Components/EmployeeMonth";
 import ClientTestimonial from "../Components/ClientTestimonial";
 import ClientCorousal from "../Components/ClientCorousal";
+import { getTestimonial } from "../../helpers/ClientTestimonial";
 
 export default function Home() {
+  const [testimonialData, setTestimonialData] = useState([]);
+  useEffect(() => {
+    getTestimonial().then((res) => {
+      setTestimonialData(res);
+    });
+  }, []);
   return (
     <div>
       <Header />
       <Header2 />
       <Stickynav />
       <MobileHeader />
-      
 
       {/* Section 1 */}
       <div className="">
@@ -187,8 +193,6 @@ export default function Home() {
         </div>
 
         <div className="flex flex-wrap justify-between text-center mb-16 ">
-          
-          
           <div className="p-4 md:w-1/3">
             <div className="h-full overflow-hidden ">
               <img
@@ -205,10 +209,10 @@ export default function Home() {
                   security staff and efficient use of technology
                 </p>
                 <Link to="/contact">
-                <button className="w-full p-4 text-black bg-gray-200 hover:bg-red-1 hover:text-white">
-                  Read More
-                </button>
-              </Link>
+                  <button className="w-full p-4 text-black bg-gray-200 hover:bg-red-1 hover:text-white">
+                    Read More
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -229,10 +233,10 @@ export default function Home() {
                   security staff and efficient use of technology
                 </p>
                 <Link to="/contact">
-                <button className="w-full p-4 text-black bg-gray-200 hover:bg-red-1 hover:text-white">
-                  Read More
-                </button>
-              </Link>
+                  <button className="w-full p-4 text-black bg-gray-200 hover:bg-red-1 hover:text-white">
+                    Read More
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -253,14 +257,13 @@ export default function Home() {
                   security staff and efficient use of technology
                 </p>
                 <Link to="/contact">
-                <button className="w-full p-4 text-black bg-gray-200 hover:bg-red-1 hover:text-white">
-                  Read More
-                </button>
-              </Link>
+                  <button className="w-full p-4 text-black bg-gray-200 hover:bg-red-1 hover:text-white">
+                    Read More
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
-
         </div>
         <div className="w-9/12 mx-auto flex items-center py-3">
           <img src={section5} className="w-24 h-24" alt="" />
@@ -389,7 +392,7 @@ export default function Home() {
       </div>
 
       {/* Section 8 Client Testimonial */}
-      <ClientTestimonial />
+      <ClientTestimonial testimonial={testimonialData} />
 
       {/* Section 9 Employee of the Month */}
       <EmployeeMonth />

@@ -48,10 +48,9 @@ export const aunthenticate = (user, next) => {
   }
 };
 
-export const signout = (next) => {
+export const signout = () => {
   if (window !== "undefined") {
     localStorage.removeItem("jwt");
-    next();
   }
 
   return fetch(`${API}/signout`, {

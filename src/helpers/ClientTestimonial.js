@@ -22,9 +22,7 @@ export const getTestimonial = () => {
   const url = `${API}/testimonial/get-all`;
   return axios
     .get(url)
-    .then((res) => {
-      console.log(res);
-    })
+    .then((res) => res.data)
     .catch((err) => {
       throw err;
     });

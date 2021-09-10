@@ -1,10 +1,19 @@
 import React from "react";
+import { useHistory } from "react-router";
+import { signout } from "../../../../helpers/auth";
 import ProfilePicture from "./../../../../argus website/PNG/IMG_0118.png";
 
 export default function ProfileBar() {
+  const history = useHistory();
   return (
     <div className="w-full my-10 flex flex-col">
-      <button className="p-2 text-l text-black font-bold ml-auto md:mr-auto md:ml-10">
+      <button
+        onClick={() => {
+          signout();
+          history.push("/dashboard/admin/login");
+        }}
+        className="p-2 text-l text-black font-bold ml-auto md:mr-auto md:ml-10"
+      >
         Logout
       </button>
       <div className="text-center">
@@ -48,11 +57,13 @@ export default function ProfileBar() {
             ></path>
           </svg>
           <div className="px-4">
-            <h1 className="title-font font-bold text-gray-900">My Transcripts</h1>
+            <h1 className="title-font font-bold text-gray-900">
+              My Transcripts
+            </h1>
             <p className="text-sm text-gray-2">Advanced</p>
           </div>
         </div>
-      </div> 
+      </div>
     </div>
   );
 }

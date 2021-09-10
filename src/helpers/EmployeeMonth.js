@@ -1,37 +1,45 @@
-import { API } from '../api';
+import { API } from "../api";
+import axios from "axios";
 
 export const updateEmployeeMonth = (data, token) => {
-    const url = `${API}/contact/update`;
-    return fetch(url, {
-      method: 'PUT',
-      headers: {
-        Accept: 'application/JSON',
-        'Content-Type': 'application/JSON',
-        Authorization: `Bearer ${token}`
-      },
-      body: JSON.stringify(data),
+  const url = `${API}/contact/update`;
+  return fetch(url, {
+    method: "PUT",
+    headers: {
+      Accept: "application/JSON",
+      "Content-Type": "application/JSON",
+      Authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify(data),
+  })
+    .then((response) => {
+      return response.json();
     })
-      .then((response) => {
-        return response.json();
-      })
-      .catch((err) => console.log(err));
-  };
+    .catch((err) => console.log(err));
+};
 
-
-  export const getEmployeeMonth = () => {
-    const url = `${API}/eom/get`;
-    return  fetch(url, {
-      method: 'GET',
+export const getEmployeeMonth = (token) => {
+  const url = `${API}/eom/get-all`;
+  return axios
+    .get(url, {
       headers: {
-        Accept: 'application/JSON',
-        'Content-Type': 'application/JSON',
+        Accept: "application/JSON",
+        "Content-Type": "application/JSON",
+        Authorization: `Bearer ${token}`,
       },
     })
-      .then((response) => {
-        console.log(response)
-        return response.json();
-      })
-      .catch((err) => console.log(err));
-  };
+    .then((res) => res.data)
+    .catch((err) => {
+      throw err;
+    });
+};
 
-
+export const getEmployeeMonthCurrent = () => {
+  const url = `${API}/eom/get`;
+  return axios
+    .get(url)
+    .then((res) => res.data)
+    .catch((err) => {
+      throw err;
+    });
+};
