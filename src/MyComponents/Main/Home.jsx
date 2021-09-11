@@ -21,12 +21,29 @@ import EmployeeMonth from "../Components/EmployeeMonth";
 import ClientTestimonial from "../Components/ClientTestimonial";
 import ClientCorousal from "../Components/ClientCorousal";
 import { getTestimonial } from "../../helpers/ClientTestimonial";
+import { getContact } from "../../helpers/contact";
 
 export default function Home() {
   const [testimonialData, setTestimonialData] = useState([]);
   useEffect(() => {
     getTestimonial().then((res) => {
       setTestimonialData(res);
+    });
+  }, []);
+
+  const [contact, setContact] = useState({
+    email: "",
+    phoneNumber: "",
+    address: "",
+  });
+
+  useEffect(() => {
+    getContact().then((data) => {
+      setContact({
+        email: data?.email,
+        phoneNumber: data?.phoneNumber,
+        address: data?.address,
+      });
     });
   }, []);
   return (
@@ -47,7 +64,7 @@ export default function Home() {
           <h1 className="flex-grow sm:pr-16 text-4xl font-bold font-for-para text-gray-400">
             Call Us <br />
             <span className="text-red-1 text-4xl sm:text-6xl font-bold">
-              647.289.1070
+              {contact.phoneNumber}
             </span>
           </h1>
           <button className="flex-shrink-0 font-bold text-white bg-red-1 py-5 px-4 md:px-12 focus:outline-none hover:bg-white border-2 border-red-1 hover:text-red-1 shadow-lg rounded-lg text-sm mt-10 sm:mt-0">
@@ -302,7 +319,7 @@ export default function Home() {
             </h2>
             <p className="text-l title-font font-bold text-gray-900">
               Have any questions? Feel free to contact our office today at{" "}
-              <span className="text-red-1">647.289.1070</span>
+              <span className="text-red-1">{contact.phoneNumber}</span>
             </p>
           </div>
         </div>

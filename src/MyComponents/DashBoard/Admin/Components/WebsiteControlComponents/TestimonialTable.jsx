@@ -11,7 +11,11 @@ export const TestimonialTable = ({ refresh, setrefresh }) => {
   useEffect(() => {
     try {
       getTestimonial().then((res) => {
-        setTestimonialData(res);
+        setTestimonialData(
+          res.sort((p1, p2) => {
+            return new Date(p2.createdAt) - new Date(p1.createdAt);
+          })
+        );
       });
       setToken(isAuthenticated());
     } catch (error) {
@@ -40,15 +44,11 @@ export const TestimonialTable = ({ refresh, setrefresh }) => {
               {testimonial?.description}
             </h1>
             <div className="flex flex-col items-center mx-auto">
-              {testimonial.photo ? (
-                <>
-                  <img
-                    src={`data:image/jpeg;base64,${b64}`}
-                    alt=""
-                    className="w-24 h-24 rounded-full p-2 "
-                  />
-                </>
-              ) : null}
+              <img
+                src={`${API}/testimonal/get-photo/${testimonial._id}`}
+                alt=""
+                className="w-24 h-24 rounded-full p-2 "
+              />
               <button
                 onClick={() => {
                   const id = testimonial._id;

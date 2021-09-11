@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import logo from "./../../argus website/PNG/Logo Vectors.png";
-import { signup } from "../../helpers/auth";
 import Header from "../Partials/Header";
 import Header2 from "../Partials/Header2";
 import MobileHeader from "../Partials/MobileHeader";

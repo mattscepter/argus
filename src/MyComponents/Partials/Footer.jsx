@@ -26,22 +26,6 @@ const Footer = () => {
     success: false,
   });
 
-  const [contact, setContact] = useState({
-    email: "",
-    phoneNumber: "",
-    address: "",
-  });
-
-  useEffect(() => {
-    getContact().then((data) => {
-      setContact({
-        email: data?.email,
-        phoneNumber: data?.phoneNumber,
-        address: data?.address,
-      });
-    });
-  }, []);
-
   const { getFieldProps, handleSubmit, errors } = useFormik({
     initialValues: {
       email: "",

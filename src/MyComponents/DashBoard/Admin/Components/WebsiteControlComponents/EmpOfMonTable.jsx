@@ -15,8 +15,6 @@ export const EmpOfMonTable = ({ seteomRefresh, eomRefresh }) => {
     });
   }, [eomRefresh]);
 
-  console.log(eom);
-
   return (
     <div className="mx-8 my-8 p-4 bg-white shadow-lg rounded-xl">
       {/* Card of table */}
@@ -31,7 +29,7 @@ export const EmpOfMonTable = ({ seteomRefresh, eomRefresh }) => {
               <img
                 src={`data:image/jpeg;base64,${b64}`}
                 alt=""
-                className="rounded-full p-2"
+                className="w-24 h-24 rounded-full p-2"
               />
               <h1 className="px-3 py-1 text-red-1 font-bold">{data.empName}</h1>
             </div>
