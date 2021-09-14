@@ -11,7 +11,7 @@ import { useFormik } from "formik";
 const validate = (values) => {
   const errors = {};
   if (!values.email) {
-    errors.email = "Required";
+    errors.email = "*Required";
   } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
     errors.email = "Invalid email address";
   }
@@ -236,15 +236,17 @@ const Footer = () => {
                 >
                   <input
                     type="email"
-                    className="w-full my-4 bg-white border border-gray-300 focus:bg-transparent focus:ring-2 focus:ring-white focus:border-white text-base outline-none text-black focus:text-white py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                    className="w-full mt-4 bg-white border border-gray-300 focus:bg-transparent focus:ring-2 focus:ring-white focus:border-white text-base outline-none text-black focus:text-white py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                     placeholder="Enter Email"
                     {...getFieldProps("email")}
                   />
                   {errors.email ? (
-                    <div className="text-white">{errors.email}</div>
+                    <div className="w-full text-xs text-white text-left">
+                      {errors.email}
+                    </div>
                   ) : null}
                   <button
-                    className="w-full p-4 rounded-lg font-bold text-white bg-black hover:bg-white hover:text-red-700 "
+                    className="w-full mt-4 p-4 rounded-lg font-bold text-white bg-black hover:bg-white hover:text-red-700 "
                     type="submit"
                   >
                     REGISTER NOW

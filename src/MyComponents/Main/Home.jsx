@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { Link } from "react-router-dom";
@@ -10,9 +10,7 @@ import section6 from "./../../argus website/PNG/sdm.png";
 import section4img from "./../../argus website/PNG/raw-2_edited.png";
 import section5 from "./../../argus website/PNG/0000000.png";
 import image1 from "./../../argus website/PNG/raw-2_edited.png";
-import testimonial from "./../../argus website/PNG/IMG_0118.png";
 import camera from "./../../argus website/SVG/3. camera.svg";
-import HeroImage from "./../../argus website/PNG/2.png";
 import Header from "./../Partials/Header";
 import Header2 from "./../Partials/Header2";
 import Stickynav from "./../Partials/Stickynav";
@@ -20,32 +18,12 @@ import MobileHeader from "../Partials/MobileHeader";
 import EmployeeMonth from "../Components/EmployeeMonth";
 import ClientTestimonial from "../Components/ClientTestimonial";
 import ClientCorousal from "../Components/ClientCorousal";
-import { getTestimonial } from "../../helpers/ClientTestimonial";
-import { getContact } from "../../helpers/contact";
+import { useSelector } from "react-redux";
 
 export default function Home() {
-  const [testimonialData, setTestimonialData] = useState([]);
-  useEffect(() => {
-    getTestimonial().then((res) => {
-      setTestimonialData(res);
-    });
-  }, []);
+  const contact = useSelector((state) => state.contact);
+  const testimonial = useSelector((state) => state.testimonial.testimonial);
 
-  const [contact, setContact] = useState({
-    email: "",
-    phoneNumber: "",
-    address: "",
-  });
-
-  useEffect(() => {
-    getContact().then((data) => {
-      setContact({
-        email: data?.email,
-        phoneNumber: data?.phoneNumber,
-        address: data?.address,
-      });
-    });
-  }, []);
   return (
     <div>
       <Header />
@@ -409,7 +387,7 @@ export default function Home() {
       </div>
 
       {/* Section 8 Client Testimonial */}
-      <ClientTestimonial testimonial={testimonialData} />
+      <ClientTestimonial testimonial={testimonial} />
 
       {/* Section 9 Employee of the Month */}
       <EmployeeMonth />

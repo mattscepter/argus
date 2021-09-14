@@ -1,12 +1,8 @@
-/* eslint-disable eqeqeq */
-/* eslint-disable no-unused-vars */
 import { API } from "../api";
-import axios from "axios";
-
-//API is the server address
+import axiosInstance from "./axiosInstance";
 
 export const signup = async (user) => {
-  await axios
+  await axiosInstance
     .post(`${API}/signup`, user, {
       headers: {
         Accept: "application/JSON",
@@ -39,10 +35,8 @@ export const signin = (user) => {
     .catch((err) => console.log(err));
 };
 
-//aunthenticate method to set a user token
-
 export const aunthenticate = (user, next) => {
-  if (window !== "undefined") {
+  if (window !== undefined) {
     localStorage.setItem("jwt", JSON.stringify(user));
     next();
   }
@@ -53,19 +47,18 @@ export const signout = () => {
     localStorage.removeItem("jwt");
   }
 
-  return fetch(`${API}/signout`, {
-    method: "GET",
-  })
+  return axiosInstance("/signout")
     .then(() => console.log("Signout Sucessfully!"))
     .catch((err) => console.log(err));
 };
 
 export const isAuthenticated = () => {
-  if (window == "undefined") {
+  if (window === undefined) {
     return false;
   }
   if (localStorage.getItem("jwt")) {
-    return JSON.parse(localStorage.getItem("jwt"));
+    const token = JSON.parse(localStorage.getItem("jwt"));
+    return token;
   } else {
     return false;
   }

@@ -6,17 +6,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { aunthenticate, signin, isAuthenticated } from "../../helpers/auth";
 import { useFormik } from "formik";
 import Alert from "../Components/Alert";
-import { API } from "../../api";
-import axios from "axios";
-
+import axiosInstance from "../../helpers/axiosInstance";
 const validate = (values) => {
   const errors = {};
   if (!values.password) {
-    errors.password = "Required";
+    errors.password = "*Required";
   }
 
   if (!values.email) {
-    errors.email = "Required";
+    errors.email = "*Required";
   } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
     errors.email = "Invalid email address";
   }
@@ -24,7 +22,7 @@ const validate = (values) => {
   return errors;
 };
 
-const LogIn = ({ open }) => {
+const LogIn = ({ open, setOpen }) => {
   const history = useHistory();
 
   const [showAlert, setShowAlert] = useState({
@@ -40,9 +38,11 @@ const LogIn = ({ open }) => {
     },
     validate,
     onSubmit: async (values, { resetForm }) => {
-      await axios
-        .post(`${API}/signin`, values)
+      await axiosInstance
+        .post(`/signin`, values)
         .then((response) => {
+          aunthenticate(response.data, () => {});
+          console.log(response);
           history.push("/dashboard/student/home");
           resetForm();
         })
@@ -63,7 +63,7 @@ const LogIn = ({ open }) => {
         <div className="w-full p-4 md:p-16 lg:p-40 bg-white rounded-3xl flex flex-col-reverse md:flex-row items-center justify-center bg-no-repeat bg-cover bg-logincar">
           <div className="content text-3xl text-center md:text-left lg:w-2/3"></div>
           <div className="w-1/3 mx-auto flex flex-col items-center">
-            <button>
+            <button onClick={() => setOpen(false)}>
               {" "}
               {/*Close Button*/}
               <FontAwesomeIcon
@@ -81,23 +81,35 @@ const LogIn = ({ open }) => {
               <img src={logo} alt="Logo" className="w-20 mb-3" />
 
               <input
-                className="w-full mb-3 py-3 px-4 border border-gray-400 focus:outline-none rounded-md focus:ring-1 ring-red-1"
+                className={`w-full mt-3 py-3 px-4 ${
+                  errors.email ? "bg-red-100" : ""
+                } border border-gray-400 focus:outline-none rounded-md focus:ring-1 ring-red-1`}
                 type="email"
                 placeholder="Email"
                 {...getFieldProps("email")}
               />
-              {errors.email ? <div>{errors.email}</div> : null}
+              {errors.email ? (
+                <div className="w-full text-xs text-red-400">
+                  {errors.email}
+                </div>
+              ) : null}
 
               <input
-                className="w-full mb-3 py-3 px-4 border border-gray-400 focus:outline-none rounded-md focus:ring-1 ring-red-1"
+                className={`w-full mt-3 py-3 px-4 ${
+                  errors.password ? "bg-red-100" : ""
+                } border border-gray-400 focus:outline-none rounded-md focus:ring-1 ring-red-1`}
                 type="password"
                 placeholder="Password"
                 {...getFieldProps("password")}
               />
-              {errors.password ? <div>{errors.password}</div> : null}
+              {errors.password ? (
+                <div className="w-full text-xs text-red-400">
+                  {errors.password}
+                </div>
+              ) : null}
 
               <button
-                className="w-1/2 bg-red-700 text-white p-3 rounded-lg font-semibold text-lg"
+                className="w-1/2 bg-red-700 text-white p-3 rounded-lg font-semibold text-lg mt-3"
                 type="submit"
               >
                 Login

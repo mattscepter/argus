@@ -1,22 +1,8 @@
-import React, { useEffect, useState } from "react";
-import { getContact } from "../../helpers/contact";
+import React from "react";
+import { useSelector } from "react-redux";
 
-const CompanyContact = ({ refresh = null }) => {
-  const [contact, setContact] = useState({
-    email: "",
-    phoneNumber: "",
-    address: "",
-  });
-
-  useEffect(() => {
-    getContact().then((data) => {
-      setContact({
-        email: data?.email,
-        phoneNumber: data?.phoneNumber,
-        address: data?.address,
-      });
-    });
-  }, [refresh]);
+const CompanyContact = () => {
+  const contact = useSelector((state) => state.contact);
 
   return (
     <div>
