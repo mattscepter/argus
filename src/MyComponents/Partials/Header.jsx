@@ -58,7 +58,7 @@ export default function Header() {
           </div>
         </div>
       </div>
-      <LogIn open={open} />
+      <LogIn open={open} setOpen={setOpen} />
     </div>
   );
 }

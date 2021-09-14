@@ -2,15 +2,17 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import ContactForm from "./Contact";
+import callus_logo from "./../../argus website/SVG/Call us now.svg";
 
 const SideBar = () => {
   const contact = useSelector((state) => state.contact);
 
-
   return (
     <div className=" lg:w-1/3 md:w-1/2 px-6 lg:px-0 lg:pl-8 xl:pl-12 flex flex-col md:ml-auto w-full md:mt-0">
       <div className="text-gray-2 text-xl font-bold bg-gray-200 mb-8">
-        <h1 className="font-bold bg-gray-3 text-white text-xl p-5"><span className="ml-8">Services</span></h1>
+        <h1 className="font-bold bg-gray-3 text-white text-xl p-5">
+          <span className="ml-8">Services</span>
+        </h1>
         <Link to="/services">
           <h1 className="rounded-lg py-5 pl-8 hover:bg-red-1 hover:text-white hover:rounded-md hover:shadow-button-inner">
             <span className="mx-4">➔</span> Residential Security
@@ -38,7 +40,7 @@ const SideBar = () => {
         </Link>
       </div>
       <div className="w-full flex flex-col items-center text-center mx-auto px-10 py-10 bg-gray-200 mt-24 mb-8">
-        <img src={callus_logo} alt="" className="w-56 -mt-32 mb-2 "/>
+        <img src={callus_logo} alt="" className="w-56 -mt-32 mb-2 " />
         <h1 className="text-2xl leading-relaxed font-bold text-gray-2 p-2 mb-4">
           Professional Help to get back your peace of mind
         </h1>

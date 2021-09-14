@@ -3,7 +3,7 @@ import logo from "./../../argus website/PNG/Logo Vectors.png";
 import { Link, useHistory } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // eslint-disable-next-line no-unused-vars
-import { aunthenticate, signin, isAuthenticated } from "../../helpers/auth";
+import { aunthenticate } from "../../helpers/auth";
 import { useFormik } from "formik";
 import Alert from "../Components/Alert";
 import axiosInstance from "../../helpers/axiosInstance";
@@ -81,9 +81,7 @@ const LogIn = ({ open, setOpen }) => {
               <img src={logo} alt="Logo" className="w-20 mb-3" />
 
               <input
-                className={`w-full mt-3 py-3 px-4 ${
-                  errors.email ? "bg-red-100" : ""
-                } border border-gray-400 focus:outline-none rounded-md focus:ring-1 ring-red-1`}
+                className={`w-full mt-3 py-3 px-4 border border-gray-400 focus:outline-none rounded-md focus:ring-1 ring-red-1`}
                 type="email"
                 placeholder="Email"
                 {...getFieldProps("email")}
@@ -95,9 +93,7 @@ const LogIn = ({ open, setOpen }) => {
               ) : null}
 
               <input
-                className={`w-full mt-3 py-3 px-4 ${
-                  errors.password ? "bg-red-100" : ""
-                } border border-gray-400 focus:outline-none rounded-md focus:ring-1 ring-red-1`}
+                className={`w-full mt-3 py-3 px-4 border border-gray-400 focus:outline-none rounded-md focus:ring-1 ring-red-1`}
                 type="password"
                 placeholder="Password"
                 {...getFieldProps("password")}

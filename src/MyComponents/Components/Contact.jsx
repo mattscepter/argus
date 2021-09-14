@@ -6,17 +6,17 @@ import Alert from "./Alert";
 const validate = (values) => {
   const errors = {};
   if (!values.name) {
-    errors.name = "Required";
+    errors.name = "*Required";
   }
   if (!values.phoneNumber) {
-    errors.phoneNumber = "Required";
+    errors.phoneNumber = "*Required";
   } else if (values.phoneNumber.length < 4) {
     errors.phoneNumber = "Must be greater 4 numbers";
   } else if (values.phoneNumber.length > 14) {
     errors.phoneNumber = "Must be less than 14 numbers";
   }
   if (!values.message) {
-    errors.message = "Required";
+    errors.message = "*Required";
   }
 
   return errors;
@@ -69,29 +69,35 @@ function ContactForm({ width = "w-full" }) {
         <Alert alert={showAlert} rmAlert={setShowAlert} />
       ) : null}
       <input
-        className="w-full mb-3 py-5 px-4 focus:outline-none focus:ring-1 ring-red-1"
+        className="w-full  py-5 px-4 focus:outline-none focus:ring-1 ring-red-1"
         type="name"
         placeholder="Your Name"
         {...getFieldProps("name")}
       />
-      {errors.name ? <div>{errors.name}</div> : null}
+      {errors.name ? (
+        <div className="w-full text-xs text-red-400">{errors.name}</div>
+      ) : null}
       <input
-        className="w-full mb-3 py-5 px-4 focus:outline-none focus:ring-1 ring-red-1"
+        className="w-full mt-3 py-5 px-4 focus:outline-none focus:ring-1 ring-red-1"
         type="telephone"
         placeholder="Phone Number"
         {...getFieldProps("phoneNumber")}
       />
-      {errors.phoneNumber ? <div>{errors.phoneNumber}</div> : null}
+      {errors.phoneNumber ? (
+        <div className="w-full text-xs text-red-400">{errors.phoneNumber}</div>
+      ) : null}
       <textarea
-        className="w-full h-56 mb-3 py-5 px-4 focus:outline-none focus:ring-1 ring-red-1"
+        className="w-full h-56 mt-3 py-5 px-4 focus:outline-none focus:ring-1 ring-red-1"
         type="text"
         placeholder="Write Message"
         {...getFieldProps("message")}
       />
-      {errors.message ? <div>{errors.message}</div> : null}
+      {errors.message ? (
+        <div className="w-full text-xs text-red-400">{errors.message}</div>
+      ) : null}
       <button
         type="submit"
-        className="w-full p-4 rounded-lg border text-white bg-red-1 hover:bg-white hover:text-red-1 hover:border-red-1"
+        className="w-full mt-3 p-4 rounded-lg border text-white bg-red-1 hover:bg-white hover:text-red-1 hover:border-red-1"
       >
         SEND MESSAGE
       </button>
