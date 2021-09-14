@@ -12,7 +12,7 @@ export default function Personell() {
     <div>
 
       <Header />
-      <Header2 />
+      <Header2 /> 
       <Stickynav/>
       <MobileHeader />
 
@@ -29,7 +29,7 @@ export default function Personell() {
       <div className="container px-4 py-6 mx-auto sm:px-20 mb:px-1 lg:px-40 xl:px-48 bg-no-repeat bg-mapbg">
         <div className="flex flex-wrap my-12">
           <div className=" md:w-1/2 lg:w-2/3 flex flex-col items-start">
-            <img src={about_image} alt="About page Image" />
+            <img src={about_image} alt="About page" />
             <p className="leading-relaxed text-l font-medium text-gray-2 my-8">
               Argus Security has more than 5000 Guards available within our
               employment database and will be able to provide you with a

@@ -27,16 +27,16 @@ const Contact = () => {
 
       <div className="overflow-hidden bg-no-repeat bg-mapbg">
         <div className="container px-4 py-20 mx-auto sm:px-20 mb:px-26 lg:px-40 xl:px-48">
-          <img src={fleet} alt="Security Cars" />
-          <div className="flex flex-wrap my-12">
-            <div className="p-2 md:w-1/4 flex flex-col items-start text-l font-medium text-gray-2">
-              <div className="flex flex-col md:flex-row items-center w-full mb-4">
-                <span className="h-1 w-10 bg-red-1 m-6 md:m-0 md:mr-4"></span>
-                <h1 className="leading-tight text-4xl title-font font-bold text-gray-900 mb-2">
+          <img src={fleet} alt="Security Cars" className="w-full"/>
+          <div className="flex items-start my-12 ">
+            <div className="p-2 md:w-1/4 flex flex-col items-start text-lg font-medium text-gray-2">
+              <div className="flex flex-row items-stretch w-full mb-6">
+                <span className="h-auto w-2 bg-red-1 mr-6"></span>
+                <h1 className="leading-tight text-4xl title-font font-bold text-gray-3">
                   How can we help?
                 </h1>
               </div>
-              <p className="leading-relaxed text-l font-medium text-gray-2 mb-8">
+              <p className="leading-normal text-lg font-medium text-gray-2 mb-6">
                 We are experiencing longer than usual response times due to
                 Covid-19. We appreciate your patience and apologize in advance
                 for any delays in responding to your message.{" "}

@@ -57,9 +57,7 @@ const ProfileBar = () => {
             ></path>
           </svg>
           <div className="px-4">
-            <h1 className="title-font font-bold text-gray-900">
-              My Transcripts
-            </h1>
+            <h1 className="title-font font-bold text-gray-900">My Transcripts</h1>
             <p className="text-sm text-gray-2">Advanced</p>
           </div>
         </div>
@@ -79,9 +77,7 @@ const ProfileBar = () => {
             ></path>
           </svg>
           <div className="px-4">
-            <h1 className="title-font font-bold text-gray-900">
-              High Quality Profile Photo
-            </h1>
+            <h1 className="title-font font-bold text-gray-900">High Quality Profile Photo</h1>
             <p className="text-sm text-gray-2">Photo Specifications</p>
           </div>
         </div>
@@ -115,12 +111,8 @@ const ProfileBar = () => {
             ></path>
           </svg>
           <div className="px-4">
-            <h1 className="title-font font-bold text-gray-900">
-              Photo identification
-            </h1>
-            <p className="text-sm text-gray-2">
-              e.g. Driver's License, Passport, etc.
-            </p>
+            <h1 className="title-font font-bold text-gray-900">Photo identification</h1>
+            <p className="text-sm text-gray-2">e.g. Driver's License, Passport, etc.</p>
           </div>
         </div>
         <div className="flex mx-auto items-center my-2">
@@ -136,12 +128,8 @@ const ProfileBar = () => {
             ></path>
           </svg>
           <div className="px-4">
-            <h1 className="title-font font-bold text-gray-900">
-              Eligibility to Work
-            </h1>
-            <p className="text-sm text-gray-2">
-              e.g. Work Permit, Study Permit, PR card etc
-            </p>
+            <h1 className="title-font font-bold text-gray-900">Eligibility to Work</h1>
+            <p className="text-sm text-gray-2">e.g. Work Permit, Study Permit, PR card etc</p>
           </div>
         </div>
         <div className="flex mx-auto items-center my-2">
@@ -157,9 +145,7 @@ const ProfileBar = () => {
             ></path>
           </svg>
           <div className="px-4">
-            <h1 className="title-font font-bold text-gray-900">
-              First Aid and CPR C
-            </h1>
+            <h1 className="title-font font-bold text-gray-900">First Aid and CPR C</h1>
             <p className="text-sm text-gray-2">if available</p>
           </div>
         </div>
@@ -176,9 +162,7 @@ const ProfileBar = () => {
             ></path>
           </svg>
           <div className="px-4">
-            <h1 className="title-font font-bold text-gray-900">
-              Security Guard Licence
-            </h1>
+            <h1 className="title-font font-bold text-gray-900">Security Guard Licence</h1>
             <p className="text-sm text-gray-2">if available</p>
           </div>
         </div>
@@ -212,9 +196,7 @@ const ProfileBar = () => {
             ></path>
           </svg>
           <div className="px-4">
-            <h1 className="title-font font-bold text-gray-900">
-              Police Foundation
-            </h1>
+            <h1 className="title-font font-bold text-gray-900">Police Foundation</h1>
             <p className="text-sm text-gray-2">if available</p>
           </div>
         </div>
@@ -231,9 +213,7 @@ const ProfileBar = () => {
             ></path>
           </svg>
           <div className="px-4">
-            <h1 className="title-font font-bold text-gray-900">
-              Health and Safety
-            </h1>
+            <h1 className="title-font font-bold text-gray-900">Health and Safety</h1>
             <p className="text-sm text-gray-2">if available</p>
           </div>
         </div>
@@ -255,8 +235,9 @@ const ProfileBar = () => {
           </div>
         </div>
       </div>
+      
     </div>
   );
-};
+}
 
 export default ProfileBar;

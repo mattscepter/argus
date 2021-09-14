@@ -54,8 +54,9 @@ const Footer = () => {
   });
 
   return (
-    <div className="text-white text-xs md:text-sm body-font bg-center bg-no-repeat bg-cover bg-footer">
-      <div className="container px-2 sm:px-8 lg:px-24 xl:pl-48 xl:pr-40 pb-12 mx-auto">
+  <div className="bg-black-1">
+    <div className="text-white text-xs md:text-sm body-font bg-top bg-no-repeat bg-cover bg-footer bg-opacity-5">
+      <div className="container px-2 sm:px-8 lg:px-24 xl:pl-48 xl:pr-40 2xl:px-0 max-w-1366  mx-auto">
         <div className="flex flex-col md:flex-row md:text-left text-center order-first items-start">
           <div className="w-3/4 flex flex-wrap md:text-left text-center order-first mx-auto">
             <div className="lg:w-1/3 w-full px-4 pt-4">
@@ -71,60 +72,60 @@ const Footer = () => {
               <hr className="border-1 border-gray-600 w-11/12 my-3" />
               <CompannyContact />
             </div>
-            <div className="lg:w-1/3 md:w-1/2 w-full px-4 pt-10 md:pt-32">
-              <h2 className="title-font font-bold text-white tracking-widest text-2xl md:text-sm mb-5">
+            <div className="lg:w-1/3 md:w-1/2 w-full lg:px-8 px-12 pt-10 md:pt-32">
+              <h2 className="title-font font-bold text-white tracking-widest text-2xl md:text-sm mb-7">
                 EXPLORE
               </h2>
               <nav className="list-none mb-10">
-                <li>
+                <li className="my-0.5">
                   {" "}
                   <Link to="/about" className="text-white  hover:text-red-1">
                     ➔ About
                   </Link>{" "}
                 </li>
-                <li>
+                <li className="my-0.5">
                   {" "}
                   <Link to="/services" className="text-white  hover:text-red-1">
                     ➔ Our Services
                   </Link>{" "}
                 </li>
-                <li>
+                <li className="my-0.5">
                   {" "}
                   <Link to="/" className="text-white  hover:text-red-1">
                     ➔ Covid-19 Plan
                   </Link>{" "}
                 </li>
-                <li>
+                <li className="my-0.5">
                   {" "}
                   <Link to="/" className="text-white  hover:text-red-1">
                     ➔ Organization Structure
                   </Link>{" "}
                 </li>
-                <li>
+                <li className="my-0.5">
                   {" "}
                   <Link to="/jobs" className="text-white  hover:text-red-1">
                     ➔ Jobs
                   </Link>{" "}
                 </li>
-                <li>
+                <li className="my-0.5">
                   {" "}
                   <Link to="/" className="text-white  hover:text-red-1">
                     ➔ Personnel
                   </Link>{" "}
                 </li>
-                <li>
+                <li className="my-0.5">
                   {" "}
                   <Link to="/training" className="text-white  hover:text-red-1">
                     ➔ Training
                   </Link>{" "}
                 </li>
-                <li>
+                <li className="my-0.5">
                   {" "}
                   <Link to="/contact" className="text-white  hover:text-red-1">
                     ➔ Contact Us
                   </Link>{" "}
                 </li>
-                <li>
+                <li className="my-0.5">
                   {" "}
                   <Link
                     to="/technology"
@@ -136,11 +137,11 @@ const Footer = () => {
               </nav>
             </div>
             <div className="lg:w-1/3 md:w-1/2 w-full px-4 pt-10 md:pt-32">
-              <h2 className="title-font font-medium text-white tracking-widest text-2xl md:text-sm mb-5">
+              <h2 className="title-font font-medium text-white tracking-widest text-2xl md:text-sm mb-7">
                 SERVICES
               </h2>
               <nav className="list-none mb-10">
-                <li>
+                <li className="my-0.5">
                   {" "}
                   <Link to="/services">
                     <button className="text-white  hover:text-red-1">
@@ -148,7 +149,7 @@ const Footer = () => {
                     </button>
                   </Link>{" "}
                 </li>
-                <li>
+                <li className="my-0.5">
                   {" "}
                   <Link to="/services">
                     <button className="text-white  hover:text-red-1">
@@ -156,7 +157,7 @@ const Footer = () => {
                     </button>
                   </Link>{" "}
                 </li>
-                <li>
+                <li className="my-0.5">
                   {" "}
                   <Link to="/services">
                     <button className="text-white  hover:text-red-1">
@@ -164,7 +165,7 @@ const Footer = () => {
                     </button>
                   </Link>{" "}
                 </li>
-                <li>
+                <li className="my-0.5">
                   {" "}
                   <Link to="/services">
                     <button className="text-white  hover:text-red-1">
@@ -172,7 +173,7 @@ const Footer = () => {
                     </button>
                   </Link>{" "}
                 </li>
-                <li>
+                <li className="my-0.5">
                   {" "}
                   <Link to="/services">
                     <button className="text-white  hover:text-red-1">
@@ -180,7 +181,7 @@ const Footer = () => {
                     </button>
                   </Link>{" "}
                 </li>
-                <li>
+                <li className="my-0.5">
                   {" "}
                   <Link to="/services">
                     <button className="text-white  hover:text-red-1">
@@ -188,7 +189,7 @@ const Footer = () => {
                     </button>
                   </Link>{" "}
                 </li>
-                <li>
+                <li className="my-0.5">
                   {" "}
                   <Link to="/services">
                     <button className="text-white  hover:text-red-1">
@@ -196,7 +197,7 @@ const Footer = () => {
                     </button>
                   </Link>{" "}
                 </li>
-                <li>
+                <li className="my-0.5">
                   {" "}
                   <Link to="/services">
                     <button className="text-white  hover:text-red-1">
@@ -204,7 +205,7 @@ const Footer = () => {
                     </button>
                   </Link>{" "}
                 </li>
-                <li>
+                <li className="my-0.5">
                   {" "}
                   <Link to="/services">
                     <button className="text-white  hover:text-red-1">
@@ -216,16 +217,16 @@ const Footer = () => {
             </div>
           </div>
           <div className="w-full md:w-1/2 lg:w-3/12 bg-red-1">
-            <div className="w-full px-4 text-center items-center pt-8">
+            <div className="w-full px-4 text-center items-center pt-6 pb-6">
               <div className="flex flex-col bg-red-1 items-center mx-auto">
                 {showAlert.show ? (
                   <Alert alert={showAlert} rmAlert={setShowAlert} />
                 ) : null}
-                <div className="bg-contain bg-no-repeat bg-center bg-shape bg-opacity-5 px-6 pt-12 pb-2 ">
-                  <h2 className="title-font font-bold text-white tracking-widest text-sm mb-3 text-center pb-2">
+                <div className="bg-contain bg-no-repeat bg-center bg-shape px-6 pt-12 pb-8 ">
+                  <h2 className="title-font font-bold text-white tracking-widest text-lg mb-3 text-center pb-2">
                     NEWSLETTER
                   </h2>
-                  <p className="text-white text-sm mt-2 text-center leading-relaxed">
+                  <p className="text-white font-medium text-lg mt-2 text-center leading-relaxed">
                     Signup to get our daily latest security news and updates.
                   </p>
                 </div>
@@ -258,13 +259,14 @@ const Footer = () => {
         </div>
       </div>
       <div className="border-t border-gray-3">
-        <div className="container px-4 md:px-16 lg:px-28 xl:px-44 py-6 mx-auto flex items-center sm:flex-row flex-col">
-          <p className="text-lg text-white sm:ml-6 sm:mt-0 mt-4">
+        <div className="px-4 md:px-16 lg:px-28 xl:px-44 2xl:px-0 max-w-1366 py-6 mx-auto flex items-center sm:flex-row flex-col">
+          <p className="text-sm text-white ">
             © Copyright 2021 by Argus Security Services Corp.
           </p>
         </div>
       </div>
     </div>
+  </div>
   );
 };
 

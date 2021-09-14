@@ -10,7 +10,9 @@ import section6 from "./../../argus website/PNG/sdm.png";
 import section4img from "./../../argus website/PNG/raw-2_edited.png";
 import section5 from "./../../argus website/PNG/0000000.png";
 import image1 from "./../../argus website/PNG/raw-2_edited.png";
+import testimonial from "./../../argus website/PNG/IMG_0118.png";
 import camera from "./../../argus website/SVG/3. camera.svg";
+import HeroImage from "./../../argus website/PNG/2.png";
 import Header from "./../Partials/Header";
 import Header2 from "./../Partials/Header2";
 import Stickynav from "./../Partials/Stickynav";
@@ -37,7 +39,7 @@ export default function Home() {
       </div>
 
       {/* Section 2 CAll Us */}
-      <div className="px-4 sm:px-8 md:px-16 lg:px-32 xl:px-48 mx-auto">
+      <div className="px-4 sm:px-8 md:px-16 lg:px-32 xl:px-48 2xl:px-0 mx-auto max-w-1366">
         <div className="flex flex-col sm:flex-row sm:items-end mx-auto">
           <h1 className="flex-grow sm:pr-16 text-4xl font-bold font-for-para text-gray-400">
             Call Us <br />
@@ -45,15 +47,15 @@ export default function Home() {
               {contact.phoneNumber}
             </span>
           </h1>
-          <button className="flex-shrink-0 font-bold text-white bg-red-1 py-5 px-4 md:px-12 focus:outline-none hover:bg-white border-2 border-red-1 hover:text-red-1 shadow-lg rounded-lg text-sm mt-10 sm:mt-0">
+          <button className="flex-shrink-0 font-bold text-white bg-red-1 py-5 px-4 md:px-12 hover:bg-white border-3 border-red-1 hover:text-red-1 rounded-lg text-sm mt-10 sm:mt-0 shadow-button-shadow">
             DISCOVER MORE
           </button>
         </div>
       </div>
 
       {/* Section 3  Accountable */}
-      <div className="text-gray-600 font-for-para overflow-hidden">
-        <div className="flex flex-col sm:flex-row px-4 sm:px-8 md:px-20 lg:px-32 xl:px-48 pt-4 pb-2 mt-8 text-white justify-center">
+      <div className="text-gray-600 font-for-para overflow-hidden mx-auto">
+        <div className="flex flex-col sm:flex-row px-4 sm:px-8 md:px-20 lg:px-32 xl:px-48 2xl:px-0 mx-auto max-w-1366 pt-4 pb-2 mt-8 text-white justify-center">
           <div className="bg-red-1 w-full sm:w-6/12 px-3 py-5 flex flex-row items-center justify-center">
             <FontAwesomeIcon
               icon="search"
@@ -78,14 +80,14 @@ export default function Home() {
       </div>
 
       {/* Section 4 Introducing Argus Security */}
-      <div>
-        <div className="px-4 sm:px-8 md:px-20 lg:px-32 xl:px-48 py-24 bg-contain bg-no-repeat bg-mapbg2 font-for-para">
+      <div className="bg-contain bg-no-repeat bg-mapbg2 ">
+        <div className="px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 2xl:px-0 mx-auto max-w-1366 py-24 font-for-para">
           <div className="flex flex-wrap items-center">
             <div className="items-end w-full md:w-1/2 flex flex-col lg:pr-12">
               <img
                 src={section4_img1}
                 alt="Argus Security Services"
-                className="pb-8 border-b-8 border-red-1"
+                className="w-full pb-8 border-b-8 border-red-1"
               />
               <img
                 src={section4_img2}
@@ -94,13 +96,13 @@ export default function Home() {
               />
             </div>
             <div className="md:pl-3 w-full md:w-1/2 flex flex-col items-start">
-              <div className="flex flex-col md:flex-row items-center w-full mb-4">
-                <span className="h-1 w-10 bg-red-1 m-6 md:m-0 md:mr-4"></span>
-                <h1 className="leading-tight text-4xl font-bold text-gray-3 mb-4">
+              <div className="flex flex-row items-stretch w-full mb-8">
+                <span className="h-auto w-2 bg-red-1 mr-7"></span>
+                <h1 className="leading-tight text-4xl font-bold text-gray-3">
                   Introducing Argus Security Services
                 </h1>
               </div>
-              <p className="leading-loose text-l text-gray-2 mb-8">
+              <p className="leading-relaxed text-lg font-medium text-gray-2 mb-8">
                 Argus Security ensures the team adherence to company rules and
                 regulations. Our goal is to make our clients the direct
                 beneficiaries of our policies and procedures.{" "}
@@ -169,7 +171,8 @@ export default function Home() {
       </div>
 
       {/* Section 5 Services */}
-      <div className="bg-no-repeat bg-contain bg-siren px-4 sm:px-8 md:px-20 lg:px-32 xl:px-48 pt-24 pb-12 font-for-para">
+      <div className="bg-repeat-x bg-contain bg-siren ">
+      <div className="px-4 sm:px-8 md:px-20 lg:px-32 xl:px-48 2xl:px-0 mx-auto max-w-1366 pt-24 pb-12 font-for-para">
         <div className="flex flex-wrap">
           <div className="flex flex-wrap w-full items-baseline">
             <div className="w-full flex flex-col md:flex-row items-center pb-5">
@@ -302,13 +305,15 @@ export default function Home() {
           </div>
         </div>
       </div>
+      </div>
 
       {/* Section 6 Know you partners */}
-      <div className="text-white body-font overflow-hidden px-4 sm:px-8 md:px-16 lg:pl-16 lg:pr-24 xl:pl-28 xl:pr-40 pt-20 bg-cover bg-knowbg font-for-para">
+      <div className="bg-cover bg-black-1">
+      <div className="text-white body-font px-4 sm:px-8 md:px-16 lg:pl-16 lg:pr-24 xl:pl-28 xl:pr-40 2xl:px-0 mx-auto max-w-1500 pt-20 font-for-para">
         <div className="px-5 py-12 mx-auto">
-          <div className="flex flex-col-reverse md:flex-row -m-12 items-end ">
-            <div className="w-10/12 md:w-7/12 mx-auto">
-              <img src={section6} alt="Argus Security" />
+          <div className="flex flex-col-reverse md:flex-row -m-12 items-stretch">
+            <div className="w-10/12 min-w-650 mx-auto bg-handcuffs bg-contain bg-center bg-opacity-10 bg-no-repeat flex items-end	">
+              <img src={section6} alt="Argus Security" className="align-top"/>
             </div>
             <div className="md:w-1/2 p-4 flex flex-col items-start">
               <h1 className="text-4xl font-bold w-full lg:w-11/12 mb-12 px-4 lg:px-0 leading-tight">
@@ -316,18 +321,18 @@ export default function Home() {
                 <br />
                 Partners-in-Protection
               </h1>
-              <div className="flex items-center">
-                <button className="px-8 py-4 text-sm font-bold bg-red-1 border border-black bg-opacity-30 mx-2 hover:bg-opacity-100">
+              <div className="flex flex-row items-center justify-between">
+                <button className="px-8 py-4 text-sm font-bold bg-red-1 border border-black-1 bg-opacity-100 hover:bg-opacity-40 rounded-lg">
                   OUR TEAM
                 </button>
-                <button className="px-8 py-4 text-sm font-bold bg-red-1 border border-black bg-opacity-30 mx-2 hover:bg-opacity-100">
+                <button className="px-8 py-4 text-sm font-bold bg-red-1 border mx-4 border-black-1 bg-opacity-100 hover:bg-opacity-40 rounded-lg">
                   ARGUS HIERARCHY
                 </button>
-                <button className="px-8 py-4 text-sm font-bold bg-red-1 border border-black bg-opacity-30 mx-2 hover:bg-opacity-100">
+                <button className="px-8 py-4 text-sm font-bold bg-red-1 border border-black-1 bg-opacity-100 hover:bg-opacity-40 rounded-lg">
                   CONTACT US
                 </button>
               </div>
-              <p className="leading-loose text-l p-6 mb-2">
+              <p className="leading-loose text-l py-6 pr-24 mb-2">
                 At Argus Security Services we maintain a prominent level of
                 training for our guards in response to our highly sensitive
                 sites. We offer 24/7 fast and reliable security services.
@@ -337,34 +342,34 @@ export default function Home() {
                 <div>
                   <img
                     src={section4img}
-                    className="w-44 lg:w-28 xl:w-40 ml-4"
+                    className="w-44 lg:w-28 xl:w-40 ml-4 sm:ml-0"
                     alt=""
                   />
                 </div>
                 <div>
                   <ul className="px-4 text-sm font-bold">
                     <li className="py-1">
-                      <span className="text-red-1 font-bold">✓</span> Member of
+                      <span className="text-red-1 font-bold mr-2">✓</span> Member of
                       Law society of Ontario
                     </li>
                     <li className="py-1">
-                      <span className="text-red-1 font-bold">✓</span> Police
+                      <span className="text-red-1 font-bold mr-2">✓</span> Police
                       Foundation Certified
                     </li>
                     <li className="py-1">
-                      <span className="text-red-1 font-bold">✓</span> 7 Years of
+                      <span className="text-red-1 font-bold mr-2">✓</span> 7 Years of
                       Security Experience
                     </li>
                     <li className="py-1">
-                      <span className="text-red-1 font-bold">✓</span> Sometimes
+                      <span className="text-red-1 font-bold mr-2">✓</span> Sometimes
                       buys me Coffee
                     </li>
                     <li className="py-1">
-                      <span className="text-red-1 font-bold">✓</span> Good Taste
+                      <span className="text-red-1 font-bold mr-2">✓</span> Good Taste
                       in Movies
                     </li>
                     <li className="py-1">
-                      <span className="text-red-1 font-bold">✓</span> Good Guy
+                      <span className="text-red-1 font-bold mr-2">✓</span> Good Guy
                       Though{" "}
                     </li>
                   </ul>
@@ -375,19 +380,22 @@ export default function Home() {
           </div>
         </div>
       </div>
+      </div>
 
       {/* Section 7 Covid 19 CTA */}
-      <div className="bg-red-1 px-4 sm:px-8 md:px-20 lg:px-32 xl:px-48 py-20 flex flex-col sm:flex-row items-end font-for-para">
-        <h1 className="flex-grow sm:pr-28 text-4xl font-bold text-white leading-tight">
-          Covid 19 Procedures and much more to safeguard your business.
-        </h1>
-        <button className="flex-shrink-0 font-bold text-red-1 bg-white py-5 px-12 focus:outline-none hover:bg-red-1 border-2 border-white hover:text-white shadow-lg rounded-lg text-l mt-10 sm:mt-0">
-          DISCOVER MORE
-        </button>
+      <div className="bg-red-1 bg-repeat-y bg-cta-bg bg-top bg-stretch-x bg bg-blend-multiply">
+        <div className="px-4 sm:px-8 md:px-20 lg:px-32 xl:px-48 2xl:px-0 mx-auto max-w-1366 py-20 flex flex-col sm:flex-row items-end font-for-para">
+          <h1 className="flex-grow sm:pr-28 text-4xl font-bold text-white leading-tight">
+            Covid 19 Procedures and much more to safeguard your business.
+          </h1>
+          <button className="flex-shrink-0 font-bold text-red-1 bg-white py-5 px-12 focus:outline-none hover:bg-red-1 border-3 border-white hover:text-white shadow-button-shadow rounded-lg text-l mt-10 sm:mt-0">
+            DISCOVER MORE
+          </button>
+        </div>
       </div>
 
       {/* Section 8 Client Testimonial */}
-      <ClientTestimonial testimonial={testimonial} />
+      <ClientTestimonial testimonial={testimonialData} />
 
       {/* Section 9 Employee of the Month */}
       <EmployeeMonth />
