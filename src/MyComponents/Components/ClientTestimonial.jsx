@@ -40,11 +40,10 @@ const ClientTestimonial = ({ testimonial }) => {
   const settings = {
     centerMode: true,
     speed: 600,
-    autoplay: true,
+    // autoplay: true,
     centerPadding: "450px",
-    autoplaySpeed: 2000,
-    pauseOnHover: true,
-    dots: true,
+    // autoplaySpeed: 2000,
+    // pauseOnHover: true,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
     responsive: [
@@ -53,6 +52,8 @@ const ClientTestimonial = ({ testimonial }) => {
         settings: {
           centerPadding: "350px",
           infinite: true,
+          nextArrow: <SampleNextArrow />,
+          prevArrow: <SamplePrevArrow />,
         },
       },
       {
@@ -60,10 +61,21 @@ const ClientTestimonial = ({ testimonial }) => {
         settings: {
           centerPadding: "250px",
           infinite: true,
+          nextArrow: <SampleNextArrow />,
+          prevArrow: <SamplePrevArrow />,
         },
       },
       {
         breakpoint: 1200,
+        settings: {
+          centerPadding: "150px",
+          infinite: true,
+          nextArrow: <SampleNextArrow />,
+          prevArrow: <SamplePrevArrow />,
+        },
+      },
+      {
+        breakpoint: 850,
         settings: {
           centerPadding: "100px",
           infinite: true,
@@ -71,9 +83,9 @@ const ClientTestimonial = ({ testimonial }) => {
       },
 
       {
-        breakpoint: 650,
+        breakpoint: 700,
         settings: {
-          centerPadding: "30px",
+          centerPadding: "50px",
           infinite: true,
         },
       },
@@ -92,7 +104,7 @@ const ClientTestimonial = ({ testimonial }) => {
         <span className="h-1 w-10 bg-red-1 mb-10 md:m-0 md:mr-4"></span>
         <h1 className="text-4xl font-bold text-gray-3 ">Client Testimonials</h1>
       </div>
-      <div className="flex flex-wrap mb-16">
+      <div className="flex flex-wrap mb-16 w-full overflow-hidden">
         <Slider {...settings} className="w-full">
           {testimonial.map((data) => {
             return (
@@ -105,7 +117,7 @@ const ClientTestimonial = ({ testimonial }) => {
                       className="w-12 text-red-1 ml-auto -mt-16"
                     />
                   </div>
-                  <div className="px-4 sm:px-16 pb-10 pt-2 w-full h-56">
+                  <div className="px-16 pb-6 pt-2 w-full h-56">
                     <p className="leading-loose mb-6">{data?.description}</p>
                     <div className="inline-flex items-center">
                       <img

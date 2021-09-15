@@ -35,9 +35,14 @@ const clientcarouselloading = (data) => ({
 
 const getClientCarousel = () => {
   return (dispatch) => {
+    const { token } = isAuthenticated();
     dispatch(clientcarouselloading(true));
     axiosInstance
-      .get("/client/get-all")
+      .get("/client/get-all", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
       .then((res) => {
         dispatch(
           setclientcarousel(

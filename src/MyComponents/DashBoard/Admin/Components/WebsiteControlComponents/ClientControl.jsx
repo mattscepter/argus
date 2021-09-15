@@ -28,8 +28,7 @@ export default function ClientControls() {
   const clientRef = useRef();
   const dispatch = useDispatch();
   const update = useSelector((state) => state.client.update);
-  const clientalert = useSelector((state) => state.client.clientcarouselalert);
-  console.log(clientalert);
+  const clientalert = useSelector((state) => state.client.clientalert);
 
   useEffect(() => {
     if (clientalert.success !== null) {
@@ -103,6 +102,9 @@ export default function ClientControls() {
         onSubmit={handleSubmit}
         className="flex flex-col items-center py-4 px-2"
       >
+        {showAlert.show ? (
+          <Alert alert={showAlert} rmAlert={setShowAlert} />
+        ) : null}
         <input
           className={`w-full ${
             errors.name ? "border-b-2 border-red-600" : "border-b border-black"

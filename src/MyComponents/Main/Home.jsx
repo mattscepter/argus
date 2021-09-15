@@ -1,6 +1,6 @@
 import React from "react";
 
-import accountable from "./../../argus website/SVG/2. Accountable.svg"
+import accountable from "./../../argus website/SVG/2. Accountable.svg";
 import { Link } from "react-router-dom";
 import section4_img1 from "./../../argus website/PNG/Video1.png";
 import section4_img2 from "./../../argus website/PNG/3.Charlie.png";
@@ -55,18 +55,14 @@ export default function Home() {
       <div className="text-gray-600 font-for-para overflow-hidden mx-auto">
         <div className="flex flex-col md:flex-row px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 2xl:px-0 mx-auto max-w-1366 pt-4 pb-2 mt-8 text-white justify-center">
           <div className="bg-red-1 w-full md:w-6/12 px-3 py-5 flex flex-row items-center justify-start">
-            <img src={accountable} alt=""
-              className="w-16 p-1 mx-4 sm:mx-10"
-            />
+            <img src={accountable} alt="" className="w-16 p-1 mx-4 sm:mx-10" />
             <div className="text-lg">
               <p>100% Accountable</p>
               <h1 className="font-bold">Know the Truth for Peace of Mind</h1>
             </div>
           </div>
           <div className="bg-gray-3 w-full md:w-6/12 px-3 py-5 flex flex-row items-center justify-start">
-            <img src={accountable} alt=""
-              className="w-16 p-1 mx-4 sm:mx-10"
-            />
+            <img src={accountable} alt="" className="w-16 p-1 mx-4 sm:mx-10" />
             <div>
               <p>100% Accountable</p>
               <h1 className="font-bold">Direct Updates Regarding Incidents</h1>
@@ -106,29 +102,30 @@ export default function Home() {
               <ul className="text-gray-2 font-medium text-lg flex flex-col md:flex-row mb-4">
                 <div>
                   <li className="my-0.5">
-                    <span className="text-red-1 font-bold mr-2">✓</span> Optimized
-                    Mobile Patrols
+                    <span className="text-red-1 font-bold mr-2">✓</span>{" "}
+                    Optimized Mobile Patrols
                   </li>
                   <li className="my-0.5">
-                    <span className="text-red-1 font-bold mr-2">✓</span> Fool Proof
-                    Checkpoints
+                    <span className="text-red-1 font-bold mr-2">✓</span> Fool
+                    Proof Checkpoints
                   </li>
                   <li className="my-0.5">
-                    <span className="text-red-1 font-bold mr-2">✓</span> GPS Tracking
+                    <span className="text-red-1 font-bold mr-2">✓</span> GPS
+                    Tracking
                   </li>
                 </div>
                 <div className="md:ml-12">
                   <li className="my-0.5">
-                    <span className="text-red-1 font-bold mr-2">✓</span> Reliable
-                    Fire Watch
+                    <span className="text-red-1 font-bold mr-2">✓</span>{" "}
+                    Reliable Fire Watch
                   </li>
                   <li className="my-0.5">
-                    <span className="text-red-1 font-bold mr-2">✓</span> Tangible
-                    Proof of Service
+                    <span className="text-red-1 font-bold mr-2">✓</span>{" "}
+                    Tangible Proof of Service
                   </li>
                   <li className="my-0.5">
-                    <span className="text-red-1 font-bold mr-2">✓</span> Efficient
-                    Dispatching System
+                    <span className="text-red-1 font-bold mr-2">✓</span>{" "}
+                    Efficient Dispatching System
                   </li>
                 </div>
               </ul>
@@ -401,7 +398,7 @@ export default function Home() {
       <EmployeeMonth />
 
       {/* Section 10 Sponsors */}
-      <ClientCorousal />
+      {/* <ClientCorousal /> */}
     </div>
   );
 }

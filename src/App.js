@@ -42,6 +42,7 @@ import { useDispatch } from "react-redux";
 import { getContact } from "./context/actions/contactAction";
 import { getTestimonial } from "./context/actions/testimonialAction";
 import { getEOM } from "./context/actions/eomAction";
+import { getClientCarousel } from "./context/actions/adminActions/clientsAction";
 
 function App() {
   const dispatch = useDispatch();
@@ -49,13 +50,14 @@ function App() {
     dispatch(getContact());
     dispatch(getTestimonial());
     dispatch(getEOM());
+    dispatch(getClientCarousel());
   }, [dispatch]);
   return (
     <Router>
       <div className="App">
         <ScrollToTop />
         <switch>
-          <Route path="/react" exact component={Home} />
+          <Route path="/" exact component={Home} />
           <Route path="/about" exact component={About} />
           <Route path="/jobs" exact component={Jobs} />
           <Route path="/contact" exact component={Contact} />
