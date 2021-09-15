@@ -1,6 +1,5 @@
 {
   "name": "argus",
-  "homepage": "https://mattscepter.github.io/argus",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
