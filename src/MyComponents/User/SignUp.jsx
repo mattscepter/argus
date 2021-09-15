@@ -6,8 +6,7 @@ import MobileHeader from "../Partials/MobileHeader";
 import Stickynav from "../Partials/Stickynav";
 import { useFormik } from "formik";
 import Alert from "../Components/Alert";
-import { API } from "../../api";
-import axios from "axios";
+import axiosInstance from "../../helpers/axiosInstance";
 
 const validate = (values) => {
   const errors = {};
@@ -40,8 +39,8 @@ const SignUp = () => {
     },
     validate,
     onSubmit: (values, { resetForm }) => {
-      axios
-        .post(`${API}/signup`, values, {
+      axiosInstance
+        .post(`/signup`, values, {
           headers: {
             Accept: "application/JSON",
             "Content-Type": "application/JSON",
@@ -87,31 +86,39 @@ const SignUp = () => {
               <Alert alert={showAlert} rmAlert={setShowAlert} />
             ) : null}
             <img src={logo} alt="Logo" className="w-20 mb-3" />
-            <div classname="w-full flex flex-col item-center">
+            {/* <div classname="w-full flex flex-col item-center">
               <hr className="w-1/3 border-1 border-black" />
               <p>or</p>
               <hr className="w-1/3 border-1 border-black" />
-            </div>
+            </div> */}
             <input
-              className="w-full mb-3 py-3 px-4 border border-gray-400 focus:outline-none rounded-md focus:ring-1 ring-red-1"
+              className={`w-full mt-3 py-3 px-4 ${
+                errors.email ? "bg-red-100" : ""
+              } border border-gray-400 focus:outline-none rounded-md focus:ring-1 ring-red-1`}
               type="email"
               placeholder="Email"
               {...getFieldProps("email")}
             />
-            {/* Error for email */}
-            {errors.email ? <div>{errors.email}</div> : null}
+            {errors.email ? (
+              <div className="w-full text-xs text-red-400">{errors.email}</div>
+            ) : null}
 
             <input
-              className="w-full mb-3 py-3 px-4 border border-gray-400 focus:outline-none rounded-md focus:ring-1 ring-red-1"
+              className={`w-full mt-3 py-3 px-4 ${
+                errors.password ? "bg-red-100" : ""
+              } border border-gray-400 focus:outline-none rounded-md focus:ring-1 ring-red-1`}
               type="password"
               placeholder="Password"
               {...getFieldProps("password")}
             />
-            {/* Error for password */}
-            {errors.password ? <div>{errors.password}</div> : null}
+            {errors.password ? (
+              <div className="w-full text-xs text-red-400">
+                {errors.password}
+              </div>
+            ) : null}
 
             <button
-              className="w-1/2 bg-red-700 text-white p-3 rounded-lg font-semibold text-lg"
+              className="w-1/2 bg-red-700 text-white p-3 rounded-lg font-semibold text-lg mt-3"
               type="submit"
             >
               Next

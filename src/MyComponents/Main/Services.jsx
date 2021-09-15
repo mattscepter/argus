@@ -7,9 +7,7 @@ import Stickynav from "./../Partials/Stickynav";
 import MobileHeader from "../Partials/MobileHeader";
 
 const Services = () => {
-  const [row1, setRow1] = useState(0);
-  const [row2, setRow2] = useState(0);
-  const [row3, setRow3] = useState(0);
+  const [row, setRow] = useState(0);
 
   return (
     <div>
@@ -62,7 +60,7 @@ const Services = () => {
                 </p>
                 <button
                   className="w-full p-4 text-black bg-gray-200 hover:bg-red-1 hover:text-white"
-                  onClick={() => setRow1(1)}
+                  onClick={() => setRow(1)}
                 >
                   Read More
                 </button>
@@ -85,7 +83,7 @@ const Services = () => {
                   NFS marked vehicles, communication between residents &
                   security staff and efficient use of technology
                 </p>
-                <button className="w-full p-4 text-black bg-gray-200 hover:bg-red-1 hover:text-white" onClick={() => setRow1(2) }>
+                <button className="w-full p-4 text-black bg-gray-200 hover:bg-red-1 hover:text-white" onClick={() => setRow(2) }>
                     Read More
                 </button>
               </div>
@@ -107,16 +105,16 @@ const Services = () => {
                   NFS marked vehicles, communication between residents &
                   security staff and efficient use of technology
                 </p>
-                <button className="w-full p-4 text-black bg-gray-200 hover:bg-red-1 hover:text-white" onClick={() => setRow1(3)}>
+                <button className="w-full p-4 text-black bg-gray-200 hover:bg-red-1 hover:text-white" onClick={() => setRow(3)}>
                     Read More
                 </button>
               </div>
             </div>
           </div>
 
-          <div className={row1 == 1 ? "block" : "hidden"}>
+          <div className={row === 1 ? "block" : "hidden"}>
             <div className="px-8 py-6 rounded-lg border border-gray-2 mb-12">
-              <button className="px-4 py-1 float-right bg-gray-200 border shadow-lg rounded-lg hover:bg-white hover:shadow-none hover:border-gray-200" onClick={() => setRow1(0)}>Close</button>
+              <button className="px-4 py-1 float-right bg-gray-200 border shadow-lg rounded-lg hover:bg-white hover:shadow-none hover:border-gray-200" onClick={() => setRow(0)}>Close</button>
               <h2 className="leading-tight text-4xl title-font font-bold text-gray-900 mt-8 mb-8">
                 EVENT SECURITY SERVICES 1
               </h2>
@@ -146,9 +144,9 @@ const Services = () => {
             </div>
           </div>
 
-          <div className={row1 == 2 ? "block" : "hidden"}>
+          <div className={row == 2 ? "block" : "hidden"}>
             <div className="px-8 py-6 rounded-lg border border-gray-2 mb-12">
-            <button className="px-4 py-1 float-right bg-gray-200 border shadow-lg rounded-lg hover:bg-white hover:shadow-none hover:border-gray-200" onClick={() => setRow1(0)}>Close</button>
+            <button className="px-4 py-1 float-right bg-gray-200 border shadow-lg rounded-lg hover:bg-white hover:shadow-none hover:border-gray-200" onClick={() => setRow(0)}>Close</button>
               <h2 className="leading-tight text-4xl title-font font-bold text-gray-900 mt-8 mb-8">
                 EVENT SECURITY SERVICES 2
               </h2> 
@@ -178,9 +176,9 @@ const Services = () => {
             </div>
           </div>
 
-          <div className={row1 == 3 ? "block" : "hidden"}>
+          <div className={row == 3 ? "block" : "hidden"}>
             <div className="px-8 py-6 rounded-lg border border-gray-2 mb-12">
-            <button className="px-4 py-1 float-right bg-gray-200 border shadow-lg rounded-lg hover:bg-white hover:shadow-none hover:border-gray-200" onClick={() => setRow1(0)}>Close</button>
+            <button className="px-4 py-1 float-right bg-gray-200 border shadow-lg rounded-lg hover:bg-white hover:shadow-none hover:border-gray-200" onClick={() => setRow(0)}>Close</button>
               <h2 className="leading-tight text-4xl title-font font-bold text-gray-900 mt-8 mb-8">
                 EVENT SECURITY SERVICES 3
               </h2>
@@ -227,7 +225,7 @@ const Services = () => {
                 </p>
                 <button
                   className="w-full p-4 text-black bg-gray-200 hover:bg-red-1 hover:text-white"
-                  onClick={() => setRow2(1)}
+                  onClick={() => setRow(4)}
                 >
                   Read More
                 </button>
@@ -250,7 +248,7 @@ const Services = () => {
                   NFS marked vehicles, communication between residents &
                   security staff and efficient use of technology
                 </p>
-                <button className="w-full p-4 text-black bg-gray-200 hover:bg-red-1 hover:text-white" onClick={() => setRow2(2)}>
+                <button className="w-full p-4 text-black bg-gray-200 hover:bg-red-1 hover:text-white" onClick={() => setRow(5)}>
                     Read More
                 </button>
               </div>
@@ -272,16 +270,16 @@ const Services = () => {
                   NFS marked vehicles, communication between residents &
                   security staff and efficient use of technology
                 </p>
-                <button className="w-full p-4 text-black bg-gray-200 hover:bg-red-1 hover:text-white" onClick={() => setRow2(3)}>
+                <button className="w-full p-4 text-black bg-gray-200 hover:bg-red-1 hover:text-white" onClick={() => setRow(6)}>
                     Read More
                 </button>
               </div>
             </div>
           </div>
 
-          <div className={row2 == 1 ? "block" : "hidden"}>
+          <div className={row == 4 ? "block" : "hidden"}>
             <div className="px-8 py-6 rounded-lg border border-gray-2 mb-12">
-            <button className="px-4 py-1 float-right bg-gray-200 border shadow-lg rounded-lg hover:bg-white hover:shadow-none hover:border-gray-200" onClick={() => setRow2(0)}>Close</button>
+            <button className="px-4 py-1 float-right bg-gray-200 border shadow-lg rounded-lg hover:bg-white hover:shadow-none hover:border-gray-200" onClick={() => setRow(0)}>Close</button>
               <h2 className="leading-tight text-4xl title-font font-bold text-gray-900 mt-8 mb-8">
                 EVENT SECURITY SERVICES 4
               </h2>
@@ -311,9 +309,9 @@ const Services = () => {
             </div>
           </div>
 
-          <div className={row2 == 2 ? "block" : "hidden"}>
+          <div className={row == 5 ? "block" : "hidden"}>
             <div className="px-8 py-6 rounded-lg border border-gray-2 mb-12">
-            <button className="px-4 py-1 float-right bg-gray-200 border shadow-lg rounded-lg hover:bg-white hover:shadow-none hover:border-gray-200" onClick={() => setRow2(0)}>Close</button>
+            <button className="px-4 py-1 float-right bg-gray-200 border shadow-lg rounded-lg hover:bg-white hover:shadow-none hover:border-gray-200" onClick={() => setRow(0)}>Close</button>
               <h2 className="leading-tight text-4xl title-font font-bold text-gray-900 mt-8 mb-8">
                 EVENT SECURITY SERVICES 5
               </h2> 
@@ -343,9 +341,9 @@ const Services = () => {
             </div>
           </div>
 
-          <div className={row2 == 3 ? "block" : "hidden"}>
+          <div className={row == 6 ? "block" : "hidden"}>
             <div className="px-8 py-6 rounded-lg border border-gray-2 mb-12">
-            <button className="px-4 py-1 float-right bg-gray-200 border shadow-lg rounded-lg hover:bg-white hover:shadow-none hover:border-gray-200" onClick={() => setRow2(0)}>Close</button>
+            <button className="px-4 py-1 float-right bg-gray-200 border shadow-lg rounded-lg hover:bg-white hover:shadow-none hover:border-gray-200" onClick={() => setRow(0)}>Close</button>
               <h2 className="leading-tight text-4xl title-font font-bold text-gray-900 mt-8 mb-8">
                 EVENT SECURITY SERVICES 6
               </h2>
@@ -392,7 +390,7 @@ const Services = () => {
                 </p>
                 <button
                   className="w-full p-4 text-black bg-gray-200 hover:bg-red-1 hover:text-white"
-                  onClick={() => setRow3(1)}
+                  onClick={() => setRow(7)}
                 >
                   Read More
                 </button>
@@ -415,7 +413,7 @@ const Services = () => {
                   NFS marked vehicles, communication between residents &
                   security staff and efficient use of technology
                 </p>
-                <button className="w-full p-4 text-black bg-gray-200 hover:bg-red-1 hover:text-white" onClick={() => setRow3(2)}>
+                <button className="w-full p-4 text-black bg-gray-200 hover:bg-red-1 hover:text-white" onClick={() => setRow(8)}>
                     Read More
                 </button>
               </div>
@@ -437,16 +435,16 @@ const Services = () => {
                   NFS marked vehicles, communication between residents &
                   security staff and efficient use of technology
                 </p>
-                <button className="w-full p-4 text-black bg-gray-200 hover:bg-red-1 hover:text-white" onClick={() => setRow3(3)}>
+                <button className="w-full p-4 text-black bg-gray-200 hover:bg-red-1 hover:text-white" onClick={() => setRow(9)}>
                     Read More
                 </button>
               </div>
             </div>
           </div>
 
-          <div className={row3 == 1 ? "block" : "hidden"}>
+          <div className={row == 7 ? "block" : "hidden"}>
             <div className="px-8 py-6 rounded-lg border border-gray-2 mb-12">
-            <button className="px-4 py-1 float-right bg-gray-200 border shadow-lg rounded-lg hover:bg-white hover:shadow-none hover:border-gray-200" onClick={() => setRow3(0)}>Close</button>
+            <button className="px-4 py-1 float-right bg-gray-200 border shadow-lg rounded-lg hover:bg-white hover:shadow-none hover:border-gray-200" onClick={() => setRow(0)}>Close</button>
               <h2 className="leading-tight text-4xl title-font font-bold text-gray-900 mt-8 mb-8">
                 EVENT SECURITY SERVICES 7
               </h2>
@@ -476,9 +474,9 @@ const Services = () => {
             </div>
           </div>
 
-          <div className={row3 == 2 ? "block" : "hidden"}>
+          <div className={row == 8 ? "block" : "hidden"}>
             <div className="px-8 py-6 rounded-lg border border-gray-2 mb-12">
-            <button className="px-4 py-1 float-right bg-gray-200 border shadow-lg rounded-lg hover:bg-white hover:shadow-none hover:border-gray-200" onClick={() => setRow3(0)}>Close</button>
+            <button className="px-4 py-1 float-right bg-gray-200 border shadow-lg rounded-lg hover:bg-white hover:shadow-none hover:border-gray-200" onClick={() => setRow(0)}>Close</button>
               <h2 className="leading-tight text-4xl title-font font-bold text-gray-900 mt-8 mb-8">
                 EVENT SECURITY SERVICES 8
               </h2> 
@@ -508,9 +506,9 @@ const Services = () => {
             </div>
           </div>
 
-          <div className={row3 == 3 ? "block" : "hidden"}>
+          <div className={row == 9 ? "block" : "hidden"}>
             <div className="px-8 py-6 rounded-lg border border-gray-2 mb-12">
-            <button className="px-4 py-1 float-right bg-gray-200 border shadow-lg rounded-lg hover:bg-white hover:shadow-none hover:border-gray-200" onClick={() => setRow3(0)}>Close</button>
+            <button className="px-4 py-1 float-right bg-gray-200 border shadow-lg rounded-lg hover:bg-white hover:shadow-none hover:border-gray-200" onClick={() => setRow(0)}>Close</button>
               <h2 className="leading-tight text-4xl title-font font-bold text-gray-900 mt-8 mb-8">
                 EVENT SECURITY SERVICES 9
               </h2>
@@ -525,7 +523,7 @@ const Services = () => {
                 laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                 sed do eiusmod tempor incididunt ut labore et dolore magna
                 aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                ullamco laboris nisi ut aliquip ex ea commodo consequat.{" "}
+                ullamco laboris nisi ut aliquip ex ea commodo consequat.
               </p>
               <p className="leading-relaxed. text-l font-medium text-gray-2 mb-8">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do

@@ -1,37 +1,39 @@
 import axios from "axios";
 import { useFormik } from "formik";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { API } from "../../../../../api";
 import Alert from "../../../../Components/Alert";
 import Compressor from "compressorjs";
+import { useDispatch, useSelector } from "react-redux";
+import { createEOM, eomError } from "../../../../../context/actions/eomAction";
 
 const validate = (values) => {
   const errors = {};
   if (!values.name) {
-    errors.client = "Required";
+    errors.name = "*Required";
   }
   if (!values.empdescription) {
-    errors.description = "Required";
+    errors.empdescription = "*Required";
   }
   if (!values.description) {
-    errors.description = "Required";
+    errors.description = "*Required";
   }
   if (!values.quality1) {
-    errors.quality1 = "Required";
+    errors.quality1 = "*Required";
   }
   if (!values.quality2) {
-    errors.quality2 = "Required";
+    errors.quality2 = "*Required";
   }
   if (!values.quality3) {
-    errors.quality3 = "Required";
+    errors.quality3 = "*Required";
   }
   if (!values.seniorName) {
-    errors.seniorName = "Required";
+    errors.seniorName = "*Required";
   }
   return errors;
 };
 
-const EmpOfMon = ({ seteomRefresh }) => {
+const EmpOfMon = () => {
   const [showAlert, setShowAlert] = useState({
     show: false,
     message: "",
@@ -41,11 +43,33 @@ const EmpOfMon = ({ seteomRefresh }) => {
   const [instructorImg, setinstructorImg] = useState();
   const [instructorSign, setinstructorSign] = useState();
 
+  const dispatch = useDispatch();
+  const error = useSelector((state) => state.eom.error);
+
+  useEffect(() => {
+    if (error !== null) {
+      if (error === true) {
+        setShowAlert({
+          show: true,
+          message: "Employee of the month added successfully",
+          success: true,
+        });
+      } else if (error === false) {
+        setShowAlert({
+          show: true,
+          message: "Error adding employee of the month testimonial",
+          success: false,
+        });
+      }
+    }
+    dispatch(eomError(null));
+  }, [dispatch, error]);
+
   const handleCompressedUpload = (e, cb) => {
     const image = e.target.files[0];
     new Compressor(image, {
-      quality: 0.5,
-      maxWidth: 2000,
+      quality: 0.3,
+      maxWidth: 1500,
       success: (compressedResult) => {
         cb(compressedResult);
       },
@@ -81,23 +105,8 @@ const EmpOfMon = ({ seteomRefresh }) => {
       formdata.append("empImage", empImg);
       formdata.append("instructorImage", instructorImg);
       formdata.append("instructorSign", instructorSign);
-      await axios
-        .post(`${API}/eom/create`, formdata)
-        .then((res) => {
-          setShowAlert({
-            show: true,
-            message: "Employee of the month added successfully",
-            success: true,
-          });
-          seteomRefresh(res);
-        })
-        .catch((err) => {
-          setShowAlert({
-            show: true,
-            message: "Error adding employee of the month testimonial",
-            success: false,
-          });
-        });
+
+      dispatch(createEOM(formdata));
     },
   });
 
@@ -120,78 +129,131 @@ const EmpOfMon = ({ seteomRefresh }) => {
           Update Employee Of the Month
         </h1>
       </div>
-      <form onSubmit={handleSubmit} className="flex flex-col items-center py-4">
+      <form
+        onSubmit={handleSubmit}
+        className="flex flex-col items-center py-4 px-2"
+      >
         {showAlert.show ? (
           <Alert alert={showAlert} rmAlert={setShowAlert} />
         ) : null}
         <input
-          className="w-full border-b border-black focus:outline-none my-2"
+          className={`w-full ${
+            errors.name ? "border-b-2 border-red-600" : "border-b border-black"
+          } focus:outline-none mt-4`}
           type="text"
           placeholder="Name of Employee"
           {...getFieldProps("name")}
         />
-        {errors.name ? <div>{errors.name}</div> : null}
+        {errors.name ? (
+          <div className="w-full text-xs text-red-400">{errors.name}</div>
+        ) : null}
         <textarea
-          className="w-full border-b border-black focus:outline-none my-2"
+          className={`w-full ${
+            errors.empdescription
+              ? "border-b-2 border-red-600"
+              : "border-b border-black"
+          } focus:outline-none mt-4`}
           type="text"
+          rows="3"
           placeholder="Write Paragraph about the Employee"
           {...getFieldProps("empdescription")}
         />
-        {errors.empdescription ? <div>{errors.empdescription}</div> : null}
+        {errors.empdescription ? (
+          <div className="w-full text-xs text-red-400">
+            {errors.empdescription}
+          </div>
+        ) : null}
         <input
-          className="w-full border-b border-black focus:outline-none my-2"
+          className={`w-full ${
+            errors.quality1
+              ? "border-b-2 border-red-600"
+              : "border-b border-black"
+          } focus:outline-none mt-4`}
           type="text"
           placeholder="Quality 1"
           {...getFieldProps("quality1")}
         />
-        {errors.quality1 ? <div>{errors.quality1}</div> : null}
+        {errors.quality1 ? (
+          <div className="w-full text-xs text-red-400">{errors.quality1}</div>
+        ) : null}
         <input
-          className="w-full border-b border-black focus:outline-none my-2"
+          className={`w-full ${
+            errors.quality2
+              ? "border-b-2 border-red-600"
+              : "border-b border-black"
+          } focus:outline-none mt-4`}
           type="text"
           placeholder="Quality 2"
           {...getFieldProps("quality2")}
         />
-        {errors.quality2 ? <div>{errors.quality2}</div> : null}
+        {errors.quality2 ? (
+          <div className="w-full text-xs text-red-400">{errors.quality2}</div>
+        ) : null}
         <input
-          className="w-full border-b border-black focus:outline-none my-2"
+          className={`w-full ${
+            errors.quality3
+              ? "border-b-2 border-red-600"
+              : "border-b border-black"
+          } focus:outline-none mt-4`}
           type="text"
           placeholder="Quality 3"
           {...getFieldProps("quality3")}
         />
-        {errors.quality3 ? <div>{errors.quality3}</div> : null}
-        <lable className="text-gray-2">Upload Image of the Employee</lable>
+        {errors.quality3 ? (
+          <div className="w-full text-xs text-red-400">{errors.quality3}</div>
+        ) : null}
+        <lable className="text-gray-2 mt-4 mb-1">
+          Upload Image of the Employee
+        </lable>
         <input
-          className="p-4 my-4 border border-black"
+          className="p-4 border border-black"
           type="file"
           accept="image/png, image/jpeg"
           onChange={(e) => handleCompressedUpload(e, setempImg)}
         />
         <input
-          className="w-full border-b border-black focus:outline-none my-2"
+          className={`w-full ${
+            errors.seniorName
+              ? "border-b-2 border-red-600"
+              : "border-b border-black"
+          } focus:outline-none mt-4`}
           type="text"
           placeholder="Name of the Area Manager"
           {...getFieldProps("seniorName")}
         />
-        {errors.seniorName ? <div>{errors.seniorName}</div> : null}
+        {errors.seniorName ? (
+          <div className="w-full text-xs text-red-400">{errors.seniorName}</div>
+        ) : null}
         <textarea
-          className="w-full border-b border-black focus:outline-none my-2"
+          className={`w-full ${
+            errors.description
+              ? "border-b-2 border-red-600"
+              : "border-b border-black"
+          } focus:outline-none mt-4`}
           type="text"
+          rows="3"
           placeholder="Area Manager Qoute"
           {...getFieldProps("description")}
         />
-        {errors.description ? <div>{errors.description}</div> : null}
-        <lable className="text-gray-2">Upload Image of the Area Manager</lable>
+        {errors.description ? (
+          <div className="w-full text-xs text-red-400">
+            {errors.description}
+          </div>
+        ) : null}
+        <lable className="text-gray-2 mt-4 mb-1">
+          Upload Image of the Area Manager
+        </lable>
         <input
-          className="p-4 my-4 border border-black"
+          className="p-4 border border-black"
           type="file"
           accept="image/png, image/jpeg"
           onChange={(e) => handleCompressedUpload(e, setinstructorImg)}
         />
-        <lable className="text-gray-2">
+        <lable className="text-gray-2 mt-4 mb-1">
           Upload Image of the Area Manager signature
         </lable>
         <input
-          className="p-4 my-4 border border-black"
+          className="p-4  border border-black mb-4"
           type="file"
           accept="image/png, image/jpeg"
           onChange={(e) => handleCompressedUpload(e, setinstructorSign)}

@@ -1,0 +1,14 @@
+export const SET_CONTACTS = "SET_CONTACTS";
+export const SETCONTACTS_ERROR = "SET_CONTACTS_ERROR";
+
+export const SET_TESTIMONIAL = "SET_TESTIMONIAL";
+export const DELETE_TESTIMONIAL = "DELETE_TESTIMONIAL";
+export const TESTIMONIAL_ERROR = "TESTIMONIAL_ERROR";
+
+export const SET_EOM = "SET_EOM";
+export const SET_EOMADMIN = "SET_EOMADMIN";
+export const EOM_ERROR = "TESTIMONIAL_ERROR";
+export const DELETE_EOM = "DELETE_EOM";
+
+export const SIGNUP = "SIGNUP";
+export const SIGNIN = "SIGNIN";

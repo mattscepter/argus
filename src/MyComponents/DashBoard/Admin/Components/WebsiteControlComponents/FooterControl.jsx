@@ -1,14 +1,16 @@
 import { useFormik } from "formik";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { isAuthenticated } from "../../../../../helpers/auth";
-import { updateContact } from "../../../../../helpers/contact";
 import CompanyContact from "../../../../Components/CompanyContact";
 import Alert from "../../../../Components/Alert";
+import { useDispatch } from "react-redux";
+import { updateContact } from "../../../../../context/actions/contactAction";
+import { useSelector } from "react-redux";
 
 const validate = (values) => {
   const errors = {};
   if (!values.phoneNumber) {
-    errors.phoneNumber = "Required";
+    errors.phoneNumber = "*Required";
   } else if (values.phoneNumber.length < 4) {
     errors.phoneNumber = "Must be greater 4 numbers";
   } else if (values.phoneNumber.length > 14) {
@@ -16,13 +18,13 @@ const validate = (values) => {
   }
 
   if (!values.email) {
-    errors.email = "Required";
+    errors.email = "*Required";
   } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
     errors.email = "Invalid email address";
   }
 
   if (!values.address) {
-    errors.address = "Required";
+    errors.address = "*Required";
   }
 
   return errors;
@@ -34,9 +36,19 @@ const FooterControl = () => {
     message: "",
     success: false,
   });
-  const [refresh, setrefresh] = useState();
 
-  const { token } = isAuthenticated();
+  const dispatch = useDispatch();
+  const contact = useSelector((state) => state.contact.error);
+
+  useEffect(() => {
+    if (contact !== null) {
+      setShowAlert({
+        show: true,
+        message: "Error Updating Contact",
+        success: false,
+      });
+    }
+  }, [contact]);
 
   const { getFieldProps, handleSubmit, errors } = useFormik({
     initialValues: {
@@ -46,25 +58,8 @@ const FooterControl = () => {
     },
     validate,
     onSubmit: (values, { resetForm }) => {
-      updateContact(values, token)
-        .then((data) => {
-          setShowAlert({
-            show: true,
-            message: "Contact updated successfully successfully",
-            success: true,
-          });
-          setrefresh(data);
-          resetForm();
-        })
-        .catch((err) => {
-          setShowAlert({
-            show: true,
-            message: "Error updating contact",
-            success: true,
-          });
-          resetForm();
-          console.log(err);
-        });
+      dispatch(updateContact(values));
+      resetForm();
     },
   });
 
@@ -89,33 +84,53 @@ const FooterControl = () => {
       </div>
       <div className="flex flex-col md:flex-row">
         <form
-          className="flex flex-col items-center py-4 w-full md:w-6/12"
+          className="flex flex-col items-center py-4 pl-2 pr-6 w-full md:w-6/12 "
           onSubmit={handleSubmit}
         >
           {showAlert.show ? (
             <Alert alert={showAlert} rmAlert={setShowAlert} />
           ) : null}
           <input
-            className="w-full border-b border-black focus:outline-none my-2"
+            className={`w-full ${
+              errors.phoneNumber
+                ? "border-b-2 border-red-600"
+                : "border-b border-black"
+            } focus:outline-none mt-4`}
             type="text"
             placeholder="Phone Number"
             {...getFieldProps("phoneNumber")}
           />
-          {errors.phoneNumber ? <div>{errors.phoneNumber}</div> : null}
+          {errors.phoneNumber ? (
+            <div className="w-full text-xs text-red-400">
+              {errors.phoneNumber}
+            </div>
+          ) : null}
           <input
-            className="w-full border-b border-black focus:outline-none my-2"
+            className={`w-full ${
+              errors.email
+                ? "border-b-2 border-red-600"
+                : "border-b border-black"
+            } focus:outline-none mt-4`}
             type="text"
             placeholder="Email"
             {...getFieldProps("email")}
           />
-          {errors.email ? <div>{errors.email}</div> : null}
+          {errors.email ? (
+            <div className="w-full text-xs text-red-400">{errors.email}</div>
+          ) : null}
           <input
-            className="w-full border-b border-black focus:outline-none my-2"
+            className={`w-full ${
+              errors.address
+                ? "border-b-2 border-red-600"
+                : "border-b border-black"
+            } focus:outline-none mt-4`}
             type="text"
             placeholder="Address"
             {...getFieldProps("address")}
           />
-          {errors.address ? <div>{errors.address}</div> : null}
+          {errors.address ? (
+            <div className="w-full text-xs text-red-400">{errors.address}</div>
+          ) : null}
           <button
             className="w-2/3 mx-auto p-4 border text-white bg-red-700 hover:bg-white hover:text-red-700 hover:border-red-700"
             type="submit"
@@ -124,7 +139,7 @@ const FooterControl = () => {
           </button>
         </form>
         <div className="w-full md:w-6/12 px-6 border-2 border-red-1 mx-auto">
-          <CompanyContact refresh={refresh} />
+          <CompanyContact />
         </div>
       </div>
     </div>

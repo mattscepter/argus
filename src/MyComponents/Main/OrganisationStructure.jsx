@@ -9,7 +9,7 @@ import MobileHeader from "../Partials/MobileHeader";
 
 export default function OrganisationStructure() {
   return (
-    <div>
+    <div className="font-for-para">
 
       <Header />
       <Header2 />
@@ -30,7 +30,7 @@ export default function OrganisationStructure() {
         <div className="flex flex-wrap my-12">
           <div className=" md:w-1/2 lg:w-2/3 flex flex-col items-start">
             <img src={about_image} alt="About page" />
-            <p className="leading-relaxed text-l font-medium text-gray-2 my-8">
+            <p className="leading-relaxed text-lg font-medium text-gray-2 mt-6 mb-6">
               Argus Security is a customer-centric culture, and we are proud to
               put our customers first, in every area of our operation. All that
               we do revolves around our customers’ needs and expectations. Our
@@ -38,10 +38,13 @@ export default function OrganisationStructure() {
               standards and procedures.
             </p>
 
-            <h2 className="leading-tight text-4xl title-font font-bold text-gray-900 mt-8 mb-8">
-              Directors Department
-            </h2>
-            <p className="leading-loose text-lg font-medium text-gray-2 mb-8">
+            <div className="flex flex-row items-stretch w-full mt-8 mb-8">
+                <span className="h-auto w-2 bg-red-1 mr-7"></span>
+                <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
+                Directors Department
+                </h1>
+              </div>
+            <p className="leading-relaxed text-lg font-medium text-gray-2 mb-6">
               The Directors Department is designed to ensure that our operation
               delivers the best customer experience by ensuring that every
               department is focused on meeting and exceeding customer
@@ -50,10 +53,13 @@ export default function OrganisationStructure() {
               reduce redundancy and increase customer satisfaction.
             </p>
 
-            <h2 className="leading-tight text-4xl title-font font-bold text-gray-900 mt-8 mb-8">
-              Human Resources
-            </h2>
-            <p className="leading-loose text-lg font-medium text-gray-2 mb-8">
+            <div className="flex flex-row items-stretch w-full mt-8 mb-8">
+                <span className="h-auto w-2 bg-red-1 mr-7"></span>
+                <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
+                Human Resources
+                </h1>
+              </div>
+            <p className="leading-relaxed text-lg font-medium text-gray-2 mb-6">
               The Human Resources Department works in partnership with our
               employees to create a positive work environment that empowers our
               members to achieve their goals. Our organizational values of
@@ -62,10 +68,13 @@ export default function OrganisationStructure() {
               one of the best employers.
             </p>
 
-            <h2 className="leading-tight text-4xl title-font font-bold text-gray-900 mt-8 mb-8">
-              Legal Department
-            </h2>
-            <p className="leading-loose text-lg font-medium text-gray-2 mb-8">
+            <div className="flex flex-row items-stretch w-full mt-8 mb-8">
+                <span className="h-auto w-2 bg-red-1 mr-7"></span>
+                <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
+                Legal Department
+                </h1>
+              </div>
+            <p className="leading-relaxed text-lg font-medium text-gray-2 mb-6">
               The Legal Departments’ mission is to guide every operation towards
               legal compliance, provide advice and to protect clients. The Legal
               Department processes all formal legal disputes and assesses the
@@ -74,10 +83,13 @@ export default function OrganisationStructure() {
               mitigation can apply
             </p>
 
-            <h2 className="leading-tight text-4xl title-font font-bold text-gray-900 mt-8 mb-8">
-              Area Management Department
-            </h2>
-            <p className="leading-loose text-lg font-medium text-gray-2 mb-8">
+            <div className="flex flex-row items-stretch w-full mt-8 mb-8">
+                <span className="h-auto w-2 bg-red-1 mr-7"></span>
+                <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
+                Area Management Department
+                </h1>
+              </div>
+            <p className="leading-relaxed text-lg font-medium text-gray-2 mb-6">
               The Mission of the Area Management Department is to establish
               relationships with the community, communication between our
               organization and the residents, and to improve the neighborhood’s
@@ -86,10 +98,13 @@ export default function OrganisationStructure() {
               service levels by providing oversight and guidance where required.
             </p>
 
-            <h2 className="leading-tight text-4xl title-font font-bold text-gray-900 mt-8 mb-8">
-              Accounting Department
-            </h2>
-            <p className="leading-loose text-lg font-medium text-gray-2 mb-8">
+            <div className="flex flex-row items-stretch w-full mt-8 mb-8">
+                <span className="h-auto w-2 bg-red-1 mr-7"></span>
+                <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
+                Accounting Department
+                </h1>
+              </div>
+            <p className="leading-relaxed text-lg font-medium text-gray-2 mb-6">
               The Accounting Department’s mission is to record every financial
               transaction and provide accurate, detailed, and understandable
               billing to our customers. The Accounting Department’s systems are
@@ -100,10 +115,13 @@ export default function OrganisationStructure() {
               signature.
             </p>
 
-            <h2 className="leading-tight text-4xl title-font font-bold text-gray-900 mt-8 mb-8">
-              Dispatch Department
-            </h2>
-            <p className="leading-loose text-lg font-medium text-gray-2 mb-8">
+            <div className="flex flex-row items-stretch w-full mt-8 mb-8">
+                <span className="h-auto w-2 bg-red-1 mr-7"></span>
+                <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
+                Dispatch Department
+                </h1>
+              </div>
+            <p className="leading-relaxed text-lg font-medium text-gray-2 mb-6">
               The Mission of the Area Management Department is to establish
               relationships with the community, communication between our
               organization and the residents, and to improve the neighborhood’s
