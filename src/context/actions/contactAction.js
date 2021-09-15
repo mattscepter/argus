@@ -1,16 +1,20 @@
 import { isAuthenticated } from "../../helpers/auth";
 
 const { default: axiosInstance } = require("../../helpers/axiosInstance");
-const { SET_CONTACTS, SETCONTACTS_ERROR } = require("../actionTypes");
+const {
+  SET_CONTACTS,
+  SETCONTACTS_ERROR,
+  CONTACT_ALERT,
+} = require("../actionTypes");
 
 const setcontact = (data) => ({
   type: SET_CONTACTS,
   payload: data,
 });
 
-const setUpdateError = (err) => ({
-  type: SETCONTACTS_ERROR,
-  payload: err,
+const contactAlert = (data) => ({
+  type: CONTACT_ALERT,
+  payload: data,
 });
 
 const getContact = () => {
@@ -34,12 +38,20 @@ const updateContact = (data) => {
         },
       })
       .then((response) => {
+        dispatch(
+          contactAlert({
+            success: true,
+            message: "Contact updated successfully",
+          })
+        );
         dispatch(setcontact(data));
       })
       .catch((error) => {
-        dispatch(setUpdateError(error.response));
+        dispatch(
+          contactAlert({ success: true, message: "Error adding successfully" })
+        );
       });
   };
 };
 
-export { getContact, updateContact, setUpdateError };
+export { getContact, updateContact, contactAlert };

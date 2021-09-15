@@ -27,7 +27,7 @@ const Contact = () => {
 
       <div className="overflow-hidden bg-no-repeat bg-mapbg">
         <div className="container px-4 py-20 mx-auto sm:px-20 mb:px-26 lg:px-40 xl:px-48">
-          <img src={fleet} alt="Security Cars" className="w-full"/>
+          <img src={fleet} alt="Security Cars" className="w-full" />
           <div className="flex items-start my-12 ">
             <div className="p-2 md:w-1/4 flex flex-col items-start text-lg font-medium text-gray-2">
               <div className="flex flex-row items-stretch w-full mb-6">
@@ -51,6 +51,7 @@ const Contact = () => {
       </div>
 
       <iframe
+        title="Map"
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2885.38568994079!2d-79.71944568499285!3d43.681744458603305!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b3f742bd5dfaf%3A0x4e85dd4aa00d79f1!2sArgus%20Security%20Services%20Corp.!5e0!3m2!1sen!2sin!4v1628009453160!5m2!1sen!2sin"
         className="w-full h-80 bg-gray-200"
         allowfullscreen=""

@@ -1,14 +1,24 @@
 const {
   SET_EOMADMIN,
-  EOM_ERROR,
   DELETE_EOM,
   SET_EOM,
+  SETUPDATE_EOM,
+  EOM_LOADING,
+  EOM_ALERT,
 } = require("../actionTypes");
 
 const initialState = {
   eom: null,
   eomAdmin: [],
-  error: null,
+  eomalert: {
+    success: null,
+    message: "",
+  },
+  update: {
+    state: false,
+    data: null,
+  },
+  loading: false,
 };
 
 const eomReducer = (state = initialState, action) => {
@@ -23,15 +33,25 @@ const eomReducer = (state = initialState, action) => {
         ...state,
         eomAdmin: action.payload,
       };
-    case EOM_ERROR:
-      return {
-        ...state,
-        error: action.payload,
-      };
     case DELETE_EOM:
       return {
         ...state,
         eomAdmin: [...state.eomAdmin.filter((c) => c._id !== action.payload)],
+      };
+    case SETUPDATE_EOM:
+      return {
+        ...state,
+        update: action.payload,
+      };
+    case EOM_LOADING:
+      return {
+        ...state,
+        loading: action.payload,
+      };
+    case EOM_ALERT:
+      return {
+        ...state,
+        eomalert: action.payload,
       };
     default:
       return state;

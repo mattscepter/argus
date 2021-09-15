@@ -38,16 +38,59 @@ function SamplePrevArrow(props) {
 const ClientCorousal = () => {
   const settings = {
     centerMode: true,
-    infinite: true,
-    slidesToShow: 3,
     speed: 600,
-    centerPadding: "60px",
+    centerPadding: "550px",
     autoplay: true,
     autoplaySpeed: 2000,
     pauseOnHover: true,
     dots: true,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
+    responsive: [
+      {
+        breakpoint: 1700,
+        settings: {
+          centerPadding: "450px",
+          infinite: true,
+        },
+      },
+      {
+        breakpoint: 1500,
+        settings: {
+          centerPadding: "350px",
+          infinite: true,
+        },
+      },
+      {
+        breakpoint: 1200,
+        settings: {
+          centerPadding: "300px",
+          infinite: true,
+        },
+      },
+
+      {
+        breakpoint: 750,
+        settings: {
+          centerPadding: "200px",
+          infinite: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          centerPadding: "150px",
+          infinite: true,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          centerPadding: "80px",
+          slidesToShow: 1,
+        },
+      },
+    ],
   };
 
   return (
@@ -58,21 +101,21 @@ const ClientCorousal = () => {
           Clients
         </h1>
       </div>
-      <Slider {...settings} className="w-full">
+      <Slider {...settings}>
         <div>
-          <img src={sponsor1} alt="" className="w-24 h-30 mx-auto" />
+          <img src={sponsor1} alt="" className=" h-56 mx-auto object-fill" />
         </div>
         <div>
-          <img src={sponsor1} alt="" className="w-24 h-30 mx-auto" />
+          <img src={sponsor1} alt="" className=" h-56 mx-auto object-fill" />
         </div>
         <div>
-          <img src={sponsor1} alt="" className="w-24 h-30 mx-auto" />
+          <img src={sponsor1} alt="" className=" h-56 mx-auto object-fill" />
         </div>
         <div>
-          <img src={sponsor1} alt="" className="w-24 h-30 mx-auto" />
+          <img src={sponsor1} alt="" className=" h-56 mx-auto object-fill" />
         </div>
         <div>
-          <img src={sponsor1} alt="" className="w-24 h-30 mx-auto" />
+          <img src={sponsor1} alt="" className=" h-56 mx-auto object-fill" />
         </div>
       </Slider>
     </div>

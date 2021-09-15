@@ -1,12 +1,19 @@
 import {
   DELETE_TESTIMONIAL,
+  SETUPDATE_TESTIMONIAL,
   SET_TESTIMONIAL,
   TESTIMONIAL_ERROR,
+  TESTIMONIAL_LOADING,
 } from "../actionTypes";
 
 const initialState = {
   testimonial: [],
   error: null,
+  update: {
+    state: false,
+    data: null,
+  },
+  loading: false,
 };
 
 const testimonialReducer = (state = initialState, action) => {
@@ -27,6 +34,16 @@ const testimonialReducer = (state = initialState, action) => {
       return {
         ...state,
         error: action.payload,
+      };
+    case SETUPDATE_TESTIMONIAL:
+      return {
+        ...state,
+        update: action.payload,
+      };
+    case TESTIMONIAL_LOADING:
+      return {
+        ...state,
+        loading: action.payload,
       };
     default:
       return state;

@@ -39,16 +39,51 @@ function SamplePrevArrow(props) {
 const ClientTestimonial = ({ testimonial }) => {
   const settings = {
     centerMode: true,
-    infinite: true,
-    slidesToShow: 1,
     speed: 600,
-    centerPadding: "450px",
     autoplay: true,
+    centerPadding: "450px",
     autoplaySpeed: 2000,
     pauseOnHover: true,
     dots: true,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
+    responsive: [
+      {
+        breakpoint: 1700,
+        settings: {
+          centerPadding: "350px",
+          infinite: true,
+        },
+      },
+      {
+        breakpoint: 1500,
+        settings: {
+          centerPadding: "250px",
+          infinite: true,
+        },
+      },
+      {
+        breakpoint: 1200,
+        settings: {
+          centerPadding: "100px",
+          infinite: true,
+        },
+      },
+
+      {
+        breakpoint: 650,
+        settings: {
+          centerPadding: "30px",
+          infinite: true,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
   };
 
   return (

@@ -1,24 +1,20 @@
 import React, { useState } from "react";
 import logo from "../../../../argus website/PNG/Logo Vectors.png";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import Alert from "../../../Components/Alert";
 
 // eslint-disable-next-line no-unused-vars
-import {
-  aunthenticate,
-  signin,
-  isAuthenticated,
-} from "../../../../helpers/auth";
+import { aunthenticate, signin } from "../../../../helpers/auth";
 import { useFormik } from "formik";
 
 const validate = (values) => {
   const errors = {};
   if (!values.password) {
-    errors.password = "Required";
+    errors.password = "*Required";
   }
 
   if (!values.email) {
-    errors.email = "Required";
+    errors.email = "*Required";
   } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
     errors.email = "Invalid email address";
   }
@@ -82,22 +78,28 @@ const LoginForAdmin = () => {
             <h1 className="text-black text-2xl mt-1 mb-3">Admin Login</h1>
 
             <input
-              className="w-full mb-3 py-3 px-4 border border-gray-400 focus:outline-none rounded-md focus:ring-1 ring-red-1"
+              className="w-full py-3 px-4 border border-gray-400 focus:outline-none rounded-md focus:ring-1 ring-red-1"
               type="email"
               placeholder="Email"
               {...getFieldProps("email")}
             />
-            {errors.email ? <div>{errors.email}</div> : null}
+            {errors.email ? (
+              <div className="w-full text-xs text-red-500">{errors.email}</div>
+            ) : null}
             <input
-              className="w-full mb-3 py-3 px-4 border border-gray-400 focus:outline-none rounded-md focus:ring-1 ring-red-1"
+              className="w-full mt-3 py-3 px-4 border border-gray-400 focus:outline-none rounded-md focus:ring-1 ring-red-1"
               type="password"
               placeholder="Password"
               {...getFieldProps("password")}
             />
-            {errors.password ? <div>{errors.password}</div> : null}
+            {errors.password ? (
+              <div className="w-full text-xs text-red-500">
+                {errors.password}
+              </div>
+            ) : null}
 
             <button
-              className="w-1/2 bg-red-700 text-white p-3 rounded-lg font-semibold text-lg"
+              className="w-1/2 mt-3 bg-red-700 text-white p-3 rounded-lg font-semibold text-lg"
               type="submit"
             >
               Login

@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import about_image from "./../../argus website/PNG/Video.png";
-import { Link } from "react-router-dom";
 import SideBar from "./../Components/SideBar.jsx";
 import Header from "./../Partials/Header";
 import Header2 from "./../Partials/Header2";
@@ -66,25 +65,25 @@ class Training extends Component {
               </h2>
               <ul class="text-gray-2 font-medium text-lg mb-6">
                 <li className="my-0.5">
-                  <span className="text-red-1 font-bold mr-2">✓</span> Course is five
-                  days (40 hours) Monday – Friday, 8:30am – 5:00pm
+                  <span className="text-red-1 font-bold mr-2">✓</span> Course is
+                  five days (40 hours) Monday – Friday, 8:30am – 5:00pm
                 </li>
                 <li>
-                  <span className="text-red-1 font-bold mr-2">✓</span> Comprehensive
-                  Security Manual is included{" "}
+                  <span className="text-red-1 font-bold mr-2">✓</span>{" "}
+                  Comprehensive Security Manual is included{" "}
                 </li>
                 <li className="my-0.5">
                   <span className="text-red-1 font-bold mr-2">✓</span> Exceeds
                   Ontario government standards
                 </li>
                 <li className="my-0.5">
-                  <span className="text-red-1 font-bold mr-2">✓</span> Our guarantee
-                  – if you fail the ministry test, you can retake the course for
-                  free!
+                  <span className="text-red-1 font-bold mr-2">✓</span> Our
+                  guarantee – if you fail the ministry test, you can retake the
+                  course for free!
                 </li>
                 <li className="my-0.5">
-                  <span className="text-red-1 font-bold mr-2">✓</span> Courses run
-                  weekly in Brampton.{" "}
+                  <span className="text-red-1 font-bold mr-2">✓</span> Courses
+                  run weekly in Brampton.{" "}
                 </li>
               </ul>
               <button className="py-4 px-12 text-3xl font-bold text-white hover:bg-white border-3 bg-red-1 border-red-1 hover:text-red-1 rounded-lg mt-10 sm:mt-0 shadow-button-shadow-2">
@@ -97,44 +96,46 @@ class Training extends Component {
               <ul className="text-gray-2 font-medium text-lg flex flex-col md:flex-row mb-6">
                 <div className="">
                   <li className="my-0.5">
-                    <span className="text-red-1 font-bold mr-2">✓</span> Introduction
-                    to the Security Industry
+                    <span className="text-red-1 font-bold mr-2">✓</span>{" "}
+                    Introduction to the Security Industry
                   </li>
                   <li className="my-0.5">
                     <span className="text-red-1 font-bold mr-2">✓</span> Basic
                     Procedures{" "}
                   </li>
                   <li className="my-0.5">
-                    <span className="text-red-1 font-bold mr-2">✓</span> Regulations{" "}
+                    <span className="text-red-1 font-bold mr-2">✓</span>{" "}
+                    Regulations{" "}
                   </li>
                   <li className="my-0.5">
-                    <span className="text-red-1 font-bold mr-2">✓</span> Use of Force
-                    Theory
+                    <span className="text-red-1 font-bold mr-2">✓</span> Use of
+                    Force Theory
                   </li>
                   <li className="my-0.5">
-                    <span className="text-red-1 font-bold mr-2">✓</span> Emergencies{" "}
+                    <span className="text-red-1 font-bold mr-2">✓</span>{" "}
+                    Emergencies{" "}
                   </li>
                 </div>
                 <div className="md:mx-10">
                   <li className="my-0.5">
-                    <span className="text-red-1 font-bold mr-2">✓</span> Health &
-                    Safety
+                    <span className="text-red-1 font-bold mr-2">✓</span> Health
+                    & Safety
                   </li>
                   <li className="my-0.5">
-                    <span className="text-red-1 font-bold mr-2">✓</span> Canadian
-                    Legal System & Authorities{" "}
+                    <span className="text-red-1 font-bold mr-2">✓</span>{" "}
+                    Canadian Legal System & Authorities{" "}
                   </li>
                   <li className="my-0.5">
                     <span className="text-red-1 font-bold mr-2">✓</span>{" "}
                     Communication I & II{" "}
                   </li>
                   <li className="my-0.5">
-                    <span className="text-red-1 font-bold mr-2">✓</span> Conflict
-                    Resolution
+                    <span className="text-red-1 font-bold mr-2">✓</span>{" "}
+                    Conflict Resolution
                   </li>
                   <li className="my-0.5">
-                    <span className="text-red-1 font-bold mr-2">✓</span> Diversity &
-                    Sensitivity
+                    <span className="text-red-1 font-bold mr-2">✓</span>{" "}
+                    Diversity & Sensitivity
                   </li>
                 </div>
               </ul>

@@ -1,6 +1,5 @@
 import "./App.css";
-import "./MyComponents/Components/FontAwesomeIcons"
-import { TweenMax , Power3 } from "gsap/gsap-core";
+import "./MyComponents/Components/FontAwesomeIcons";
 
 import AdminRoute from "./MyComponents/DashBoard/Admin/Components/AdminRoutes";
 import StudentRoutes from "./MyComponents/DashBoard/Student/Components/StudentRoutes";
@@ -37,7 +36,7 @@ import AdminStatistics from "./MyComponents/DashBoard/Admin/Statistics";
 import AdminCourseControl from "./MyComponents/DashBoard/Admin/CourseControl";
 import AdminContactControl from "./MyComponents/DashBoard/Admin/ContactFormMessages";
 
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { getContact } from "./context/actions/contactAction";
@@ -51,7 +50,6 @@ function App() {
     dispatch(getTestimonial());
     dispatch(getEOM());
   }, [dispatch]);
-
   return (
     <Router>
       <div className="App">
@@ -72,23 +70,52 @@ function App() {
           <Route path="/reports&data" component={ReportsData} />
           <Route path="/communication" component={Communication} />
           <Route path="/mobilepatrols" component={MobilePatrols} />
-          <Route path="/organisationstructure" component={OrganisationStructure}/>
+          <Route
+            path="/organisationstructure"
+            component={OrganisationStructure}
+          />
           <Route path="/harassementpolicy" component={HarassementPolicy} />
           <Route path="/personell" component={Personell} />
-          
-          <StudentRoutes path="/dashboard/student/home" component={StudentHome} />
-          <StudentRoutes path="/dashboard/student/calendar" component={StudentCalendar} />
-          <StudentRoutes path="/dashboard/student/training" component={StudentTraining} />
-          <StudentRoutes path="/dashboard/student/course" component={StudentCourse} />
-          <StudentRoutes path="/dashboard/student/contact" component={StudentContact} />
 
-          <Route path="/dashboard/admin/login" component={LoginForAdmin} /> 
+          <StudentRoutes
+            path="/dashboard/student/home"
+            component={StudentHome}
+          />
+          <StudentRoutes
+            path="/dashboard/student/calendar"
+            component={StudentCalendar}
+          />
+          <StudentRoutes
+            path="/dashboard/student/training"
+            component={StudentTraining}
+          />
+          <StudentRoutes
+            path="/dashboard/student/course"
+            component={StudentCourse}
+          />
+          <StudentRoutes
+            path="/dashboard/student/contact"
+            component={StudentContact}
+          />
+
+          <Route path="/dashboard/admin/login" component={LoginForAdmin} />
           <AdminRoute path="/dashboard/admin/home" component={AdminHome} />
-          <AdminRoute path="/dashboard/admin/homecontrols" component={AdminHomeControls} />
-          <AdminRoute path="/dashboard/admin/statistics" component={AdminStatistics} />
-          <AdminRoute path="/dashboard/admin/coursecontrol" component={AdminCourseControl} />
-          <AdminRoute path="/dashboard/admin/contactformmessages" component={AdminContactControl} />
-
+          <AdminRoute
+            path="/dashboard/admin/homecontrols"
+            component={AdminHomeControls}
+          />
+          <AdminRoute
+            path="/dashboard/admin/statistics"
+            component={AdminStatistics}
+          />
+          <AdminRoute
+            path="/dashboard/admin/coursecontrol"
+            component={AdminCourseControl}
+          />
+          <AdminRoute
+            path="/dashboard/admin/contactformmessages"
+            component={AdminContactControl}
+          />
         </switch>
         <Footer />
       </div>

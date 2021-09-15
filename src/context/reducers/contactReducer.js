@@ -1,10 +1,13 @@
-const { SET_CONTACTS, SETCONTACTS_ERROR } = require("../actionTypes");
+const { SET_CONTACTS, CONTACT_ALERT } = require("../actionTypes");
 
 const initialState = {
   email: "",
   phoneNumber: "",
   address: "",
-  error: null,
+  contactalert: {
+    success: null,
+    message: "",
+  },
 };
 
 const contactReducer = (state = initialState, action) => {
@@ -16,10 +19,10 @@ const contactReducer = (state = initialState, action) => {
         phoneNumber: action.payload.phoneNumber,
         address: action.payload.address,
       };
-    case SETCONTACTS_ERROR:
+    case CONTACT_ALERT:
       return {
         ...state,
-        error: action.payload,
+        contactalert: action.payload,
       };
     default:
       return state;

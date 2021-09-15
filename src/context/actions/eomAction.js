@@ -3,8 +3,10 @@ const { default: axiosInstance } = require("../../helpers/axiosInstance");
 const {
   SET_EOM,
   SET_EOMADMIN,
-  EOM_ERROR,
   DELETE_EOM,
+  SETUPDATE_EOM,
+  EOM_LOADING,
+  EOM_ALERT,
 } = require("../actionTypes");
 
 const seteom = (data) => ({
@@ -17,13 +19,22 @@ const seteomAdmin = (data) => ({
   payload: data,
 });
 
-const eomError = (data) => ({
-  type: EOM_ERROR,
+const eommessage = (data) => ({
+  type: EOM_ALERT,
+  payload: data,
+});
+const deleteeom = (data) => ({
+  type: DELETE_EOM,
   payload: data,
 });
 
-const deleteeom = (data) => ({
-  type: DELETE_EOM,
+const setupdateeom = (data) => ({
+  type: SETUPDATE_EOM,
+  payload: data,
+});
+
+const eomloading = (data) => ({
+  type: EOM_LOADING,
   payload: data,
 });
 
@@ -40,6 +51,7 @@ const getEOM = () => {
 
 const getEOMAdmin = () => {
   return (dispatch) => {
+    dispatch(eomloading(true));
     const { token } = isAuthenticated();
     axiosInstance
       .get("/eom/get-all", {
@@ -49,20 +61,49 @@ const getEOMAdmin = () => {
       })
       .then((res) => {
         dispatch(seteomAdmin(res.data));
+        dispatch(eomloading(false));
       })
-      .catch((err) => {});
+      .catch((err) => {
+        dispatch(eomloading(false));
+      });
   };
 };
 
 const createEOM = (data) => {
   return (dispatch) => {
+    const { token } = isAuthenticated();
     axiosInstance
-      .post("/eom/create", data)
-      .then(() => {
-        dispatch(getEOMAdmin());
-        dispatch(eomError(true));
+      .post("/eom/create", data, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
       })
-      .catch((err) => eomError(false));
+      .then((res) => {
+        if (res.data.error) {
+          dispatch(
+            eommessage({
+              success: false,
+              message: res.data.error,
+            })
+          );
+        } else {
+          dispatch(getEOMAdmin());
+          dispatch(
+            eommessage({
+              success: true,
+              message: "Employee of the month added successfully",
+            })
+          );
+        }
+      })
+      .catch((err) =>
+        dispatch(
+          eommessage({
+            success: false,
+            message: "Error adding employee of the month",
+          })
+        )
+      );
   };
 };
 
@@ -81,5 +122,43 @@ const deleteEOM = (id) => {
       .catch((err) => {});
   };
 };
+const updateEOM = (data, id) => {
+  return (dispatch) => {
+    const { token } = isAuthenticated();
+    axiosInstance
+      .put(`/eom/update/${id}`, data, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .then(() => {
+        dispatch(getEOMAdmin());
+        dispatch(
+          eommessage({
+            success: true,
+            message: "Employee of the month updated successfully",
+          })
+        );
+        dispatch(setupdateeom({ state: false, data: null }));
+      })
+      .catch((err) => {
+        dispatch(
+          eommessage({
+            success: false,
+            message: "Error updating employee of the month",
+          })
+        );
+        dispatch(setupdateeom({ state: false, data: null }));
+      });
+  };
+};
 
-export { createEOM, getEOMAdmin, eomError, deleteEOM, getEOM };
+export {
+  createEOM,
+  getEOMAdmin,
+  eommessage,
+  deleteEOM,
+  getEOM,
+  setupdateeom,
+  updateEOM,
+};

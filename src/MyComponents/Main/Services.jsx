@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import image1 from "./../../argus website/PNG/raw-2_edited.png";
-import { Link } from "react-router-dom";
 import Header from "./../Partials/Header";
 import Header2 from "./../Partials/Header2";
 import Stickynav from "./../Partials/Stickynav";
@@ -83,8 +82,11 @@ const Services = () => {
                   NFS marked vehicles, communication between residents &
                   security staff and efficient use of technology
                 </p>
-                <button className="w-full p-4 text-black bg-gray-200 hover:bg-red-1 hover:text-white" onClick={() => setRow(2) }>
-                    Read More
+                <button
+                  className="w-full p-4 text-black bg-gray-200 hover:bg-red-1 hover:text-white"
+                  onClick={() => setRow(2)}
+                >
+                  Read More
                 </button>
               </div>
             </div>
@@ -105,8 +107,11 @@ const Services = () => {
                   NFS marked vehicles, communication between residents &
                   security staff and efficient use of technology
                 </p>
-                <button className="w-full p-4 text-black bg-gray-200 hover:bg-red-1 hover:text-white" onClick={() => setRow(3)}>
-                    Read More
+                <button
+                  className="w-full p-4 text-black bg-gray-200 hover:bg-red-1 hover:text-white"
+                  onClick={() => setRow(3)}
+                >
+                  Read More
                 </button>
               </div>
             </div>
@@ -114,7 +119,12 @@ const Services = () => {
 
           <div className={row === 1 ? "block" : "hidden"}>
             <div className="px-8 py-6 rounded-lg border border-gray-2 mb-12">
-              <button className="px-4 py-1 float-right bg-gray-200 border shadow-lg rounded-lg hover:bg-white hover:shadow-none hover:border-gray-200" onClick={() => setRow(0)}>Close</button>
+              <button
+                className="px-4 py-1 float-right bg-gray-200 border shadow-lg rounded-lg hover:bg-white hover:shadow-none hover:border-gray-200"
+                onClick={() => setRow(0)}
+              >
+                Close
+              </button>
               <h2 className="leading-tight text-4xl title-font font-bold text-gray-900 mt-8 mb-8">
                 EVENT SECURITY SERVICES 1
               </h2>
@@ -144,12 +154,17 @@ const Services = () => {
             </div>
           </div>
 
-          <div className={row == 2 ? "block" : "hidden"}>
+          <div className={row === 2 ? "block" : "hidden"}>
             <div className="px-8 py-6 rounded-lg border border-gray-2 mb-12">
-            <button className="px-4 py-1 float-right bg-gray-200 border shadow-lg rounded-lg hover:bg-white hover:shadow-none hover:border-gray-200" onClick={() => setRow(0)}>Close</button>
+              <button
+                className="px-4 py-1 float-right bg-gray-200 border shadow-lg rounded-lg hover:bg-white hover:shadow-none hover:border-gray-200"
+                onClick={() => setRow(0)}
+              >
+                Close
+              </button>
               <h2 className="leading-tight text-4xl title-font font-bold text-gray-900 mt-8 mb-8">
                 EVENT SECURITY SERVICES 2
-              </h2> 
+              </h2>
               <p className="leading-loose text-lg font-medium text-gray-2 mb-8">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
@@ -176,9 +191,14 @@ const Services = () => {
             </div>
           </div>
 
-          <div className={row == 3 ? "block" : "hidden"}>
+          <div className={row === 3 ? "block" : "hidden"}>
             <div className="px-8 py-6 rounded-lg border border-gray-2 mb-12">
-            <button className="px-4 py-1 float-right bg-gray-200 border shadow-lg rounded-lg hover:bg-white hover:shadow-none hover:border-gray-200" onClick={() => setRow(0)}>Close</button>
+              <button
+                className="px-4 py-1 float-right bg-gray-200 border shadow-lg rounded-lg hover:bg-white hover:shadow-none hover:border-gray-200"
+                onClick={() => setRow(0)}
+              >
+                Close
+              </button>
               <h2 className="leading-tight text-4xl title-font font-bold text-gray-900 mt-8 mb-8">
                 EVENT SECURITY SERVICES 3
               </h2>
@@ -248,8 +268,11 @@ const Services = () => {
                   NFS marked vehicles, communication between residents &
                   security staff and efficient use of technology
                 </p>
-                <button className="w-full p-4 text-black bg-gray-200 hover:bg-red-1 hover:text-white" onClick={() => setRow(5)}>
-                    Read More
+                <button
+                  className="w-full p-4 text-black bg-gray-200 hover:bg-red-1 hover:text-white"
+                  onClick={() => setRow(5)}
+                >
+                  Read More
                 </button>
               </div>
             </div>
@@ -270,16 +293,24 @@ const Services = () => {
                   NFS marked vehicles, communication between residents &
                   security staff and efficient use of technology
                 </p>
-                <button className="w-full p-4 text-black bg-gray-200 hover:bg-red-1 hover:text-white" onClick={() => setRow(6)}>
-                    Read More
+                <button
+                  className="w-full p-4 text-black bg-gray-200 hover:bg-red-1 hover:text-white"
+                  onClick={() => setRow(6)}
+                >
+                  Read More
                 </button>
               </div>
             </div>
           </div>
 
-          <div className={row == 4 ? "block" : "hidden"}>
+          <div className={row === 4 ? "block" : "hidden"}>
             <div className="px-8 py-6 rounded-lg border border-gray-2 mb-12">
-            <button className="px-4 py-1 float-right bg-gray-200 border shadow-lg rounded-lg hover:bg-white hover:shadow-none hover:border-gray-200" onClick={() => setRow(0)}>Close</button>
+              <button
+                className="px-4 py-1 float-right bg-gray-200 border shadow-lg rounded-lg hover:bg-white hover:shadow-none hover:border-gray-200"
+                onClick={() => setRow(0)}
+              >
+                Close
+              </button>
               <h2 className="leading-tight text-4xl title-font font-bold text-gray-900 mt-8 mb-8">
                 EVENT SECURITY SERVICES 4
               </h2>
@@ -309,12 +340,17 @@ const Services = () => {
             </div>
           </div>
 
-          <div className={row == 5 ? "block" : "hidden"}>
+          <div className={row === 5 ? "block" : "hidden"}>
             <div className="px-8 py-6 rounded-lg border border-gray-2 mb-12">
-            <button className="px-4 py-1 float-right bg-gray-200 border shadow-lg rounded-lg hover:bg-white hover:shadow-none hover:border-gray-200" onClick={() => setRow(0)}>Close</button>
+              <button
+                className="px-4 py-1 float-right bg-gray-200 border shadow-lg rounded-lg hover:bg-white hover:shadow-none hover:border-gray-200"
+                onClick={() => setRow(0)}
+              >
+                Close
+              </button>
               <h2 className="leading-tight text-4xl title-font font-bold text-gray-900 mt-8 mb-8">
                 EVENT SECURITY SERVICES 5
-              </h2> 
+              </h2>
               <p className="leading-loose text-lg font-medium text-gray-2 mb-8">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
@@ -341,9 +377,14 @@ const Services = () => {
             </div>
           </div>
 
-          <div className={row == 6 ? "block" : "hidden"}>
+          <div className={row === 6 ? "block" : "hidden"}>
             <div className="px-8 py-6 rounded-lg border border-gray-2 mb-12">
-            <button className="px-4 py-1 float-right bg-gray-200 border shadow-lg rounded-lg hover:bg-white hover:shadow-none hover:border-gray-200" onClick={() => setRow(0)}>Close</button>
+              <button
+                className="px-4 py-1 float-right bg-gray-200 border shadow-lg rounded-lg hover:bg-white hover:shadow-none hover:border-gray-200"
+                onClick={() => setRow(0)}
+              >
+                Close
+              </button>
               <h2 className="leading-tight text-4xl title-font font-bold text-gray-900 mt-8 mb-8">
                 EVENT SECURITY SERVICES 6
               </h2>
@@ -413,8 +454,11 @@ const Services = () => {
                   NFS marked vehicles, communication between residents &
                   security staff and efficient use of technology
                 </p>
-                <button className="w-full p-4 text-black bg-gray-200 hover:bg-red-1 hover:text-white" onClick={() => setRow(8)}>
-                    Read More
+                <button
+                  className="w-full p-4 text-black bg-gray-200 hover:bg-red-1 hover:text-white"
+                  onClick={() => setRow(8)}
+                >
+                  Read More
                 </button>
               </div>
             </div>
@@ -435,16 +479,24 @@ const Services = () => {
                   NFS marked vehicles, communication between residents &
                   security staff and efficient use of technology
                 </p>
-                <button className="w-full p-4 text-black bg-gray-200 hover:bg-red-1 hover:text-white" onClick={() => setRow(9)}>
-                    Read More
+                <button
+                  className="w-full p-4 text-black bg-gray-200 hover:bg-red-1 hover:text-white"
+                  onClick={() => setRow(9)}
+                >
+                  Read More
                 </button>
               </div>
             </div>
           </div>
 
-          <div className={row == 7 ? "block" : "hidden"}>
+          <div className={row === 7 ? "block" : "hidden"}>
             <div className="px-8 py-6 rounded-lg border border-gray-2 mb-12">
-            <button className="px-4 py-1 float-right bg-gray-200 border shadow-lg rounded-lg hover:bg-white hover:shadow-none hover:border-gray-200" onClick={() => setRow(0)}>Close</button>
+              <button
+                className="px-4 py-1 float-right bg-gray-200 border shadow-lg rounded-lg hover:bg-white hover:shadow-none hover:border-gray-200"
+                onClick={() => setRow(0)}
+              >
+                Close
+              </button>
               <h2 className="leading-tight text-4xl title-font font-bold text-gray-900 mt-8 mb-8">
                 EVENT SECURITY SERVICES 7
               </h2>
@@ -474,12 +526,17 @@ const Services = () => {
             </div>
           </div>
 
-          <div className={row == 8 ? "block" : "hidden"}>
+          <div className={row === 8 ? "block" : "hidden"}>
             <div className="px-8 py-6 rounded-lg border border-gray-2 mb-12">
-            <button className="px-4 py-1 float-right bg-gray-200 border shadow-lg rounded-lg hover:bg-white hover:shadow-none hover:border-gray-200" onClick={() => setRow(0)}>Close</button>
+              <button
+                className="px-4 py-1 float-right bg-gray-200 border shadow-lg rounded-lg hover:bg-white hover:shadow-none hover:border-gray-200"
+                onClick={() => setRow(0)}
+              >
+                Close
+              </button>
               <h2 className="leading-tight text-4xl title-font font-bold text-gray-900 mt-8 mb-8">
                 EVENT SECURITY SERVICES 8
-              </h2> 
+              </h2>
               <p className="leading-loose text-lg font-medium text-gray-2 mb-8">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
@@ -506,9 +563,14 @@ const Services = () => {
             </div>
           </div>
 
-          <div className={row == 9 ? "block" : "hidden"}>
+          <div className={row === 9 ? "block" : "hidden"}>
             <div className="px-8 py-6 rounded-lg border border-gray-2 mb-12">
-            <button className="px-4 py-1 float-right bg-gray-200 border shadow-lg rounded-lg hover:bg-white hover:shadow-none hover:border-gray-200" onClick={() => setRow(0)}>Close</button>
+              <button
+                className="px-4 py-1 float-right bg-gray-200 border shadow-lg rounded-lg hover:bg-white hover:shadow-none hover:border-gray-200"
+                onClick={() => setRow(0)}
+              >
+                Close
+              </button>
               <h2 className="leading-tight text-4xl title-font font-bold text-gray-900 mt-8 mb-8">
                 EVENT SECURITY SERVICES 9
               </h2>
@@ -537,7 +599,6 @@ const Services = () => {
               </p>
             </div>
           </div>
-
         </div>
       </div>
     </div>
