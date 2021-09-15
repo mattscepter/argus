@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Logo from "./../../argus website/SVG/logosvg.svg";
 import Scroll from "./../../argus website/SVG/Scroll up.svg";
+import gsap from "gsap";
 
 const Stickynav = () => {
   const [open, setOpen] = useState(false);

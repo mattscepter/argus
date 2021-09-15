@@ -27,7 +27,7 @@ const Contact = () => {
 
       <div className="overflow-hidden bg-no-repeat bg-mapbg">
         <div className="container px-4 py-20 mx-auto sm:px-20 mb:px-26 lg:px-40 xl:px-48">
-          <img src={fleet} alt="Security Cars" className="w-full" />
+          <img src={fleet} alt="Security Cars" className="w-full"/>
           <div className="flex items-start my-12 ">
             <div className="p-2 md:w-1/4 flex flex-col items-start text-lg font-medium text-gray-2">
               <div className="flex flex-row items-stretch w-full mb-6">

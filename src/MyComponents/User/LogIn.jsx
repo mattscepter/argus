@@ -87,7 +87,7 @@ const LogIn = ({ open, setOpen }) => {
                 {...getFieldProps("email")}
               />
               {errors.email ? (
-                <div className="w-full text-xs text-red-500">
+                <div className="w-full text-xs text-red-400">
                   {errors.email}
                 </div>
               ) : null}
@@ -99,7 +99,7 @@ const LogIn = ({ open, setOpen }) => {
                 {...getFieldProps("password")}
               />
               {errors.password ? (
-                <div className="w-full text-xs text-red-500">
+                <div className="w-full text-xs text-red-400">
                   {errors.password}
                 </div>
               ) : null}

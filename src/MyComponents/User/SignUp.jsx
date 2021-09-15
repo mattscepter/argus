@@ -100,7 +100,7 @@ const SignUp = () => {
               {...getFieldProps("email")}
             />
             {errors.email ? (
-              <div className="w-full text-xs text-red-500">{errors.email}</div>
+              <div className="w-full text-xs text-red-400">{errors.email}</div>
             ) : null}
 
             <input
@@ -112,7 +112,7 @@ const SignUp = () => {
               {...getFieldProps("password")}
             />
             {errors.password ? (
-              <div className="w-full text-xs text-red-500">
+              <div className="w-full text-xs text-red-400">
                 {errors.password}
               </div>
             ) : null}

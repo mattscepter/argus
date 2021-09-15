@@ -11,7 +11,7 @@ import Teams from "../Components/TeamsSection";
 class About extends Component {
   render() {
     return (
-      <div>
+      <div className="font-for-para">
         <Header />
         <Header2 />
         <Stickynav />
@@ -31,10 +31,13 @@ class About extends Component {
           <div className="flex flex-wrap my-12">
             <div className=" md:w-1/2 lg:w-2/3 flex flex-col items-start">
               <img src={about_image} alt="About page" className="w-full h-full"/>
-              <h2 className="text-4xl title-font font-bold text-gray-3 mt-8 mb-8">
+              <div className="flex flex-row items-stretch w-full mt-8 mb-8">
+                <span className="h-auto w-2 bg-red-1 mr-7"></span>
+                <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
                 Objective
-              </h2>
-              <p className="leading-loose text-lg font-medium text-gray-2 mb-8">
+                </h1>
+              </div>
+              <p className="leading-relaxed text-lg font-medium text-gray-2 mb-6">
                 Argus Security began as a team of protection specialists from
                 different public and private backgrounds with the aim of
                 delivering the highest quality of service at the most
@@ -44,7 +47,7 @@ class About extends Component {
                 security guards bring forth the professionalism that enables us
                 to successfully serve and protect our clients.
               </p>
-              <p className="leading-loose text-lg font-medium text-gray-2 mb-8">
+              <p className="leading-relaxed text-lg font-medium text-gray-2 mb-6">
                 In an environment with growing rules and regulations, Argus
                 understands the importance of ensuring the team is adherent to
                 company rules and regulations. We ensure trust and integrity is
@@ -59,17 +62,20 @@ class About extends Component {
 
               <AboutPageButtons />
 
-              <h2 className="text-4xl title-font font-bold text-gray-3 mt-8 mb-8">
-                Why us?
-              </h2>
-              <p className="leading-loose text-lg font-medium text-gray-2 mb-8">
+              <div className="flex flex-row items-stretch w-full mt-8 mb-8">
+                <span className="h-auto w-2 bg-red-1 mr-7"></span>
+                <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
+                Why Us?
+                </h1>
+              </div>
+              <p className="leading-relaxed text-lg font-medium text-gray-2 mb-6">
                 Our mission is to provide great customer experience and superior
                 protection service. Our values are to deliver our service with
                 honor, integrity, and dignity. Argus Security is a
                 well-established and technologically advanced security service
                 provider
               </p>
-              <p className="leading-loose text-lg font-medium text-gray-2 mb-8">
+              <p className="leading-relaxed text-lg font-medium text-gray-2 mb-6">
                 Argus Security provides clients with superior security services
                 for healthcare facilities, residential and commercial buildings,
                 and retail loss prevention. Our services package delivery

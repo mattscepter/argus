@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import technology_image from "./../../../argus website/PNG/Silvertrac.png";
+import { Link } from "react-router-dom";
 import TechPageButtons from "./../../Components/TechPageButtons.jsx";
 import SideBar from "./../../Components/SideBar.jsx";
 import Header from "./../../Partials/Header";
@@ -10,7 +11,7 @@ import MobileHeader from "./../../Partials/MobileHeader";
 class Technology extends Component {
   render() {
     return (
-      <div>
+      <div className="font-for-para">
         <Header />
         <Header2 />
         <Stickynav />
@@ -30,10 +31,14 @@ class Technology extends Component {
           <div className="flex flex-wrap my-12">
             <div className=" md:w-1/2 lg:w-2/3 flex flex-col items-start">
               <img src={technology_image} alt="About page" />
-              <h2 className="leading-tight text-4xl title-font font-bold text-gray-900 mt-8 mb-8">
+
+              <div className="flex flex-row items-stretch w-full mt-8 mb-8">
+                <span className="h-auto w-2 bg-red-1 mr-7"></span>
+                <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
                 SilverTrac
-              </h2>
-              <p className="leading-loose text-lg font-medium text-gray-2 mb-8">
+                </h1>
+              </div>
+              <p className="leading-relaxed text-lg font-medium text-gray-2 mb-6">
                 Argus Security uses the Silvertrac mobile app system. This
                 allows guards to clock on upon arrival at their site. We are
                 made automatically aware when our Guards arrives on site, and
@@ -41,7 +46,7 @@ class Technology extends Component {
                 mist efficient bridge between logistics and operations
                 department of Argus Security.
               </p>
-              <p className="leading-loose text-lg font-medium text-gray-2 mb-8">
+              <p className="leading-relaxed text-lg font-medium text-gray-2 mb-6">
                 We've exceeded customer expectations and has provided the level
                 of service well above the competition using clear, reliable
                 reporting data.{" "}

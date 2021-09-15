@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import about_image from "./../../../argus website/PNG/Video.png";
+import { Link } from "react-router-dom";
 import TechPageButtons from "./../../Components/TechPageButtons.jsx";
 import SideBar from "./../../Components/SideBar.jsx";
 import Header from "./../../Partials/Header";
@@ -10,7 +11,7 @@ import MobileHeader from "./../../Partials/MobileHeader";
 class IncidentReporting extends Component {
   render() {
     return (
-      <div>
+      <div className="font-for-para">
         <Header />
         <Header2 />
         <Stickynav />
@@ -30,10 +31,14 @@ class IncidentReporting extends Component {
           <div className="flex flex-wrap my-12">
             <div className=" md:w-1/2 lg:w-2/3 flex flex-col items-start">
               <img src={about_image} alt="About page" />
-              <h2 className="leading-tight text-4xl title-font font-bold text-gray-900 mt-8 mb-8">
+
+              <div className="flex flex-row items-stretch w-full mt-8 mb-8">
+                <span className="h-auto w-2 bg-red-1 mr-7"></span>
+                <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
                 Robust Incident Reporting
-              </h2>
-              <p className="leading-loose text-lg font-medium text-gray-2 mb-8">
+                </h1>
+              </div>
+              <p className="leading-relaxed text-lg font-medium text-gray-2 mb-6">
                 Simple incident reporting helps better gauge guard performance &
                 improve client relations. Incident reporting feature allows
                 guards to add the most important information anytime from any
@@ -41,10 +46,13 @@ class IncidentReporting extends Component {
                 reporting makes producing a Daily Activity Report a hassle.
               </p>
 
-              <h2 className="leading-tight text-4xl title-font font-bold text-gray-900 mt-8 mb-8">
+              <div className="flex flex-row items-stretch w-full mt-8 mb-8">
+                <span className="h-auto w-2 bg-red-1 mr-7"></span>
+                <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
                 Efficient Data Collection
-              </h2>
-              <p className="leading-loose text-lg font-medium text-gray-2 mb-8">
+                </h1>
+              </div>
+              <p className="leading-relaxed text-lg font-medium text-gray-2 mb-6">
                 We do not have to spend time chasing down information from
                 guards instead we use it to resolve the issues at hand.
                 Silvertrac’s intuitive mobile guard app is designed to make
@@ -55,25 +63,28 @@ class IncidentReporting extends Component {
                 criteria that can be included in any report, like:
               </p>
 
-              <ul className="text-lg mb-8">
-                <li className="text-gray-3">
-                  <span className="font-bold text-red-1">✓</span> Time-stamped
-                  photos, audio files, and text notes.
+              <ul className="text-gray-2 text-lg">
+                <li className="my-0.5">
+                  <span className="font-bold text-red-1 mr-2">✓</span>{" "}
+                  Time-stamped photos, audio files, and text notes.
                 </li>
-                <li className="text-gray-3">
-                  <span className="font-bold text-red-1">✓</span> Priority
+                <li className="my-0.5">
+                  <span className="font-bold text-red-1 mr-2">✓</span> Priority
                   levels and notification settings for any issue type.{" "}
                 </li>
-                <li className="text-gray-3">
-                  <span className="font-bold text-red-1">✓</span>{" "}
+                <li className="my-0.5">
+                  <span className="font-bold text-red-1 mr-2">✓</span>{" "}
                   Property-specific issue types{" "}
                 </li>
               </ul>
 
-              <h2 className="leading-tight text-4xl title-font font-bold text-gray-900 mt-8 mb-8">
+              <div className="flex flex-row items-stretch w-full mt-8 mb-8">
+                <span className="h-auto w-2 bg-red-1 mr-7"></span>
+                <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
                 Filtered Reports
-              </h2>
-              <p className="leading-loose text-lg font-medium text-gray-2 mb-8">
+                </h1>
+              </div>
+              <p className="leading-relaxed text-lg font-medium text-gray-2 mb-6">
                 Each incident is immediately available for review in the Issue
                 Monitor. Reports can be filtered by property, issue type, guard,
                 priority level, and more. This allows any Argus Security to

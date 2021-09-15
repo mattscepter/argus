@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import about_image from "./../../../argus website/PNG/Video.png";
+import { Link } from "react-router-dom";
 import TechPageButtons from "./../../Components/TechPageButtons.jsx";
 import SideBar from "./../../Components/SideBar.jsx";
 import Header from "./../../Partials/Header";
@@ -10,7 +11,7 @@ import MobileHeader from "./../../Partials/MobileHeader";
 class MobilePatrols extends Component {
   render() {
     return (
-      <div>
+      <div className="font-for-para">
         <Header />
         <Header2 />
         <Stickynav />
@@ -30,43 +31,50 @@ class MobilePatrols extends Component {
           <div className="flex flex-wrap my-12">
             <div className=" md:w-1/2 lg:w-2/3 flex flex-col items-start">
               <img src={about_image} alt="About page" />
-              <h2 className="leading-tight text-4xl title-font font-bold text-gray-900 mt-8 mb-8">
+
+              <div className="flex flex-row items-stretch w-full mt-8 mb-8">
+                <span className="h-auto w-2 bg-red-1 mr-7"></span>
+                <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
                 Optimized Mobile Patrols
-              </h2>
-              <p className="leading-loose text-lg font-medium text-gray-2 mb-8">
+                </h1>
+              </div>
+              <p className="leading-relaxed text-lg font-medium text-gray-2 mb-6">
                 There’s an ever-increasing demand in the security industry to
                 deliver at speed and at scale. The only way to meet that demand
                 with mobile patrols is to be better, faster, and cheaper, which
                 means reducing time and cost spent in an operation. Silvertrac
                 helps optimize mobile patrols by:
               </p>
-              <ul className="text-lg mb-8">
-                <li className="text-gray-3">
-                  <span className="font-bold text-red-1">✓</span> Tracking
+              <ul className="text-gray-2 text-lg">
+                <li className="my-0.5">
+                  <span className="font-bold text-red-1 mr-2">✓</span> Tracking
                   patrol productivity in real-time through checkpoints.
                 </li>
-                <li className="text-gray-3">
-                  <span className="font-bold text-red-1">✓</span> Minimizing
+                <li className="my-0.5">
+                  <span className="font-bold text-red-1 mr-2">✓</span> Minimizing
                   service interruptions.
                 </li>
-                <li className="text-gray-3">
-                  <span className="font-bold text-red-1">✓</span> Reducing time
+                <li className="my-0.5">
+                  <span className="font-bold text-red-1 mr-2">✓</span> Reducing time
                   between sites{" "}
                 </li>
-                <li className="text-gray-3">
-                  <span className="font-bold text-red-1">✓</span> Visualizing
+                <li className="my-0.5">
+                  <span className="font-bold text-red-1 mr-2">✓</span> Visualizing
                   mobile patrols{" "}
                 </li>
-                <li className="text-gray-3">
-                  <span className="font-bold text-red-1">✓</span> Integrating
+                <li className="my-0.5">
+                  <span className="font-bold text-red-1 mr-2">✓</span> Integrating
                   Google Maps® so guards never have to leave the app{" "}
                 </li>
               </ul>
 
-              <h2 className="leading-tight text-4xl title-font font-bold text-gray-900 mt-8 mb-8">
+              <div className="flex flex-row items-stretch w-full mt-8 mb-8">
+                <span className="h-auto w-2 bg-red-1 mr-7"></span>
+                <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
                 Mobile Patrol Checkpoints
-              </h2>
-              <p className="leading-loose text-lg font-medium text-gray-2 mb-8">
+                </h1>
+              </div>
+              <p className="leading-relaxed text-lg font-medium text-gray-2 mb-6">
                 Checkpoints are the key to Silvertrac’s mobile patrol software
                 success. They guide officers on patrol throughout each shift via
                 digital checkpoints and are easy to set up across multiple
@@ -74,29 +82,32 @@ class MobilePatrols extends Component {
                 of detail that allows teams to further optimize how drivers
                 spend their time. When a checkpoint is hit, four things happen:
               </p>
-              <ul className="text-lg mb-8">
-                <li className="text-gray-3">
-                  <span className="font-bold text-red-1">✓</span> The officer
+              <ul className="text-gray-2 text-lg">
+                <li className="my-0.5">
+                  <span className="font-bold text-red-1 mr-2">✓</span> The officer
                   receives specific instructions for the current site.
                 </li>
-                <li className="text-gray-3">
-                  <span className="font-bold text-red-1">✓</span> A pre-written
+                <li className="my-0.5">
+                  <span className="font-bold text-red-1 mr-2">✓</span> A pre-written
                   note is added directly to the Daily Activity Report (DAR).
                 </li>
-                <li className="text-gray-3">
-                  <span className="font-bold text-red-1">✓</span> A GPS pinpoint
+                <li className="my-0.5">
+                  <span className="font-bold text-red-1 mr-2">✓</span> A GPS pinpoint
                   is captured showing the time and location of the hit.{" "}
                 </li>
-                <li className="text-gray-3">
-                  <span className="font-bold text-red-1">✓</span> Option to
+                <li className="my-0.5">
+                  <span className="font-bold text-red-1 mr-2">✓</span> Option to
                   require a photo to be taken of the area.{" "}
                 </li>
               </ul>
 
-              <h2 className="leading-tight text-4xl title-font font-bold text-gray-900 mt-8 mb-8">
+              <div className="flex flex-row items-stretch w-full mt-8 mb-8">
+                <span className="h-auto w-2 bg-red-1 mr-7"></span>
+                <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
                 Automatically Populate Daily Activity Reports
-              </h2>
-              <p className="leading-loose text-lg font-medium text-gray-2 mb-8">
+                </h1>
+              </div>
+              <p className="leading-relaxed text-lg font-medium text-gray-2 mb-6">
                 In the field, guards can quickly log all security, maintenance,
                 and parking related issues at each property with ease. As
                 officers report what they see on site, Daily Activity Reports
@@ -105,10 +116,13 @@ class MobilePatrols extends Component {
                 paper.
               </p>
 
-              <h2 className="leading-tight text-4xl title-font font-bold text-gray-900 mt-8 mb-8">
+              <div className="flex flex-row items-stretch w-full mt-8 mb-8">
+                <span className="h-auto w-2 bg-red-1 mr-7"></span>
+                <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
                 Track Every Vehicle-Related Cost
-              </h2>
-              <p className="leading-loose text-lg font-medium text-gray-2 mb-8">
+                </h1>
+              </div>
+              <p className="leading-relaxed text-lg font-medium text-gray-2 mb-6">
                 Silvertrac has the tools to stay on top of every vehicle in your
                 fleet. Track vehicle usage, reduce maintenance costs, and
                 optimize routes by quickly recording important patrol vehicle

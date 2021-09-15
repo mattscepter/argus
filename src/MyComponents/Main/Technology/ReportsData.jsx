@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import about_image from "./../../../argus website/PNG/Video.png";
+import { Link } from "react-router-dom";
 import TechPageButtons from "./../../Components/TechPageButtons.jsx";
 import SideBar from "./../../Components/SideBar.jsx";
 import Header from "./../../Partials/Header";
@@ -10,7 +11,7 @@ import MobileHeader from "./../../Partials/MobileHeader";
 class ReportsData extends Component {
   render() {
     return (
-      <div>
+      <div className="font-for-para">
         <Header />
         <Header2 />
         <Stickynav />
@@ -31,10 +32,13 @@ class ReportsData extends Component {
             <div className=" md:w-1/2 lg:w-2/3 flex flex-col items-start">
               <img src={about_image} alt="About page" />
 
-              <h2 className="leading-tight text-4xl title-font font-bold text-gray-900 mt-8 mb-8">
+              <div className="flex flex-row items-stretch w-full mt-8 mb-8">
+                <span className="h-auto w-2 bg-red-1 mr-7"></span>
+                <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
                 Digital Reporting Made Easy
-              </h2>
-              <p className="leading-loose text-lg font-medium text-gray-2 mb-8">
+                </h1>
+              </div>
+              <p className="leading-relaxed text-lg font-medium text-gray-2 mb-6">
                 Organizing information collected from the field into
                 client-ready, valuable reports can be a difficult process.
                 Traditional security reports like messy, handwritten Daily
@@ -44,10 +48,13 @@ class ReportsData extends Component {
                 services bring to a client’s operation.
               </p>
 
-              <h2 className="leading-tight text-4xl title-font font-bold text-gray-900 mt-8 mb-8">
+              <div className="flex flex-row items-stretch w-full mt-8 mb-8">
+                <span className="h-auto w-2 bg-red-1 mr-7"></span>
+                <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
                 Four-in-One Reporting
-              </h2>
-              <p className="leading-loose text-lg font-medium text-gray-2 mb-8">
+                </h1>
+              </div>
+              <p className="leading-relaxed text-lg font-medium text-gray-2 mb-6">
                 Every time a guard completes an assigned task, updates a daily
                 log, or hits a checkpoint. A small amount of information is sent
                 to your dashboard and can be turned into branded company reports
@@ -55,28 +62,32 @@ class ReportsData extends Component {
                 available to help make better business decisions every day:{" "}
               </p>
 
-              <ul className="text-lg mb-8">
-                <li className="text-gray-3">
-                  <span className="font-bold text-red-1">✓</span> Daily Activity
-                  Reports
+              <ul className="text-gray-2 text-lg">
+                <li className="my-0.5">
+                  <span className="font-bold text-red-1 mr-2">✓</span> Daily
+                  Activity Reports
                 </li>
-                <li className="text-gray-3">
-                  <span className="font-bold text-red-1">✓</span> Shift Reports{" "}
-                </li>
-                <li className="text-gray-3">
-                  <span className="font-bold text-red-1">✓</span> Checkpoint
+                <li className="my-0.5">
+                  <span className="font-bold text-red-1 mr-2">✓</span> Shift
                   Reports{" "}
                 </li>
-                <li className="text-gray-3">
-                  <span className="font-bold text-red-1">✓</span> Summary
+                <li className="my-0.5">
+                  <span className="font-bold text-red-1 mr-2">✓</span>{" "}
+                  Checkpoint Reports{" "}
+                </li>
+                <li className="my-0.5">
+                  <span className="font-bold text-red-1 mr-2">✓</span> Summary
                   Reports{" "}
                 </li>
               </ul>
 
-              <h2 className="leading-tight text-4xl title-font font-bold text-gray-900 mt-8 mb-8">
+              <div className="flex flex-row items-stretch w-full mt-8 mb-8">
+                <span className="h-auto w-2 bg-red-1 mr-7"></span>
+                <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
                 Daily Activity Reports
-              </h2>
-              <p className="leading-loose text-lg font-medium text-gray-2 mb-8">
+                </h1>
+              </div>
+              <p className="leading-relaxed text-lg font-medium text-gray-2 mb-6">
                 Daily Activity Reports (DARs) can pull activity that fits unique
                 criteria on any property within user-identified timeframes. In
                 any report pulled, each entry will have: the reporting guard,
@@ -87,29 +98,38 @@ class ReportsData extends Component {
                 clients both to catch up on different types of{" "}
               </p>
 
-              <h2 className="leading-tight text-4xl title-font font-bold text-gray-900 mt-8 mb-8">
+              <div className="flex flex-row items-stretch w-full mt-8 mb-8">
+                <span className="h-auto w-2 bg-red-1 mr-7"></span>
+                <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
                 User Shift Reports
-              </h2>
-              <p className="leading-loose text-lg font-medium text-gray-2 mb-8">
+                </h1>
+              </div>
+              <p className="leading-relaxed text-lg font-medium text-gray-2 mb-6">
                 Shift Reports are powerful rundowns that show officer activity
                 as they move from property-to-property. Check arrival times,
                 departures, and issues sent during any{" "}
               </p>
 
-              <h2 className="leading-tight text-4xl title-font font-bold text-gray-900 mt-8 mb-8">
+              <div className="flex flex-row items-stretch w-full mt-8 mb-8">
+                <span className="h-auto w-2 bg-red-1 mr-7"></span>
+                <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
                 Checkpoint Reports
-              </h2>
-              <p className="leading-loose text-lg font-medium text-gray-2 mb-8">
+                </h1>
+              </div>
+              <p className="leading-relaxed text-lg font-medium text-gray-2 mb-6">
                 Checkpoint Reports show how a tour goes onsite and provide all
                 the information needed to send better reports faster. Track
                 where guards are with live GPS mapping and see what they are
                 reporting in real time{" "}
               </p>
 
-              <h2 className="leading-tight text-4xl title-font font-bold text-gray-900 mt-8 mb-8">
+              <div className="flex flex-row items-stretch w-full mt-8 mb-8">
+                <span className="h-auto w-2 bg-red-1 mr-7"></span>
+                <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
                 Summary Reports
-              </h2>
-              <p className="leading-loose text-lg font-medium text-gray-2 mb-8">
+                </h1>
+              </div>
+              <p className="leading-relaxed text-lg font-medium text-gray-2 mb-6">
                 Summary Reports give insights into issues in the field by
                 showing every issue at a property and the number of times each
                 issue or action has been reported during a certain time frame.

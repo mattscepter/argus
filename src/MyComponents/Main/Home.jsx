@@ -1,10 +1,10 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
+import accountable from "./../../argus website/SVG/2. Accountable.svg"
 import { Link } from "react-router-dom";
 import section4_img1 from "./../../argus website/PNG/Video1.png";
 import section4_img2 from "./../../argus website/PNG/3.Charlie.png";
-import quotes from "../../argus website/PNG/quotes.PNG";
+import quotes from "../../argus website/SVG/Appostrophies.svg";
 import signature from "./../../argus website/SVG/01.svg";
 import section6 from "./../../argus website/PNG/sdm.png";
 import section4img from "./../../argus website/PNG/raw-2_edited.png";
@@ -25,7 +25,7 @@ export default function Home() {
   const testimonial = useSelector((state) => state.testimonial.testimonial);
 
   return (
-    <div>
+    <div className="font-for-para">
       <Header />
       <Header2 />
       <Stickynav />
@@ -37,7 +37,7 @@ export default function Home() {
       </div>
 
       {/* Section 2 CAll Us */}
-      <div className="px-4 sm:px-8 md:px-16 lg:px-32 xl:px-48 2xl:px-0 mx-auto max-w-1366">
+      <div className="px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 2xl:px-0 mx-auto max-w-1366">
         <div className="flex flex-col sm:flex-row sm:items-end mx-auto">
           <h1 className="flex-grow sm:pr-16 text-4xl font-bold font-for-para text-gray-400">
             Call Us <br />
@@ -53,21 +53,19 @@ export default function Home() {
 
       {/* Section 3  Accountable */}
       <div className="text-gray-600 font-for-para overflow-hidden mx-auto">
-        <div className="flex flex-col sm:flex-row px-4 sm:px-8 md:px-20 lg:px-32 xl:px-48 2xl:px-0 mx-auto max-w-1366 pt-4 pb-2 mt-8 text-white justify-center">
-          <div className="bg-red-1 w-full sm:w-6/12 px-3 py-5 flex flex-row items-center justify-center">
-            <FontAwesomeIcon
-              icon="search"
-              className="text-4xl text-white p-1 mr-10"
+        <div className="flex flex-col md:flex-row px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 2xl:px-0 mx-auto max-w-1366 pt-4 pb-2 mt-8 text-white justify-center">
+          <div className="bg-red-1 w-full md:w-6/12 px-3 py-5 flex flex-row items-center justify-start">
+            <img src={accountable} alt=""
+              className="w-16 p-1 mx-4 sm:mx-10"
             />
-            <div>
+            <div className="text-lg">
               <p>100% Accountable</p>
               <h1 className="font-bold">Know the Truth for Peace of Mind</h1>
             </div>
           </div>
-          <div className="bg-gray-3 w-full sm:w-6/12 px-3 py-5 flex flex-row items-center justify-center">
-            <FontAwesomeIcon
-              icon="search"
-              className="text-4xl text-white p-1 mr-10"
+          <div className="bg-gray-3 w-full md:w-6/12 px-3 py-5 flex flex-row items-center justify-start">
+            <img src={accountable} alt=""
+              className="w-16 p-1 mx-4 sm:mx-10"
             />
             <div>
               <p>100% Accountable</p>
@@ -78,10 +76,10 @@ export default function Home() {
       </div>
 
       {/* Section 4 Introducing Argus Security */}
-      <div className="bg-contain bg-no-repeat bg-mapbg2 ">
+      <div className="bg-contain bg-no-repeat bg-mapbg2 font-for-para">
         <div className="px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 2xl:px-0 mx-auto max-w-1366 py-24 font-for-para">
           <div className="flex flex-wrap items-center">
-            <div className="items-end w-full md:w-1/2 flex flex-col lg:pr-12">
+            <div className="items-end w-full md:w-1/2 flex flex-col md:pr-4 lg:pr-12">
               <img
                 src={section4_img1}
                 alt="Argus Security Services"
@@ -94,42 +92,42 @@ export default function Home() {
               />
             </div>
             <div className="md:pl-3 w-full md:w-1/2 flex flex-col items-start">
-              <div className="flex flex-row items-stretch w-full mb-8">
+              <div className="flex flex-row items-stretch w-full mt-8 md:mt-0 mb-8">
                 <span className="h-auto w-2 bg-red-1 mr-7"></span>
-                <h1 className="leading-tight text-4xl font-bold text-gray-3">
+                <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
                   Introducing Argus Security Services
                 </h1>
               </div>
-              <p className="leading-relaxed text-lg font-medium text-gray-2 mb-8">
+              <p className="leading-normal text-lg font-medium text-gray-2 mb-8">
                 Argus Security ensures the team adherence to company rules and
                 regulations. Our goal is to make our clients the direct
                 beneficiaries of our policies and procedures.{" "}
               </p>
-              <ul className="text-black font-bold text-l flex flex-col md:flex-row mb-2">
+              <ul className="text-gray-2 font-medium text-lg flex flex-col md:flex-row mb-4">
                 <div>
-                  <li className="py-1">
-                    <span className="text-red-1 font-bold">✓</span> Optimized
+                  <li className="my-0.5">
+                    <span className="text-red-1 font-bold mr-2">✓</span> Optimized
                     Mobile Patrols
                   </li>
-                  <li className="py-1">
-                    <span className="text-red-1 font-bold">✓</span> Fool Proof
+                  <li className="my-0.5">
+                    <span className="text-red-1 font-bold mr-2">✓</span> Fool Proof
                     Checkpoints
                   </li>
-                  <li className="py-1">
-                    <span className="text-red-1 font-bold">✓</span> GPS Tracking
+                  <li className="my-0.5">
+                    <span className="text-red-1 font-bold mr-2">✓</span> GPS Tracking
                   </li>
                 </div>
                 <div className="md:ml-12">
-                  <li className="py-1">
-                    <span className="text-red-1 font-bold">✓</span> Reliable
+                  <li className="my-0.5">
+                    <span className="text-red-1 font-bold mr-2">✓</span> Reliable
                     Fire Watch
                   </li>
-                  <li className="py-1">
-                    <span className="text-red-1 font-bold">✓</span> Tangible
+                  <li className="my-0.5">
+                    <span className="text-red-1 font-bold mr-2">✓</span> Tangible
                     Proof of Service
                   </li>
-                  <li className="py-1">
-                    <span className="text-red-1 font-bold">✓</span> Efficient
+                  <li className="my-0.5">
+                    <span className="text-red-1 font-bold mr-2">✓</span> Efficient
                     Dispatching System
                   </li>
                 </div>
@@ -165,22 +163,22 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <img src={camera} alt="" className="w-40 h-40 ml-auto -mt-40" />
+        <img src={camera} alt="" className="w-40 h-40 ml-auto -mt-36" />
       </div>
 
       {/* Section 5 Services */}
-      <div className="bg-repeat-x bg-contain bg-siren ">
-        <div className="px-4 sm:px-8 md:px-20 lg:px-32 xl:px-48 2xl:px-0 mx-auto max-w-1366 pt-24 pb-12 font-for-para">
-          <div className="flex flex-wrap">
+      <div className="bg-repeat-x bg-cover md:bg-contain bg-siren">
+        <div className="px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 2xl:px-0 mx-auto max-w-1366 pt-24 pb-12 font-for-para">
+          <div className="flex flex-wrap pb-8">
             <div className="flex flex-wrap w-full items-baseline">
               <div className="w-full flex flex-col md:flex-row items-center pb-5">
-                <div className="flex flex-col md:flex-row items-center pr-24">
-                  <span className="h-1 w-10 bg-red-1 mb-10 md:m-0 md:mr-4"></span>
-                  <h1 className="leading-tight text-4xl font-bold text-gray-3 pb-10 md:pb-0 ">
+                <div className="flex flex-row items-stretch pr-24">
+                  <span className="h-auto w-2 bg-red-1 mr-7"></span>
+                  <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
                     Firsthand information to our operations
                   </h1>
                 </div>
-                <p className="leading-loose text-l text-gray-2 pb-10 md:pb-0 ">
+                <p className="leading-relaxed font-medium text-lg text-gray-2 pb-10 md:pb-0 ">
                   As a client you will gain first hand access to day-today
                   operations and daily occurrence reposts.
                 </p>
@@ -261,7 +259,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="w-9/12 mx-auto flex items-center py-3">
+          <div className="w-full sm:w-9/12 mx-auto flex items-center py-3">
             <img src={section5} className="w-24 h-24" alt="" />
             <div className="-mt-20 -ml-6">
               <svg
@@ -307,10 +305,10 @@ export default function Home() {
 
       {/* Section 6 Know you partners */}
       <div className="bg-cover bg-black-1">
-        <div className="text-white body-font px-4 sm:px-8 md:px-16 lg:pl-16 lg:pr-24 xl:pl-28 xl:pr-40 2xl:px-0 mx-auto max-w-1500 pt-20 font-for-para">
-          <div className="px-5 py-12 mx-auto">
-            <div className="flex flex-col-reverse md:flex-row -m-12 items-stretch">
-              <div className="w-10/12 min-w-650 mx-auto bg-handcuffs bg-contain bg-center bg-opacity-10 bg-no-repeat flex items-end	">
+        <div className="text-white body-font px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 2xl:px-0 m-0 max-w-1500 pt-20 font-for-para">
+          <div className="px-5 pt-12">
+            <div className="flex flex-col-reverse md:flex-row m-12 items-stretch">
+              <div className="bg-handcuffs bg-contain bg-center bg-opacity-10 bg-no-repeat flex items-end	">
                 <img
                   src={section6}
                   alt="Argus Security"
