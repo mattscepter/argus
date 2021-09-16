@@ -10,7 +10,7 @@ import MobileHeader from "../Partials/MobileHeader";
 class Training extends Component {
   render() {
     return (
-      <div>
+      <div className="font-for-para">
         <Header />
         <Header2 />
         <Stickynav />
@@ -30,9 +30,12 @@ class Training extends Component {
           <div className="flex flex-wrap my-12">
             <div className=" md:w-1/2 lg:w-2/3 flex flex-col items-start">
               <img src={about_image} alt="Training Page" className="w-full" />
-              <h2 className="leading-tight text-4xl title-font font-bold text-gray-3 mt-6 mb-6">
+              <div className="flex flex-row items-stretch w-full mt-8 mb-8">
+                <span className="h-auto w-2 bg-red-1 mr-7"></span>
+                <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
                 Road to Success
-              </h2>
+                </h1>
+              </div>
               <p className="leading-relaxed text-lg font-medium text-gray-2 mb-6">
                 Argus Institute‘s Basic Security Training Course gives you
                 everything you need to prepare for your Ontario Security Guard
@@ -47,9 +50,12 @@ class Training extends Component {
                 training.
               </p>
 
-              <h2 className="leading-tight text-4xl title-font font-bold text-gray-3 mt-6 mb-6">
+              <div className="flex flex-row items-stretch w-full mt-8 mb-8">
+                <span className="h-auto w-2 bg-red-1 mr-7"></span>
+                <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
                 Basic Security Traning Course (online) $149.99
-              </h2>
+                </h1>
+              </div>
               <p className="leading-relaxed text-lg font-medium text-gray-2 mb-8">
                 You can take advantage of our Online Learning Platform that
                 features Self-Paced Online Courses (SPOC), optional live
@@ -61,9 +67,12 @@ class Training extends Component {
                 REGISTER
               </button>
 
-              <h2 className="leading-tight text-4xl title-font font-bold text-gray-3 mt-6 mb-8">
+              <div className="flex flex-row items-stretch w-full mt-8 mb-8">
+                <span className="h-auto w-2 bg-red-1 mr-7"></span>
+                <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
                 Basic Security Training Course – (In-class room) $199.99
-              </h2>
+                </h1>
+              </div>
               <ul class="text-gray-2 font-medium text-lg mb-6">
                 <li className="my-0.5">
                   <span className="text-red-1 font-bold mr-2">✓</span> Course is five
@@ -91,9 +100,12 @@ class Training extends Component {
                 REGISTER
               </button>
 
-              <h2 className="leading-tight text-4xl title-font font-bold text-gray-3 mt-6 mb-6">
+              <div className="flex flex-row items-stretch w-full mt-8 mb-8">
+                <span className="h-auto w-2 bg-red-1 mr-7"></span>
+                <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
                 Basic Security Training Course topics
-              </h2>
+                </h1>
+              </div>
               <ul className="text-gray-2 font-medium text-lg flex flex-col md:flex-row mb-6">
                 <div className="">
                   <li className="my-0.5">
@@ -138,9 +150,12 @@ class Training extends Component {
                   </li>
                 </div>
               </ul>
-              <h2 className="leading-tight text-4xl title-font font-bold text-gray-3 mt-6 mb-6">
+              <div className="flex flex-row items-stretch w-full mt-8 mb-8">
+                <span className="h-auto w-2 bg-red-1 mr-7"></span>
+                <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
                 FAQ
-              </h2>
+                </h1>
+              </div>
               <p className="p-4 mb-2 border-2 border-gray-200 text-gray-2  w-full">
                 <span className="text-red-1 font-bold">1.</span> Where do I take
                 the test?

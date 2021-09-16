@@ -4,20 +4,55 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import quotes from "../../argus website/PNG/quotes.PNG";
 import { API } from "../../api";
+import "./carousel.css";
+function SampleNextArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{
+        ...style,
+        display: "block",
+        paddingLeft: "50px",
+        transform: "scale(1.5)",
+      }}
+      onClick={onClick}
+    />
+  );
+}
+function SamplePrevArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{
+        ...style,
+        display: "block",
+        paddingRight: "150px",
+        transform: "scale(1.5)",
+      }}
+      onClick={onClick}
+    />
+  );
+}
 
 const ClientTestimonial = ({ testimonial }) => {
-  var settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
+  const settings = {
     centerMode: true,
-    slidesToShow: 2,
-    slidesToScroll: 5,
+    infinite: true,
+    slidesToShow: 1,
+    speed: 600,
+    centerPadding: "450px",
+    autoplay: true,
+    autoplaySpeed: 2000,
+    pauseOnHover: true,
+    dots: true,
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />,
   };
 
   return (
-    <div className="bg-client">
-    <div className="px-4 sm:px-8 md:px-16 lg:px-28 xl:px-48 2xl:px-0 mx-auto max-w-1366 py-24 bg-client font-for-para">
+    <div className="px-4 sm:px-8 md:px-16 lg:px-28 xl:px-48 py-24 bg-gray-1 font-for-para">
       <div className="flex flex-col lg:flex-row lg:justify-center items-center mb-24">
         <span className="h-1 w-10 bg-red-1 mb-10 md:m-0 md:mr-4"></span>
         <h1 className="text-4xl font-bold text-gray-3 ">Client Testimonials</h1>
@@ -26,7 +61,7 @@ const ClientTestimonial = ({ testimonial }) => {
         <Slider {...settings} className="w-full">
           {testimonial.map((data) => {
             return (
-              <div className="p-8 md:w-1/2 w-full">
+              <div className="py-8 px-2 ">
                 <div className="h-full bg-white shadow-lg flex flex-col">
                   <div className="bg-gray-1 px-6 py-10 ml-auto">
                     <img
@@ -35,7 +70,7 @@ const ClientTestimonial = ({ testimonial }) => {
                       className="w-12 text-red-1 ml-auto -mt-16"
                     />
                   </div>
-                  <div className="px-6 sm:px-16 pb-10 pt-4">
+                  <div className="px-4 sm:px-16 pb-10 pt-2 w-full h-56">
                     <p className="leading-loose mb-6">{data?.description}</p>
                     <div className="inline-flex items-center">
                       <img
@@ -57,7 +92,6 @@ const ClientTestimonial = ({ testimonial }) => {
           })}
         </Slider>
       </div>
-    </div>
     </div>
   );
 };

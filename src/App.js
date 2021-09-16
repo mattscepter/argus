@@ -24,23 +24,34 @@ import OrganisationStructure from "./MyComponents/Main/OrganisationStructure.jsx
 import HarassementPolicy from "./MyComponents/Main/HarassementPolicy";
 import Personell from "./MyComponents/Main/Personell";
 import StudentHome from "./MyComponents/DashBoard/Student/Home.jsx";
-import StudentCalendar from  "./MyComponents/DashBoard/Student/Calendar.jsx";
+import StudentCalendar from "./MyComponents/DashBoard/Student/Calendar.jsx";
 import StudentCourse from "./MyComponents/DashBoard/Student/PurchaseCourse.jsx";
-import StudentTraining from "./MyComponents/DashBoard/Student/Training"
-import StudentContact from "./MyComponents/DashBoard/Student/Contact"
+import StudentTraining from "./MyComponents/DashBoard/Student/Training";
+import StudentContact from "./MyComponents/DashBoard/Student/Contact";
 import ScrollToTop from "./Functions/ScrollToTop";
 
 import LoginForAdmin from "./MyComponents/DashBoard/Admin/AdminControl/LoginForAdmin";
-import AdminHome from "./MyComponents/DashBoard/Admin/Home"
-import AdminHomeControls from "./MyComponents/DashBoard/Admin/HomePageControls"
-import AdminStatistics from "./MyComponents/DashBoard/Admin/Statistics"
-import AdminCourseControl from "./MyComponents/DashBoard/Admin/CourseControl"
-import AdminContactControl from "./MyComponents/DashBoard/Admin/ContactFormMessages"
+import AdminHome from "./MyComponents/DashBoard/Admin/Home";
+import AdminHomeControls from "./MyComponents/DashBoard/Admin/HomePageControls";
+import AdminStatistics from "./MyComponents/DashBoard/Admin/Statistics";
+import AdminCourseControl from "./MyComponents/DashBoard/Admin/CourseControl";
+import AdminContactControl from "./MyComponents/DashBoard/Admin/ContactFormMessages";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { getContact } from "./context/actions/contactAction";
+import { getTestimonial } from "./context/actions/testimonialAction";
+import { getEOM } from "./context/actions/eomAction";
 
 function App() {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getContact());
+    dispatch(getTestimonial());
+    dispatch(getEOM());
+  }, [dispatch]);
+
   return (
     <Router>
       <div className="App">

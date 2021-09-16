@@ -1,15 +1,13 @@
-import { API } from '../api';
+import axiosInstance from "./axiosInstance";
 
-export const updateContact = (data, token) => {
-  const url = `${API}/contact/update`;
-  return fetch(url, {
-    method: 'PUT',
+export const updateContact = async (data, token) => {
+  const url = `/contact/update`;
+  return axiosInstance(url, data, {
     headers: {
-      Accept: 'application/JSON',
-      'Content-Type': 'application/JSON',
-      Authorization: `Bearer ${token}`
+      Accept: "application/JSON",
+      "Content-Type": "application/JSON",
+      Authorization: `Bearer ${token}`,
     },
-    body: JSON.stringify(data),
   })
     .then((response) => {
       return response.json();
@@ -18,16 +16,16 @@ export const updateContact = (data, token) => {
 };
 
 export const getContact = () => {
-  const url = `${API}/contact/get`;
-  return  fetch(url, {
-    method: 'GET',
+  const url = `/contact/get`;
+  axiosInstance(url, {
+    method: "GET",
     headers: {
-      Accept: 'application/JSON',
-      'Content-Type': 'application/JSON',
+      Accept: "application/JSON",
+      "Content-Type": "application/JSON",
     },
   })
     .then((response) => {
-      return response.json();
+      localStorage.setItem("contact", JSON.stringify(response.data));
     })
     .catch((err) => console.log(err));
 };

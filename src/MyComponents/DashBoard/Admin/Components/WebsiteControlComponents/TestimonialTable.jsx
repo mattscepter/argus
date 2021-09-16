@@ -1,32 +1,17 @@
-import React, { useEffect, useState } from "react";
-import { getTestimonial } from "../../../../../helpers/ClientTestimonial";
-import { isAuthenticated } from "../../../../../helpers/auth";
-import axios from "axios";
+import React from "react";
 import { API } from "../../../../../api";
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { deleteTestimonial } from "../../../../../context/actions/testimonialAction";
 
-export const TestimonialTable = ({ refresh, setrefresh }) => {
-  const [testimonialData, setTestimonialData] = useState([]);
-  const [token, setToken] = useState();
-
-  useEffect(() => {
-    try {
-      getTestimonial().then((res) => {
-        setTestimonialData(
-          res.sort((p1, p2) => {
-            return new Date(p2.createdAt) - new Date(p1.createdAt);
-          })
-        );
-      });
-      setToken(isAuthenticated());
-    } catch (error) {
-      console.log(error);
-    }
-  }, [refresh]);
+export const TestimonialTable = () => {
+  const testimonial = useSelector((state) => state.testimonial.testimonial);
+  const dispatch = useDispatch();
 
   return (
     <div className="mx-8 my-8 p-4 bg-white shadow-lg rounded-xl">
       {/* Card of table */}
-      {testimonialData.map((testimonial) => {
+      {testimonial.map((testimonial) => {
         const arr = new Uint8Array(testimonial?.photo?.data?.data);
         const b64 = btoa(
           arr.reduce((data, byte) => data + String.fromCharCode(byte), "")
@@ -51,21 +36,7 @@ export const TestimonialTable = ({ refresh, setrefresh }) => {
               />
               <button
                 onClick={() => {
-                  const id = testimonial._id;
-                  axios
-                    .delete(`${API}/testimonial/delete/${id}`, {
-                      headers: {
-                        Accept: "application/JSON",
-                        "Content-Type": "application/JSON",
-                        Authorization: `Bearer ${token?.token}`,
-                      },
-                    })
-                    .then((res) => {
-                      setrefresh(res);
-                    })
-                    .catch((err) => {
-                      console.log(err);
-                    });
+                  dispatch(deleteTestimonial(testimonial._id));
                 }}
                 className="px-3 py-1 m-2 border-2 border-dashed border-red-1 bg-red-1 text-white rounded-lg hover:text-red-1 hover:bg-opacity-20"
               >
