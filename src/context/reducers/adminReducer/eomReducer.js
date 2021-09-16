@@ -5,7 +5,8 @@ const {
   SETUPDATE_EOM,
   EOM_LOADING,
   EOM_ALERT,
-} = require("../actionTypes");
+  ADDEOM_LOADING,
+} = require("../../actionTypes");
 
 const initialState = {
   eom: null,
@@ -19,6 +20,7 @@ const initialState = {
     data: null,
   },
   loading: false,
+  addloading: false,
 };
 
 const eomReducer = (state = initialState, action) => {
@@ -52,6 +54,11 @@ const eomReducer = (state = initialState, action) => {
       return {
         ...state,
         eomalert: action.payload,
+      };
+    case ADDEOM_LOADING:
+      return {
+        ...state,
+        addloading: action.payload,
       };
     default:
       return state;

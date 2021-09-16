@@ -1,6 +1,7 @@
 import { isAuthenticated } from "../../../helpers/auth";
 import axiosInstance from "../../../helpers/axiosInstance";
 import {
+  ADDCLIENT_LOADING,
   CLIENTCAROUSEL_LOADING,
   CLIENT_CAROUSELALERT,
   DELETECLIENT_CAROUSEL,
@@ -30,6 +31,11 @@ const setupdateclientcarousel = (data) => ({
 
 const clientcarouselloading = (data) => ({
   type: CLIENTCAROUSEL_LOADING,
+  payload: data,
+});
+
+const addclientloading = (data) => ({
+  type: ADDCLIENT_LOADING,
   payload: data,
 });
 
@@ -79,6 +85,7 @@ const deleteClientCarousel = (id) => {
 
 const addClientCarousel = (data) => {
   return (dispatch) => {
+    dispatch(addclientloading(true));
     const { token } = isAuthenticated();
     axiosInstance
       .post("/client/create", data, {
@@ -87,6 +94,7 @@ const addClientCarousel = (data) => {
         },
       })
       .then(() => {
+        dispatch(addclientloading(false));
         dispatch(getClientCarousel());
         dispatch(
           clientcarouselAlert({
@@ -96,6 +104,7 @@ const addClientCarousel = (data) => {
         );
       })
       .catch((err) => {
+        dispatch(addclientloading(false));
         dispatch(
           clientcarouselAlert({
             success: false,
@@ -108,6 +117,7 @@ const addClientCarousel = (data) => {
 
 const updateClientCarousel = (data, id) => {
   return (dispatch) => {
+    dispatch(addclientloading(true));
     const { token } = isAuthenticated();
     axiosInstance
       .put(`/client/update/${id}`, data, {
@@ -116,6 +126,7 @@ const updateClientCarousel = (data, id) => {
         },
       })
       .then(() => {
+        dispatch(addclientloading(false));
         dispatch(getClientCarousel());
         dispatch(
           clientcarouselAlert({
@@ -126,6 +137,7 @@ const updateClientCarousel = (data, id) => {
         dispatch(setupdateclientcarousel({ state: false, data: null }));
       })
       .catch((err) => {
+        dispatch(addclientloading(false));
         dispatch(
           clientcarouselAlert({
             success: false,

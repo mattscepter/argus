@@ -398,7 +398,7 @@ export default function Home() {
       <EmployeeMonth />
 
       {/* Section 10 Sponsors */}
-      {/* <ClientCorousal /> */}
+      <ClientCorousal />
     </div>
   );
 }

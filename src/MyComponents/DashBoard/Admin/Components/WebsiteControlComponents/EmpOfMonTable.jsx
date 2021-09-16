@@ -5,7 +5,7 @@ import { API } from "../../../../../api";
 import {
   deleteEOM,
   setupdateeom,
-} from "../../../../../context/actions/eomAction";
+} from "../../../../../context/actions/adminActions/eomAction";
 import Loader from "react-loader-spinner";
 
 export const EmpOfMonTable = () => {
@@ -24,14 +24,17 @@ export const EmpOfMonTable = () => {
         <>
           {" "}
           {eom.map((data) => {
-            let url =
-              `${API}/eom/get-photo/empImage-${data._id}?` +
-              new Date().getTime();
             return (
-              <div className="flex flex-col md:flex-row border-2 text-lg items-center">
+              <div
+                key={data._id}
+                className="flex flex-col md:flex-row border-2 text-lg items-center"
+              >
                 <div className="flex flex-col items-center text-center w-full md:w-2/12">
                   <img
-                    src={url}
+                    src={
+                      `${API}/eom/get-photo/empImage-${data._id}?` +
+                      new Date().getTime()
+                    }
                     alt=""
                     className="w-24 h-24 rounded-full p-2"
                   />

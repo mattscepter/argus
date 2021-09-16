@@ -1,4 +1,5 @@
 import {
+  ADDCLIENT_LOADING,
   CLIENTCAROUSEL_LOADING,
   CLIENT_CAROUSELALERT,
   DELETECLIENT_CAROUSEL,
@@ -17,6 +18,7 @@ const initialState = {
     data: null,
   },
   loading: false,
+  addloading: false,
 };
 
 const clientReducer = (state = initialState, action) => {
@@ -45,6 +47,11 @@ const clientReducer = (state = initialState, action) => {
       return {
         ...state,
         update: action.payload,
+      };
+    case ADDCLIENT_LOADING:
+      return {
+        ...state,
+        addloading: action.payload,
       };
     default:
       return state;

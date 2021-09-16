@@ -1,11 +1,11 @@
-import { isAuthenticated } from "../../helpers/auth";
+import { isAuthenticated } from "../../../helpers/auth";
 
-const { default: axiosInstance } = require("../../helpers/axiosInstance");
+const { default: axiosInstance } = require("../../../helpers/axiosInstance");
 const {
   SET_CONTACTS,
   SETCONTACTS_ERROR,
   CONTACT_ALERT,
-} = require("../actionTypes");
+} = require("../../actionTypes");
 
 const setcontact = (data) => ({
   type: SET_CONTACTS,

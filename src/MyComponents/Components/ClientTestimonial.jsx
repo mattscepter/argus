@@ -39,46 +39,39 @@ function SamplePrevArrow(props) {
 const ClientTestimonial = ({ testimonial }) => {
   const settings = {
     centerMode: true,
+    focusOnSelect: true,
     speed: 600,
-    // autoplay: true,
+    autoplay: true,
     centerPadding: "450px",
-    // autoplaySpeed: 2000,
-    // pauseOnHover: true,
+    autoplaySpeed: 2000,
+    pauseOnHover: true,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
+    dots: true,
     responsive: [
       {
         breakpoint: 1700,
         settings: {
           centerPadding: "350px",
-          infinite: true,
-          nextArrow: <SampleNextArrow />,
-          prevArrow: <SamplePrevArrow />,
         },
       },
       {
         breakpoint: 1500,
         settings: {
           centerPadding: "250px",
-          infinite: true,
-          nextArrow: <SampleNextArrow />,
-          prevArrow: <SamplePrevArrow />,
         },
       },
       {
         breakpoint: 1200,
         settings: {
           centerPadding: "150px",
-          infinite: true,
-          nextArrow: <SampleNextArrow />,
-          prevArrow: <SamplePrevArrow />,
         },
       },
       {
         breakpoint: 850,
         settings: {
           centerPadding: "100px",
-          infinite: true,
+          arrows: false,
         },
       },
 
@@ -86,13 +79,14 @@ const ClientTestimonial = ({ testimonial }) => {
         breakpoint: 700,
         settings: {
           centerPadding: "50px",
-          infinite: true,
+          arrows: false,
         },
       },
       {
         breakpoint: 480,
         settings: {
-          slidesToShow: 1,
+          centerPadding: "10px",
+          arrows: false,
         },
       },
     ],
@@ -104,11 +98,11 @@ const ClientTestimonial = ({ testimonial }) => {
         <span className="h-1 w-10 bg-red-1 mb-10 md:m-0 md:mr-4"></span>
         <h1 className="text-4xl font-bold text-gray-3 ">Client Testimonials</h1>
       </div>
-      <div className="flex flex-wrap mb-16 w-full overflow-hidden">
+      <div className="flex flex-wrap mb-16 w-full">
         <Slider {...settings} className="w-full">
           {testimonial.map((data) => {
             return (
-              <div className="py-8 px-2 ">
+              <div key={data._id} className="pt-10 px-2">
                 <div className="h-full bg-white shadow-lg flex flex-col">
                   <div className="bg-gray-1 px-6 py-10 ml-auto">
                     <img

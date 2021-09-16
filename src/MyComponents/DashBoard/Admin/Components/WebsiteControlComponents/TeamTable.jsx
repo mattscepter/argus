@@ -1,23 +1,72 @@
 import React from "react";
-import placeholderImage from "./../../../../../argus website/PNG/IMG_0118.png"
+import { useDispatch, useSelector } from "react-redux";
+import { API } from "../../../../../api";
+import {
+  deleteTeam,
+  setupdateteam,
+} from "../../../../../context/actions/adminActions/teamAction";
+import Loader from "react-loader-spinner";
 
 export const TeamTable = () => {
+  const teamMember = useSelector((state) => state.team.team);
+  const loading = useSelector((state) => state.team.loading);
+  const dispatch = useDispatch();
   return (
     <div className="mx-8 my-8 p-4 bg-white shadow-lg rounded-xl">
-      
-        {/* Card of table */}
-        <div className ="flex flex-col md:flex-row border-2 text-lg items-center">
-            <div className="flex flex-col items-center text-center w-full md:w-2/12">
-                <h1 className="px-3 py-1 text-red-1 font-bold">Name Here</h1>
-                <h1 className="px-3 py-1 leading-tight">Position</h1>
-            </div>
-            <h1 className="px-3 py-1 border-b-2 border-t-2 md:border-0 md:border-r-2 md:border-l-2 w-full md:w-8/12">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi corrupti amet doloremque eos, repellat tempore non, sequi illum magnam placeat dolorem aperiam, numquam maxime dolore vero suscipit temporibus. Odio, veritatis.</h1>
-            <div className="flex flex-col items-center mx-auto">
-                <img src={placeholderImage} alt=""  className="rounded-full p-2"/>
-                <button className="px-3 py-1 m-2 border-2 border-dashed border-red-1 bg-red-1 text-white rounded-lg hover:text-red-1 hover:bg-opacity-20">Delete</button>
-            </div>
-        </div> 
-
+      {/* Card of table */}
+      {loading ? (
+        <div className="w-full flex items-center justify-center">
+          <Loader type="TailSpin" color="#BA0913" height={60} width={60} />
+        </div>
+      ) : (
+        <>
+          {" "}
+          {teamMember.map((team) => {
+            return (
+              <div
+                key={team._id}
+                className="flex flex-col md:flex-row border-2 text-lg items-center"
+              >
+                <div className="flex flex-col items-center text-center w-full md:w-2/12">
+                  <img
+                    src={
+                      `${API}/team/get-photo/${team._id}?` +
+                      new Date().getTime()
+                    }
+                    alt=""
+                    className="w-24 h-24 rounded-full p-1 "
+                  />
+                  <h1 className="px-3 text-red-1 font-bold">{team.name}</h1>
+                  <h1 className="px-3  leading-tight">{team.role}</h1>
+                </div>
+                <h1 className="px-3 py-1 border-b-2 border-t-2 md:border-0 md:border-r-2 md:border-l-2 w-full md:w-8/12">
+                  {team.description}
+                </h1>
+                <div className="flex flex-col items-center mx-auto">
+                  <div className="flex flex-col items-center mx-auto">
+                    <button
+                      onClick={() => {
+                        dispatch(deleteTeam(team._id));
+                      }}
+                      className="px-3 py-1 m-2 border-2 border-dashed border-red-1 bg-red-1 text-white rounded-lg hover:text-red-1 hover:bg-opacity-20"
+                    >
+                      Delete
+                    </button>
+                    <button
+                      onClick={() => {
+                        dispatch(setupdateteam({ state: true, data: team }));
+                      }}
+                      className="px-3 py-1 m-2 border-2 border-dashed border-red-1 bg-red-1 text-white rounded-lg hover:text-blue-400 hover:bg-blue-100 hover:border-blue-400"
+                    >
+                      Update
+                    </button>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </>
+      )}
     </div>
   );
 };

@@ -1,19 +1,24 @@
 import {
+  ADDTESTIMONIAL_LOADING,
   DELETE_TESTIMONIAL,
   SETUPDATE_TESTIMONIAL,
   SET_TESTIMONIAL,
-  TESTIMONIAL_ERROR,
+  TESTIMONIAL_ALERT,
   TESTIMONIAL_LOADING,
-} from "../actionTypes";
+} from "../../actionTypes";
 
 const initialState = {
   testimonial: [],
-  error: null,
   update: {
     state: false,
     data: null,
   },
   loading: false,
+  testimonialalert: {
+    success: null,
+    message: "",
+  },
+  addloading: false,
 };
 
 const testimonialReducer = (state = initialState, action) => {
@@ -30,11 +35,6 @@ const testimonialReducer = (state = initialState, action) => {
           ...state.testimonial.filter((c) => c._id !== action.payload),
         ],
       };
-    case TESTIMONIAL_ERROR:
-      return {
-        ...state,
-        error: action.payload,
-      };
     case SETUPDATE_TESTIMONIAL:
       return {
         ...state,
@@ -44,6 +44,16 @@ const testimonialReducer = (state = initialState, action) => {
       return {
         ...state,
         loading: action.payload,
+      };
+    case TESTIMONIAL_ALERT:
+      return {
+        ...state,
+        testimonialalert: action.payload,
+      };
+    case ADDTESTIMONIAL_LOADING:
+      return {
+        ...state,
+        addloading: action.payload,
       };
     default:
       return state;

@@ -1,4 +1,4 @@
-const { SET_CONTACTS, CONTACT_ALERT } = require("../actionTypes");
+const { SET_CONTACTS, CONTACT_ALERT } = require("../../actionTypes");
 
 const initialState = {
   email: "",

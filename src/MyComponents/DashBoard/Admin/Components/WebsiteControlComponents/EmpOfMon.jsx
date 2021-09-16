@@ -8,7 +8,8 @@ import {
   eommessage,
   setupdateeom,
   updateEOM,
-} from "../../../../../context/actions/eomAction";
+} from "../../../../../context/actions/adminActions/eomAction";
+import Loader from "react-loader-spinner";
 
 const validate = (values) => {
   const errors = {};
@@ -49,6 +50,7 @@ const EmpOfMon = () => {
   const dispatch = useDispatch();
   const eomalert = useSelector((state) => state.eom.eomalert);
   const update = useSelector((state) => state.eom.update);
+  const loading = useSelector((state) => state.eom.addloading);
   const empImgRef = useRef();
   const insImgRef = useRef();
   const insSignRef = useRef();
@@ -302,7 +304,18 @@ const EmpOfMon = () => {
           type="submit"
           className="w-2/3 mx-auto p-4 border text-white bg-red-700 hover:bg-white hover:text-red-700 hover:border-red-700"
         >
-          {update.state ? "Update" : "Add"}
+          {loading ? (
+            <div className="w-full flex items-center justify-center">
+              <Loader
+                type="TailSpin"
+                color="lightgray"
+                height={40}
+                width={40}
+              />
+            </div>
+          ) : (
+            <> {update.state ? "Update" : "Add"}</>
+          )}
         </button>
         {update.state ? (
           <button

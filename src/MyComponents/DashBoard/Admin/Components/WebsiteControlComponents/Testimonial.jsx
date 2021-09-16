@@ -7,9 +7,10 @@ import { useSelector } from "react-redux";
 import {
   addTestimonial,
   setupdatetestimonial,
-  testimonialerror,
+  testimonailAlert,
   updateTestimonial,
-} from "../../../../../context/actions/testimonialAction";
+} from "../../../../../context/actions/adminActions/testimonialAction";
+import Loader from "react-loader-spinner";
 
 const validate = (values) => {
   const errors = {};
@@ -33,8 +34,11 @@ export default function Testimonials() {
   });
   const [testimonialImg, setTestimonialImg] = useState();
   const dispatch = useDispatch();
-  const error = useSelector((state) => state.testimonial.error);
   const update = useSelector((state) => state.testimonial.update);
+  const testimonialalert = useSelector(
+    (state) => state.testimonial.testimonialalert
+  );
+  const loading = useSelector((state) => state.testimonial.addloading);
   const ref = useRef();
 
   const handleCompressedUpload = (e) => {
@@ -49,39 +53,23 @@ export default function Testimonials() {
   };
 
   useEffect(() => {
-    if (error !== null) {
-      if (update.state) {
-        if (error === true) {
-          setShowAlert({
-            show: true,
-            message: "Testimonial updated successfully",
-            success: true,
-          });
-        } else if (error === false) {
-          setShowAlert({
-            show: true,
-            message: "Error updated testimonial",
-            success: false,
-          });
-        }
+    if (testimonialalert.success !== null) {
+      if (testimonialalert.success) {
+        setShowAlert({
+          show: true,
+          message: testimonialalert.message,
+          success: true,
+        });
       } else {
-        if (error === true) {
-          setShowAlert({
-            show: true,
-            message: "Testimonial added successfully",
-            success: true,
-          });
-        } else if (error === false) {
-          setShowAlert({
-            show: true,
-            message: "Error adding testimonial",
-            success: false,
-          });
-        }
+        setShowAlert({
+          show: true,
+          message: testimonialalert.message,
+          success: false,
+        });
       }
+      dispatch(testimonailAlert({ success: null, message: "" }));
     }
-    dispatch(testimonialerror(null));
-  }, [error, dispatch, update]);
+  }, [dispatch, testimonialalert]);
 
   const { getFieldProps, handleSubmit, errors, setValues, resetForm } =
     useFormik({
@@ -200,7 +188,18 @@ export default function Testimonials() {
           type="submit"
           className="w-2/3 mx-auto p-4 border text-white bg-red-700 hover:bg-white hover:text-red-700 hover:border-red-700"
         >
-          {update.state ? "Update" : "Add"}
+          {loading ? (
+            <div className="w-full flex items-center justify-center">
+              <Loader
+                type="TailSpin"
+                color="lightgray"
+                height={40}
+                width={40}
+              />
+            </div>
+          ) : (
+            <> {update.state ? "Update" : "Add"}</>
+          )}
         </button>
         {update.state ? (
           <button

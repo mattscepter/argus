@@ -6,7 +6,7 @@ import { useDispatch } from "react-redux";
 import {
   contactAlert,
   updateContact,
-} from "../../../../../context/actions/contactAction";
+} from "../../../../../context/actions/adminActions/contactAction";
 import { useSelector } from "react-redux";
 
 const validate = (values) => {

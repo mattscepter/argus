@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 import {
   deleteTestimonial,
   setupdatetestimonial,
-} from "../../../../../context/actions/testimonialAction";
+} from "../../../../../context/actions/adminActions/testimonialAction";
 import Loader from "react-loader-spinner";
 
 export const TestimonialTable = () => {
@@ -25,7 +25,10 @@ export const TestimonialTable = () => {
           {" "}
           {testimonial.map((testimonial) => {
             return (
-              <div className="flex flex-col md:flex-row border-2 text-lg items-center">
+              <div
+                key={testimonial._id}
+                className="flex flex-col md:flex-row border-2 text-lg items-center"
+              >
                 <div className="flex flex-col items-center py-2 text-center w-full md:w-2/12">
                   <img
                     src={

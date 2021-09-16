@@ -1,5 +1,5 @@
-const { isAuthenticated } = require("../../helpers/auth");
-const { default: axiosInstance } = require("../../helpers/axiosInstance");
+const { isAuthenticated } = require("../../../helpers/auth");
+const { default: axiosInstance } = require("../../../helpers/axiosInstance");
 const {
   SET_EOM,
   SET_EOMADMIN,
@@ -7,7 +7,8 @@ const {
   SETUPDATE_EOM,
   EOM_LOADING,
   EOM_ALERT,
-} = require("../actionTypes");
+  ADDEOM_LOADING,
+} = require("../../actionTypes");
 
 const seteom = (data) => ({
   type: SET_EOM,
@@ -35,6 +36,11 @@ const setupdateeom = (data) => ({
 
 const eomloading = (data) => ({
   type: EOM_LOADING,
+  payload: data,
+});
+
+const addtestimonialloading = (data) => ({
+  type: ADDEOM_LOADING,
   payload: data,
 });
 
@@ -72,6 +78,7 @@ const getEOMAdmin = () => {
 const createEOM = (data) => {
   return (dispatch) => {
     const { token } = isAuthenticated();
+    dispatch(addtestimonialloading(true));
     axiosInstance
       .post("/eom/create", data, {
         headers: {
@@ -79,6 +86,7 @@ const createEOM = (data) => {
         },
       })
       .then((res) => {
+        dispatch(addtestimonialloading(false));
         if (res.data.error) {
           dispatch(
             eommessage({
@@ -96,14 +104,15 @@ const createEOM = (data) => {
           );
         }
       })
-      .catch((err) =>
+      .catch((err) => {
+        dispatch(addtestimonialloading(false));
         dispatch(
           eommessage({
             success: false,
             message: "Error adding employee of the month",
           })
-        )
-      );
+        );
+      });
   };
 };
 
@@ -124,6 +133,7 @@ const deleteEOM = (id) => {
 };
 const updateEOM = (data, id) => {
   return (dispatch) => {
+    dispatch(addtestimonialloading(true));
     const { token } = isAuthenticated();
     axiosInstance
       .put(`/eom/update/${id}`, data, {
@@ -132,6 +142,7 @@ const updateEOM = (data, id) => {
         },
       })
       .then(() => {
+        dispatch(addtestimonialloading(false));
         dispatch(getEOMAdmin());
         dispatch(
           eommessage({
@@ -142,6 +153,7 @@ const updateEOM = (data, id) => {
         dispatch(setupdateeom({ state: false, data: null }));
       })
       .catch((err) => {
+        dispatch(addtestimonialloading(false));
         dispatch(
           eommessage({
             success: false,

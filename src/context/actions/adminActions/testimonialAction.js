@@ -1,13 +1,14 @@
-import { isAuthenticated } from "../../helpers/auth";
+import { isAuthenticated } from "../../../helpers/auth";
 
-const { default: axiosInstance } = require("../../helpers/axiosInstance");
+const { default: axiosInstance } = require("../../../helpers/axiosInstance");
 const {
   SET_TESTIMONIAL,
   DELETE_TESTIMONIAL,
-  TESTIMONIAL_ERROR,
   SETUPDATE_TESTIMONIAL,
   TESTIMONIAL_LOADING,
-} = require("../actionTypes");
+  TESTIMONIAL_ALERT,
+  ADDTESTIMONIAL_LOADING,
+} = require("../../actionTypes");
 
 const settestimonial = (data) => ({
   type: SET_TESTIMONIAL,
@@ -19,11 +20,6 @@ const deletetestimonial = (id) => ({
   payload: id,
 });
 
-const testimonialerror = (data) => ({
-  type: TESTIMONIAL_ERROR,
-  payload: data,
-});
-
 const setupdatetestimonial = (data) => ({
   type: SETUPDATE_TESTIMONIAL,
   payload: data,
@@ -31,6 +27,16 @@ const setupdatetestimonial = (data) => ({
 
 const testimonialloading = (data) => ({
   type: TESTIMONIAL_LOADING,
+  payload: data,
+});
+
+const testimonailAlert = (data) => ({
+  type: TESTIMONIAL_ALERT,
+  payload: data,
+});
+
+const addtestimonialloading = (data) => ({
+  type: ADDTESTIMONIAL_LOADING,
   payload: data,
 });
 
@@ -76,6 +82,7 @@ const deleteTestimonial = (id) => {
 const addTestimonial = (data) => {
   return (dispatch) => {
     const { token } = isAuthenticated();
+    dispatch(addtestimonialloading(true));
     axiosInstance
       .post("/testimonial/create", data, {
         headers: {
@@ -83,11 +90,23 @@ const addTestimonial = (data) => {
         },
       })
       .then(() => {
+        dispatch(addtestimonialloading(false));
         dispatch(getTestimonial());
-        dispatch(testimonialerror(true));
+        dispatch(
+          testimonailAlert({
+            success: true,
+            message: "Testimonial added successfully",
+          })
+        );
       })
       .catch((err) => {
-        dispatch(testimonialerror(false));
+        dispatch(addtestimonialloading(false));
+        dispatch(
+          testimonailAlert({
+            success: false,
+            message: "Error adding testimonial",
+          })
+        );
       });
   };
 };
@@ -95,6 +114,7 @@ const addTestimonial = (data) => {
 const updateTestimonial = (data, id) => {
   return (dispatch) => {
     const { token } = isAuthenticated();
+    dispatch(addtestimonialloading(true));
     axiosInstance
       .put(`/testimonial/update/${id}`, data, {
         headers: {
@@ -102,12 +122,24 @@ const updateTestimonial = (data, id) => {
         },
       })
       .then(() => {
+        dispatch(addtestimonialloading(false));
         dispatch(getTestimonial());
-        dispatch(testimonialerror(true));
+        dispatch(
+          testimonailAlert({
+            success: true,
+            message: "Testimonial updated successfully",
+          })
+        );
         dispatch(setupdatetestimonial({ state: false, data: null }));
       })
       .catch((err) => {
-        dispatch(testimonialerror(false));
+        dispatch(addtestimonialloading(false));
+        dispatch(
+          testimonailAlert({
+            success: false,
+            message: "Error updating testimonial",
+          })
+        );
         dispatch(setupdatetestimonial({ state: false, data: null }));
       });
   };
@@ -117,7 +149,7 @@ export {
   getTestimonial,
   deleteTestimonial,
   addTestimonial,
-  testimonialerror,
   setupdatetestimonial,
   updateTestimonial,
+  testimonailAlert,
 };

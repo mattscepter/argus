@@ -5,10 +5,12 @@ import { useDispatch } from "react-redux";
 import {
   addClientCarousel,
   clientcarouselAlert,
+  setupdateclientcarousel,
   updateClientCarousel,
 } from "../../../../../context/actions/adminActions/clientsAction";
 import Compressor from "compressorjs";
 import Alert from "../../../../Components/Alert";
+import Loader from "react-loader-spinner";
 
 const validate = (values) => {
   const errors = {};
@@ -29,6 +31,7 @@ export default function ClientControls() {
   const dispatch = useDispatch();
   const update = useSelector((state) => state.client.update);
   const clientalert = useSelector((state) => state.client.clientalert);
+  const loading = useSelector((state) => state.client.addloading);
 
   useEffect(() => {
     if (clientalert.success !== null) {
@@ -82,6 +85,14 @@ export default function ClientControls() {
       },
     });
 
+  useEffect(() => {
+    if (update.state) {
+      setValues({
+        name: update.data.name,
+      });
+    }
+  }, [setValues, update]);
+
   return (
     <div className="mx-8 my-8 p-4 bg-white shadow-lg rounded-xl">
       <div className="flex items-center">
@@ -132,8 +143,33 @@ export default function ClientControls() {
           type="submit"
           className="w-2/3 mx-auto p-4 border text-white bg-red-700 hover:bg-white hover:text-red-700 hover:border-red-700"
         >
-          Add
+          {loading ? (
+            <div className="w-full flex items-center justify-center">
+              <Loader
+                type="TailSpin"
+                color="lightgray"
+                height={40}
+                width={40}
+                radius={0}
+              />
+            </div>
+          ) : (
+            <> {update.state ? "Update" : "Add"}</>
+          )}
         </button>
+        {update.state ? (
+          <button
+            className="w-1/4 mx-auto px-4 py-2 mt-4 border text-white bg-red-700 hover:bg-white hover:text-red-700 hover:border-red-700"
+            onClick={() => {
+              clientRef.current.value = "";
+              setclientImg(null);
+              resetForm();
+              dispatch(setupdateclientcarousel({ state: false, data: null }));
+            }}
+          >
+            Add new client
+          </button>
+        ) : null}
       </form>
     </div>
   );

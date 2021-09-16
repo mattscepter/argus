@@ -39,10 +39,11 @@ import AdminContactControl from "./MyComponents/DashBoard/Admin/ContactFormMessa
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { getContact } from "./context/actions/contactAction";
-import { getTestimonial } from "./context/actions/testimonialAction";
-import { getEOM } from "./context/actions/eomAction";
+import { getContact } from "./context/actions/adminActions/contactAction";
+import { getTestimonial } from "./context/actions/adminActions/testimonialAction";
+import { getEOM } from "./context/actions/adminActions/eomAction";
 import { getClientCarousel } from "./context/actions/adminActions/clientsAction";
+import { getTeam } from "./context/actions/adminActions/teamAction";
 
 function App() {
   const dispatch = useDispatch();
@@ -51,13 +52,14 @@ function App() {
     dispatch(getTestimonial());
     dispatch(getEOM());
     dispatch(getClientCarousel());
+    dispatch(getTeam());
   }, [dispatch]);
   return (
     <Router>
       <div className="App">
         <ScrollToTop />
         <switch>
-          <Route path="/" exact component={Home} />
+          <Route path="/react" exact component={Home} />
           <Route path="/about" exact component={About} />
           <Route path="/jobs" exact component={Jobs} />
           <Route path="/contact" exact component={Contact} />
