@@ -55,7 +55,7 @@ const Footer = () => {
   return (
   <div className="bg-black-1">
     <div className="text-white text-xs md:text-sm body-font bg-top bg-no-repeat bg-cover bg-footer bg-opacity-5">
-      <div className="container px-2 sm:px-8 lg:px-24 xl:pl-48 xl:pr-40 2xl:px-0 max-w-1366  mx-auto">
+      <div className="container px-4 sm:px-8 lg:px-12 2xl:px-0 max-w-1366  mx-auto">
         <div className="flex flex-col md:flex-row md:text-left text-center order-first items-start">
           <div className="w-3/4 flex flex-wrap md:text-left text-center order-first mx-auto">
             <div className="lg:w-1/3 w-full px-4 pt-4">

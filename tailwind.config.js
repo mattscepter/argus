@@ -73,9 +73,13 @@ module.exports = {
       maxWidth: {
         1366: "1366px",
         1500: "1500px",
+        8: "8px",
       },
       minWidth: {
-        650: "650px",
+        8: "8px",
+      },
+      width: {
+        "8-px": "8px",
       },
       boxShadow: {
         "header-outer-shadow": "3px 3px 6px 1px rgba(0, 0, 0, 0.2)",
@@ -87,10 +91,21 @@ module.exports = {
       backgroundSize: {
         "stretch-x": "100% 100%",
       },
+      animation: {
+        fadeIn: "scaleIn 2s ease-in forwards",
+      },
+      keyframes: {
+        scaleIn: {
+          "0%": { scale: 0 },
+          "100%": { scale: 1 },
+        },
+      },
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      animation: ["motion-safe"],
+    },
   },
   plugins: [],
 };

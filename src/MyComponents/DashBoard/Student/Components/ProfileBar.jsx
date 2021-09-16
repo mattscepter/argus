@@ -1,7 +1,7 @@
 import React from "react";
 import ProfilePicture from "./../../../../argus website/PNG/IMG_0118.png";
 import { signout } from "../../../../helpers/auth";
-import { useHistory } from "react-router-dom";
+import { link, useHistory } from "react-router-dom";
 
 const ProfileBar = () => {
   const history = useHistory();

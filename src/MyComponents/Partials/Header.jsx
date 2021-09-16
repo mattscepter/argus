@@ -10,7 +10,11 @@ export default function Header() {
     <div className="shadow-lg sticky">
       <div className="bg-red-1 shadow-header-outer-shadow">
         <div className="bg-red-1 bg-no-repeat bg-header-bg bg-center bg-stretch-x bg-blend-multiply">
+<<<<<<< HEAD
           <div className="hidden lg:block px-4 sm:px-6 md:px-8 lg:px-12 2xl:px-0 mx-auto max-w-1366 text-base">
+=======
+          <div className="hidden lg:block px-4 sm:px-8 lg:px-12 2xl:px-0 mx-auto max-w-1366 text-base">
+>>>>>>> cbb13dcb985af1424793825f69a29c21bfdbbcaa
             <div className="flex flex-row items-center mx-auto justify-between font-bold border-white font-for-para">
               <nav className="flex flex-row items-center">
                 <Link
@@ -30,7 +34,7 @@ export default function Header() {
                 <img
                   src={Logo}
                   alt="Logo of Argus Security"
-                  className="w-28 my-2 "
+                  className="w-28 my-2"
                 />
               </Link>
               <nav className="flex flex-row items-center">
