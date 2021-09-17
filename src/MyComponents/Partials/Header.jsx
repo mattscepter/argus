@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Logo from "./../../argus website/SVG/logosvg.svg";
+import Logo from "./../../argus website/SVG/Logowith shadow.svg";
 import { Link } from "react-router-dom";
 import LogIn from "../User/LogIn";
 
@@ -30,7 +30,7 @@ export default function Header() {
                 <img
                   src={Logo}
                   alt="Logo of Argus Security"
-                  className="w-28 my-2"
+                  className="w-32 my-1"
                 />
               </Link>
               <nav className="flex flex-row items-center">

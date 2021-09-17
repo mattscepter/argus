@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
-class Header2 extends Component {
+class HeaderHome extends Component {
   Header;
 
   render() {
@@ -10,35 +10,35 @@ class Header2 extends Component {
         <nav class="flex flex-wrap items-center text-base font-bold font-for-para">
           <Link
             to="/about"
-            className="w-1/5 text-white py-4 text-center bg-black bg-opacity-40 hover:bg-red-1 hover:bg-opacity-60"
+            className="w-1/5 text-white py-4 text-center bg-black bg-opacity-40 hover:bg-opacity-60"
           >
             ABOUT
           </Link>
 
           <Link
             to="/services"
-            className="w-1/5 text-white py-4 text-center bg-black bg-opacity-40 hover:bg-red-1 hover:bg-opacity-60"
+            className="w-1/5 text-white py-4 text-center bg-black bg-opacity-40 hover:bg-opacity-60"
           >
             SERVICES
           </Link>
 
           <Link
             to="/jobs"
-            className="w-1/5 text-white py-4 text-center bg-black bg-opacity-40 hover:bg-red-1 hover:bg-opacity-60"
+            className="w-1/5 text-white py-4 text-center bg-black bg-opacity-40 hover:bg-opacity-60"
           >
             JOBS
           </Link>
 
           <Link
             to="/training"
-            className="w-1/5 text-white py-4 text-center bg-black bg-opacity-40 hover:bg-red-1 hover:bg-opacity-60"
+            className="w-1/5 text-white py-4 text-center bg-black bg-opacity-40 hover:bg-opacity-60"
           >
             COURSES
           </Link>
 
           <Link
             to="/contact"
-            className="w-1/5 text-white py-4 text-center bg-black bg-opacity-40 hover:bg-red-1 hover:bg-opacity-60"
+            className="w-1/5 text-white py-4 text-center bg-black bg-opacity-40 hover:bg-opacity-60"
           >
             CONTACT
           </Link>
@@ -48,4 +48,4 @@ class Header2 extends Component {
   }
 }
 
-export default Header2;
+export default HeaderHome;

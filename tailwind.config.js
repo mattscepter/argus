@@ -21,6 +21,7 @@ module.exports = {
         "cta-bg": "url('argus website/PNG/1. Overlay 3.png')",
         logincar: "url(argus website/PNG/2. Hero box.png)",
         handcuffs: "url(argus website/SVG/9. Hancuffs.svg)",
+        triangles: "url(argus website/SVG/Know your partner triangles.svg)",
       }),
       colors: {
         "gray-1": "#F1F1F1",
@@ -71,7 +72,7 @@ module.exports = {
         "4xl": "2.85rem",
       },
       maxWidth: {
-        1366: "1366px",
+        1366: "1230px",
         1500: "1500px",
         8: "8px",
       },
@@ -91,21 +92,10 @@ module.exports = {
       backgroundSize: {
         "stretch-x": "100% 100%",
       },
-      animation: {
-        fadeIn: "scaleIn 2s ease-in forwards",
-      },
-      keyframes: {
-        scaleIn: {
-          "0%": { scale: 0 },
-          "100%": { scale: 1 },
-        },
-      },
     },
   },
   variants: {
-    extend: {
-      animation: ["motion-safe"],
-    },
+    extend: {},
   },
   plugins: [],
 };

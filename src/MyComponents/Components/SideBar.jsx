@@ -30,7 +30,7 @@ const SideBar = () => {
         </Link>
         <Link to="/training">
           <h1 className="rounded-lg py-5 pl-8 hover:bg-red-1 hover:text-white hover:rounded-md hover:shadow-button-inner">
-            <span className="mx-0.5 sm:mx-4 md:mx-1 lg:mx-0.5 xl:mx-4">➔</span> Security Guard License
+            <span className="mx-0.5 sm:mx-4 md:mx-1 lg:mx-0.5 xl:mx-4">➔</span> Security License
           </h1>
         </Link>
         <Link to="/jobs">
@@ -41,7 +41,7 @@ const SideBar = () => {
       </div>
       <div className="w-full flex flex-col items-center text-center mx-auto px-10 py-10 bg-gray-200 mt-24 mb-8">
         <img src={callus_logo} alt="" className="w-56 -mt-32 mb-2 " />
-        <h1 className="text-2xl leading-relaxed font-bold text-gray-2 p-2 mb-4">
+        <h1 className="text-xl leading-relaxed font-bold text-gray-2 p-2 mb-4">
           Professional Help to get back your peace of mind
         </h1>
         <a

@@ -93,7 +93,7 @@ const ClientTestimonial = ({ testimonial }) => {
   };
 
   return (
-    <div className="px-4 sm:px-8 md:px-16 lg:px-28 xl:px-48 py-24 bg-gray-1 font-for-para">
+    <div className="px-4 sm:px-8 md:px-16 lg:px-28 xl:px-48 py-24 bg-client font-for-para">
       <div className="flex flex-col lg:flex-row lg:justify-center items-center mb-24">
         <span className="h-1 w-10 bg-red-1 mb-10 md:m-0 md:mr-4"></span>
         <h1 className="text-4xl font-bold text-gray-3 ">Client Testimonials</h1>

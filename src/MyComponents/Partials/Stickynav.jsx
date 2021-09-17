@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Logo from "./../../argus website/SVG/logosvg.svg";
+import Logo from "./../../argus website/SVG/Logowith shadow.svg";
 import Scroll from "./../../argus website/SVG/Scroll up.svg";
 import gsap from "gsap";
 
