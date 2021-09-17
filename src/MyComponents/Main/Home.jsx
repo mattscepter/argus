@@ -89,7 +89,7 @@ export default function Home() {
             </div>
             <div className="md:pl-3 w-full md:w-1/2 flex flex-col items-start">
               <div className="flex flex-row items-stretch w-full mt-8 md:mt-0 mb-8">
-                <span className="h-auto min-w-8 w-8-px max-w-8 bg-red-1 mr-7 motion-safe:animate-scaleIn"></span>
+                <span className="h-auto min-w-8 w-8-px max-w-8 bg-red-1 mr-7  motion-safe:animate-scaleIn"></span>
                 <h1 className="leading-tight text-3xl lg:text-4xl font-bold text-gray-3">
                   Introducing Argus Security Services
                 </h1>

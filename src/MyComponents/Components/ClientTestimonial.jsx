@@ -102,7 +102,7 @@ const ClientTestimonial = ({ testimonial }) => {
         <Slider {...settings} className="w-full">
           {testimonial.map((data) => {
             return (
-              <div key={data._id} className="pt-10 px-2">
+              <div key={data._id} className="pt-10 px-2 testimonialSlider">
                 <div className="h-full bg-white shadow-lg flex flex-col">
                   <div className="bg-gray-1 px-6 py-10 ml-auto">
                     <img

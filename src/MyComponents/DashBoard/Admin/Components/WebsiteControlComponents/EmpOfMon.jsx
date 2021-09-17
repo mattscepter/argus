@@ -331,7 +331,7 @@ const EmpOfMon = () => {
               dispatch(setupdateeom({ state: false, data: null }));
             }}
           >
-            Add new testimonial
+            Add new employee of the month
           </button>
         ) : null}
       </form>

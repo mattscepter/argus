@@ -202,7 +202,7 @@ export default function TeamControl() {
               dispatch(setupdateteam({ state: false, data: null }));
             }}
           >
-            Add new testimonial
+            Add new team member
           </button>
         ) : null}
       </form>

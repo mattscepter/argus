@@ -39,16 +39,14 @@ function SamplePrevArrow(props) {
 const ClientCorousal = () => {
   const clients = useSelector((state) => state.client.clients);
   const settings = {
-    centerMode: true,
-    focusOnSelect: true,
-    speed: 600,
-    centerPadding: "530px",
+    speed: 2000,
     autoplay: true,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 0,
+    cssEase: "linear",
     pauseOnHover: true,
     dots: true,
-    nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />,
+    slidesToShow: 5,
+    arrows: false,
     responsive: [
       {
         breakpoint: 1800,
@@ -88,6 +86,7 @@ const ClientCorousal = () => {
         breakpoint: 950,
         settings: {
           centerPadding: "220px",
+          slidesToShow: 4,
         },
       },
 
@@ -95,7 +94,7 @@ const ClientCorousal = () => {
         breakpoint: 850,
         settings: {
           centerPadding: "180px",
-          arrows: false,
+          slidesToShow: 4,
         },
       },
 
@@ -103,7 +102,7 @@ const ClientCorousal = () => {
         breakpoint: 750,
         settings: {
           centerPadding: "160px",
-          arrows: false,
+          slidesToShow: 4,
         },
       },
 
@@ -111,7 +110,7 @@ const ClientCorousal = () => {
         breakpoint: 650,
         settings: {
           centerPadding: "140px",
-          arrows: false,
+          slidesToShow: 3,
         },
       },
 
@@ -119,28 +118,28 @@ const ClientCorousal = () => {
         breakpoint: 600,
         settings: {
           centerPadding: "120px",
-          arrows: false,
+          slidesToShow: 3,
         },
       },
       {
         breakpoint: 550,
         settings: {
           centerPadding: "90px",
-          arrows: false,
+          slidesToShow: 3,
         },
       },
       {
         breakpoint: 480,
         settings: {
           centerPadding: "70px",
-          arrows: false,
+          slidesToShow: 3,
         },
       },
     ],
   };
 
   return (
-    <div className="px-4 sm:px-8 md:px-16 lg:px-28 xl:px-48 py-12 mx-auto bg-gray-1">
+    <div className="px-0 sm:px-8 xl:px-32 py-12 mx-auto bg-gray-1">
       <div className="flex flex-col lg:flex-row items-center lg:justify-center mb-4">
         <span className="h-1 w-10 bg-red-1 m-6 md:m-0 md:mr-4"></span>
         <h1 className="leading-tight text-4xl font-bold text-gray-3 mb-4">
@@ -154,7 +153,7 @@ const ClientCorousal = () => {
               <img
                 src={`${API}/client/get-photo/${client._id}`}
                 alt=""
-                className="w-64 h-56 mx-auto object-contain pt-10"
+                className="w-44 h-40 mx-auto object-contain pt-10"
               />
             </div>
           );

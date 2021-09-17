@@ -92,9 +92,7 @@ const SignUp = () => {
               <hr className="w-1/3 border-1 border-black" />
             </div> */}
             <input
-              className={`w-full mt-3 py-3 px-4 ${
-                errors.email ? "bg-red-100" : ""
-              } border border-gray-400 focus:outline-none rounded-md focus:ring-1 ring-red-1`}
+              className={`w-full mt-3 py-3 px-4 border border-gray-400 focus:outline-none rounded-md focus:ring-1 ring-red-1`}
               type="email"
               placeholder="Email"
               {...getFieldProps("email")}
@@ -104,9 +102,7 @@ const SignUp = () => {
             ) : null}
 
             <input
-              className={`w-full mt-3 py-3 px-4 ${
-                errors.password ? "bg-red-100" : ""
-              } border border-gray-400 focus:outline-none rounded-md focus:ring-1 ring-red-1`}
+              className={`w-full mt-3 py-3 px-4 border border-gray-400 focus:outline-none rounded-md focus:ring-1 ring-red-1`}
               type="password"
               placeholder="Password"
               {...getFieldProps("password")}
