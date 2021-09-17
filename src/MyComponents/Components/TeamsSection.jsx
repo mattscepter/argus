@@ -90,12 +90,13 @@ const Teams = () => {
 
   return (
     <div className="py-24 font-for-para overflow-hidden">
-      <div className="flex flex-col lg:flex-row lg:justify-center items-center mb-20">
-        <span className="h-1 w-10 bg-red-1 mb-10 md:m-0 md:mr-4"></span>
-        <h1 className="text-4xl font-bold text-gray-3 ">Our Team</h1>
-      </div>
       <div className="px-0 lg:px-14  mx-auto max-w-1366 flex flex-col justify-center items-center">
-        <div className="w-screen h-96 bg-empofmon bg-cover bg-center bg-no-repeat flex justify-center items-end">
+        <div className="w-screen h-auto bg-empofmon bg-cover bg-center bg-no-repeat flex flex-col items-center justify-center">
+          <div className="flex flex-col lg:flex-row lg:justify-center items-center my-20 mr-4">
+            <span className="h-1 w-10 bg-red-1 mb-10 md:m-0 md:mr-4"></span>
+            <h1 className="text-4xl font-bold text-gray-3 ">Our Team</h1>
+          </div>
+
           <div className="w-full h-full xl:w-3/5 ">
             <Slider
               asNavFor={nav.nav1}
