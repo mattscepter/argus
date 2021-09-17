@@ -39,29 +39,70 @@ function SamplePrevArrow(props) {
 const ClientTestimonial = ({ testimonial }) => {
   const settings = {
     centerMode: true,
-    infinite: true,
-    slidesToShow: 1,
+    focusOnSelect: true,
     speed: 600,
-    centerPadding: "450px",
     autoplay: true,
+    centerPadding: "450px",
     autoplaySpeed: 2000,
     pauseOnHover: true,
-    dots: true,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
+    dots: true,
+    responsive: [
+      {
+        breakpoint: 1700,
+        settings: {
+          centerPadding: "350px",
+        },
+      },
+      {
+        breakpoint: 1500,
+        settings: {
+          centerPadding: "250px",
+        },
+      },
+      {
+        breakpoint: 1200,
+        settings: {
+          centerPadding: "150px",
+        },
+      },
+      {
+        breakpoint: 850,
+        settings: {
+          centerPadding: "100px",
+          arrows: false,
+        },
+      },
+
+      {
+        breakpoint: 700,
+        settings: {
+          centerPadding: "50px",
+          arrows: false,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          centerPadding: "10px",
+          arrows: false,
+        },
+      },
+    ],
   };
 
   return (
-    <div className="px-4 sm:px-8 md:px-16 lg:px-28 xl:px-48 py-24 bg-gray-1 font-for-para">
+    <div className="px-4 sm:px-8 md:px-16 lg:px-28 xl:px-48 py-24 bg-client font-for-para">
       <div className="flex flex-col lg:flex-row lg:justify-center items-center mb-24">
         <span className="h-1 w-10 bg-red-1 mb-10 md:m-0 md:mr-4"></span>
         <h1 className="text-4xl font-bold text-gray-3 ">Client Testimonials</h1>
       </div>
-      <div className="flex flex-wrap mb-16">
+      <div className="flex flex-wrap mb-16 w-full">
         <Slider {...settings} className="w-full">
           {testimonial.map((data) => {
             return (
-              <div className="py-8 px-2 ">
+              <div key={data._id} className="pt-10 px-2">
                 <div className="h-full bg-white shadow-lg flex flex-col">
                   <div className="bg-gray-1 px-6 py-10 ml-auto">
                     <img
@@ -70,7 +111,7 @@ const ClientTestimonial = ({ testimonial }) => {
                       className="w-12 text-red-1 ml-auto -mt-16"
                     />
                   </div>
-                  <div className="px-4 sm:px-16 pb-10 pt-2 w-full h-56">
+                  <div className="px-8 pb-3 pt-1 w-full h-56">
                     <p className="leading-loose mb-6">{data?.description}</p>
                     <div className="inline-flex items-center">
                       <img

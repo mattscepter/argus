@@ -1,10 +1,12 @@
 import { useFormik } from "formik";
 import React, { useEffect, useState } from "react";
-import { isAuthenticated } from "../../../../../helpers/auth";
 import CompanyContact from "../../../../Components/CompanyContact";
 import Alert from "../../../../Components/Alert";
 import { useDispatch } from "react-redux";
-import { updateContact } from "../../../../../context/actions/contactAction";
+import {
+  contactAlert,
+  updateContact,
+} from "../../../../../context/actions/adminActions/contactAction";
 import { useSelector } from "react-redux";
 
 const validate = (values) => {
@@ -38,17 +40,26 @@ const FooterControl = () => {
   });
 
   const dispatch = useDispatch();
-  const contact = useSelector((state) => state.contact.error);
+  const contactalert = useSelector((state) => state.contact.contactalert);
 
   useEffect(() => {
-    if (contact !== null) {
-      setShowAlert({
-        show: true,
-        message: "Error Updating Contact",
-        success: false,
-      });
+    if (contactalert.success !== null) {
+      if (contactalert.success) {
+        setShowAlert({
+          show: true,
+          message: contactalert.message,
+          success: true,
+        });
+      } else {
+        setShowAlert({
+          show: true,
+          message: contactalert.message,
+          success: false,
+        });
+      }
+      dispatch(contactAlert({ success: null, message: "" }));
     }
-  }, [contact]);
+  }, [dispatch, contactalert]);
 
   const { getFieldProps, handleSubmit, errors } = useFormik({
     initialValues: {
@@ -95,7 +106,7 @@ const FooterControl = () => {
               errors.phoneNumber
                 ? "border-b-2 border-red-600"
                 : "border-b border-black"
-            } focus:outline-none mt-4`}
+            } focus:outline-none mt-4 p-1`}
             type="text"
             placeholder="Phone Number"
             {...getFieldProps("phoneNumber")}
@@ -110,7 +121,7 @@ const FooterControl = () => {
               errors.email
                 ? "border-b-2 border-red-600"
                 : "border-b border-black"
-            } focus:outline-none mt-4`}
+            } focus:outline-none mt-4 p-1`}
             type="text"
             placeholder="Email"
             {...getFieldProps("email")}
@@ -123,7 +134,7 @@ const FooterControl = () => {
               errors.address
                 ? "border-b-2 border-red-600"
                 : "border-b border-black"
-            } focus:outline-none mt-4`}
+            } focus:outline-none mt-4 p-1`}
             type="text"
             placeholder="Address"
             {...getFieldProps("address")}
@@ -132,7 +143,7 @@ const FooterControl = () => {
             <div className="w-full text-xs text-red-400">{errors.address}</div>
           ) : null}
           <button
-            className="w-2/3 mx-auto p-4 border text-white bg-red-700 hover:bg-white hover:text-red-700 hover:border-red-700"
+            className="w-2/3 mx-auto mt-6 p-4 border text-white bg-red-700 hover:bg-white hover:text-red-700 hover:border-red-700"
             type="submit"
           >
             Update

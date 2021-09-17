@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Alert from "../../../../Components/Alert";
 import Compressor from "compressorjs";
 import { useFormik } from "formik";
@@ -6,8 +6,11 @@ import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import {
   addTestimonial,
-  testimonialerror,
-} from "../../../../../context/actions/testimonialAction";
+  setupdatetestimonial,
+  testimonailAlert,
+  updateTestimonial,
+} from "../../../../../context/actions/adminActions/testimonialAction";
+import Loader from "react-loader-spinner";
 
 const validate = (values) => {
   const errors = {};
@@ -31,7 +34,12 @@ export default function Testimonials() {
   });
   const [testimonialImg, setTestimonialImg] = useState();
   const dispatch = useDispatch();
-  const error = useSelector((state) => state.testimonial.error);
+  const update = useSelector((state) => state.testimonial.update);
+  const testimonialalert = useSelector(
+    (state) => state.testimonial.testimonialalert
+  );
+  const loading = useSelector((state) => state.testimonial.addloading);
+  const ref = useRef();
 
   const handleCompressedUpload = (e) => {
     const image = e.target.files[0];
@@ -45,42 +53,60 @@ export default function Testimonials() {
   };
 
   useEffect(() => {
-    if (error !== null) {
-      if (error === true) {
+    if (testimonialalert.success !== null) {
+      if (testimonialalert.success) {
         setShowAlert({
           show: true,
-          message: "Testimonial added successfully",
+          message: testimonialalert.message,
           success: true,
         });
-      } else if (error === false) {
+      } else {
         setShowAlert({
           show: true,
-          message: "Error adding testimonial",
+          message: testimonialalert.message,
           success: false,
         });
       }
+      dispatch(testimonailAlert({ success: null, message: "" }));
     }
-    dispatch(testimonialerror(null));
-  }, [error, dispatch]);
+  }, [dispatch, testimonialalert]);
 
-  const { getFieldProps, handleSubmit, errors } = useFormik({
-    initialValues: {
-      client: "",
-      description: "",
-      company: "",
-    },
-    validate,
-    onSubmit: async (values, { resetForm }) => {
-      resetForm();
-      const formdata = new FormData();
-      formdata.append("name", values.client);
-      formdata.append("description", values.description);
-      formdata.append("role", values.company);
-      formdata.append("photo", testimonialImg);
+  const { getFieldProps, handleSubmit, errors, setValues, resetForm } =
+    useFormik({
+      initialValues: {
+        client: "",
+        description: "",
+        company: "",
+      },
+      validate,
+      onSubmit: async (values, { resetForm }) => {
+        ref.current.value = "";
+        resetForm();
+        const formdata = new FormData();
+        formdata.append("name", values.client);
+        formdata.append("description", values.description);
+        formdata.append("role", values.company);
+        formdata.append("photo", testimonialImg);
+        formdata.append("isApproved", false);
+        formdata.append("priority", 0);
+        setTestimonialImg(null);
+        if (update.state) {
+          dispatch(updateTestimonial(formdata, update.data._id));
+        } else {
+          dispatch(addTestimonial(formdata));
+        }
+      },
+    });
 
-      dispatch(addTestimonial(formdata));
-    },
-  });
+  useEffect(() => {
+    if (update.state) {
+      setValues({
+        client: update.data.name,
+        description: update.data.description,
+        company: update.data.role,
+      });
+    }
+  }, [setValues, update]);
 
   return (
     <div className="mx-8 my-8 p-4 bg-white shadow-lg rounded-xl">
@@ -110,7 +136,7 @@ export default function Testimonials() {
             errors.client
               ? "border-b-2 border-red-600"
               : "border-b border-black"
-          } focus:outline-none mt-4`}
+          } focus:outline-none mt-4 p-1`}
           type="text"
           placeholder="Name of Client"
           {...getFieldProps("client")}
@@ -123,7 +149,7 @@ export default function Testimonials() {
             errors.company
               ? "border-b-2 border-red-600"
               : "border-b border-black"
-          } focus:outline-none mt-4`}
+          } focus:outline-none mt-4 p-1`}
           type="text"
           placeholder="Name of Company client is from"
           {...getFieldProps("company")}
@@ -136,7 +162,7 @@ export default function Testimonials() {
             errors.description
               ? "border-b-2 border-red-600"
               : "border-b border-black"
-          } focus:outline-none mt-4`}
+          } focus:outline-none mt-4 p-1`}
           type="text"
           rows="3"
           placeholder="Write Testimonial by the client."
@@ -155,14 +181,39 @@ export default function Testimonials() {
           className="p-4 mb-4  border border-black"
           type="file"
           accept="image/png, image/jpeg"
+          ref={ref}
           onChange={(e) => handleCompressedUpload(e)}
         />
         <button
           type="submit"
           className="w-2/3 mx-auto p-4 border text-white bg-red-700 hover:bg-white hover:text-red-700 hover:border-red-700"
         >
-          Add
+          {loading ? (
+            <div className="w-full flex items-center justify-center">
+              <Loader
+                type="TailSpin"
+                color="lightgray"
+                height={40}
+                width={40}
+              />
+            </div>
+          ) : (
+            <> {update.state ? "Update" : "Add"}</>
+          )}
         </button>
+        {update.state ? (
+          <button
+            className="w-1/4 mx-auto px-4 py-2 mt-4 border text-white bg-red-700 hover:bg-white hover:text-red-700 hover:border-red-700"
+            onClick={() => {
+              ref.current.value = "";
+              setTestimonialImg(null);
+              resetForm();
+              dispatch(setupdatetestimonial({ state: false, data: null }));
+            }}
+          >
+            Add new testimonial
+          </button>
+        ) : null}
       </form>
     </div>
   );

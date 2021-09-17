@@ -4,7 +4,7 @@ import accountable from "./../../argus website/SVG/2. Accountable.svg";
 import { Link } from "react-router-dom";
 import section4_img1 from "./../../argus website/PNG/Video1.png";
 import section4_img2 from "./../../argus website/PNG/3.Charlie.png";
-import quotes from "../../argus website/SVG/Appostrophies.svg";
+import quotes from "../../argus website/SVG/Appostrophies square.svg";
 import signature from "./../../argus website/SVG/01.svg";
 import section6 from "./../../argus website/PNG/sdm.png";
 import section4img from "./../../argus website/PNG/raw-2_edited.png";
@@ -12,13 +12,16 @@ import section5 from "./../../argus website/PNG/0000000.png";
 import image1 from "./../../argus website/PNG/raw-2_edited.png";
 import camera from "./../../argus website/SVG/3. camera.svg";
 import Header from "./../Partials/Header";
-import Header2 from "./../Partials/Header2";
+import HeaderHome from "../Partials/HeaderHome";
 import Stickynav from "./../Partials/Stickynav";
 import MobileHeader from "../Partials/MobileHeader";
 import EmployeeMonth from "../Components/EmployeeMonth";
 import ClientTestimonial from "../Components/ClientTestimonial";
 import ClientCorousal from "../Components/ClientCorousal";
 import { useSelector } from "react-redux";
+import SideLine from "../Components/SideLine";
+
+
 
 export default function Home() {
   const contact = useSelector((state) => state.contact);
@@ -27,7 +30,7 @@ export default function Home() {
   return (
     <div className="font-for-para">
       <Header />
-      <Header2 />
+      <HeaderHome />
       <Stickynav />
       <MobileHeader />
 
@@ -45,7 +48,7 @@ export default function Home() {
               {contact.phoneNumber}
             </span>
           </h1>
-          <button className="flex-shrink-0 font-bold text-white bg-red-1 py-5 px-4 md:px-12 hover:bg-white border-3 border-red-1 hover:text-red-1 rounded-lg text-sm mt-10 sm:mt-0 shadow-button-shadow">
+          <button className="flex-shrink-0 font-bold text-white bg-red-1 py-5 px-4 md:px-12 hover:bg-white border-3 border-double border-red-1 hover:text-red-1 rounded-lg text-sm mt-10 sm:mt-0 shadow-header-outer-shadow">
             DISCOVER MORE
           </button>
         </div>
@@ -79,7 +82,7 @@ export default function Home() {
               <img
                 src={section4_img1}
                 alt="Argus Security Services"
-                className="w-full pb-8 border-b-8 border-red-1"
+                className="w-full xl:w-11/12 pb-8 border-b-8 border-red-1 lg:mr-auto"
               />
               <img
                 src={section4_img2}
@@ -89,7 +92,7 @@ export default function Home() {
             </div>
             <div className="md:pl-3 w-full md:w-1/2 flex flex-col items-start">
               <div className="flex flex-row items-stretch w-full mt-8 md:mt-0 mb-8">
-                <span className="h-auto min-w-8 w-8-px max-w-8 bg-red-1 mr-7 motion-safe:animate-scaleIn"></span>
+                <SideLine />
                 <h1 className="leading-tight text-3xl lg:text-4xl font-bold text-gray-3">
                   Introducing Argus Security Services
                 </h1>
@@ -135,7 +138,7 @@ export default function Home() {
                     <img
                       src={quotes}
                       alt=""
-                      className="w-8 lg:w-12 inline-block text-red-1 ml-4 -mb-4"
+                      className="w-8 inline-block text-red-1 ml-4 -mb-4 transition ease-out duration-500 transform origin-top scale-100"
                     />
                     <p className="leading-relaxed text-lg lg:text-xl font-medium text-gray-2 bg-gray-200 px-12 py-8 shadow-lg mb-8">
                       Success is not result of the amount of time we put in,
@@ -164,13 +167,13 @@ export default function Home() {
       </div>
 
       {/* Section 5 Services */}
-      <div className="bg-repeat-x bg-cover md:bg-contain bg-siren">
+      <div className="bg-repeat-x bg-siren bg-top bg-contain">
         <div className="px-4 sm:px-8 lg:px-12 2xl:px-0 mx-auto max-w-1366 pt-24 pb-12 font-for-para">
           <div className="flex flex-wrap pb-8">
             <div className="flex flex-wrap w-full items-baseline">
               <div className="w-full flex flex-col md:flex-row items-center pb-5">
                 <div className="flex flex-row items-stretch pr-24">
-                  <span className="h-auto w-2 bg-red-1 mr-7"></span>
+                  <SideLine />
                   <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
                     Firsthand information to our operations
                   </h1>
@@ -188,22 +191,20 @@ export default function Home() {
             <div className="p-4 md:w-1/3">
               <div className="h-full overflow-hidden ">
                 <img
-                  className="lg:h-72 md:h-36 w-full object-cover object-center"
+                  className="lg:h-72 md:h-36 w-full object-cover object-center rounded-2xl mb-10"
                   src={image1}
                   alt="blog"
                 />
-                <div className="bg-white hover:bg-gray-200 duration-300 mx-2.5 z-auto">
-                  <div className=" border-r-4 border-l-4">
-                    <h1 className="title-font text-lg font-medium text-white p-3 mb-3 bg-center bg-no-repeat bg-shape1 z-auto">
+                <div className="bg-white border-4 rounded-2xl hover:bg-gray-200 duration-300 mx-2.5 z-auto">
+                    <h1 className="title-font text-lg font-medium text-white p-3 mb-3 bg-center bg-no-repeat bg-shape1 bg-contain md:bg-cover lg:bg-contain z-auto -mt-7">
                       GATED COMMUNITY
                     </h1>
-                    <p className="leading-loose text-gray-2 px-6 py-2">
+                    <p className="leading-loose text-gray-2 px-6 py-6">
                       NFS marked vehicles, communication between residents &
                       security staff and efficient use of technology
                     </p>
-                  </div>
-                  <Link to="/contact">
-                    <button className="w-full p-4 text-black rounded bg-gray-200 hover:bg-red-1 hover:text-white">
+                    <Link to="/services">
+                    <button className="w-full p-4 text-black rounded-xl bg-gray-200 hover:bg-red-1 hover:text-white">
                       Read More
                     </button>
                   </Link>
@@ -214,22 +215,20 @@ export default function Home() {
             <div className="p-4 md:w-1/3">
               <div className="h-full overflow-hidden ">
                 <img
-                  className="lg:h-72 md:h-36 w-full object-cover object-center"
+                  className="lg:h-72 md:h-36 w-full object-cover object-center rounded-2xl mb-10"
                   src={image1}
                   alt="blog"
                 />
-                <div className="bg-white hover:bg-gray-200 duration-300 mx-2.5 z-auto">
-                  <div className=" border-r-4 border-l-4">
-                    <h1 className="title-font text-lg font-medium text-white p-3 mb-3 bg-center bg-no-repeat bg-shape1 z-auto">
+                <div className="bg-white border-4 rounded-2xl hover:bg-gray-200 duration-300 mx-2.5 z-auto">
+                    <h1 className="title-font text-lg font-medium text-white p-3 mb-3 bg-center bg-no-repeat bg-shape1 bg-contain md:bg-cover lg:bg-contain z-auto -mt-7">
                       GATED COMMUNITY
                     </h1>
-                    <p className="leading-loose text-gray-2 px-6 py-2">
+                    <p className="leading-loose text-gray-2 px-6 py-6">
                       NFS marked vehicles, communication between residents &
                       security staff and efficient use of technology
                     </p>
-                  </div>
-                  <Link to="/contact">
-                    <button className="w-full p-4 text-black rounded bg-gray-200 hover:bg-red-1 hover:text-white">
+                    <Link to="/services">
+                    <button className="w-full p-4 text-black rounded-xl bg-gray-200 hover:bg-red-1 hover:text-white">
                       Read More
                     </button>
                   </Link>
@@ -240,22 +239,20 @@ export default function Home() {
             <div className="p-4 md:w-1/3">
               <div className="h-full overflow-hidden ">
                 <img
-                  className="lg:h-72 md:h-36 w-full object-cover object-center"
+                  className="lg:h-72 md:h-36 w-full object-cover object-center rounded-2xl mb-10"
                   src={image1}
                   alt="blog"
                 />
-                <div className="bg-white hover:bg-gray-200 duration-300 mx-2.5 z-auto">
-                  <div className=" border-r-4 border-l-4">
-                    <h1 className="title-font text-lg font-medium text-white p-3 mb-3 bg-center bg-no-repeat bg-shape1 z-auto">
+                <div className="bg-white border-4 rounded-2xl hover:bg-gray-200 duration-300 mx-2.5 z-auto">
+                    <h1 className="title-font text-lg font-medium text-white p-3 mb-3 bg-center bg-no-repeat bg-shape1 bg-contain md:bg-cover lg:bg-contain z-auto -mt-7">
                       GATED COMMUNITY
                     </h1>
-                    <p className="leading-loose text-gray-2 px-6 py-2">
+                    <p className="leading-loose text-gray-2 px-6 py-6">
                       NFS marked vehicles, communication between residents &
                       security staff and efficient use of technology
                     </p>
-                  </div>
-                  <Link to="/contact" className="rounded">
-                    <button className="w-full p-4 text-black rounded bg-gray-200 hover:bg-red-1 hover:text-white">
+                    <Link to="/services">
+                    <button className="w-full p-4 text-black rounded-xl bg-gray-200 hover:bg-red-1 hover:text-white">
                       Read More
                     </button>
                   </Link>
@@ -264,6 +261,7 @@ export default function Home() {
             </div>
 
           </div>
+
           <div className="w-full sm:w-9/12 mx-auto flex items-center py-3">
             <img src={section5} className="w-24 h-24" alt="" />
             <div className="-mt-20 -ml-6">
@@ -310,34 +308,33 @@ export default function Home() {
 
       {/* Section 6 Know you partners */}
       <div className="bg-cover bg-black-1">
-        <div className="text-white body-font px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 2xl:px-0 m-0 max-w-1500 pt-20 font-for-para">
-          <div className="px-5 pt-12">
-            <div className="flex flex-col-reverse md:flex-row m-12 items-stretch">
-              <div className="bg-handcuffs bg-contain bg-center bg-opacity-10 bg-no-repeat flex items-end	">
-                <img
-                  src={section6}
-                  alt="Argus Security"
-                  className=""
-                />
+        <div className="text-white body-font px-4 sm:px-8 lg:px-12 2xl:px-0 mx-auto max-w-1500 font-for-para pt-16 bg-triangles bg-no-repeat bg-left-top">
+          <div className="px-5">
+            <div className="flex flex-col-reverse md:flex-row items-stretch">
+              <div className="bg-handcuffs bg-contain bg-center bg-opacity-10 bg-no-repeat flex items-end">
+                <img src={section6} alt="Argus Security" className="block md:hidden lg:block" />
               </div>
-              <div className="md:w-1/2 p-4 flex flex-col items-start">
-                <h1 className="text-4xl font-bold w-full lg:w-11/12 mb-12 px-4 lg:px-0 leading-tight">
-                  Know your
-                  <br />
-                  Partners-in-Protection
-                </h1>
-                <div className="flex flex-row items-center justify-between">
-                  <button className="px-8 py-4 text-sm font-bold bg-red-1 border border-black-1 bg-opacity-100 hover:bg-opacity-40 rounded-lg">
+              <div className="w-full lg:w-1/2 p-4 flex flex-col items-start">
+                <div className="flex flex-row items-stretch w-full mt-8 md:mt-0 mb-8">
+                  <SideLine />
+                  <h1 className="leading-tight text-3xl lg:text-4xl font-bold text-white">
+                    Know your
+                    <br />
+                    Partners-in-Protection
+                  </h1>
+                </div>
+                <div className="flex flex-col md:flex-row items-start sm:items-center justify-between">
+                  <button className="px-6 py-4 text-sm font-bold bg-red-1 border border-black-1 bg-opacity-100 hover:bg-opacity-40 rounded-lg">
                     OUR TEAM
                   </button>
-                  <button className="px-8 py-4 text-sm font-bold bg-red-1 border mx-4 border-black-1 bg-opacity-100 hover:bg-opacity-40 rounded-lg">
+                  <button className="px-6 py-4 text-sm font-bold bg-red-1 border  my-4 sm:m-4 border-black-1 bg-opacity-100 hover:bg-opacity-40 rounded-lg">
                     ARGUS HIERARCHY
                   </button>
-                  <button className="px-8 py-4 text-sm font-bold bg-red-1 border border-black-1 bg-opacity-100 hover:bg-opacity-40 rounded-lg">
+                  <button className="px-6 py-4 text-sm font-bold bg-red-1 border border-black-1 bg-opacity-100 hover:bg-opacity-40 rounded-lg">
                     CONTACT US
                   </button>
                 </div>
-                <p className="leading-loose text-l py-6 pr-24 mb-2">
+                <p className="leading-loose text-lg py-6 xl:pr-24 mb-2">
                   At Argus Security Services we maintain a prominent level of
                   training for our guards in response to our highly sensitive
                   sites. We offer 24/7 fast and reliable security services.
@@ -347,12 +344,12 @@ export default function Home() {
                   <div>
                     <img
                       src={section4img}
-                      className="w-44 lg:w-28 xl:w-40 ml-4 sm:ml-0"
+                      className="w-44 lg:w-28 xl:w-40 pr-4"
                       alt=""
                     />
                   </div>
                   <div>
-                    <ul className="px-4 text-sm font-bold">
+                    <ul className=" py-4 text-sm font-bold">
                       <li className="py-1">
                         <span className="text-red-1 font-bold mr-2">✓</span>{" "}
                         Member of Law society of Ontario
@@ -380,7 +377,7 @@ export default function Home() {
                     </ul>
                   </div>
                 </div>
-                <img src={signature} alt="" className="w-96 md:-ml-72" />
+                <img src={signature} alt="" className="w-96 lg:-ml-72" />
               </div>
             </div>
           </div>

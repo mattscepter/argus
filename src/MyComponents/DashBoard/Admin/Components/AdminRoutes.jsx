@@ -2,13 +2,21 @@
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Route, Redirect } from "react-router-dom";
-import { getEOMAdmin } from "../../../../context/actions/eomAction";
+import { getClientCarousel } from "../../../../context/actions/adminActions/clientsAction";
+import { getContact } from "../../../../context/actions/adminActions/contactAction";
+import { getTeam } from "../../../../context/actions/adminActions/teamAction";
+import { getTestimonial } from "../../../../context/actions/adminActions/testimonialAction";
+import { getEOMAdmin } from "../../../../context/actions/adminActions/eomAction";
 import { isAuthenticated } from "./../../../../helpers/auth";
 
 const AdminRoute = ({ component: Component, ...rest }) => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getEOMAdmin());
+    dispatch(getTestimonial());
+    dispatch(getContact());
+    dispatch(getClientCarousel());
+    dispatch(getTeam());
   }, [dispatch]);
   return (
     <Route

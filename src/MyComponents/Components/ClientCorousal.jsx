@@ -2,7 +2,8 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import sponsor1 from "./../../argus website/PNG/7. Sponsor 2.png";
+import { useSelector } from "react-redux";
+import { API } from "../../api";
 
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
@@ -36,18 +37,106 @@ function SamplePrevArrow(props) {
 }
 
 const ClientCorousal = () => {
+  const clients = useSelector((state) => state.client.clients);
   const settings = {
     centerMode: true,
-    infinite: true,
-    slidesToShow: 3,
+    focusOnSelect: true,
     speed: 600,
-    centerPadding: "60px",
+    centerPadding: "530px",
     autoplay: true,
     autoplaySpeed: 2000,
     pauseOnHover: true,
     dots: true,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
+    responsive: [
+      {
+        breakpoint: 1800,
+        settings: {
+          centerPadding: "500px",
+        },
+      },
+
+      {
+        breakpoint: 1700,
+        settings: {
+          centerPadding: "450px",
+        },
+      },
+
+      {
+        breakpoint: 1600,
+        settings: {
+          centerPadding: "350px",
+        },
+      },
+
+      {
+        breakpoint: 1500,
+        settings: {
+          centerPadding: "300px",
+        },
+      },
+      {
+        breakpoint: 1200,
+        settings: {
+          centerPadding: "260px",
+        },
+      },
+
+      {
+        breakpoint: 950,
+        settings: {
+          centerPadding: "220px",
+        },
+      },
+
+      {
+        breakpoint: 850,
+        settings: {
+          centerPadding: "180px",
+          arrows: false,
+        },
+      },
+
+      {
+        breakpoint: 750,
+        settings: {
+          centerPadding: "160px",
+          arrows: false,
+        },
+      },
+
+      {
+        breakpoint: 650,
+        settings: {
+          centerPadding: "140px",
+          arrows: false,
+        },
+      },
+
+      {
+        breakpoint: 600,
+        settings: {
+          centerPadding: "120px",
+          arrows: false,
+        },
+      },
+      {
+        breakpoint: 550,
+        settings: {
+          centerPadding: "90px",
+          arrows: false,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          centerPadding: "70px",
+          arrows: false,
+        },
+      },
+    ],
   };
 
   return (
@@ -58,22 +147,18 @@ const ClientCorousal = () => {
           Clients
         </h1>
       </div>
-      <Slider {...settings} className="w-full">
-        <div>
-          <img src={sponsor1} alt="" className="w-24 h-30 mx-auto" />
-        </div>
-        <div>
-          <img src={sponsor1} alt="" className="w-24 h-30 mx-auto" />
-        </div>
-        <div>
-          <img src={sponsor1} alt="" className="w-24 h-30 mx-auto" />
-        </div>
-        <div>
-          <img src={sponsor1} alt="" className="w-24 h-30 mx-auto" />
-        </div>
-        <div>
-          <img src={sponsor1} alt="" className="w-24 h-30 mx-auto" />
-        </div>
+      <Slider {...settings}>
+        {clients.map((client) => {
+          return (
+            <div key={client._id}>
+              <img
+                src={`${API}/client/get-photo/${client._id}`}
+                alt=""
+                className="w-64 h-56 mx-auto object-contain pt-10"
+              />
+            </div>
+          );
+        })}
       </Slider>
     </div>
   );

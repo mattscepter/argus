@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import image1 from "./../../argus website/PNG/raw-2_edited.png";
-import { Link } from "react-router-dom";
 import Header from "./../Partials/Header";
 import Header2 from "./../Partials/Header2";
 import Stickynav from "./../Partials/Stickynav";
 import MobileHeader from "../Partials/MobileHeader";
+import SideLine from "../Components/SideLine";
 
 const Services = () => {
   const [row, setRow] = useState(0);
@@ -26,91 +26,91 @@ const Services = () => {
         </div>
       </div>
 
-      <div class="px-2 sm:px-40 lg:px-40 xl:px-48 bg-no-repeat bg-contain bg-mapbg2">
-        <div class="container px-5 py-12 sm:py-16 mx-auto flex flex-wrap">
-          <div class="flex flex-wrap w-full items-center">
-            <div className="flex flex-col md:flex-row items-center w-1/2 mb-4">
-              <span className="h-1 w-10 bg-red-1 m-6 md:m-0 md:mr-4"></span>
-              <h1 className="leading-tight text-4xl font-bold text-gray-3 ">
-                First hand information to our operations
-              </h1>
+      <div class="px-4 sm:px-8 lg:px-12 2xl:px-0 mx-auto max-w-1366 bg-no-repeat bg-contain bg-mapbg2">
+          <div className="flex flex-wrap py-12">
+            <div className="flex flex-wrap w-full items-baseline">
+              <div className="w-full flex flex-col md:flex-row items-center pb-5">
+                <div className="flex flex-row items-stretch pr-24">
+                  <SideLine />
+                  <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
+                    Firsthand information to our operations
+                  </h1>
+                </div>
+                <p className="leading-relaxed font-medium text-lg text-gray-2 pb-10 md:pb-0 ">
+                  As a client you will gain first hand access to day-today
+                  operations and daily occurrence reposts.
+                </p>
+              </div>
             </div>
-            <p class="lg:pl-6 lg:w-1/2 mx-auto leading-loose text-lg font-medium text-gray-2">
-              As a client you will gain first hand access to day-today
-              operations and daily occurrence reposts.
-            </p>
           </div>
-        </div>
 
         <div class="flex flex-wrap text-center mb-8">
-          <div className="p-4 md:w-1/3">
-            <div className="h-full overflow-hidden ">
-              <img
-                className="lg:h-64 md:h-36 w-full object-cover object-center transform hover:scale-110 duration-300"
-                src={image1}
-                alt="blog"
-              />
-              <div className="bg-white border-6 hover:bg-gray-200 duration-500">
-                <h1 className="title-font text-lg font-medium text-white p-3 mb-3 bg-center bg-no-repeat bg-shape1">
-                  GATED COMMUNITY
-                </h1>
-                <p className="leading-loose text-gray-2 px-6 py-2">
-                  NFS marked vehicles, communication between residents &
-                  security staff and efficient use of technology
-                </p>
-                <button
-                  className="w-full p-4 text-black bg-gray-200 hover:bg-red-1 hover:text-white"
-                  onClick={() => setRow(1)}
-                >
-                  Read More
-                </button>
+          
+        <div className="p-4 md:w-1/3">
+              <div className="h-full overflow-hidden ">
+                <img
+                  className="lg:h-72 md:h-36 w-full object-cover object-center rounded-2xl mb-10"
+                  src={image1}
+                  alt="blog"
+                />
+                <div className="bg-white border-4 rounded-2xl hover:bg-gray-200 duration-300 mx-2.5 z-auto">
+                    <h1 className="title-font text-lg font-medium text-white p-3 mb-3 bg-center bg-no-repeat bg-shape1 bg-contain md:bg-cover lg:bg-contain z-auto -mt-7">
+                      GATED COMMUNITY
+                    </h1>
+                    <p className="leading-loose text-gray-2 px-6 py-6">
+                      NFS marked vehicles, communication between residents &
+                      security staff and efficient use of technology
+                    </p>
+                    <button className="w-full p-4 text-black rounded-xl bg-gray-200 hover:bg-red-1 hover:text-white" onClick={() => setRow(1) }>
+                      Read More
+                    </button>
+                </div>
               </div>
             </div>
-          </div>
 
-          <div className="p-4 md:w-1/3">
-            <div className="h-full overflow-hidden ">
-              <img
-                className="lg:h-64 md:h-36 w-full object-cover object-center transform hover:scale-110 duration-300"
-                src={image1}
-                alt="blog"
-              />
-              <div className="bg-white border-6 hover:bg-gray-200 duration-500">
-                <h1 className="title-font text-lg font-medium text-white p-3 mb-3 bg-center bg-no-repeat bg-shape1">
-                  GATED COMMUNITY
-                </h1>
-                <p className="leading-loose text-gray-2 px-6 py-2">
-                  NFS marked vehicles, communication between residents &
-                  security staff and efficient use of technology
-                </p>
-                <button className="w-full p-4 text-black bg-gray-200 hover:bg-red-1 hover:text-white" onClick={() => setRow(2) }>
-                    Read More
-                </button>
+            <div className="p-4 md:w-1/3">
+              <div className="h-full overflow-hidden ">
+                <img
+                  className="lg:h-72 md:h-36 w-full object-cover object-center rounded-2xl mb-10"
+                  src={image1}
+                  alt="blog"
+                />
+                <div className="bg-white border-4 rounded-2xl hover:bg-gray-200 duration-300 mx-2.5 z-auto">
+                    <h1 className="title-font text-lg font-medium text-white p-3 mb-3 bg-center bg-no-repeat bg-shape1 bg-contain md:bg-cover lg:bg-contain z-auto -mt-7">
+                      GATED COMMUNITY
+                    </h1>
+                    <p className="leading-loose text-gray-2 px-6 py-6">
+                      NFS marked vehicles, communication between residents &
+                      security staff and efficient use of technology
+                    </p>
+                    <button className="w-full p-4 text-black rounded-xl bg-gray-200 hover:bg-red-1 hover:text-white" onClick={() => setRow(2) }>
+                      Read More
+                    </button>
+                </div>
               </div>
             </div>
-          </div>
 
-          <div className="p-4 md:w-1/3">
-            <div className="h-full overflow-hidden ">
-              <img
-                className="lg:h-64 md:h-36 w-full object-cover object-center transform hover:scale-110 duration-300"
-                src={image1}
-                alt="blog"
-              />
-              <div className="bg-white border-6 hover:bg-gray-200 duration-500">
-                <h1 className="title-font text-lg font-medium text-white p-3 mb-3 bg-center bg-no-repeat bg-shape1">
-                  GATED COMMUNITY
-                </h1>
-                <p className="leading-loose text-gray-2 px-6 py-2">
-                  NFS marked vehicles, communication between residents &
-                  security staff and efficient use of technology
-                </p>
-                <button className="w-full p-4 text-black bg-gray-200 hover:bg-red-1 hover:text-white" onClick={() => setRow(3)}>
-                    Read More
-                </button>
+            <div className="p-4 md:w-1/3">
+              <div className="h-full overflow-hidden ">
+                <img
+                  className="lg:h-72 md:h-36 w-full object-cover object-center rounded-2xl mb-10"
+                  src={image1}
+                  alt="blog"
+                />
+                <div className="bg-white border-4 rounded-2xl hover:bg-gray-200 duration-300 mx-2.5 z-auto">
+                    <h1 className="title-font text-lg font-medium text-white p-3 mb-3 bg-center bg-no-repeat bg-shape1 bg-contain md:bg-cover lg:bg-contain z-auto -mt-7">
+                      GATED COMMUNITY
+                    </h1>
+                    <p className="leading-loose text-gray-2 px-6 py-6">
+                      NFS marked vehicles, communication between residents &
+                      security staff and efficient use of technology
+                    </p>
+                    <button className="w-full p-4 text-black rounded-xl bg-gray-200 hover:bg-red-1 hover:text-white" onClick={() => setRow(3) }>
+                      Read More
+                    </button>
+                </div>
               </div>
             </div>
-          </div>
 
           <div className={row === 1 ? "block" : "hidden"}>
             <div className="px-8 py-6 rounded-lg border border-gray-2 mb-12">
@@ -149,7 +149,7 @@ const Services = () => {
             <button className="px-4 py-1 float-right bg-gray-200 border shadow-lg rounded-lg hover:bg-white hover:shadow-none hover:border-gray-200" onClick={() => setRow(0)}>Close</button>
               <h2 className="leading-tight text-4xl title-font font-bold text-gray-900 mt-8 mb-8">
                 EVENT SECURITY SERVICES 2
-              </h2> 
+              </h2>
               <p className="leading-loose text-lg font-medium text-gray-2 mb-8">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
@@ -209,73 +209,70 @@ const Services = () => {
           </div>
 
           <div className="p-4 md:w-1/3">
-            <div className="h-full overflow-hidden ">
-              <img
-                className="lg:h-64 md:h-36 w-full object-cover object-center transform hover:scale-110 duration-300"
-                src={image1}
-                alt="blog"
-              />
-              <div className="bg-white border-6 hover:bg-gray-200 duration-500">
-                <h1 className="title-font text-lg font-medium text-white p-3 mb-3 bg-center bg-no-repeat bg-shape1">
-                  GATED COMMUNITY
-                </h1>
-                <p className="leading-loose text-gray-2 px-6 py-2">
-                  NFS marked vehicles, communication between residents &
-                  security staff and efficient use of technology
-                </p>
-                <button
-                  className="w-full p-4 text-black bg-gray-200 hover:bg-red-1 hover:text-white"
-                  onClick={() => setRow(4)}
-                >
-                  Read More
-                </button>
+              <div className="h-full overflow-hidden ">
+                <img
+                  className="lg:h-72 md:h-36 w-full object-cover object-center rounded-2xl mb-10"
+                  src={image1}
+                  alt="blog"
+                />
+                <div className="bg-white border-4 rounded-2xl hover:bg-gray-200 duration-300 mx-2.5 z-auto">
+                    <h1 className="title-font text-lg font-medium text-white p-3 mb-3 bg-center bg-no-repeat bg-shape1 bg-contain md:bg-cover lg:bg-contain z-auto -mt-7">
+                      GATED COMMUNITY
+                    </h1>
+                    <p className="leading-loose text-gray-2 px-6 py-6">
+                      NFS marked vehicles, communication between residents &
+                      security staff and efficient use of technology
+                    </p>
+                    <button className="w-full p-4 text-black rounded-xl bg-gray-200 hover:bg-red-1 hover:text-white" onClick={() => setRow(4) }>
+                      Read More
+                    </button>
+                </div>
               </div>
             </div>
-          </div>
 
-          <div className="p-4 md:w-1/3">
-            <div className="h-full overflow-hidden ">
-              <img
-                className="lg:h-64 md:h-36 w-full object-cover object-center transform hover:scale-110 duration-300"
-                src={image1}
-                alt="blog"
-              />
-              <div className="bg-white border-6 hover:bg-gray-200 duration-500">
-                <h1 className="title-font text-lg font-medium text-white p-3 mb-3 bg-center bg-no-repeat bg-shape1">
-                  GATED COMMUNITY
-                </h1>
-                <p className="leading-loose text-gray-2 px-6 py-2">
-                  NFS marked vehicles, communication between residents &
-                  security staff and efficient use of technology
-                </p>
-                <button className="w-full p-4 text-black bg-gray-200 hover:bg-red-1 hover:text-white" onClick={() => setRow(5)}>
-                    Read More
-                </button>
+            <div className="p-4 md:w-1/3">
+              <div className="h-full overflow-hidden ">
+                <img
+                  className="lg:h-72 md:h-36 w-full object-cover object-center rounded-2xl mb-10"
+                  src={image1}
+                  alt="blog"
+                />
+                <div className="bg-white border-4 rounded-2xl hover:bg-gray-200 duration-300 mx-2.5 z-auto">
+                    <h1 className="title-font text-lg font-medium text-white p-3 mb-3 bg-center bg-no-repeat bg-shape1 bg-contain md:bg-cover lg:bg-contain z-auto -mt-7">
+                      GATED COMMUNITY
+                    </h1>
+                    <p className="leading-loose text-gray-2 px-6 py-6">
+                      NFS marked vehicles, communication between residents &
+                      security staff and efficient use of technology
+                    </p>
+                    <button className="w-full p-4 text-black rounded-xl bg-gray-200 hover:bg-red-1 hover:text-white" onClick={() => setRow(5) }>
+                      Read More
+                    </button>
+                </div>
               </div>
             </div>
-          </div>
 
-          <div className="p-4 md:w-1/3">
-            <div className="h-full overflow-hidden ">
-              <img
-                className="lg:h-64 md:h-36 w-full object-cover object-center transform hover:scale-110 duration-300"
-                src={image1}
-                alt="blog"
-              />
-              <div className="bg-white border-6 hover:bg-gray-200 duration-500">
-                <h1 className="title-font text-lg font-medium text-white p-3 mb-3 bg-center bg-no-repeat bg-shape1">
-                  GATED COMMUNITY
-                </h1>
-                <p className="leading-loose text-gray-2 px-6 py-2">
-                  NFS marked vehicles, communication between residents &
-                  security staff and efficient use of technology
-                </p>
-                <button className="w-full p-4 text-black bg-gray-200 hover:bg-red-1 hover:text-white" onClick={() => setRow(6)}>
-                    Read More
-                </button>
+            <div className="p-4 md:w-1/3">
+              <div className="h-full overflow-hidden ">
+                <img
+                  className="lg:h-72 md:h-36 w-full object-cover object-center rounded-2xl mb-10"
+                  src={image1}
+                  alt="blog"
+                />
+                <div className="bg-white border-4 rounded-2xl hover:bg-gray-200 duration-300 mx-2.5 z-auto">
+                    <h1 className="title-font text-lg font-medium text-white p-3 mb-3 bg-center bg-no-repeat bg-shape1 bg-contain md:bg-cover lg:bg-contain z-auto -mt-7">
+                      GATED COMMUNITY
+                    </h1>
+                    <p className="leading-loose text-gray-2 px-6 py-6">
+                      NFS marked vehicles, communication between residents &
+                      security staff and efficient use of technology
+                    </p>
+                    <button className="w-full p-4 text-black rounded-xl bg-gray-200 hover:bg-red-1 hover:text-white" onClick={() => setRow(6) }>
+                      Read More
+                    </button>
+                </div>
               </div>
             </div>
-          </div>
 
           <div className={row == 4 ? "block" : "hidden"}>
             <div className="px-8 py-6 rounded-lg border border-gray-2 mb-12">
@@ -314,7 +311,7 @@ const Services = () => {
             <button className="px-4 py-1 float-right bg-gray-200 border shadow-lg rounded-lg hover:bg-white hover:shadow-none hover:border-gray-200" onClick={() => setRow(0)}>Close</button>
               <h2 className="leading-tight text-4xl title-font font-bold text-gray-900 mt-8 mb-8">
                 EVENT SECURITY SERVICES 5
-              </h2> 
+              </h2>
               <p className="leading-loose text-lg font-medium text-gray-2 mb-8">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
@@ -374,70 +371,68 @@ const Services = () => {
           </div>
 
           <div className="p-4 md:w-1/3">
-            <div className="h-full overflow-hidden ">
-              <img
-                className="lg:h-64 md:h-36 w-full object-cover object-center transform hover:scale-110 duration-300"
-                src={image1}
-                alt="blog"
-              />
-              <div className="bg-white border-6 hover:bg-gray-200 duration-500">
-                <h1 className="title-font text-lg font-medium text-white p-3 mb-3 bg-center bg-no-repeat bg-shape1">
-                  GATED COMMUNITY
-                </h1>
-                <p className="leading-loose text-gray-2 px-6 py-2">
-                  NFS marked vehicles, communication between residents &
-                  security staff and efficient use of technology
-                </p>
-                <button
-                  className="w-full p-4 text-black bg-gray-200 hover:bg-red-1 hover:text-white"
-                  onClick={() => setRow(7)}
-                >
-                  Read More
-                </button>
+              <div className="h-full overflow-hidden ">
+                <img
+                  className="lg:h-72 md:h-36 w-full object-cover object-center rounded-2xl mb-10"
+                  src={image1}
+                  alt="blog"
+                />
+                <div className="bg-white border-4 rounded-2xl hover:bg-gray-200 duration-300 mx-2.5 z-auto">
+                    <h1 className="title-font text-lg font-medium text-white p-3 mb-3 bg-center bg-no-repeat bg-shape1 bg-contain md:bg-cover lg:bg-contain z-auto -mt-7">
+                      GATED COMMUNITY
+                    </h1>
+                    <p className="leading-loose text-gray-2 px-6 py-6">
+                      NFS marked vehicles, communication between residents &
+                      security staff and efficient use of technology
+                    </p>
+                    <button className="w-full p-4 text-black rounded-xl bg-gray-200 hover:bg-red-1 hover:text-white" onClick={() => setRow(7) }>
+                      Read More
+                    </button>
+                </div>
               </div>
             </div>
-          </div>
 
-          <div className="p-4 md:w-1/3">
-            <div className="h-full overflow-hidden ">
-              <img
-                className="lg:h-64 md:h-36 w-full object-cover object-center transform hover:scale-110 duration-300"
-                src={image1}
-                alt="blog"
-              />
-              <div className="bg-white border-6 hover:bg-gray-200 duration-500">
-                <h1 className="title-font text-lg font-medium text-white p-3 mb-3 bg-center bg-no-repeat bg-shape1">
-                  GATED COMMUNITY
-                </h1>
-                <p className="leading-loose text-gray-2 px-6 py-2">
-                  NFS marked vehicles, communication between residents &
-                  security staff and efficient use of technology
-                </p>
-                <button className="w-full p-4 text-black bg-gray-200 hover:bg-red-1 hover:text-white" onClick={() => setRow(8)}>
-                    Read More
-                </button>
+            <div className="p-4 md:w-1/3">
+              <div className="h-full overflow-hidden ">
+                <img
+                  className="lg:h-72 md:h-36 w-full object-cover object-center rounded-2xl mb-10"
+                  src={image1}
+                  alt="blog"
+                />
+                <div className="bg-white border-4 rounded-2xl hover:bg-gray-200 duration-300 mx-2.5 z-auto">
+                    <h1 className="title-font text-lg font-medium text-white p-3 mb-3 bg-center bg-no-repeat bg-shape1 bg-contain md:bg-cover lg:bg-contain z-auto -mt-7">
+                      GATED COMMUNITY
+                    </h1>
+                    <p className="leading-loose text-gray-2 px-6 py-6">
+                      NFS marked vehicles, communication between residents &
+                      security staff and efficient use of technology
+                    </p>
+                    <button className="w-full p-4 text-black rounded-xl bg-gray-200 hover:bg-red-1 hover:text-white" onClick={() => setRow(8) }>
+                      Read More
+                    </button>
+                </div>
               </div>
             </div>
-          </div>
 
-          <div className="p-4 md:w-1/3">
-            <div className="h-full overflow-hidden ">
-              <img
-                className="lg:h-64 md:h-36 w-full object-cover object-center transform hover:scale-110 duration-300 z-0"
-                src={image1}
-                alt="blog"
-              />
-              <div className="bg-white border-6 hover:bg-gray-200 duration-500">
-                <h1 className="title-font text-lg font-medium text-white p-3 mb-3 bg-center bg-no-repeat bg-shape1">
-                  GATED COMMUNITY
-                </h1>
-                <p className="leading-loose text-gray-2 px-6 py-2">
-                  NFS marked vehicles, communication between residents &
-                  security staff and efficient use of technology
-                </p>
-                <button className="w-full p-4 text-black bg-gray-200 hover:bg-red-1 hover:text-white" onClick={() => setRow(9)}>
-                    Read More
-                </button>
+            <div className="p-4 md:w-1/3">
+              <div className="h-full overflow-hidden ">
+                <img
+                  className="lg:h-72 md:h-36 w-full object-cover object-center rounded-2xl mb-10"
+                  src={image1}
+                  alt="blog"
+                />
+                <div className="bg-white border-4 rounded-2xl hover:bg-gray-200 duration-300 mx-2.5 z-auto">
+                    <h1 className="title-font text-lg font-medium text-white p-3 mb-3 bg-center bg-no-repeat bg-shape1 bg-contain md:bg-cover lg:bg-contain z-auto -mt-7">
+                      GATED COMMUNITY
+                    </h1>
+                    <p className="leading-loose text-gray-2 px-6 py-6">
+                      NFS marked vehicles, communication between residents &
+                      security staff and efficient use of technology
+                    </p>
+                    <button className="w-full p-4 text-black rounded-xl bg-gray-200 hover:bg-red-1 hover:text-white" onClick={() => setRow(9) }>
+                      Read More
+                    </button>
+                </div>
               </div>
             </div>
           </div>
@@ -479,7 +474,7 @@ const Services = () => {
             <button className="px-4 py-1 float-right bg-gray-200 border shadow-lg rounded-lg hover:bg-white hover:shadow-none hover:border-gray-200" onClick={() => setRow(0)}>Close</button>
               <h2 className="leading-tight text-4xl title-font font-bold text-gray-900 mt-8 mb-8">
                 EVENT SECURITY SERVICES 8
-              </h2> 
+              </h2>
               <p className="leading-loose text-lg font-medium text-gray-2 mb-8">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
@@ -537,10 +532,8 @@ const Services = () => {
               </p>
             </div>
           </div>
-
         </div>
       </div>
-    </div>
   );
 };
 

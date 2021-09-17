@@ -1,11 +1,15 @@
-import axios from "axios";
 import { useFormik } from "formik";
-import React, { useEffect, useState } from "react";
-import { API } from "../../../../../api";
+import React, { useEffect, useRef, useState } from "react";
 import Alert from "../../../../Components/Alert";
 import Compressor from "compressorjs";
 import { useDispatch, useSelector } from "react-redux";
-import { createEOM, eomError } from "../../../../../context/actions/eomAction";
+import {
+  createEOM,
+  eommessage,
+  setupdateeom,
+  updateEOM,
+} from "../../../../../context/actions/adminActions/eomAction";
+import Loader from "react-loader-spinner";
 
 const validate = (values) => {
   const errors = {};
@@ -44,26 +48,32 @@ const EmpOfMon = () => {
   const [instructorSign, setinstructorSign] = useState();
 
   const dispatch = useDispatch();
-  const error = useSelector((state) => state.eom.error);
+  const eomalert = useSelector((state) => state.eom.eomalert);
+  const update = useSelector((state) => state.eom.update);
+  const loading = useSelector((state) => state.eom.addloading);
+  const empImgRef = useRef();
+  const insImgRef = useRef();
+  const insSignRef = useRef();
 
   useEffect(() => {
-    if (error !== null) {
-      if (error === true) {
+    if (eomalert.success !== null) {
+      if (eomalert.success === true) {
         setShowAlert({
           show: true,
-          message: "Employee of the month added successfully",
+          message: eomalert.message,
           success: true,
         });
-      } else if (error === false) {
+        dispatch(eommessage({ success: null, message: "" }));
+      } else if (eomalert.success === false) {
         setShowAlert({
           show: true,
-          message: "Error adding employee of the month testimonial",
+          message: eomalert.message,
           success: false,
         });
+        dispatch(eommessage({ success: null, message: "" }));
       }
     }
-    dispatch(eomError(null));
-  }, [dispatch, error]);
+  }, [dispatch, eomalert]);
 
   const handleCompressedUpload = (e, cb) => {
     const image = e.target.files[0];
@@ -76,39 +86,62 @@ const EmpOfMon = () => {
     });
   };
 
-  const { getFieldProps, handleSubmit, errors } = useFormik({
-    initialValues: {
-      name: "",
-      empdescription: "",
-      description: "",
-      quality1: "",
-      quality2: "",
-      quality3: "",
-      empPhoto: "",
-      seniorName: "",
-      seniorPhoto: "",
-    },
-    validate,
-    onSubmit: async (values, { resetForm }) => {
-      resetForm();
-      const formdata = new FormData();
-      formdata.append("empName", values.name);
-      formdata.append("empDesc", values.description);
-      formdata.append("description", values.description);
-      let arr = [];
-      arr.push(values.quality1);
-      arr.push(values.quality2);
-      arr.push(values.quality3);
-      formdata.append("skills", arr);
-      formdata.append("instructorName", values.seniorName);
-      formdata.append("instructorRole", "Area Manager");
-      formdata.append("empImage", empImg);
-      formdata.append("instructorImage", instructorImg);
-      formdata.append("instructorSign", instructorSign);
+  const { getFieldProps, handleSubmit, errors, setValues, resetForm } =
+    useFormik({
+      initialValues: {
+        name: "",
+        empdescription: "",
+        description: "",
+        quality1: "",
+        quality2: "",
+        quality3: "",
+        seniorName: "",
+      },
+      validate,
+      onSubmit: async (values, { resetForm }) => {
+        empImgRef.current.value = "";
+        insImgRef.current.value = "";
+        insSignRef.current.value = "";
+        resetForm();
+        const formdata = new FormData();
+        formdata.append("empName", values.name);
+        formdata.append("empDesc", values.empdescription);
+        formdata.append("description", values.description);
+        let arr = [];
+        arr.push(values.quality1);
+        arr.push(values.quality2);
+        arr.push(values.quality3);
+        formdata.append("skills", arr);
+        formdata.append("instructorName", values.seniorName);
+        formdata.append("instructorRole", "Area Manager");
+        formdata.append("empImage", empImg);
+        formdata.append("instructorImage", instructorImg);
+        formdata.append("instructorSign", instructorSign);
+        setempImg(null);
+        setinstructorImg(null);
+        setinstructorSign(null);
 
-      dispatch(createEOM(formdata));
-    },
-  });
+        if (update.state) {
+          dispatch(updateEOM(formdata, update.data._id));
+        } else {
+          dispatch(createEOM(formdata));
+        }
+      },
+    });
+
+  useEffect(() => {
+    if (update.state) {
+      setValues({
+        name: update.data.empName,
+        empdescription: update.data.empDesc,
+        description: update.data.description,
+        quality1: update.data.skills[0].split(",")[0],
+        quality2: update.data.skills[0].split(",")[1],
+        quality3: update.data.skills[0].split(",")[2],
+        seniorName: update.data.instructorName,
+      });
+    }
+  }, [setValues, update]);
 
   return (
     <div className="mx-8 my-8 p-4 bg-white shadow-lg rounded-xl">
@@ -139,7 +172,7 @@ const EmpOfMon = () => {
         <input
           className={`w-full ${
             errors.name ? "border-b-2 border-red-600" : "border-b border-black"
-          } focus:outline-none mt-4`}
+          } focus:outline-none mt-4 p-1`}
           type="text"
           placeholder="Name of Employee"
           {...getFieldProps("name")}
@@ -152,7 +185,7 @@ const EmpOfMon = () => {
             errors.empdescription
               ? "border-b-2 border-red-600"
               : "border-b border-black"
-          } focus:outline-none mt-4`}
+          } focus:outline-none mt-4 p-1`}
           type="text"
           rows="3"
           placeholder="Write Paragraph about the Employee"
@@ -168,7 +201,7 @@ const EmpOfMon = () => {
             errors.quality1
               ? "border-b-2 border-red-600"
               : "border-b border-black"
-          } focus:outline-none mt-4`}
+          } focus:outline-none mt-4 p-1`}
           type="text"
           placeholder="Quality 1"
           {...getFieldProps("quality1")}
@@ -181,7 +214,7 @@ const EmpOfMon = () => {
             errors.quality2
               ? "border-b-2 border-red-600"
               : "border-b border-black"
-          } focus:outline-none mt-4`}
+          } focus:outline-none mt-4 p-1`}
           type="text"
           placeholder="Quality 2"
           {...getFieldProps("quality2")}
@@ -194,7 +227,7 @@ const EmpOfMon = () => {
             errors.quality3
               ? "border-b-2 border-red-600"
               : "border-b border-black"
-          } focus:outline-none mt-4`}
+          } focus:outline-none mt-4 p-1`}
           type="text"
           placeholder="Quality 3"
           {...getFieldProps("quality3")}
@@ -209,6 +242,7 @@ const EmpOfMon = () => {
           className="p-4 border border-black"
           type="file"
           accept="image/png, image/jpeg"
+          ref={empImgRef}
           onChange={(e) => handleCompressedUpload(e, setempImg)}
         />
         <input
@@ -229,7 +263,7 @@ const EmpOfMon = () => {
             errors.description
               ? "border-b-2 border-red-600"
               : "border-b border-black"
-          } focus:outline-none mt-4`}
+          } focus:outline-none mt-4 p-1`}
           type="text"
           rows="3"
           placeholder="Area Manager Qoute"
@@ -240,30 +274,66 @@ const EmpOfMon = () => {
             {errors.description}
           </div>
         ) : null}
-        <lable className="text-gray-2 mt-4 mb-1">
-          Upload Image of the Area Manager
-        </lable>
-        <input
-          className="p-4 border border-black"
-          type="file"
-          accept="image/png, image/jpeg"
-          onChange={(e) => handleCompressedUpload(e, setinstructorImg)}
-        />
-        <lable className="text-gray-2 mt-4 mb-1">
-          Upload Image of the Area Manager signature
-        </lable>
-        <input
-          className="p-4  border border-black mb-4"
-          type="file"
-          accept="image/png, image/jpeg"
-          onChange={(e) => handleCompressedUpload(e, setinstructorSign)}
-        />
+        <div className="w-full flex justify-evenly items-center my-6">
+          <div className="flex flex-col items-center">
+            <lable className="text-gray-2 mt-4 mb-1">
+              Upload Image of the Area Manager
+            </lable>
+            <input
+              className="p-4 border border-black"
+              type="file"
+              accept="image/png, image/jpeg"
+              ref={insImgRef}
+              onChange={(e) => handleCompressedUpload(e, setinstructorImg)}
+            />
+          </div>
+          <div className="flex flex-col items-center">
+            <lable className="text-gray-2 mt-4 mb-1">
+              Upload Image of the Area Manager signature
+            </lable>
+            <input
+              className="p-4  border border-black "
+              type="file"
+              accept="image/png, image/jpeg"
+              ref={insSignRef}
+              onChange={(e) => handleCompressedUpload(e, setinstructorSign)}
+            />
+          </div>
+        </div>
         <button
           type="submit"
           className="w-2/3 mx-auto p-4 border text-white bg-red-700 hover:bg-white hover:text-red-700 hover:border-red-700"
         >
-          Update
+          {loading ? (
+            <div className="w-full flex items-center justify-center">
+              <Loader
+                type="TailSpin"
+                color="lightgray"
+                height={40}
+                width={40}
+              />
+            </div>
+          ) : (
+            <> {update.state ? "Update" : "Add"}</>
+          )}
         </button>
+        {update.state ? (
+          <button
+            className="w-1/4 mx-auto px-4 py-2 mt-4 border text-white bg-red-700 hover:bg-white hover:text-red-700 hover:border-red-700"
+            onClick={() => {
+              empImgRef.current.value = "";
+              insImgRef.current.value = "";
+              insSignRef.current.value = "";
+              setempImg(null);
+              setinstructorImg(null);
+              setinstructorSign(null);
+              resetForm();
+              dispatch(setupdateeom({ state: false, data: null }));
+            }}
+          >
+            Add new testimonial
+          </button>
+        ) : null}
       </form>
     </div>
   );

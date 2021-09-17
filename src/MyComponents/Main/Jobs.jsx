@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 import about_image from "./../../argus website/PNG/Video.png";
-import { Link } from "react-router-dom";
 import SideBar from "./../Components/SideBar.jsx";
 import Header from "./../Partials/Header";
 import Header2 from "./../Partials/Header2";
-import Stickynav from "./../Partials/Stickynav"
+import Stickynav from "./../Partials/Stickynav";
 import MobileHeader from "../Partials/MobileHeader";
 
 class About extends Component {
@@ -14,7 +13,7 @@ class About extends Component {
 
         <Header />
         <Header2 />
-        <Stickynav/>
+        <Stickynav />
         <MobileHeader />
 
         <div className="text-gray-600 body-font bg-no-repeat bg-cover bg-servicesbg">
@@ -27,7 +26,7 @@ class About extends Component {
           </div>
         </div>
 
-        <div className="container px-4 py-6 mx-auto sm:px-20 mb:px-1 lg:px-40 xl:px-48 2xl:px-0 max-w-1366 bg-no-repeat bg-mapbg">
+        <div className="px-4 sm:px-8 lg:px-12 max-w-1366 mx-auto bg-no-repeat bg-mapbg">
           <div className="flex flex-wrap my-12">
             <div className=" md:w-1/2 lg:w-2/3 flex flex-col items-start">
               <img src={about_image} alt="Jobs page" className="w-full"/>

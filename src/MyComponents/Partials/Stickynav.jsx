@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Logo from "./../../argus website/SVG/logosvg.svg";
+import Logo from "./../../argus website/SVG/Logowith shadow.svg";
 import Scroll from "./../../argus website/SVG/Scroll up.svg";
 import gsap from "gsap";
 
@@ -39,8 +39,9 @@ const Stickynav = () => {
         }
       >
         <div className={open ? "block" : "hidden"}>
-          <div className="bg-red-1 w-full">
-            <div className="hidden lg:block w-full px-4 sm:px-8 md:px-16 lg:px-28 xl:px-48 text-l fixed top-0 bg-red-1 font-for-para shadow-lg z-50">
+          <div className="bg-red-1 w-full fixed top-0 z-50">
+            <div className="hidden lg:block w-full px-4 sm:px-8 lg:px-12 2xl:px-0 mx-auto max-w-1366 text-lg bg-red-1 font-for-para shadow-lg z-50">
+              
               <Link to="/react">
                 <img src={Logo} alt="" className="w-24 fixed top-1 left-2" />
               </Link>

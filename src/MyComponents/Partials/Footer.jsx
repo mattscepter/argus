@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from "react";
-import Logo from "./../../argus website/SVG/logosvg.svg";
+import React, { useState } from "react";
+import Logo from "./../../argus website/SVG/Logowith shadow.svg";
 import { Link } from "react-router-dom";
-import { getContact } from "../../helpers/contact";
-import CompannyContact from "../Components/CompanyContact";
+import CompanyContact from "../Components/CompanyContact";
 import Alert from "../Components/Alert";
 import { API } from "../../api";
 import axios from "axios";
@@ -70,7 +69,7 @@ const Footer = () => {
                 residential sector in Ontario.
               </p>
               <hr className="border-1 border-gray-600 w-11/12 my-3" />
-              <CompannyContact />
+              <CompanyContact />
             </div>
             <div className="lg:w-1/3 md:w-1/2 w-full lg:px-8 px-12 pt-10 md:pt-32">
               <h2 className="title-font font-bold text-white tracking-widest text-2xl md:text-sm mb-7">
@@ -237,7 +236,7 @@ const Footer = () => {
                 >
                   <input
                     type="email"
-                    className="w-full mt-4 bg-white border border-gray-300 focus:bg-transparent focus:ring-2 focus:ring-white focus:border-white text-base outline-none text-black focus:text-white py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                    className="w-full myt-4 mb-2 bg-white border border-gray-300 text-base outline-none text-black py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                     placeholder="Enter Email"
                     {...getFieldProps("email")}
                   />
@@ -247,7 +246,7 @@ const Footer = () => {
                     </div>
                   ) : null}
                   <button
-                    className="w-full mt-4 p-4 rounded-lg font-bold text-white bg-black hover:bg-white hover:text-red-700 "
+                    className="w-full p-4 rounded-lg font-bold text-white bg-black hover:bg-white hover:text-red-700 mt-3"
                     type="submit"
                   >
                     REGISTER NOW
