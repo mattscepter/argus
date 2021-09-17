@@ -116,7 +116,7 @@ const Teams = () => {
           </div>
         </div>
 
-        <div className="px-6 mt-4 xl-px-0 w-full xl:w-3/4 2xl:w-11/12">
+        <div className="sm:px-6  mt-4 xl-px-0 w-full xl:w-3/4 2xl:w-11/12">
           <Slider
             {...descSettings}
             asNavFor={nav.nav2}

@@ -28,7 +28,7 @@ export default function Home() {
     <div className="font-for-para">
       <Header />
       <Header2 />
-      <Stickynav />
+      <Stickynav data-aos="fade-up" />
       <MobileHeader />
 
       {/* Section 1 */}
