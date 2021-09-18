@@ -2,9 +2,11 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import quotes from "../../argus website/PNG/quotes.PNG";
+import quotes from "../../argus website/SVG/Appostrophies square.svg";
 import { API } from "../../api";
 import "./carousel.css";
+import SideLine from "./SideLine";
+
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
   return (
@@ -43,7 +45,7 @@ const ClientTestimonial = ({ testimonial }) => {
     speed: 600,
     autoplay: true,
     centerPadding: "450px",
-    autoplaySpeed: 2000,
+    autoplaySpeed: 5000,
     pauseOnHover: true,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
@@ -93,45 +95,51 @@ const ClientTestimonial = ({ testimonial }) => {
   };
 
   return (
-    <div className="px-4 sm:px-8 md:px-16 lg:px-28 xl:px-48 py-24 bg-client font-for-para">
-      <div className="flex flex-col lg:flex-row lg:justify-center items-center mb-24">
-        <span className="h-1 w-10 bg-red-1 mb-10 md:m-0 md:mr-4"></span>
-        <h1 className="text-4xl font-bold text-gray-3 ">Client Testimonials</h1>
-      </div>
-      <div className="flex flex-wrap mb-16 w-full">
-        <Slider {...settings} className="w-full">
-          {testimonial.map((data) => {
-            return (
-              <div key={data._id} className="pt-10 px-2">
-                <div className="h-full bg-white shadow-lg flex flex-col">
-                  <div className="bg-gray-1 px-6 py-10 ml-auto">
-                    <img
-                      src={quotes}
-                      alt=""
-                      className="w-12 text-red-1 ml-auto -mt-16"
-                    />
-                  </div>
-                  <div className="px-8 pb-3 pt-1 w-full h-56">
-                    <p className="leading-loose mb-6">{data?.description}</p>
-                    <div className="inline-flex items-center">
+    <div className="bg-client">
+      <div className="px-4 sm:px-8 lg:px-12 2xl:px-0 mx-auto max-w-1366 py-24 font-for-para">
+        <div className="flex flex-row items-stretch w-full mt-8 md:mt-0 mb-12 lg:justify-center">
+          <SideLine />
+          <h1 className="leading-tight text-3xl lg:text-4xl font-bold text-gray-3">
+            Client Testimonials
+          </h1>
+        </div>
+        <div className="flex flex-wrap mb-16 w-full">
+          <Slider {...settings} className="w-full">
+            {testimonial.map((data) => {
+              return (
+                <div key={data._id} className="pt-10 px-2 testimonialSlider">
+                  <div className="h-full bg-white shadow-lg flex flex-col">
+                    <div className="bg-gray-1 px-6 py-10 ml-auto">
                       <img
-                        src={`${API}/testimonal/get-photo/${data._id}`}
+                        src={quotes}
                         alt=""
-                        className="w-20 h-20 p-1 border-2 border-red-1 flex-shrink-0 object-cover object-center"
+                        className="w-9 text-red-1 ml-auto -mt-14"
                       />
-                      <span className="flex-grow flex flex-col pl-4">
-                        <span className="title-font font-medium text-red-1">
-                          {data?.name}
+                    </div>
+                    <div className="px-16 pb-6 pt-2 w-full h-56">
+                      <p className="leading-loose mb-6">{data?.description}</p>
+                      <div className="inline-flex items-center">
+                        <img
+                          src={`${API}/testimonal/get-photo/${data._id}`}
+                          alt=""
+                          className="w-20 h-20 p-1 border-2 border-red-1 flex-shrink-0 object-cover object-center"
+                        />
+                        <span className="flex-grow flex flex-col pl-4">
+                          <span className="title-font font-medium text-red-1">
+                            {data?.name}
+                          </span>
+                          <span className="text-black text-sm">
+                            {data?.role}
+                          </span>
                         </span>
-                        <span className="text-black text-sm">{data?.role}</span>
-                      </span>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            );
-          })}
-        </Slider>
+              );
+            })}
+          </Slider>
+        </div>
       </div>
     </div>
   );

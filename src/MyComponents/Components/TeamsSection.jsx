@@ -5,37 +5,33 @@ import "slick-carousel/slick/slick-theme.css";
 import { useSelector } from "react-redux";
 import { API } from "../../api";
 
-function SampleNextArrow(props) {
-  const { className, style, onClick } = props;
-  return (
-    <div
-      className={className}
-      style={{
-        ...style,
-        display: "block",
-        paddingLeft: "50px",
-        transform: "scale(1.5)",
-      }}
-      onClick={onClick}
-    />
-  );
-}
-function SamplePrevArrow(props) {
-  const { className, style, onClick } = props;
-  return (
-    <div
-      className={className}
-      style={{
-        ...style,
-        display: "block",
-        paddingRight: "150px",
-        transform: "scale(1.5)",
-      }}
-      onClick={onClick}
-    />
-  );
-}
-
+const SlickArrowLeft = ({ currentSlide, slideCount, ...props }) => (
+  <button
+    {...props}
+    className={
+      "slick-prev slick-arrow" + (currentSlide === 0 ? " slick-disabled" : "")
+    }
+    aria-hidden="true"
+    aria-disabled={currentSlide === 0 ? true : false}
+    type="button"
+  >
+    Previous
+  </button>
+);
+const SlickArrowRight = ({ currentSlide, slideCount, ...props }) => (
+  <button
+    {...props}
+    className={
+      "slick-next slick-arrow" +
+      (currentSlide === slideCount - 1 ? " slick-disabled" : "")
+    }
+    aria-hidden="true"
+    aria-disabled={currentSlide === slideCount - 1 ? true : false}
+    type="button"
+  >
+    Next
+  </button>
+);
 const Teams = () => {
   const team = useSelector((state) => state.team.team);
 
@@ -55,73 +51,31 @@ const Teams = () => {
     centerMode: true,
     speed: 600,
     autoplay: true,
-    centerPadding: "450px",
-    autoplaySpeed: 3000,
+    autoplaySpeed: 2500,
     pauseOnHover: true,
-    arrows: false,
+    slidesToShow: 3,
+    variableWidth: true,
+    useCSS: true,
+    prevArrow: <SlickArrowLeft />,
+    nextArrow: <SlickArrowRight />,
     responsive: [
       {
-        breakpoint: 1500,
+        breakpoint: 1026,
         settings: {
-          centerPadding: "420px",
+          arrows: false,
         },
       },
       {
-        breakpoint: 1300,
+        breakpoint: 650,
         settings: {
-          centerPadding: "400px",
+          arrows: false,
         },
       },
       {
-        breakpoint: 1200,
+        breakpoint: 500,
         settings: {
-          centerPadding: "340px",
-        },
-      },
-      {
-        breakpoint: 1100,
-        settings: {
-          centerPadding: "310px",
-        },
-      },
-
-      {
-        breakpoint: 1000,
-        settings: {
-          centerPadding: "300px",
-        },
-      },
-
-      {
-        breakpoint: 900,
-        settings: {
-          centerPadding: "250px",
-        },
-      },
-      {
-        breakpoint: 800,
-        settings: {
-          centerPadding: "240px",
-        },
-      },
-
-      {
-        breakpoint: 700,
-        settings: {
-          centerPadding: "180px",
-        },
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          centerPadding: "130px",
-        },
-      },
-
-      {
-        breakpoint: 480,
-        settings: {
-          centerPadding: "120px",
+          arrows: false,
+          centerPadding: "10px",
         },
       },
     ],
@@ -131,80 +85,64 @@ const Teams = () => {
     focusOnSelect: true,
     centerMode: true,
     speed: 600,
-    centerPadding: "120px",
     arrows: false,
-    responsive: [
-      {
-        breakpoint: 900,
-        settings: {
-          centerPadding: "70px",
-        },
-      },
-      {
-        breakpoint: 650,
-        settings: {
-          centerPadding: "50px",
-        },
-      },
-      {
-        breakpoint: 500,
-        settings: {
-          centerPadding: "20px",
-        },
-      },
-    ],
   };
 
   return (
-    <div className="w-full px-4 sm:px-8 lg:px-12 2xl:px-0 mx-auto max-w-1366 font-for-para">
-      <div className="bg-empofmon bg-cover bg-center bg-no-repeat pt-3">
-        <div className="flex flex-col lg:flex-row lg:justify-center items-center mb-4 md:mb-8 lg:mb-20">
-          <span className="h-1 w-10 bg-red-1 mb-10 md:m-0 md:mr-4"></span>
-          <h1 className="text-4xl font-bold text-gray-3 py-2">Our Team</h1>
+    <div className="py-24 font-for-para overflow-hidden">
+      <div className="px-0 lg:px-14  mx-auto max-w-1366 flex flex-col justify-center items-center">
+        <div className="w-screen h-auto bg-empofmon bg-cover bg-center bg-no-repeat flex flex-col items-center justify-center">
+          <div className="flex flex-col lg:flex-row lg:justify-center items-center my-20 mr-4">
+            <span className="h-1 w-10 bg-red-1 mb-10 md:m-0 md:mr-4"></span>
+            <h1 className="text-4xl font-bold text-gray-3 ">Our Team</h1>
+          </div>
+
+          <div className="w-full h-full xl:w-3/5 ">
+            <Slider
+              asNavFor={nav.nav1}
+              ref={(slider) => (slider2 = slider)}
+              {...imgSliderSettings}
+              className="teamSliderMain h-full"
+            >
+              {team.map((teammember) => {
+                return (
+                  <img
+                    src={`${API}/team/get-photo/${teammember._id}`}
+                    alt=""
+                    className="max-h-44 mx-auto object-contain object-bottom pt-6 teamSlider"
+                  />
+                );
+              })}
+            </Slider>
+          </div>
         </div>
 
-        <Slider
-          asNavFor={nav.nav1}
-          ref={(slider) => (slider2 = slider)}
-          {...imgSliderSettings}
-        >
-          {team.map((teammember) => {
-            return (
-              <div>
-                <img
-                  src={`${API}/team/get-photo/${teammember._id}`}
-                  alt=""
-                  className="max-h-96 mx-auto object-contain object-bottom pt-6"
-                />
-              </div>
-            );
-          })}
-        </Slider>
+        <div className="sm:px-6  mt-4 xl-px-0 w-full xl:w-3/4 2xl:w-11/12">
+          <Slider
+            {...descSettings}
+            asNavFor={nav.nav2}
+            ref={(slider) => (slider1 = slider)}
+          >
+            {team.map((teammember) => {
+              return (
+                <div className="teamDetail" key={teammember._id}>
+                  <div className="w-full p-4 mt-2">
+                    <h1 className="text-3xl title-font font-bold text-gray-900 mb-2 border-b-6 p-2 pt-0 pl-0 border-red-500 inline-block">
+                      {teammember.name}
+                    </h1>
+                    <h2 className="text-xl title-font font-bold text-gray-900 mb-2">
+                      {teammember.role}
+                    </h2>
+                    <p className="leading-loose text-lg font-medium text-gray-2 mb-8">
+                      {teammember.description}
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
+          </Slider>
+        </div>
       </div>
-
-      <Slider
-        {...descSettings}
-        asNavFor={nav.nav2}
-        ref={(slider) => (slider1 = slider)}
-      >
-        {team.map((teammember) => {
-          return (
-            <div key={teammember._id}>
-              <div className="w-full p-4 mt-6">
-                <h1 className="text-3xl title-font font-bold text-gray-3 mb-2 border-b-6 p-2 pt-0 pl-0 border-red-1 inline-block">
-                  {teammember.name}
-                </h1>
-                <h2 className="text-xl title-font font-bold text-gray-3 mb-2">
-                  {teammember.role}
-                </h2>
-                <p className="leading-loose text-lg font-medium text-gray-2 mb-8">
-                  {teammember.description}
-                </p>
-              </div>
-            </div>
-          );
-        })}
-      </Slider>
     </div>
   );
 };

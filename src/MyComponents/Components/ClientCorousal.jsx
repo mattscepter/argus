@@ -4,6 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useSelector } from "react-redux";
 import { API } from "../../api";
+import SideLine from "./SideLine";
 
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
@@ -39,16 +40,14 @@ function SamplePrevArrow(props) {
 const ClientCorousal = () => {
   const clients = useSelector((state) => state.client.clients);
   const settings = {
-    centerMode: true,
-    focusOnSelect: true,
-    speed: 600,
-    centerPadding: "530px",
+    speed: 4000,
     autoplay: true,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 0,
+    cssEase: "linear",
     pauseOnHover: true,
     dots: true,
-    nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />,
+    slidesToShow: 5,
+    arrows: false,
     responsive: [
       {
         breakpoint: 1800,
@@ -88,6 +87,7 @@ const ClientCorousal = () => {
         breakpoint: 950,
         settings: {
           centerPadding: "220px",
+          slidesToShow: 4,
         },
       },
 
@@ -95,7 +95,7 @@ const ClientCorousal = () => {
         breakpoint: 850,
         settings: {
           centerPadding: "180px",
-          arrows: false,
+          slidesToShow: 4,
         },
       },
 
@@ -103,7 +103,7 @@ const ClientCorousal = () => {
         breakpoint: 750,
         settings: {
           centerPadding: "160px",
-          arrows: false,
+          slidesToShow: 4,
         },
       },
 
@@ -111,7 +111,7 @@ const ClientCorousal = () => {
         breakpoint: 650,
         settings: {
           centerPadding: "140px",
-          arrows: false,
+          slidesToShow: 3,
         },
       },
 
@@ -119,47 +119,49 @@ const ClientCorousal = () => {
         breakpoint: 600,
         settings: {
           centerPadding: "120px",
-          arrows: false,
+          slidesToShow: 3,
         },
       },
       {
         breakpoint: 550,
         settings: {
           centerPadding: "90px",
-          arrows: false,
+          slidesToShow: 3,
         },
       },
       {
         breakpoint: 480,
         settings: {
           centerPadding: "70px",
-          arrows: false,
+          slidesToShow: 3,
         },
       },
     ],
   };
 
   return (
-    <div className="px-4 sm:px-8 md:px-16 lg:px-28 xl:px-48 py-12 mx-auto bg-gray-1">
-      <div className="flex flex-col lg:flex-row items-center lg:justify-center mb-4">
-        <span className="h-1 w-10 bg-red-1 m-6 md:m-0 md:mr-4"></span>
-        <h1 className="leading-tight text-4xl font-bold text-gray-3 mb-4">
-          Clients
-        </h1>
+    <div className="bg-client">
+      <div className="px-4 sm:px-8 lg:px-12 2xl:px-0 mx-auto max-w-1366 py-12">
+        <div className="flex flex-row items-stretch w-full mt-8 md:mt-0 mb-8 lg:justify-center">
+          <SideLine />
+          <h1 className="leading-tight text-3xl lg:text-4xl font-bold text-gray-3">
+            Clients
+          </h1>
+        </div>
+        <Slider {...settings}>
+          {clients.map((client) => {
+            return (
+              <div key={client._id}>
+                <img
+                  src={`${API}/client/get-photo/${client._id}`}
+                  alt=""
+                  className="w-44 h-40 mx-auto object-contain pt-10"
+                />
+              </div>
+            );
+          })}
+        </Slider>
       </div>
-      <Slider {...settings}>
-        {clients.map((client) => {
-          return (
-            <div key={client._id}>
-              <img
-                src={`${API}/client/get-photo/${client._id}`}
-                alt=""
-                className="w-64 h-56 mx-auto object-contain pt-10"
-              />
-            </div>
-          );
-        })}
-      </Slider>
     </div>
   );
 };

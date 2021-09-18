@@ -88,10 +88,15 @@ module.exports = {
         "button-shadow-2": "3px 3px 6px 1px rgba(0, 0, 0, 0.16)",
         "button-shadow-3": "3px 3px 6px 1px rgba(0, 0, 0, 0.08)",
         "button-inner": "inset -3px -3px 6px 1px rgba(0, 0, 0, 0.20)",
+        "speech": "5px 5px 10px 1px rgba(0, 0, 0, 0.16)",
+        "speech-2": "5px 3px 10px 1px rgba(0, 0, 0, 0.08)",
       },
       backgroundSize: {
         "stretch-x": "100% 100%",
       },
+      rotate: {
+         '60': '60deg',
+       }
     },
   },
   variants: {

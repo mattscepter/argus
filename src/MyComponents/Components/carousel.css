@@ -1,13 +1,115 @@
-.slick-slide {
-  transform-origin: bottom;
+.slick-slide > div > .testimonialSlider {
   transform: scale(0.7);
   transition: all 0.4s ease-in-out;
-  opacity: 0.4;
+  opacity: 0.5;
 }
 
-.slick-center {
-  transform-origin: bottom;
+.slick-center > div > .testimonialSlider {
   transition: all 0.3s ease-out;
   transform: scale(1.1);
   opacity: 1;
+}
+
+.slick-slide > div > .teamSlider {
+  position: relative;
+  opacity: 0.6;
+  transition: all 0.5s ease-in;
+  transform: scale(1.2);
+  transform-origin: bottom;
+}
+
+.slick-active > div > .teamSlider {
+  position: relative;
+  transform-origin: bottom;
+  transform: scale(1.7);
+  transition: all 0.5s ease-in;
+  opacity: 0.8;
+  z-index: 10;
+}
+
+.teamSliderMain > div {
+  height: 100% !important;
+}
+.teamSliderMain > div > div > div > div {
+  height: 100% !important;
+  margin-top: 210px;
+}
+
+.slick-center > div > .teamSlider {
+  position: relative;
+  transform-origin: bottom;
+  transform: scale(2.5);
+  transition: transform 0.8s ease-out;
+  opacity: 1;
+  z-index: 100;
+}
+
+.slick-slide > div > .teamDetail {
+  transform: scale(0.7);
+  transition: all 0.4s ease-in-out;
+  opacity: 0.5;
+}
+
+.slick-center > div > .teamDetail {
+  transition: all 0.3s ease-out;
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+.teamSliderMain > .slick-arrow {
+  position: absolute;
+  bottom: -40px;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  text-indent: -9999px;
+  background-repeat: no-repeat;
+}
+.teamSliderMain > .slick-arrow:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+.teamSliderMain > .slick-prev {
+  top: 50% !important;
+  left: -50px;
+  transform: translateX(-50%) translateX(-30px);
+  background: rgb(87, 87, 87);
+  -webkit-clip-path: polygon(0 50%, 100% 0, 100% 100%);
+  clip-path: polygon(0 50%, 100% 0, 100% 100%);
+  z-index: 2;
+}
+
+.teamSliderMain > .slick-prev:hover {
+  background: rgb(105, 105, 105);
+}
+
+.teamSliderMain > .slick-next {
+  top: 50% !important;
+  right: -70px;
+  transform: translateX(-50%) translateX(30px);
+  background: rgb(87, 87, 87);
+  -webkit-clip-path: polygon(100% 50%, 0 0, 0 100%);
+  clip-path: polygon(100% 50%, 0 0, 0 100%);
+  z-index: 1;
+}
+
+.teamSliderMain > .slick-next:hover {
+  background: rgb(105, 105, 105);
+}
+
+@media screen and (max-width: 1280px) {
+  .teamSliderMain > .slick-next {
+    right: -25px;
+  }
+  .teamSliderMain > .slick-prev {
+    left: 5px;
+  }
 }

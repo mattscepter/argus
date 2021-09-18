@@ -1,11 +1,35 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-class HeaderHome extends Component {
-  Header;
 
-  render() {
-    return (
+const HeaderHome = () => {
+
+  const [open, setOpen] = useState(false);
+
+  window.onscroll = function () {
+    scrollFunction();
+  };
+
+  function scrollFunction() {
+    if (
+      document.body.scrollTop > 130 ||
+      document.documentElement.scrollTop > 130
+    ) {
+      setOpen(true);
+    } else {
+      setOpen(false);
+    }
+  }
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
+  return (
+    <div>
       <div className="hidden lg:block px-4 sm:px-8 lg:px-12 2xl:px-0 mx-auto max-w-1366 text-sm -mb-16 font-for-para z-10">
         <nav class="flex flex-wrap items-center text-base font-bold font-for-para">
           <Link
@@ -44,8 +68,9 @@ class HeaderHome extends Component {
           </Link>
         </nav>
       </div>
-    );
-  }
+    </div>
+  )
 }
 
 export default HeaderHome;
+
