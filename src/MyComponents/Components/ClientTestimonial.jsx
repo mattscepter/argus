@@ -45,6 +45,8 @@ const ClientTestimonial = ({ testimonial }) => {
     centerPadding: "350px",
     autoplaySpeed: 5000,
     pauseOnHover: true,
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />,
     dots: true,
     responsive: [
       {
