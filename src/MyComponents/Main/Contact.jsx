@@ -33,7 +33,7 @@ const Contact = () => {
             <div className="p-2 md:w-1/3 flex flex-col items-start text-lg font-medium text-gray-2">
               <div className="flex flex-row items-stretch w-full mb-6">
                 <SideLine />
-                <h1 className="leading-tight text-4xl title-font font-bold text-gray-3">
+                <h1 className="leading-tight text-3xl lg:text-4xl title-font font-bold text-gray-3">
                   How can we help?
                 </h1>
               </div>

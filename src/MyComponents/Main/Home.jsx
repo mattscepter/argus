@@ -203,6 +203,30 @@ export default function Home() {
             </div>
           </div>
 
+          <div className="w-1/3 rounded-3xl mb-12 m-8 hover:shadow-button-shadow-3">
+              <div className="rounded-2xl bg-white">
+                <div className="flex flex-col items-center justify-around">
+                <div className="w-full">
+                    <img src={image1} alt="" className="rounded-2xl w-full mx-auto -mb-6"/>
+                  </div>
+                  <div className=" w-full text-center px-4 pb-6 border-t-4 border-r-4 border-l-4 border-gray-1">
+                    <h2 className="leading-tight text-2xl title-font font-bold text-white mb-6 bg-center bg-no-repeat bg-shape1 bg-contain md:bg-cover lg:bg-contain p-2">
+                      Gated Community
+                    </h2>
+                    <p className="leading-relaxed text-lg font-medium text-gray-2 mb-2">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt .
+                    </p>
+                  </div>
+                  <div className="bg-gray-200 w-full hover:bg-opacity-0">
+                  <button className="w-full p-4 rounded-lg text-black hover:bg-red-1 hover:text-white">
+                      Read More
+                  </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
           <div className="flex flex-wrap justify-center text-center mb-16 ">
             <div className="group p-4 sm:w-96">
               <div className="h-full overflow-hidden ">
@@ -232,12 +256,12 @@ export default function Home() {
             <div className="p-4 sm:w-96">
               <div className="h-full overflow-hidden ">
                 <img
-                  className="lg:h-72 md:h-36 w-full object-cover object-center rounded-2xl mb-10"
+                  className="lg:h-72 md:h-36 w-full object-cover object-center rounded-2xl -mb-4 "
                   src={image1}
                   alt="blog"
                 />
                 <div className="bg-white border-4 rounded-2xl hover:bg-gray-200 duration-300 mx-2.5 z-auto">
-                  <h1 className="title-font text-lg font-medium text-white p-3 mb-3 bg-center bg-no-repeat bg-shape1 bg-contain md:bg-cover lg:bg-contain z-auto -mt-7">
+                  <h1 className="title-font text-lg font-medium text-white p-3 bg-center bg-no-repeat bg-shape1 bg-contain md:bg-cover lg:bg-contain z-auto">
                     GATED COMMUNITY
                   </h1>
                   <p className="leading-loose text-gray-2 px-6 py-6">

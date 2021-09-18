@@ -116,94 +116,82 @@ const Services = () => {
                   className="w-full p-4 text-black rounded-xl bg-gray-200 hover:bg-red-1 hover:text-white"
                   onClick={() => setRow(3)}
                 >
-                  <FontAwesomeIcon
-                    icon="window-close"
-                    className="text-3xl text-white bg-black fixed top-4 right-4"
-                  />
+                  Read More
                 </button>
               </div>
             </div>
           </div>
 
           <div className={row === 1 ? "block" : "hidden"}>
-            <div className="px-8 py-6 rounded-lg border border-gray-2 mb-12 ">
-              <button
-                className="px-4 py-1 float-right bg-gray-200 border shadow-lg rounded-lg hover:bg-white hover:shadow-none hover:border-gray-200"
-                onClick={() => setRow(0)}
-              >
-                Close
-              </button>
-              <div className="flex flex-col md:flex-row ">
-                <div>
-                  <h2 className="leading-tight text-4xl title-font font-bold text-gray-900 mt-8 mb-8">
-                    EVENT SECURITY SERVICES 1
-                  </h2>
-                  <p className="leading-loose text-lg font-medium text-gray-2 mb-8">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in voluptate velit
-                    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-                    occaecat cupidatat non proident, sunt in culpa qui officia
-                    deserunt mollit anim id est laborum.Lorem ipsum dolor sit
-                    amet, consectetur adipiscing elit, sed do eiusmod tempor
-                    incididunt ut labore et dolore magna aliqua. Ut enim ad
-                    minim veniam, quis nostrud exercitation ullamco laboris nisi
-                    ut aliquip ex ea commodo consequat.{" "}
-                  </p>
-                  <p className="leading-relaxed. text-l font-medium text-gray-2 mb-8">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                  </p>
-                </div>
-                <div>
-                  <video className="p-10"></video>
+            <div className="p-2 rounded-3xl border-3 border-client mb-12 m-6">
+              <div className="rounded-2xl bg-client">
+                <div className="flex flex-col md:flex-row items-center justify-around">
+                  <div className=" w-full md:w-1/2 lg:w-8/12 text-left px-3 sm:px-8 py-4">
+                    <h2 className="leading-tight text-2xl lg:text-3xl title-font font-bold text-gray-3 mt-8 mb-6">
+                      EVENT SECURITY SERVICES 1
+                    </h2>
+                    <p className="leading-relaxed text-lg font-medium text-gray-2 mb-6">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Duis aute irure dolor in reprehenderit in voluptate velit
+                      esse cillum dolore eu fugiat nulla pariatur. Excepteur
+                      sint occaecat cupidatat non proident, sunt in culpa qui
+                      officia deserunt mollit anim id est laborum.
+                    </p>
+                    <p className="leading-relaxed text-lg font-medium text-gray-2 mb-2">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Duis aute irure dolor in reprehenderit in voluptate velit
+                      esse cillum dolore eu fugiat nulla pariatur.
+                    </p>
+                  </div>
+                  <div className="w-full md:w-1/2 lg:w-4/12 p-8">
+                    <video className="rounded-2xl shadow-button-shadow-2 w-72 mx-auto" poster={image1}></video>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <div className={row == 2 ? "block" : "hidden"}>
-            <div className="px-8 py-6 rounded-lg border border-gray-2 mb-12">
-              <button
-                className="px-4 py-1 float-right bg-gray-200 border shadow-lg rounded-lg hover:bg-white hover:shadow-none hover:border-gray-200"
-                onClick={() => setRow(0)}
-              >
-                Close
-              </button>
-              <h2 className="leading-tight text-4xl title-font font-bold text-gray-900 mt-8 mb-8">
-                EVENT SECURITY SERVICES 2
-              </h2>
-              <p className="leading-loose text-lg font-medium text-gray-2 mb-8">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est
-                laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                sed do eiusmod tempor incididunt ut labore et dolore magna
-                aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                ullamco laboris nisi ut aliquip ex ea commodo consequat.{" "}
-              </p>
-              <p className="leading-relaxed. text-l font-medium text-gray-2 mb-8">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit
-                amet, consectetur adipiscing elit, sed do eiusmod tempor
-                incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                veniam, quis nostrud exercitation ullamco laboris nisi ut
-                aliquip ex ea commodo consequat.
-              </p>
+            <div className={row == 2 ? "block" : "hidden"}>
+              <div className="px-8 py-6 rounded-lg border border-gray-2 mb-12">
+                <button
+                  className="px-4 py-1 float-right bg-gray-200 border shadow-lg rounded-lg hover:bg-white hover:shadow-none hover:border-gray-200"
+                  onClick={() => setRow(0)}
+                >
+                  Close
+                </button>
+                <h2 className="leading-tight text-4xl title-font font-bold text-gray-900 mt-8 mb-8">
+                  EVENT SECURITY SERVICES 2
+                </h2>
+                <p className="leading-loose text-lg font-medium text-gray-2 mb-8">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                  irure dolor in reprehenderit in voluptate velit esse cillum
+                  dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                  cupidatat non proident, sunt in culpa qui officia deserunt
+                  mollit anim id est laborum.Lorem ipsum dolor sit amet,
+                  consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                  ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                  quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+                  ea commodo consequat.{" "}
+                </p>
+                <p className="leading-relaxed. text-l font-medium text-gray-2 mb-8">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum
+                  dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+                  minim veniam, quis nostrud exercitation ullamco laboris nisi
+                  ut aliquip ex ea commodo consequat.
+                </p>
+              </div>
             </div>
           </div>
 
