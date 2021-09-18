@@ -4,6 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useSelector } from "react-redux";
 import { API } from "../../api";
+import SideLine from "./SideLine";
 
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
@@ -39,14 +40,15 @@ function SamplePrevArrow(props) {
 const ClientCorousal = () => {
   const clients = useSelector((state) => state.client.clients);
   const settings = {
-    speed: 2000,
+    infinite: true,
+    speed: 5000,
     autoplay: true,
     autoplaySpeed: 0,
     cssEase: "linear",
     pauseOnHover: true,
-    dots: true,
     slidesToShow: 5,
     arrows: false,
+    className: "slick-new",
     responsive: [
       {
         breakpoint: 1800,
@@ -139,26 +141,28 @@ const ClientCorousal = () => {
   };
 
   return (
-    <div className="px-0 sm:px-8 xl:px-32 py-12 mx-auto bg-gray-1">
-      <div className="flex flex-col lg:flex-row items-center lg:justify-center mb-4">
-        <span className="h-1 w-10 bg-red-1 m-6 md:m-0 md:mr-4"></span>
-        <h1 className="leading-tight text-4xl font-bold text-gray-3 mb-4">
-          Clients
-        </h1>
+    <div className="bg-client">
+      <div className="px-4 sm:px-8 lg:px-12 2xl:px-0 mx-auto max-w-1366 py-12">
+        <div className="flex flex-row items-stretch w-full mt-8 md:mt-0 mb-8 lg:justify-center">
+          <SideLine />
+          <h1 className="leading-tight text-3xl lg:text-4xl font-bold text-gray-3">
+            Clients
+          </h1>
+        </div>
+        <Slider {...settings}>
+          {clients.map((client) => {
+            return (
+              <div key={client._id} className="clientSlider">
+                <img
+                  src={`${API}/client/get-photo/${client._id}`}
+                  alt=""
+                  className="w-44 h-40 mx-auto object-contain pt-10"
+                />
+              </div>
+            );
+          })}
+        </Slider>
       </div>
-      <Slider {...settings}>
-        {clients.map((client) => {
-          return (
-            <div key={client._id}>
-              <img
-                src={`${API}/client/get-photo/${client._id}`}
-                alt=""
-                className="w-44 h-40 mx-auto object-contain pt-10"
-              />
-            </div>
-          );
-        })}
-      </Slider>
     </div>
   );
 };

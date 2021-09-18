@@ -6,6 +6,7 @@ import Header from "./../Partials/Header";
 import Header2 from "./../Partials/Header2";
 import Stickynav from "./../Partials/Stickynav"
 import MobileHeader from "../Partials/MobileHeader";
+import SideLine from "./../Components/SideLine"
 
 export default function Personell() {
   return (
@@ -19,14 +20,14 @@ export default function Personell() {
       <div className="text-gray-600 body-font bg-no-repeat bg-cover bg-aboutbg">
         <div className="container mx-auto flex px-5 py-40 items-center justify-center flex-col">
           <div className="text-center lg:w-2/3 w-full">
-            <h1 className="title-font sm:text-6xl text-3xl mb-4 font-medium text-white">
+            <h1 className="title-font sm:text-6xl text-3xl mb-4 font-bold text-white">
               PERSONELL
             </h1>
           </div>
         </div>
       </div>
 
-      <div className="px-4 sm:px-8 lg:px-12 max-w-1366 mx-auto bg-no-repeat bg-mapbg">
+      <div className="px-4 sm:px-8 lg:px-12 xl:px-0 max-w-1366 mx-auto bg-no-repeat bg-mapbg">
         <div className="flex flex-wrap my-12">
           <div className=" md:w-1/2 lg:w-2/3 flex flex-col items-start">
             <img src={about_image} alt="About page" />
@@ -42,7 +43,7 @@ export default function Personell() {
             </p>
 
             <div className="flex flex-row items-stretch w-full mt-8 mb-8">
-                <span className="h-auto w-2 bg-red-1 mr-7"></span>
+                <SideLine />
                 <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
                 RIGOROUSLY SCREENED
                 </h1>
@@ -59,7 +60,7 @@ export default function Personell() {
             </p>
 
             <div className="flex flex-row items-stretch w-full mt-8 mb-8">
-                <span className="h-auto w-2 bg-red-1 mr-7"></span>
+                <SideLine />
                 <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
                 EXCEPTIONALLY TRAINED
                 </h1>
@@ -81,7 +82,7 @@ export default function Personell() {
             </p>
 
             <div className="flex flex-row items-stretch w-full mt-8 mb-8">
-                <span className="h-auto w-2 bg-red-1 mr-7"></span>
+                <SideLine />
                 <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
                 PROFESSIONAL ATTITUDES
                 </h1>
@@ -96,7 +97,7 @@ export default function Personell() {
             </p>
 
             <div className="flex flex-row items-stretch w-full mt-8 mb-8">
-                <span className="h-auto w-2 bg-red-1 mr-7"></span>
+                <SideLine />
                 <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
                 Area Management Department
                 </h1>
@@ -115,7 +116,7 @@ export default function Personell() {
             </p>
 
             <div className="flex flex-row items-stretch w-full mt-8 mb-8">
-                <span className="h-auto w-2 bg-red-1 mr-7"></span>
+                <SideLine />
                 <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
                 ACCOUNTABILITY
                 </h1>

@@ -15,14 +15,13 @@ export default function Header() {
               <nav className="flex flex-row items-center">
                 <Link
                   to="/technology"
-                  className="text-white border-4 border-white rounded px-6 lg:px-5 2xl:px-10 py-3.5 mr-3.5 2xl:mr-8 hover:bg-white hover:text-red-1 hover:shadow-header-outer-shadow"
+                  className="text-white hover:bg-white font-medium xl:font-bold text-base hover:shadow-button-inner border-4 border-double rounded-lg px-4 xl:px-7 py-3.5 mr-3.5 2xl:mr-8 hover:text-red-1"
                 >
-                  Technology
+                 Technology
                 </Link>
                 <Link
                   to="/Training"
-                  className="text-white border-4 border-white rounded px-4 2xl:px-9  py-3.5 hover:bg-white hover:text-red-1 hover:shadow-header-outer-shadow"
-                >
+                  className="text-white hover:bg-white font-medium xl:font-bold text-base hover:shadow-button-inner border-4 border-double rounded-lg px-3 xl:px-6 py-3.5  hover:text-red-1 ">
                   Get Your Security Guard License
                 </Link>
               </nav>
@@ -37,19 +36,19 @@ export default function Header() {
                 <button
                   open={open}
                   onClick={() => setOpen(true)}
-                  className="text-white border-4 font-bold border-white rounded px-2 2xl:px-5 py-3.5 mr-3 2xl:mr-8 hover:bg-white hover:text-red-1 hover:shadow-header-outer-shadow"
+                  className="text-white hover:bg-white font-medium xl:font-bold text-base hover:shadow-button-inner border-4 border-double rounded-lg px-2 xl:px-2.5 py-3.5 mr-3 2xl:mr-8  hover:text-red-1"
                 >
                   Student Portal
                 </button>
                 <Link
                   to="/dashboard/student/home"
-                  className="text-white border-4 border-white rounded px-2 2xl:px-5 py-3.5 mr-3 2xl:mr-8 hover:bg-white hover:text-red-1 hover:shadow-header-outer-shadow"
+                  className="text-white hover:bg-white font-medium xl:font-bold text-base hover:shadow-button-inner border-4 border-double rounded-lg px-2 xl:px-2.5 py-3.5 mr-3 2xl:mr-8 hover:text-red-1"
                 >
                   Client Portal
                 </Link>
                 <Link
                   to="/dashboard/admin/home"
-                  className="text-white border-4 border-white rounded px-2 2xl:px-5 py-3.5 hover:bg-white hover:text-red-1 hover:shadow-header-outer-shadow"
+                  className="text-white hover:bg-white font-medium xl:font-bold text-base hover:shadow-button-inner border-4 border-double rounded-lg px-2 xl:px-3 py-3.5 hover:text-red-1"
                 >
                   Employee Portal
                 </Link>

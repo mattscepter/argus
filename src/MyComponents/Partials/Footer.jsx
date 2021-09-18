@@ -53,12 +53,12 @@ const Footer = () => {
   });
 
   return (
-    <div className="bg-black-1">
-      <div className="text-white text-xs md:text-sm body-font bg-top bg-no-repeat bg-cover bg-footer bg-opacity-5">
+    <div className="bg-black-1 font-for-para">
+      <div className="text-white text-lg md:text-sm body-font bg-top bg-no-repeat bg-cover bg-footer bg-opacity-5">
         <div className="container px-4 sm:px-8 lg:px-12 2xl:px-0 max-w-1366  mx-auto">
           <div className="flex flex-col md:flex-row md:text-left text-center order-first items-start">
             <div className="w-3/4 flex flex-wrap md:text-left text-center order-first mx-auto">
-              <div className="lg:w-1/3 w-full px-4 pt-4">
+              <div className="lg:w-1/3 w-full px-4 pt-4 ">
                 <img
                   src={Logo}
                   className="w-28 mx-auto md:mx-0 my-2"
@@ -71,11 +71,11 @@ const Footer = () => {
                 <hr className="border-1 border-gray-600 w-11/12 my-3" />
                 <CompanyContact />
               </div>
-              <div className="lg:w-1/3 md:w-1/2 w-full lg:px-8 px-12 pt-10 md:pt-32">
+              <div className="lg:w-1/3 md:w-1/2 w-full px-4 lg:px-8 md:px-12 pt-10 md:pt-32">
                 <h2 className="title-font font-bold text-white tracking-widest text-2xl md:text-sm mb-7">
                   EXPLORE
                 </h2>
-                <nav className="list-none mb-10">
+                <nav className="list-none mb-10 text-left sn:text-center">
                   <li className="my-0.5">
                     {" "}
                     <Link to="/about" className="text-white  hover:text-red-1">
@@ -144,11 +144,11 @@ const Footer = () => {
                   </li>
                 </nav>
               </div>
-              <div className="lg:w-1/3 md:w-1/2 w-full px-4 pt-10 md:pt-32">
+              <div className="lg:w-1/3 md:w-1/2 w-full px-4 lg:px-8 md:px-12 pt-10 md:pt-32">
                 <h2 className="title-font font-medium text-white tracking-widest text-2xl md:text-sm mb-7">
                   SERVICES
                 </h2>
-                <nav className="list-none mb-10">
+                <nav className="list-none mb-10 text-left sn:text-center">
                   <li className="my-0.5">
                     {" "}
                     <Link to="/services">

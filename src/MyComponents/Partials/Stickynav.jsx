@@ -13,8 +13,8 @@ const Stickynav = () => {
 
   function scrollFunction() {
     if (
-      document.body.scrollTop > 170 ||
-      document.documentElement.scrollTop > 170
+      document.body.scrollTop > 130 ||
+      document.documentElement.scrollTop > 130
     ) {
       setOpen(true);
     } else {
@@ -31,7 +31,7 @@ const Stickynav = () => {
 
   return (
     <div>
-      <div className="fixed top-0 w-full ">
+      <div className="fixed top-0 w-full z-50">
         <div
           className={
             open
@@ -46,8 +46,8 @@ const Stickynav = () => {
                 : "transition-all opacity-0 duration-200"
             }
           >
-            <div className="bg-red-1 w-full">
-              <div className="hidden lg:block w-full px-4 sm:px-8 md:px-16 lg:px-28 xl:px-48 text-l fixed top-0 bg-red-1 font-for-para shadow-lg z-50">
+            <div className="bg-red-1 w-full fixed top-0 z-50">
+              <div className="hidden lg:block w-full px-4 sm:px-8 lg:px-12 2xl:px-0 mx-auto max-w-1366 text-lg bg-red-1 font-for-para shadow-lg z-50">
                 <Link to="/react">
                   <img src={Logo} alt="" className="w-24 fixed top-1 left-2" />
                 </Link>

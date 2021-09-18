@@ -7,6 +7,7 @@ import Header from "./../../Partials/Header";
 import Header2 from "./../../Partials/Header2";
 import Stickynav from "./../../Partials/Stickynav";
 import MobileHeader from "./../../Partials/MobileHeader";
+import SideLine from "./../../Components/SideLine"
 
 class ToursCheckpoints extends Component {
   render() {
@@ -27,13 +28,13 @@ class ToursCheckpoints extends Component {
           </div>
         </div>
 
-        <div className="px-4 sm:px-8 lg:px-12 max-w-1366 mx-auto bg-no-repeat bg-mapbg">
+        <div className="px-4 sm:px-8 lg:px-12 xl:px-0 max-w-1366 mx-auto bg-no-repeat bg-mapbg">
           <div className="flex flex-wrap my-12">
             <div className=" md:w-1/2 lg:w-2/3 flex flex-col items-start">
               <img src={about_image} alt="About page" />
               
               <div className="flex flex-row items-stretch w-full mt-8 mb-8">
-                <span className="h-auto w-2 bg-red-1 mr-7"></span>
+                <SideLine />
                 <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
                 Full Officer Accountability
                 </h1>
@@ -48,7 +49,7 @@ class ToursCheckpoints extends Component {
               </p>
 
               <div className="flex flex-row items-stretch w-full mt-8 mb-8">
-                <span className="h-auto w-2 bg-red-1 mr-7"></span>
+                <SideLine />
                 <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
                 Painting a Complete Picture
                 </h1>
@@ -87,7 +88,7 @@ class ToursCheckpoints extends Component {
               </ul>
 
               <div className="flex flex-row items-stretch w-full mt-8 mb-8">
-                <span className="h-auto w-2 bg-red-1 mr-7"></span>
+                <SideLine />
                 <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
                 Painting a Complete Picture
                 </h1>
@@ -126,7 +127,7 @@ class ToursCheckpoints extends Component {
               </ul>
 
               <div className="flex flex-row items-stretch w-full mt-8 mb-8">
-                <span className="h-auto w-2 bg-red-1 mr-7"></span>
+                <SideLine />
                 <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
                 An All-Inclusive Mobile Guard App
                 </h1>
@@ -160,7 +161,7 @@ class ToursCheckpoints extends Component {
               </ul>
 
               <div className="flex flex-row items-stretch w-full mt-8 mb-8">
-                <span className="h-auto w-2 bg-red-1 mr-7"></span>
+                <SideLine />
                 <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
                 Send Relevant Information Quickly
                 </h1>
