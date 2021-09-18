@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import accountable from "./../../argus website/SVG/2. Accountable.svg";
 import { Link } from "react-router-dom";
@@ -22,6 +22,11 @@ import { useSelector } from "react-redux";
 import SideLine from "../Components/SideLine";
 import { useRef } from "react";
 import useOnScreen from "../../helpers/onScreen";
+import {
+  disableBodyScroll,
+  enableBodyScroll,
+  clearAllBodyScrollLocks,
+} from "body-scroll-lock";
 
 export default function Home() {
   const contact = useSelector((state) => state.contact);
@@ -35,11 +40,6 @@ export default function Home() {
 
   return (
     <div className="font-for-para">
-      <Header />
-      <HeaderHome />
-      <Stickynav />
-      <MobileHeader />
-
       {/* Section 1 */}
       <div className="">
         <div className="py-24 sm:py-64 px-4 sm:px-8 md:px-16 lg:px-32 xl:px-48 bg-center bg-no-repeat bg-hero bg-cover"></div>
@@ -204,28 +204,32 @@ export default function Home() {
           </div>
 
           <div className="w-1/3 rounded-3xl mb-12 m-8 hover:shadow-button-shadow-3">
-              <div className="rounded-2xl bg-white">
-                <div className="flex flex-col items-center justify-around">
+            <div className="rounded-2xl bg-white">
+              <div className="flex flex-col items-center justify-around">
                 <div className="w-full">
-                    <img src={image1} alt="" className="rounded-2xl w-full mx-auto -mb-6"/>
-                  </div>
-                  <div className=" w-full text-center px-4 pb-6 border-t-4 border-r-4 border-l-4 border-gray-1">
-                    <h2 className="leading-tight text-2xl title-font font-bold text-white mb-6 bg-center bg-no-repeat bg-shape1 bg-contain md:bg-cover lg:bg-contain p-2">
-                      Gated Community
-                    </h2>
-                    <p className="leading-relaxed text-lg font-medium text-gray-2 mb-2">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor incididunt .
-                    </p>
-                  </div>
-                  <div className="bg-gray-200 w-full hover:bg-opacity-0">
+                  <img
+                    src={image1}
+                    alt=""
+                    className="rounded-2xl w-full mx-auto -mb-6"
+                  />
+                </div>
+                <div className=" w-full text-center px-4 pb-6 border-t-4 border-r-4 border-l-4 border-gray-1">
+                  <h2 className="leading-tight text-2xl title-font font-bold text-white mb-6 bg-center bg-no-repeat bg-shape1 bg-contain md:bg-cover lg:bg-contain p-2">
+                    Gated Community
+                  </h2>
+                  <p className="leading-relaxed text-lg font-medium text-gray-2 mb-2">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt .
+                  </p>
+                </div>
+                <div className="bg-gray-200 w-full hover:bg-opacity-0">
                   <button className="w-full p-4 rounded-lg text-black hover:bg-red-1 hover:text-white">
-                      Read More
+                    Read More
                   </button>
-                  </div>
                 </div>
               </div>
             </div>
+          </div>
 
           <div className="flex flex-wrap justify-center text-center mb-16 ">
             <div className="group p-4 sm:w-96">

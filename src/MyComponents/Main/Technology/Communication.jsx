@@ -7,17 +7,12 @@ import Header from "./../../Partials/Header";
 import Header2 from "./../../Partials/Header2";
 import Stickynav from "./../../Partials/Stickynav";
 import MobileHeader from "./../../Partials/MobileHeader";
-import SideLine from "./../../Components/SideLine"
+import SideLine from "./../../Components/SideLine";
 
 class Communication extends Component {
   render() {
     return (
       <div className="font-for-para">
-        <Header />
-        <Header2 />
-        <Stickynav />
-        <MobileHeader />
-
         <div className="text-gray-600 body-font bg-no-repeat bg-cover bg-aboutbg">
           <div className="container mx-auto flex px-5 py-40 items-center justify-center flex-col">
             <div className="text-center lg:w-2/3 w-full">
@@ -35,7 +30,7 @@ class Communication extends Component {
               <div className="flex flex-row items-stretch w-full mt-8 mb-8">
                 <SideLine />
                 <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
-                Highest Rated Industry Platform
+                  Highest Rated Industry Platform
                 </h1>
               </div>
               <p className="leading-relaxed text-lg font-medium text-gray-2 mb-6">
@@ -51,7 +46,7 @@ class Communication extends Component {
               <div className="flex flex-row items-stretch w-full mt-8 mb-8">
                 <SideLine />
                 <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
-                Online Resource Center
+                  Online Resource Center
                 </h1>
               </div>
               <p className="leading-relaxed text-lg font-medium text-gray-2 mb-6">
@@ -63,7 +58,7 @@ class Communication extends Component {
               <div className="flex flex-row items-stretch w-full mt-8 mb-8">
                 <SideLine />
                 <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
-                “Show Me How”
+                  “Show Me How”
                 </h1>
               </div>
               <p className="leading-relaxed text-lg font-medium text-gray-2 mb-6">
@@ -75,7 +70,7 @@ class Communication extends Component {
               <div className="flex flex-row items-stretch w-full mt-8 mb-8">
                 <SideLine />
                 <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
-                Top-Tier, Canada-based Support Teams
+                  Top-Tier, Canada-based Support Teams
                 </h1>
               </div>
               <p className="leading-relaxed text-lg font-medium text-gray-2 mb-6">

@@ -17,15 +17,16 @@ export default function Header() {
                   to="/technology"
                   className="text-white hover:bg-white font-medium xl:font-bold text-base hover:shadow-button-inner border-4 border-double rounded-lg px-4 xl:px-7 py-3.5 mr-3.5 2xl:mr-8 hover:text-red-1"
                 >
-                 Technology
+                  Technology
                 </Link>
                 <Link
                   to="/Training"
-                  className="text-white hover:bg-white font-medium xl:font-bold text-base hover:shadow-button-inner border-4 border-double rounded-lg px-3 xl:px-6 py-3.5  hover:text-red-1 ">
+                  className="text-white hover:bg-white font-medium xl:font-bold text-base hover:shadow-button-inner border-4 border-double rounded-lg px-3 xl:px-6 py-3.5  hover:text-red-1 "
+                >
                   Get Your Security Guard License
                 </Link>
               </nav>
-              <Link to="/react">
+              <Link to="/">
                 <img
                   src={Logo}
                   alt="Logo of Argus Security"

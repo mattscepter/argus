@@ -7,17 +7,12 @@ import Header from "./../../Partials/Header";
 import Header2 from "./../../Partials/Header2";
 import Stickynav from "./../../Partials/Stickynav";
 import MobileHeader from "./../../Partials/MobileHeader";
-import SideLine from "./../../Components/SideLine"
+import SideLine from "./../../Components/SideLine";
 
 class DispatchTasks extends Component {
   render() {
     return (
       <div className="font-for-para">
-        <Header />
-        <Header2 />
-        <Stickynav />
-        <MobileHeader />
-
         <div className="text-gray-600 body-font bg-no-repeat bg-cover bg-aboutbg">
           <div className="container mx-auto flex px-5 py-40 items-center justify-center flex-col">
             <div className="text-center lg:w-2/3 w-full">
@@ -36,7 +31,7 @@ class DispatchTasks extends Component {
               <div className="flex flex-row items-stretch w-full mt-8 mb-8">
                 <SideLine />
                 <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
-                Dispatch Overview
+                  Dispatch Overview
                 </h1>
               </div>
               <p className="leading-relaxed text-lg font-medium text-gray-2 mb-6">
@@ -78,7 +73,7 @@ class DispatchTasks extends Component {
               <div className="flex flex-row items-stretch w-full mt-8 mb-8">
                 <SideLine />
                 <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
-                Dispatching One-Off Tasks
+                  Dispatching One-Off Tasks
                 </h1>
               </div>
               <p className="leading-relaxed text-lg font-medium text-gray-2 mb-6">
@@ -104,7 +99,7 @@ class DispatchTasks extends Component {
               <div className="flex flex-row items-stretch w-full mt-8 mb-8">
                 <SideLine />
                 <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
-                Simple Task Assignment for Guards
+                  Simple Task Assignment for Guards
                 </h1>
               </div>
               <p className="leading-relaxed text-lg font-medium text-gray-2 mb-6">
@@ -132,7 +127,7 @@ class DispatchTasks extends Component {
               <div className="flex flex-row items-stretch w-full mt-8 mb-8">
                 <SideLine />
                 <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
-                Simplified Field Operations Management
+                  Simplified Field Operations Management
                 </h1>
               </div>
               <p className="leading-relaxed text-lg font-medium text-gray-2 mb-6">

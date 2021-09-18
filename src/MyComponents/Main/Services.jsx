@@ -13,11 +13,6 @@ const Services = () => {
 
   return (
     <div>
-      <Header />
-      <Header2 />
-      <Stickynav />
-      <MobileHeader />
-
       <div className="text-gray-600 body-font bg-no-repeat bg-cover bg-servicesbg">
         <div className="container mx-auto flex px-5 py-40 items-center justify-center flex-col">
           <div className="text-center lg:w-2/3 w-full">
@@ -150,7 +145,10 @@ const Services = () => {
                     </p>
                   </div>
                   <div className="w-full md:w-1/2 lg:w-4/12 p-8">
-                    <video className="rounded-2xl shadow-button-shadow-2 w-72 mx-auto" poster={image1}></video>
+                    <video
+                      className="rounded-2xl shadow-button-shadow-2 w-72 mx-auto"
+                      poster={image1}
+                    ></video>
                   </div>
                 </div>
               </div>

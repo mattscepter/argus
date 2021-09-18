@@ -7,17 +7,12 @@ import Header from "./../../Partials/Header";
 import Header2 from "./../../Partials/Header2";
 import Stickynav from "./../../Partials/Stickynav";
 import MobileHeader from "./../../Partials/MobileHeader";
-import SideLine from "./../../Components/SideLine"
+import SideLine from "./../../Components/SideLine";
 
 class ToursCheckpoints extends Component {
   render() {
     return (
       <div className="font-for-para">
-        <Header />
-        <Header2 />
-        <Stickynav />
-        <MobileHeader />
-
         <div className="text-gray-600 body-font bg-no-repeat bg-cover bg-aboutbg">
           <div className="container mx-auto flex px-5 py-40 items-center justify-center flex-col">
             <div className="text-center lg:w-2/3 w-full">
@@ -32,11 +27,11 @@ class ToursCheckpoints extends Component {
           <div className="flex flex-wrap my-12">
             <div className=" md:w-1/2 lg:w-2/3 flex flex-col items-start">
               <img src={about_image} alt="About page" />
-              
+
               <div className="flex flex-row items-stretch w-full mt-8 mb-8">
                 <SideLine />
                 <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
-                Full Officer Accountability
+                  Full Officer Accountability
                 </h1>
               </div>
               <p className="leading-relaxed text-lg font-medium text-gray-2 mb-6">
@@ -51,7 +46,7 @@ class ToursCheckpoints extends Component {
               <div className="flex flex-row items-stretch w-full mt-8 mb-8">
                 <SideLine />
                 <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
-                Painting a Complete Picture
+                  Painting a Complete Picture
                 </h1>
               </div>
               <p className="leading-relaxed text-lg font-medium text-gray-2 mb-6">
@@ -90,7 +85,7 @@ class ToursCheckpoints extends Component {
               <div className="flex flex-row items-stretch w-full mt-8 mb-8">
                 <SideLine />
                 <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
-                Painting a Complete Picture
+                  Painting a Complete Picture
                 </h1>
               </div>
               <p className="leading-relaxed text-lg font-medium text-gray-2 mb-6">
@@ -129,7 +124,7 @@ class ToursCheckpoints extends Component {
               <div className="flex flex-row items-stretch w-full mt-8 mb-8">
                 <SideLine />
                 <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
-                An All-Inclusive Mobile Guard App
+                  An All-Inclusive Mobile Guard App
                 </h1>
               </div>
               <p className="leading-relaxed text-lg font-medium text-gray-2 mb-6">
@@ -163,7 +158,7 @@ class ToursCheckpoints extends Component {
               <div className="flex flex-row items-stretch w-full mt-8 mb-8">
                 <SideLine />
                 <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
-                Send Relevant Information Quickly
+                  Send Relevant Information Quickly
                 </h1>
               </div>
               <p className="leading-relaxed text-lg font-medium text-gray-2 mb-6">

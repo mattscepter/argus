@@ -5,18 +5,12 @@ import Header from "./../Partials/Header";
 import Header2 from "./../Partials/Header2";
 import Stickynav from "./../Partials/Stickynav";
 import MobileHeader from "../Partials/MobileHeader";
-import SideLine from "./../Components/SideLine"
+import SideLine from "./../Components/SideLine";
 
 class About extends Component {
   render() {
     return (
       <div className="font-for-para">
-
-        <Header />
-        <Header2 />
-        <Stickynav />
-        <MobileHeader />
-
         <div className="text-gray-600 body-font bg-no-repeat bg-cover bg-servicesbg">
           <div className="container mx-auto flex px-5 py-40 items-center justify-center flex-col">
             <div className="text-center lg:w-2/3 w-full">
@@ -30,11 +24,11 @@ class About extends Component {
         <div className="px-4 sm:px-8 lg:px-12 xl:px-0 max-w-1366 mx-auto bg-no-repeat bg-mapbg">
           <div className="flex flex-wrap my-12">
             <div className=" md:w-1/2 lg:w-2/3 flex flex-col items-start">
-              <img src={about_image} alt="Jobs page" className="w-full"/>
+              <img src={about_image} alt="Jobs page" className="w-full" />
               <div className="flex flex-row items-stretch w-full mt-8 mb-8">
                 <SideLine />
                 <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
-                Scope of Service
+                  Scope of Service
                 </h1>
               </div>
               <p className="leading-normal text-lg font-medium text-gray-2 mb-6">
@@ -46,24 +40,30 @@ class About extends Component {
               <ul className="text-gray-2 font-medium text-lg flex flex-col md:flex-row">
                 <div className="">
                   <li className="my-0.5">
-                    <span className="text-red-1 font-bold mr-2">✓</span> Retail Malls
+                    <span className="text-red-1 font-bold mr-2">✓</span> Retail
+                    Malls
                   </li>
                   <li className="my-0.5">
-                    <span className="text-red-1 font-bold mr-2">✓</span> Commercial Properties{" "}
+                    <span className="text-red-1 font-bold mr-2">✓</span>{" "}
+                    Commercial Properties{" "}
                   </li>
                   <li className="my-0.5">
-                    <span className="text-red-1 font-bold mr-2">✓</span> Condominiums{" "}
+                    <span className="text-red-1 font-bold mr-2">✓</span>{" "}
+                    Condominiums{" "}
                   </li>
                 </div>
                 <div className="md:ml-10">
                   <li className="my-0.5">
-                    <span className="text-red-1 font-bold mr-2">✓</span> Industrial Sites
+                    <span className="text-red-1 font-bold mr-2">✓</span>{" "}
+                    Industrial Sites
                   </li>
                   <li className="my-0.5">
-                    <span className="text-red-1 font-bold mr-2">✓</span> Healthcare Facilities
+                    <span className="text-red-1 font-bold mr-2">✓</span>{" "}
+                    Healthcare Facilities
                   </li>
                   <li className="my-0.5">
-                    <span className="text-red-1 font-bold mr-2">✓</span> Mobile Guard{" "}
+                    <span className="text-red-1 font-bold mr-2">✓</span> Mobile
+                    Guard{" "}
                   </li>
                 </div>
               </ul>
@@ -71,7 +71,7 @@ class About extends Component {
               <div className="flex flex-row items-stretch w-full mt-8 mb-8">
                 <SideLine />
                 <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
-                Employment Requirements
+                  Employment Requirements
                 </h1>
               </div>
               <p className="leading-normal text-lg font-medium text-gray-2 mb-6">
@@ -81,34 +81,36 @@ class About extends Component {
               </p>
               <ul className="text-gray-2 font-medium text-lg mb-6">
                 <li className="my-0.5">
-                  <span className="text-red-1 font-bold mr-2">✓</span> A valid Ontario Security
-                  Licence{" "}
+                  <span className="text-red-1 font-bold mr-2">✓</span> A valid
+                  Ontario Security Licence{" "}
                 </li>
                 <li className="my-0.5">
-                  <span className="text-red-1 font-bold mr-2">✓</span> Previous experience
+                  <span className="text-red-1 font-bold mr-2">✓</span> Previous
+                  experience
                 </li>
                 <li className="my-0.5">
-                  <span className="text-red-1 font-bold mr-2">✓</span> Education (Ontario Grade
-                  12 or equivalent)
+                  <span className="text-red-1 font-bold mr-2">✓</span> Education
+                  (Ontario Grade 12 or equivalent)
                 </li>
                 <li className="my-0.5">
-                  <span className="text-red-1 font-bold mr-2">✓</span> Availability to work
-                  required shifts{" "}
+                  <span className="text-red-1 font-bold mr-2">✓</span>{" "}
+                  Availability to work required shifts{" "}
                 </li>
                 <li className="my-0.5">
-                  <span className="text-red-1 font-bold mr-2">✓</span> No criminal record
+                  <span className="text-red-1 font-bold mr-2">✓</span> No
+                  criminal record
                 </li>
                 <li className="my-0.5">
-                  <span className="text-red-1 font-bold mr-2">✓</span> Canadian citizen or
-                  landed immigrant status
+                  <span className="text-red-1 font-bold mr-2">✓</span> Canadian
+                  citizen or landed immigrant status
                 </li>
                 <li className="my-0.5">
-                  <span className="text-red-1 font-bold mr-2">✓</span> Available transportation
-                  to get to work{" "}
+                  <span className="text-red-1 font-bold mr-2">✓</span> Available
+                  transportation to get to work{" "}
                 </li>
                 <li className="my-0.5">
-                  <span className="text-red-1 font-bold mr-2">✓</span> A clean and professional
-                  appearance with good hygiene
+                  <span className="text-red-1 font-bold mr-2">✓</span> A clean
+                  and professional appearance with good hygiene
                 </li>
               </ul>
               <p className="leading-loose text-lg font-medium text-gray-2 mb-4 sm:mb-8">

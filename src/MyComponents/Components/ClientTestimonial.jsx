@@ -14,8 +14,7 @@ function SampleNextArrow(props) {
       className={className}
       style={{
         ...style,
-        display: "block",
-        paddingLeft: "50px",
+        paddingLeft: "10px",
         transform: "scale(1.5)",
       }}
       onClick={onClick}
@@ -29,8 +28,7 @@ function SamplePrevArrow(props) {
       className={className}
       style={{
         ...style,
-        display: "block",
-        paddingRight: "150px",
+        paddingRight: "100px",
         transform: "scale(1.5)",
       }}
       onClick={onClick}
@@ -47,32 +45,43 @@ const ClientTestimonial = ({ testimonial }) => {
     centerPadding: "350px",
     autoplaySpeed: 5000,
     pauseOnHover: true,
-    nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />,
     dots: true,
     responsive: [
       {
         breakpoint: 1700,
         settings: {
           centerPadding: "350px",
+          nextArrow: <SampleNextArrow />,
+          prevArrow: <SamplePrevArrow />,
         },
       },
       {
         breakpoint: 1500,
         settings: {
           centerPadding: "300px",
+          nextArrow: <SampleNextArrow />,
+          prevArrow: <SamplePrevArrow />,
         },
       },
       {
         breakpoint: 1200,
         settings: {
-          centerPadding: "150px",
+          centerPadding: "250px",
+          arrows: false,
         },
       },
       {
+        breakpoint: 950,
+        settings: {
+          centerPadding: "200px",
+          arrows: false,
+        },
+      },
+
+      {
         breakpoint: 850,
         settings: {
-          centerPadding: "100px",
+          centerPadding: "170px",
           arrows: false,
         },
       },
@@ -96,7 +105,7 @@ const ClientTestimonial = ({ testimonial }) => {
 
   return (
     <div className="bg-client">
-      <div className="px-4 sm:px-8 lg:px-12 2xl:px-0 mx-auto max-w-1366 py-24 font-for-para">
+      <div className="px-0 sm:px-4 lg:px-12 2xl:px-0 mx-auto max-w-1366 py-24 font-for-para">
         <div className="flex flex-row items-stretch w-full mt-8 md:mt-0 mb-12 lg:justify-center">
           <SideLine />
           <h1 className="leading-tight text-3xl lg:text-4xl font-bold text-gray-3">

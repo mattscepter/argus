@@ -4,19 +4,13 @@ import about_image from "./../../argus website/PNG/Video.png";
 import SideBar from "./../Components/SideBar.jsx";
 import Header from "./../Partials/Header";
 import Header2 from "./../Partials/Header2";
-import Stickynav from "./../Partials/Stickynav"
+import Stickynav from "./../Partials/Stickynav";
 import MobileHeader from "../Partials/MobileHeader";
-import SideLine from "./../Components/SideLine"
+import SideLine from "./../Components/SideLine";
 
 export default function Personell() {
   return (
     <div className="font-for-para">
-
-      <Header />
-      <Header2 /> 
-      <Stickynav/>
-      <MobileHeader />
-
       <div className="text-gray-600 body-font bg-no-repeat bg-cover bg-aboutbg">
         <div className="container mx-auto flex px-5 py-40 items-center justify-center flex-col">
           <div className="text-center lg:w-2/3 w-full">
@@ -43,11 +37,11 @@ export default function Personell() {
             </p>
 
             <div className="flex flex-row items-stretch w-full mt-8 mb-8">
-                <SideLine />
-                <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
+              <SideLine />
+              <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
                 RIGOROUSLY SCREENED
-                </h1>
-              </div>
+              </h1>
+            </div>
             <p className="leading-relaxed text-lg font-medium text-gray-2 mb-6">
               The Argus Security Pre-employment screening process involves
               investigating the backgrounds of potential employees to make sure
@@ -60,11 +54,11 @@ export default function Personell() {
             </p>
 
             <div className="flex flex-row items-stretch w-full mt-8 mb-8">
-                <SideLine />
-                <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
+              <SideLine />
+              <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
                 EXCEPTIONALLY TRAINED
-                </h1>
-              </div>
+              </h1>
+            </div>
             <p className="leading-relaxed text-lg font-medium text-gray-2 mb-6">
               Argus Security Guards are all trained to meet and exceed the
               required security training that the government has regulated. In
@@ -82,11 +76,11 @@ export default function Personell() {
             </p>
 
             <div className="flex flex-row items-stretch w-full mt-8 mb-8">
-                <SideLine />
-                <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
+              <SideLine />
+              <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
                 PROFESSIONAL ATTITUDES
-                </h1>
-              </div>
+              </h1>
+            </div>
             <p className="leading-relaxed text-lg font-medium text-gray-2 mb-6">
               The Legal Departments’ mission is to guide every operation towards
               legal compliance, provide advice and to protect clients. The Legal
@@ -97,11 +91,11 @@ export default function Personell() {
             </p>
 
             <div className="flex flex-row items-stretch w-full mt-8 mb-8">
-                <SideLine />
-                <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
+              <SideLine />
+              <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
                 Area Management Department
-                </h1>
-              </div>
+              </h1>
+            </div>
             <p className="leading-relaxed text-lg font-medium text-gray-2 mb-6">
               Argus Security is built on a culture of professionalism. Our
               Guards are trained to maintain a professional attitude. We define
@@ -116,11 +110,11 @@ export default function Personell() {
             </p>
 
             <div className="flex flex-row items-stretch w-full mt-8 mb-8">
-                <SideLine />
-                <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
+              <SideLine />
+              <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
                 ACCOUNTABILITY
-                </h1>
-              </div>
+              </h1>
+            </div>
             <p className="leading-relaxed text-lg font-medium text-gray-2 mb-6">
               Each site will be given a Supervisor who will be responsible for
               the management of security operations. The Site Supervisor will be

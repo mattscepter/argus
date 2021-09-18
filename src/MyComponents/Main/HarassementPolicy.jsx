@@ -5,19 +5,13 @@ import SideBar from "./../Components/SideBar.jsx";
 import AboutPageButtons from "../Components/AboutPageButtons";
 import Header from "./../Partials/Header";
 import Header2 from "./../Partials/Header2";
-import Stickynav from "./../Partials/Stickynav"
+import Stickynav from "./../Partials/Stickynav";
 import MobileHeader from "../Partials/MobileHeader";
-import SideLine from "./../Components/SideLine"
+import SideLine from "./../Components/SideLine";
 
 export default function HarassementPolicy() {
   return (
     <div>
-
-      <Header />
-      <Header2 />
-      <Stickynav/>
-      <MobileHeader />
-
       <div className="text-gray-600 body-font bg-no-repeat bg-cover bg-aboutbg">
         <div className="container mx-auto flex px-5 py-40 items-center justify-center flex-col">
           <div className="text-center lg:w-2/3 w-full">
@@ -39,11 +33,11 @@ export default function HarassementPolicy() {
             </p>
 
             <div className="flex flex-row items-stretch w-full mt-8 mb-8">
-                <SideLine />
-                <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
+              <SideLine />
+              <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
                 Purpose
-                </h1>
-              </div>
+              </h1>
+            </div>
             <p className="leading-relaxed text-lg font-medium text-gray-2 mb-6">
               Argus Security is committed to providing a working environment in
               which all of its employees and clients are treated with respect
@@ -68,11 +62,11 @@ export default function HarassementPolicy() {
             </p>
 
             <div className="flex flex-row items-stretch w-full mt-8 mb-8">
-                <SideLine />
-                <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
+              <SideLine />
+              <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
                 Definitions
-                </h1>
-              </div>
+              </h1>
+            </div>
             <p className="leading-relaxed text-lg font-medium text-gray-2 mb-6">
               The following will assist in the identification of harassment and
               discrimination.{" "}
@@ -95,40 +89,41 @@ export default function HarassementPolicy() {
 
             <ul className="text-gray-2 font-medium text-lg mb-6">
               <li className="my-0.5">
-                <span className="text-red-1 font-bold mr-2">✓</span> Acts of harassment can
-                include, but are not limited to:
+                <span className="text-red-1 font-bold mr-2">✓</span> Acts of
+                harassment can include, but are not limited to:
               </li>
               <li className="my-0.5">
-                <span className="text-red-1 font-bold mr-2">✓</span> Profane language and
-                inappropriate comments or gestures;{" "}
+                <span className="text-red-1 font-bold mr-2">✓</span> Profane
+                language and inappropriate comments or gestures;{" "}
               </li>
               <li className="my-0.5">
-                <span className="text-red-1 font-bold mr-2">✓</span> Inappropriate physical
-                conduct;{" "}
+                <span className="text-red-1 font-bold mr-2">✓</span>{" "}
+                Inappropriate physical conduct;{" "}
               </li>
               <li className="my-0.5">
-                <span className="text-red-1 font-bold mr-2">✓</span> Material or offensive
-                pictures that are displayed publicly, circulated, put on
-                someone’s work space or belongings, or on a computer or fax
+                <span className="text-red-1 font-bold mr-2">✓</span> Material or
+                offensive pictures that are displayed publicly, circulated, put
+                on someone’s work space or belongings, or on a computer or fax
                 machine
               </li>
               <li className="my-0.5">
-                <span className="text-red-1 font-bold mr-2">✓</span> Any inappropriate
-                electronic or cyber activity used for the purpose of violence,
-                intimidation and/ or harassment{" "}
+                <span className="text-red-1 font-bold mr-2">✓</span> Any
+                inappropriate electronic or cyber activity used for the purpose
+                of violence, intimidation and/ or harassment{" "}
               </li>
               <li className="my-0.5">
-                <span className="text-red-1 font-bold mr-2">✓</span> Creating an intimidating
-                or offensive working environment; or
+                <span className="text-red-1 font-bold mr-2">✓</span> Creating an
+                intimidating or offensive working environment; or
               </li>
               <li className="my-0.5">
-                <span className="text-red-1 font-bold mr-2">✓</span> Creating a degrading,
-                humiliating, or hostile work environment{" "}
+                <span className="text-red-1 font-bold mr-2">✓</span> Creating a
+                degrading, humiliating, or hostile work environment{" "}
               </li>
               <li className="my-0.5">
-                <span className="text-red-1 font-bold mr-2">✓</span> Cyber bullying, defined as
-                any inappropriate electronic or cyber activity used for the
-                purpose of violence, intimidation and/or harassment{" "}
+                <span className="text-red-1 font-bold mr-2">✓</span> Cyber
+                bullying, defined as any inappropriate electronic or cyber
+                activity used for the purpose of violence, intimidation and/or
+                harassment{" "}
               </li>
             </ul>
 
@@ -145,51 +140,52 @@ export default function HarassementPolicy() {
 
             <ul className="text-gray-2 font-medium text-lg mb-6 ">
               <li className="my-0.5">
-                <span className="text-red-1 font-bold mr-2">✓</span> Requests for sexual
-                favors;
+                <span className="text-red-1 font-bold mr-2">✓</span> Requests
+                for sexual favors;
               </li>
               <li className="my-0.5">
-                <span className="text-red-1 font-bold mr-2">✓</span> Verbal or physical conduct
-                of a sexual nature;
+                <span className="text-red-1 font-bold mr-2">✓</span> Verbal or
+                physical conduct of a sexual nature;
               </li>
               <li className="my-0.5">
-                <span className="text-red-1 font-bold mr-2">✓</span> Physical conduct of a
-                sexual nature;
+                <span className="text-red-1 font-bold mr-2">✓</span> Physical
+                conduct of a sexual nature;
               </li>
               <li className="my-0.5">
-                <span className="text-red-1 font-bold mr-2">✓</span> Offensive sexual comments,
-                abuse or innuendo about how someone talks, dresses or acts;
+                <span className="text-red-1 font-bold mr-2">✓</span> Offensive
+                sexual comments, abuse or innuendo about how someone talks,
+                dresses or acts;
               </li>
               <li className="my-0.5">
-                <span className="text-red-1 font-bold mr-2">✓</span> Jokes or gestures of a
-                sexual nature;
+                <span className="text-red-1 font-bold mr-2">✓</span> Jokes or
+                gestures of a sexual nature;
               </li>
               <li className="my-0.5">
-                <span className="text-red-1 font-bold mr-2">✓</span> Material or offensive
-                pictures that are displayed publicly, circulated, put on
-                someone’s work space or belongings, or on a computer or fax
+                <span className="text-red-1 font-bold mr-2">✓</span> Material or
+                offensive pictures that are displayed publicly, circulated, put
+                on someone’s work space or belongings, or on a computer or fax
                 machine; in neither print or electronic form
               </li>
               <li className="my-0.5">
-                <span className="text-red-1 font-bold mr-2">✓</span> Staring or leering in a
-                sexual manner
+                <span className="text-red-1 font-bold mr-2">✓</span> Staring or
+                leering in a sexual manner
               </li>
               <li className="my-0.5">
-                <span className="text-red-1 font-bold mr-2">✓</span> CTelephone calls or e-mail
-                of a sexual nature.
+                <span className="text-red-1 font-bold mr-2">✓</span> CTelephone
+                calls or e-mail of a sexual nature.
               </li>
               <li className="my-0.5">
-                <span className="text-red-1 font-bold mr-2">✓</span> Soliciting sexual favors
-                in exchange for a benefit
+                <span className="text-red-1 font-bold mr-2">✓</span> Soliciting
+                sexual favors in exchange for a benefit
               </li>
               <li className="my-0.5">
-                <span className="text-red-1 font-bold mr-2">✓</span> Unnecessary physical
-                contact, such as massages
+                <span className="text-red-1 font-bold mr-2">✓</span> Unnecessary
+                physical contact, such as massages
               </li>
               <li className="my-0.5">
-                <span className="text-red-1 font-bold mr-2">✓</span> Asking for dates or
-                personal contact when the person has already indicated they are
-                not interested
+                <span className="text-red-1 font-bold mr-2">✓</span> Asking for
+                dates or personal contact when the person has already indicated
+                they are not interested
               </li>
             </ul>
 
@@ -219,11 +215,11 @@ export default function HarassementPolicy() {
             </p>
 
             <div className="flex flex-row items-stretch w-full mt-8 mb-8">
-                <SideLine />
-                <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
+              <SideLine />
+              <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
                 Freedom from Harassment and Discrimination
-                </h1>
-              </div>
+              </h1>
+            </div>
             <p className="leading-relaxed text-lg font-medium text-gray-2 mb-6">
               In keeping with the Human Rights Code, Argus Security prohibits
               discrimination or any form of harassment in employment as well as
@@ -274,11 +270,11 @@ export default function HarassementPolicy() {
             </p>
 
             <div className="flex flex-row items-stretch w-full mt-8 mb-8">
-                <SideLine />
-                <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
+              <SideLine />
+              <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
                 Abuse of this Policy
-                </h1>
-              </div>
+              </h1>
+            </div>
             <p className="leading-relaxed text-lg font-medium text-gray-2 mb-6">
               Argus Security supports the prompt and timely investigation and
               resolution of complaints of harassment or discrimination. However,
@@ -294,11 +290,11 @@ export default function HarassementPolicy() {
             </p>
 
             <div className="flex flex-row items-stretch w-full mt-8 mb-8">
-                <SideLine />
-                <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
+              <SideLine />
+              <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
                 Confidentiality
-                </h1>
-              </div>
+              </h1>
+            </div>
             <p className="leading-relaxed text-lg font-medium text-gray-2 mb-6">
               While individuals are encouraged to seek advice and counsel
               regarding possible violations of this policy, it is requested that
@@ -319,11 +315,11 @@ export default function HarassementPolicy() {
             </p>
 
             <div className="flex flex-row items-stretch w-full mt-8 mb-8">
-                <SideLine />
-                <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
+              <SideLine />
+              <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
                 Procedure
-                </h1>
-              </div>
+              </h1>
+            </div>
             <p className="leading-relaxed text-lg font-medium text-gray-2 mb-6">
               Any employee who feels that he or she has been the subject of
               harassment or discrimination contrary to this policy may attempt
@@ -367,11 +363,11 @@ export default function HarassementPolicy() {
             </p>
 
             <div className="flex flex-row items-stretch w-full mt-8 mb-8">
-                <SideLine />
-                <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
+              <SideLine />
+              <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
                 Initial Assessment of Complaint
-                </h1>
-              </div>
+              </h1>
+            </div>
             <p className="leading-relaxed text-lg font-medium text-gray-2 mb-6">
               Once the Complainant lodges a complaint with his / her supervisor
               or the Appropriate Authority, the person receiving the complaint
@@ -381,22 +377,24 @@ export default function HarassementPolicy() {
 
             <ul className="text-gray-2 font-medium text-lg mb-6">
               <li className="my-0.5">
-                <span className="text-red-1 font-bold mr-2">✓</span> the complaint does not
-                fall within the definitions outlined in the policy, is not
-                subject to this policy, and should be pursued through an
-                alternate mechanism;
+                <span className="text-red-1 font-bold mr-2">✓</span> the
+                complaint does not fall within the definitions outlined in the
+                policy, is not subject to this policy, and should be pursued
+                through an alternate mechanism;
               </li>
               <li className="my-0.5">
-                <span className="text-red-1 font-bold mr-2">✓</span> the subject matter has
-                been found to be frivolous, vexatious or in bad faith;
+                <span className="text-red-1 font-bold mr-2">✓</span> the subject
+                matter has been found to be frivolous, vexatious or in bad
+                faith;
               </li>
               <li className="my-0.5">
-                <span className="text-red-1 font-bold mr-2">✓</span> the complaint appears to
-                be outside the jurisdiction of Argus Security; or
+                <span className="text-red-1 font-bold mr-2">✓</span> the
+                complaint appears to be outside the jurisdiction of Argus
+                Security; or
               </li>
               <li className="my-0.5">
-                <span className="text-red-1 font-bold mr-2">✓</span> the complaint cannot be
-                supported or substantiated.
+                <span className="text-red-1 font-bold mr-2">✓</span> the
+                complaint cannot be supported or substantiated.
               </li>
             </ul>
 
@@ -409,11 +407,11 @@ export default function HarassementPolicy() {
             </p>
 
             <div className="flex flex-row items-stretch w-full mt-8 mb-8">
-                <SideLine />
-                <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
+              <SideLine />
+              <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
                 Informal Resolution
-                </h1>
-              </div>
+              </h1>
+            </div>
             <p className="leading-relaxed text-lg font-medium text-gray-2 mb-6">
               The Complainant may and is encouraged to seek the assistance of
               the Appropriate Authority towards an informal resolution of the
@@ -428,11 +426,11 @@ export default function HarassementPolicy() {
             </p>
 
             <div className="flex flex-row items-stretch w-full mt-8 mb-8">
-                <SideLine />
-                <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
+              <SideLine />
+              <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
                 Formal Complaint
-                </h1>
-              </div>
+              </h1>
+            </div>
             <p className="leading-relaxed text-lg font-medium text-gray-2 mb-6">
               If the Complainant wishes to proceed further with his or her
               complaint, the Complainant must then provide a written statement
@@ -456,11 +454,11 @@ export default function HarassementPolicy() {
             </p>
 
             <div className="flex flex-row items-stretch w-full mt-8 mb-8">
-                <SideLine />
-                <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
+              <SideLine />
+              <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
                 Investigation
-                </h1>
-              </div>
+              </h1>
+            </div>
             <p className="leading-relaxed text-lg font-medium text-gray-2 mb-6">
               Argus Security seeks to resolve every harassment and
               discrimination claim as expediently as possible. The Appropriate
@@ -488,11 +486,11 @@ export default function HarassementPolicy() {
             </p>
 
             <div className="flex flex-row items-stretch w-full mt-8 mb-8">
-                <SideLine />
-                <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
+              <SideLine />
+              <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
                 Report Handling Procedures
-                </h1>
-              </div>
+              </h1>
+            </div>
             <p className="leading-relaxed text-lg font-medium text-gray-2 mb-6">
               The Appropriate Authority shall advise the Complainant and the
               Respondent of the findings of any investigation conducted under
@@ -512,13 +510,12 @@ export default function HarassementPolicy() {
               employees
             </p>
 
-
             <div className="flex flex-row items-stretch w-full mt-8 mb-8">
-                <SideLine />
-                <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
+              <SideLine />
+              <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
                 Records
-                </h1>
-              </div>
+              </h1>
+            </div>
             <p className="leading-relaxed text-lg font-medium text-gray-2 mb-6">
               The Human Resources department will keep records of all formal and
               informal resolutions and hearings except where otherwise stated in
@@ -532,9 +529,18 @@ export default function HarassementPolicy() {
               This policy is based upon the following pieces of legislation and
               policies:
               <br />
-              <span className="text-gray-3 font-bold mr-2">Ontario Human Rights Code </span><br />
-              <span className="text-gray-3 font-bold mr-2">Occupational Health & Safety Act </span><br />
-              <span className="text-gray-3 font-bold mr-2">Workplace Anti-Violence Policy </span> <br />
+              <span className="text-gray-3 font-bold mr-2">
+                Ontario Human Rights Code{" "}
+              </span>
+              <br />
+              <span className="text-gray-3 font-bold mr-2">
+                Occupational Health & Safety Act{" "}
+              </span>
+              <br />
+              <span className="text-gray-3 font-bold mr-2">
+                Workplace Anti-Violence Policy{" "}
+              </span>{" "}
+              <br />
             </p>
 
             <AboutPageButtons />
