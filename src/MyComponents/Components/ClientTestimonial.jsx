@@ -127,7 +127,7 @@ const ClientTestimonial = ({ testimonial }) => {
                         className="w-9 text-red-1 ml-auto -mt-14"
                       />
                     </div>
-                    <div className="px-16 pb-6 pt-2 w-full h-56">
+                    <div className="px-6 sm:px-6 md:px-10 pb-6 pt-2 w-full h-56">
                       <p className="leading-loose mb-6">{data?.description}</p>
                       <div className="inline-flex items-center">
                         <img
