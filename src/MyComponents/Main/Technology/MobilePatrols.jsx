@@ -7,17 +7,12 @@ import Header from "./../../Partials/Header";
 import Header2 from "./../../Partials/Header2";
 import Stickynav from "./../../Partials/Stickynav";
 import MobileHeader from "./../../Partials/MobileHeader";
-import SideLine from "./../../Components/SideLine"
+import SideLine from "./../../Components/SideLine";
 
 class MobilePatrols extends Component {
   render() {
     return (
       <div className="font-for-para">
-        <Header />
-        <Header2 />
-        <Stickynav />
-        <MobileHeader />
-
         <div className="text-gray-600 body-font bg-no-repeat bg-cover bg-aboutbg">
           <div className="container mx-auto flex px-5 py-40 items-center justify-center flex-col">
             <div className="text-center lg:w-2/3 w-full">
@@ -33,10 +28,10 @@ class MobilePatrols extends Component {
             <div className=" md:w-1/2 lg:w-2/3 flex flex-col items-start">
               <img src={about_image} alt="About page" />
 
-              <div className="flex flex-row items-stretch w-full mt-8 mb-8">
+              <div className="flex flex-row items-stretch w-full mt-14 mb-8">
                 <SideLine />
                 <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
-                Optimized Mobile Patrols
+                  Optimized Mobile Patrols
                 </h1>
               </div>
               <p className="leading-relaxed text-lg font-medium text-gray-2 mb-6">
@@ -46,33 +41,33 @@ class MobilePatrols extends Component {
                 means reducing time and cost spent in an operation. Silvertrac
                 helps optimize mobile patrols by:
               </p>
-              <ul className="text-gray-2 text-lg">
+              <ul className="text-gray-2 text-lg mb-8">
                 <li className="my-0.5">
                   <span className="font-bold text-red-1 mr-2">✓</span> Tracking
                   patrol productivity in real-time through checkpoints.
                 </li>
                 <li className="my-0.5">
-                  <span className="font-bold text-red-1 mr-2">✓</span> Minimizing
-                  service interruptions.
+                  <span className="font-bold text-red-1 mr-2">✓</span>{" "}
+                  Minimizing service interruptions.
                 </li>
                 <li className="my-0.5">
-                  <span className="font-bold text-red-1 mr-2">✓</span> Reducing time
-                  between sites{" "}
+                  <span className="font-bold text-red-1 mr-2">✓</span> Reducing
+                  time between sites{" "}
                 </li>
                 <li className="my-0.5">
-                  <span className="font-bold text-red-1 mr-2">✓</span> Visualizing
-                  mobile patrols{" "}
+                  <span className="font-bold text-red-1 mr-2">✓</span>{" "}
+                  Visualizing mobile patrols{" "}
                 </li>
                 <li className="my-0.5">
-                  <span className="font-bold text-red-1 mr-2">✓</span> Integrating
-                  Google Maps® so guards never have to leave the app{" "}
+                  <span className="font-bold text-red-1 mr-2">✓</span>{" "}
+                  Integrating Google Maps® so guards never have to leave the app{" "}
                 </li>
               </ul>
 
               <div className="flex flex-row items-stretch w-full mt-8 mb-8">
                 <SideLine />
                 <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
-                Mobile Patrol Checkpoints
+                  Mobile Patrol Checkpoints
                 </h1>
               </div>
               <p className="leading-relaxed text-lg font-medium text-gray-2 mb-6">
@@ -83,18 +78,19 @@ class MobilePatrols extends Component {
                 of detail that allows teams to further optimize how drivers
                 spend their time. When a checkpoint is hit, four things happen:
               </p>
-              <ul className="text-gray-2 text-lg">
+              <ul className="text-gray-2 text-lg mb-8">
                 <li className="my-0.5">
-                  <span className="font-bold text-red-1 mr-2">✓</span> The officer
-                  receives specific instructions for the current site.
+                  <span className="font-bold text-red-1 mr-2">✓</span> The
+                  officer receives specific instructions for the current site.
                 </li>
                 <li className="my-0.5">
-                  <span className="font-bold text-red-1 mr-2">✓</span> A pre-written
-                  note is added directly to the Daily Activity Report (DAR).
+                  <span className="font-bold text-red-1 mr-2">✓</span> A
+                  pre-written note is added directly to the Daily Activity
+                  Report (DAR).
                 </li>
                 <li className="my-0.5">
-                  <span className="font-bold text-red-1 mr-2">✓</span> A GPS pinpoint
-                  is captured showing the time and location of the hit.{" "}
+                  <span className="font-bold text-red-1 mr-2">✓</span> A GPS
+                  pinpoint is captured showing the time and location of the hit.{" "}
                 </li>
                 <li className="my-0.5">
                   <span className="font-bold text-red-1 mr-2">✓</span> Option to
@@ -105,7 +101,7 @@ class MobilePatrols extends Component {
               <div className="flex flex-row items-stretch w-full mt-8 mb-8">
                 <SideLine />
                 <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
-                Automatically Populate Daily Activity Reports
+                  Automatically Populate Daily Activity Reports
                 </h1>
               </div>
               <p className="leading-relaxed text-lg font-medium text-gray-2 mb-6">
@@ -120,7 +116,7 @@ class MobilePatrols extends Component {
               <div className="flex flex-row items-stretch w-full mt-8 mb-8">
                 <SideLine />
                 <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
-                Track Every Vehicle-Related Cost
+                  Track Every Vehicle-Related Cost
                 </h1>
               </div>
               <p className="leading-relaxed text-lg font-medium text-gray-2 mb-6">

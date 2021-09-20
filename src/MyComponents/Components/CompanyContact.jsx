@@ -8,7 +8,7 @@ const CompanyContact = () => {
   const contact = useSelector((state) => state.contact);
 
   return (
-    <div className="text-sm">
+    <div className="text-lg md:text-sm">
     <a href={`tel:${contact.phoneNumber}`} className="flex flex-row items-center py-1">
        <img src={phone_logo} alt="Phone Logo" className="w-5"/>
         <p className="pl-5">{contact?.phoneNumber}</p>
@@ -19,7 +19,7 @@ const CompanyContact = () => {
     </a>
     <div className="flex flex-row items-start py-1">
       <img src={location_logo} alt="Phone Logo" className="w-5"/>
-      <p className="pl-5 md:pr-2 lg:pr-4 xl:pr-8 2xl:pr-16">{contact?.address}</p>
+      <p className="pl-5">{contact?.address}</p>
     </div>
   </div>
   );

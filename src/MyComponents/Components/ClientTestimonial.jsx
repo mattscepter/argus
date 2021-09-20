@@ -14,8 +14,7 @@ function SampleNextArrow(props) {
       className={className}
       style={{
         ...style,
-        display: "block",
-        paddingLeft: "50px",
+        paddingLeft: "10px",
         transform: "scale(1.5)",
       }}
       onClick={onClick}
@@ -29,8 +28,7 @@ function SamplePrevArrow(props) {
       className={className}
       style={{
         ...style,
-        display: "block",
-        paddingRight: "150px",
+        paddingRight: "100px",
         transform: "scale(1.5)",
       }}
       onClick={onClick}
@@ -44,7 +42,7 @@ const ClientTestimonial = ({ testimonial }) => {
     focusOnSelect: true,
     speed: 600,
     autoplay: true,
-    centerPadding: "450px",
+    centerPadding: "350px",
     autoplaySpeed: 5000,
     pauseOnHover: true,
     nextArrow: <SampleNextArrow />,
@@ -55,24 +53,37 @@ const ClientTestimonial = ({ testimonial }) => {
         breakpoint: 1700,
         settings: {
           centerPadding: "350px",
+          nextArrow: <SampleNextArrow />,
+          prevArrow: <SamplePrevArrow />,
         },
       },
       {
         breakpoint: 1500,
         settings: {
-          centerPadding: "250px",
+          centerPadding: "300px",
+          nextArrow: <SampleNextArrow />,
+          prevArrow: <SamplePrevArrow />,
         },
       },
       {
         breakpoint: 1200,
         settings: {
-          centerPadding: "150px",
+          centerPadding: "250px",
+          arrows: false,
         },
       },
       {
+        breakpoint: 950,
+        settings: {
+          centerPadding: "200px",
+          arrows: false,
+        },
+      },
+
+      {
         breakpoint: 850,
         settings: {
-          centerPadding: "100px",
+          centerPadding: "170px",
           arrows: false,
         },
       },
@@ -96,39 +107,41 @@ const ClientTestimonial = ({ testimonial }) => {
 
   return (
     <div className="bg-client">
-      <div className="px-4 sm:px-8 lg:px-12 2xl:px-0 mx-auto max-w-1366 py-24 font-for-para">
-        <div className="flex flex-row items-stretch w-full mt-8 md:mt-0 mb-12 lg:justify-center">
-          <SideLine />
-          <h1 className="leading-tight text-3xl lg:text-4xl font-bold text-gray-3">
-            Client Testimonials
-          </h1>
+      <div className="px-4 sm:px-8 lg:px-12 2xl:px-0 mx-auto max-w-1366 py-14 font-for-para">
+        <div className="flex justify-start">
+          <div className="flex flex-row items-stretch w-full mt-8 md:mt-0 mb-12 lg:justify-center">
+            <SideLine />
+            <h1 className="leading-tight text-3xl lg:text-4xl font-bold text-gray-3">
+              Client Testimonials
+            </h1>
+          </div>
         </div>
         <div className="flex flex-wrap mb-16 w-full">
           <Slider {...settings} className="w-full">
             {testimonial.map((data) => {
               return (
-                <div key={data._id} className="pt-10 px-2 testimonialSlider">
+                <div key={data._id} className="pt-10 px-2 pb-32 sm:pb-20 testimonialSlider">
                   <div className="h-full bg-white shadow-lg flex flex-col">
-                    <div className="bg-gray-1 px-6 py-10 ml-auto">
+                    <div className="bg-gray-1 px-10 py-6 ml-auto">
                       <img
                         src={quotes}
                         alt=""
-                        className="w-9 text-red-1 ml-auto -mt-14"
+                        className="w-8 h-12 text-red-1 ml-auto -mt-12"
                       />
                     </div>
-                    <div className="px-16 pb-6 pt-2 w-full h-56">
-                      <p className="leading-loose mb-6">{data?.description}</p>
-                      <div className="inline-flex items-center">
+                    <div className="px-4 sm:px-8 pb-8 pt-2 w-full">
+                      <p className="leading-loose mb-6 text-gray-2">{data?.description}</p>
+                      <div className="inline-flex items-end">
                         <img
                           src={`${API}/testimonal/get-photo/${data._id}`}
                           alt=""
                           className="w-20 h-20 p-1 border-2 border-red-1 flex-shrink-0 object-cover object-center"
                         />
-                        <span className="flex-grow flex flex-col pl-4">
-                          <span className="title-font font-medium text-red-1">
+                        <span className="flex-grow flex flex-col items- pl-4">
+                          <span className="text-lg font-bold text-red-1 border-b-2 border-red-1">
                             {data?.name}
                           </span>
-                          <span className="text-black text-sm">
+                          <span className="text-gray-3 text-lg">
                             {data?.role}
                           </span>
                         </span>

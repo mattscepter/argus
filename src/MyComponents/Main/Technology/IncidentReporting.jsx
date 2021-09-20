@@ -7,17 +7,12 @@ import Header from "./../../Partials/Header";
 import Header2 from "./../../Partials/Header2";
 import Stickynav from "./../../Partials/Stickynav";
 import MobileHeader from "./../../Partials/MobileHeader";
-import SideLine from "./../../Components/SideLine"
+import SideLine from "./../../Components/SideLine";
 
 class IncidentReporting extends Component {
   render() {
     return (
       <div className="font-for-para">
-        <Header />
-        <Header2 />
-        <Stickynav />
-        <MobileHeader />
-
         <div className="text-gray-600 body-font bg-no-repeat bg-cover bg-aboutbg">
           <div className="container mx-auto flex px-5 py-40 items-center justify-center flex-col">
             <div className="text-center lg:w-2/3 w-full">
@@ -33,10 +28,10 @@ class IncidentReporting extends Component {
             <div className=" md:w-1/2 lg:w-2/3 flex flex-col items-start">
               <img src={about_image} alt="About page" />
 
-              <div className="flex flex-row items-stretch w-full mt-8 mb-8">
+              <div className="flex flex-row items-stretch w-full mt-14 mb-8">
                 <SideLine />
                 <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
-                Robust Incident Reporting
+                  Robust Incident Reporting
                 </h1>
               </div>
               <p className="leading-relaxed text-lg font-medium text-gray-2 mb-6">
@@ -47,10 +42,10 @@ class IncidentReporting extends Component {
                 reporting makes producing a Daily Activity Report a hassle.
               </p>
 
-              <div className="flex flex-row items-stretch w-full mt-8 mb-8">
+              <div className="flex flex-row items-stretch w-full mt-6 mb-8">
                 <SideLine />
                 <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
-                Efficient Data Collection
+                  Efficient Data Collection
                 </h1>
               </div>
               <p className="leading-relaxed text-lg font-medium text-gray-2 mb-6">
@@ -64,7 +59,7 @@ class IncidentReporting extends Component {
                 criteria that can be included in any report, like:
               </p>
 
-              <ul className="text-gray-2 text-lg">
+              <ul className="text-gray-2 text-lg mb-7">
                 <li className="my-0.5">
                   <span className="font-bold text-red-1 mr-2">✓</span>{" "}
                   Time-stamped photos, audio files, and text notes.
@@ -79,10 +74,10 @@ class IncidentReporting extends Component {
                 </li>
               </ul>
 
-              <div className="flex flex-row items-stretch w-full mt-8 mb-8">
+              <div className="flex flex-row items-stretch w-full mt-6 mb-8">
                 <SideLine />
                 <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
-                Filtered Reports
+                  Filtered Reports
                 </h1>
               </div>
               <p className="leading-relaxed text-lg font-medium text-gray-2 mb-6">

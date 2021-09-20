@@ -4,19 +4,13 @@ import SideBar from "./../Components/SideBar.jsx";
 import AboutPageButtons from "../Components/AboutPageButtons";
 import Header from "./../Partials/Header";
 import Header2 from "./../Partials/Header2";
-import Stickynav from "./../Partials/Stickynav"
+import Stickynav from "./../Partials/Stickynav";
 import MobileHeader from "../Partials/MobileHeader";
-import SideLine from "./../Components/SideLine"
+import SideLine from "./../Components/SideLine";
 
 export default function OrganisationStructure() {
   return (
     <div className="font-for-para">
-
-      <Header />
-      <Header2 />
-      <Stickynav/>
-      <MobileHeader />
-
       <div className="text-gray-600 body-font bg-no-repeat bg-cover bg-aboutbg">
         <div className="container mx-auto flex px-5 py-40 items-center justify-center flex-col">
           <div className="text-center lg:w-2/3 w-full">
@@ -31,7 +25,7 @@ export default function OrganisationStructure() {
         <div className="flex flex-wrap my-12">
           <div className=" md:w-1/2 lg:w-2/3 flex flex-col items-start">
             <img src={about_image} alt="About page" />
-            <p className="leading-relaxed text-lg font-medium text-gray-2 mt-6 mb-6">
+            <p className="leading-relaxed text-lg font-medium text-gray-2 mt-14 mb-6">
               Argus Security is a customer-centric culture, and we are proud to
               put our customers first, in every area of our operation. All that
               we do revolves around our customers’ needs and expectations. Our
@@ -40,11 +34,11 @@ export default function OrganisationStructure() {
             </p>
 
             <div className="flex flex-row items-stretch w-full mt-8 mb-8">
-                <SideLine />
-                <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
+              <SideLine />
+              <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
                 Directors Department
-                </h1>
-              </div>
+              </h1>
+            </div>
             <p className="leading-relaxed text-lg font-medium text-gray-2 mb-6">
               The Directors Department is designed to ensure that our operation
               delivers the best customer experience by ensuring that every
@@ -55,11 +49,11 @@ export default function OrganisationStructure() {
             </p>
 
             <div className="flex flex-row items-stretch w-full mt-8 mb-8">
-                <SideLine />
-                <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
+              <SideLine />
+              <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
                 Human Resources
-                </h1>
-              </div>
+              </h1>
+            </div>
             <p className="leading-relaxed text-lg font-medium text-gray-2 mb-6">
               The Human Resources Department works in partnership with our
               employees to create a positive work environment that empowers our
@@ -70,11 +64,11 @@ export default function OrganisationStructure() {
             </p>
 
             <div className="flex flex-row items-stretch w-full mt-8 mb-8">
-                <SideLine />
-                <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
+              <SideLine />
+              <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
                 Legal Department
-                </h1>
-              </div>
+              </h1>
+            </div>
             <p className="leading-relaxed text-lg font-medium text-gray-2 mb-6">
               The Legal Departments’ mission is to guide every operation towards
               legal compliance, provide advice and to protect clients. The Legal
@@ -85,11 +79,11 @@ export default function OrganisationStructure() {
             </p>
 
             <div className="flex flex-row items-stretch w-full mt-8 mb-8">
-                <SideLine />
-                <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
+              <SideLine />
+              <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
                 Area Management Department
-                </h1>
-              </div>
+              </h1>
+            </div>
             <p className="leading-relaxed text-lg font-medium text-gray-2 mb-6">
               The Mission of the Area Management Department is to establish
               relationships with the community, communication between our
@@ -100,11 +94,11 @@ export default function OrganisationStructure() {
             </p>
 
             <div className="flex flex-row items-stretch w-full mt-8 mb-8">
-                <SideLine />
-                <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
+              <SideLine />
+              <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
                 Accounting Department
-                </h1>
-              </div>
+              </h1>
+            </div>
             <p className="leading-relaxed text-lg font-medium text-gray-2 mb-6">
               The Accounting Department’s mission is to record every financial
               transaction and provide accurate, detailed, and understandable
@@ -117,11 +111,11 @@ export default function OrganisationStructure() {
             </p>
 
             <div className="flex flex-row items-stretch w-full mt-8 mb-8">
-                <SideLine />
-                <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
+              <SideLine />
+              <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
                 Dispatch Department
-                </h1>
-              </div>
+              </h1>
+            </div>
             <p className="leading-relaxed text-lg font-medium text-gray-2 mb-6">
               The Mission of the Area Management Department is to establish
               relationships with the community, communication between our

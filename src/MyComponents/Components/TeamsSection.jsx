@@ -4,6 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useSelector } from "react-redux";
 import { API } from "../../api";
+import SideLine from "./SideLine";
 
 const SlickArrowLeft = ({ currentSlide, slideCount, ...props }) => (
   <button
@@ -89,35 +90,40 @@ const Teams = () => {
   };
 
   return (
-    <div className="py-24 font-for-para overflow-hidden">
-      <div className="px-0 lg:px-14  mx-auto max-w-1366 flex flex-col justify-center items-center">
-        <div className="w-screen h-auto bg-empofmon bg-cover bg-center bg-no-repeat flex flex-col items-center justify-center">
-          <div className="flex flex-col lg:flex-row lg:justify-center items-center my-20 mr-4">
-            <span className="h-1 w-10 bg-red-1 mb-10 md:m-0 md:mr-4"></span>
-            <h1 className="text-4xl font-bold text-gray-3 ">Our Team</h1>
-          </div>
+    <div className="py-12 font-for-para overflow-hidden">
+      <div className="flex flex-col justify-center items-center">
+        
+        <div className="w-full bg-empofmon bg-cover bg-center bg-no-repeat">
+          <div className="w-screen h-auto px-0 mx-auto bg-cover bg-center bg-no-repeat flex flex-col items-center justify-around">
+          <div className="flex flex-row items-stretch w-full pt-16 md:mt-0 mb-12 lg:justify-center">
+          <SideLine />
+          <h1 className="leading-tight text-3xl lg:text-4xl font-bold text-gray-3">
+            Our Team
+          </h1>
+        </div>
 
-          <div className="w-full h-full xl:w-3/5 ">
-            <Slider
-              asNavFor={nav.nav1}
-              ref={(slider) => (slider2 = slider)}
-              {...imgSliderSettings}
-              className="teamSliderMain h-full"
-            >
-              {team.map((teammember) => {
-                return (
-                  <img
-                    src={`${API}/team/get-photo/${teammember._id}`}
-                    alt=""
-                    className="max-h-44 mx-auto object-contain object-bottom pt-6 teamSlider"
-                  />
-                );
-              })}
-            </Slider>
+            <div className="w-full h-full xl:w-3/5 ">
+              <Slider
+                asNavFor={nav.nav1}
+                ref={(slider) => (slider2 = slider)}
+                {...imgSliderSettings}
+                className="teamSliderMain h-full"
+              >
+                {team.map((teammember) => {
+                  return (
+                    <img
+                      src={`${API}/team/get-photo/${teammember._id}`}
+                      alt=""
+                      className="max-h-44 mx-auto object-contain object-bottom pt-6 teamSlider"
+                    />
+                  );
+                })}
+              </Slider>
+            </div>
           </div>
         </div>
 
-        <div className="sm:px-6  mt-4 xl-px-0 w-full xl:w-3/4 2xl:w-11/12">
+        <div className="sm:px-6 mt-4 xl-px-0 w-full xl:w-3/4 2xl:w-11/12 max-w-1366">
           <Slider
             {...descSettings}
             asNavFor={nav.nav2}
@@ -127,7 +133,7 @@ const Teams = () => {
               return (
                 <div className="teamDetail" key={teammember._id}>
                   <div className="w-full p-4 mt-2">
-                    <h1 className="text-3xl title-font font-bold text-gray-900 mb-2 border-b-6 p-2 pt-0 pl-0 border-red-500 inline-block">
+                    <h1 className="text-3xl title-font font-bold text-gray-900 mb-2 border-b-6 p-2 pt-0 pl-0 border-red-1 inline-block">
                       {teammember.name}
                     </h1>
                     <h2 className="text-xl title-font font-bold text-gray-900 mb-2">

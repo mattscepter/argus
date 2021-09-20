@@ -53,26 +53,28 @@ const Footer = () => {
   });
 
   return (
-    <div className="bg-black-1 font-for-para">
+    <footer className="bg-black-1 font-for-para">
       <div className="text-white text-lg md:text-sm body-font bg-top bg-no-repeat bg-cover bg-footer bg-opacity-5">
-        <div className="container px-4 sm:px-8 lg:px-12 2xl:px-0 max-w-1366  mx-auto">
-          <div className="flex flex-col md:flex-row md:text-left text-center order-first items-start">
-            <div className="w-3/4 flex flex-wrap md:text-left text-center order-first mx-auto">
-              <div className="lg:w-1/3 w-full px-4 pt-4 ">
+        <div className="container px-4 sm:px-8 lg:px-12 2xl:px-0 max-w-1366 mx-auto">
+          <div className="flex flex-col lg:flex-row text-left md:text-center order-first items-start">
+            <div className="w-full md:w-3/4 flex flex-wrap md:text-left text-center order-first mx-auto">
+              <div className="lg:w-1/3 w-full md:pl-3 pt-4">
                 <img
                   src={Logo}
-                  className="w-28 mx-auto md:mx-0 my-2"
+                  className="w-28 mx-auto lg:mx-0 my-2"
                   alt="Logo "
                 />
                 <p className="text-white leading-loose">
                   Your protection is Our Mission. Proudly serving business and
                   residential sector in Ontario.
                 </p>
-                <hr className="border-1 border-gray-600 w-11/12 my-3" />
-                <CompanyContact />
+                <hr className="border-1 border-gray-600 w-full mr-3 my-3" />
+                <div className="text-left">
+                  <CompanyContact />
+                </div>
               </div>
-              <div className="lg:w-1/3 md:w-1/2 w-full px-4 lg:px-8 md:px-12 pt-10 md:pt-32">
-                <h2 className="title-font font-bold text-white tracking-widest text-2xl md:text-sm mb-7">
+              <div className="lg:w-1/3 md:w-1/2 w-full px-10 lg:px-8 md:px-8 pt-10 lg:pt-32">
+                <h2 className="title-font font-bold text-white tracking-widest text-2xl md:text-sm mb-7 text-left">
                   EXPLORE
                 </h2>
                 <nav className="list-none mb-10 text-left sn:text-center">
@@ -144,8 +146,8 @@ const Footer = () => {
                   </li>
                 </nav>
               </div>
-              <div className="lg:w-1/3 md:w-1/2 w-full px-4 lg:px-8 md:px-12 pt-10 md:pt-32">
-                <h2 className="title-font font-medium text-white tracking-widest text-2xl md:text-sm mb-7">
+              <div className="lg:w-1/3 md:w-1/2 w-full px-10 lg:px-8 md:px-8 pt-10 lg:pt-32">
+                <h2 className="title-font font-bold text-white tracking-widest text-2xl md:text-sm mb-7 text-left">
                   SERVICES
                 </h2>
                 <nav className="list-none mb-10 text-left sn:text-center">
@@ -224,7 +226,7 @@ const Footer = () => {
                 </nav>
               </div>
             </div>
-            <div className="w-full md:w-1/2 lg:w-3/12 bg-red-1">
+            <div className="w-full md:w-2/3 lg:w-3/12 bg-red-1 mx-auto mb-2 lg:mb-0">
               <div className="w-full px-4 text-center items-center pt-6 pb-6">
                 <div className="flex flex-col bg-red-1 items-center mx-auto">
                   {showAlert.show ? (
@@ -267,14 +269,14 @@ const Footer = () => {
           </div>
         </div>
         <div className="border-t border-gray-3">
-          <div className="px-4 md:px-16 lg:px-28 xl:px-44 2xl:px-0 max-w-1366 py-6 mx-auto flex items-center sm:flex-row flex-col">
-            <p className="text-sm text-white ">
+          <div className="px-4 sm:px-8 lg:px-12 2xl:px-0 max-w-1366 py-6 mx-auto flex items-center sm:flex-row flex-col">
+            <p className="text-sm text-white">
               © Copyright 2021 by Argus Security Services Corp.
             </p>
           </div>
         </div>
       </div>
-    </div>
+    </footer>
   );
 };
 

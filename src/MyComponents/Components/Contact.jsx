@@ -97,7 +97,7 @@ function ContactForm({ width = "w-full" }) {
       ) : null}
       <button
         type="submit"
-        className="w-full text-xl lg:text-base xl:text-xl p-4 text-white font-bold hover:bg-white border-4 bg-red-1 border-red-1 border-double hover:text-red-1 rounded-lg mt-4 hover:shadow-button-inner"
+        className="w-full text-xl lg:text-base xl:text-xl p-4 text-white font-bold hover:bg-white border-4 bg-red-1 border-red-1 border-double hover:text-red-1 rounded-lg mt-2 hover:shadow-button-inner"
       >
         SEND MESSAGE
       </button>

@@ -11,7 +11,7 @@ module.exports = {
         aboutbg: "url('argus website/PNG/Image Thumbnail2.png')",
         servicesbg: "url('argus website/PNG/Image Thumbnail.png')",
         jobsbg: "url('argus website/PNG/Image Thumbnail1.png')",
-        callus: "url('argus website/PNG/aboutcallusbg.png')",
+        callus: "url('argus website/PNG/raw-2_edited.png')",
         knowbg: "url('argus website/PNG/Group 1560.jpg')",
         empofmon: "url('argus website/PNG/Overlay.png')",
         shape: "url(argus website/SVG/5. Newsletter.svg)",
@@ -31,6 +31,7 @@ module.exports = {
         "black-1": "#1c1c1c",
         hover: "#501616",
         client: "#e8eaee",
+        "mobile-nav-border":"#707070"
       },
       fontFamily: {
         "for-heading": [
@@ -70,10 +71,12 @@ module.exports = {
       },
       fontSize: {
         "4xl": "2.85rem",
+        "number": "2.50rem"
       },
       maxWidth: {
         1366: "1230px",
         1500: "1500px",
+        1600: "1600px",
         8: "8px",
       },
       minWidth: {
@@ -90,6 +93,7 @@ module.exports = {
         "button-inner": "inset -3px -3px 6px 1px rgba(0, 0, 0, 0.20)",
         "speech": "5px 5px 10px 1px rgba(0, 0, 0, 0.16)",
         "speech-2": "5px 3px 10px 1px rgba(0, 0, 0, 0.08)",
+        "services": "inset -3px -3px 10px 1px rgba(0, 0, 0, 0.30)",
       },
       backgroundSize: {
         "stretch-x": "100% 100%",

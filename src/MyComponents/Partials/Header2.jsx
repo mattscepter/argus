@@ -30,7 +30,7 @@ class Header2 extends Component {
           </Link>
 
           <Link
-            to="/training"
+            to="/courses"
             className="w-1/5 text-white py-4 text-center bg-black bg-opacity-40 hover:bg-red-1 hover:bg-opacity-60"
           >
             COURSES

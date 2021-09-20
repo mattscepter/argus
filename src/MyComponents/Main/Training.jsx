@@ -6,17 +6,12 @@ import Header from "./../Partials/Header";
 import Header2 from "./../Partials/Header2";
 import Stickynav from "./../Partials/Stickynav";
 import MobileHeader from "../Partials/MobileHeader";
-import SideLine from "./../Components/SideLine"
+import SideLine from "./../Components/SideLine";
 
 class Training extends Component {
   render() {
     return (
       <div className="font-for-para">
-        <Header />
-        <Header2 />
-        <Stickynav />
-        <MobileHeader />
-
         <div className="text-gray-600 body-font bg-no-repeat bg-cover bg-servicesbg">
           <div className="container mx-auto flex px-5 py-40 items-center justify-center flex-col">
             <div className="text-center lg:w-2/3 w-full">
@@ -31,10 +26,10 @@ class Training extends Component {
           <div className="flex flex-wrap my-12">
             <div className=" md:w-1/2 lg:w-2/3 flex flex-col items-start">
               <img src={about_image} alt="Training Page" className="w-full" />
-              <div className="flex flex-row items-stretch w-full mt-8 mb-8">
+              <div className="flex flex-row items-stretch w-full mt-14 mb-8">
                 <SideLine />
                 <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
-                Road to Success
+                  Road to Success
                 </h1>
               </div>
               <p className="leading-relaxed text-lg font-medium text-gray-2 mb-6">
@@ -51,110 +46,112 @@ class Training extends Component {
                 training.
               </p>
 
-              <div className="flex flex-row items-stretch w-full mt-8 mb-8">
+              <div className="flex flex-row items-stretch w-full mt-8 mb-6">
                 <SideLine />
                 <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
-                Basic Security Traning Course (online) $149.99
+                  Basic Security Traning Course (online) $149.99
                 </h1>
               </div>
-              <p className="leading-relaxed text-lg font-medium text-gray-2 mb-8">
+              <p className="leading-relaxed text-lg font-medium text-gray-2 mb-6">
                 You can take advantage of our Online Learning Platform that
                 features Self-Paced Online Courses (SPOC), optional live
                 instructor-led sessions within our Virtual Training Room (VTR),
                 and 8 hours of in-classroom First Aid/CPR Level C certification
                 training.
               </p>
-              <button className="py-4 px-12 text-3xl font-bold text-white hover:bg-white border-3 bg-red-1 border-red-1 hover:text-red-1 rounded-lg mt-10 sm:mt-0 shadow-button-shadow-2">
+              <button className="mx-auto md:mx-0 font-bold text-white bg-red-1 py-4 px-8 md:px-16 hover:bg-white border-4 border-double  border-red-1 hover:text-red-1 rounded-lg text-2xl mt-10 sm:mt-0 hover:shadow-button-inner mb-8">
                 REGISTER
               </button>
 
-              <div className="flex flex-row items-stretch w-full mt-8 mb-8">
+              <div className="flex flex-row items-stretch w-full mt-8 mb-6">
                 <SideLine />
                 <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
-                Basic Security Training Course – (In-class room) $199.99
+                  Basic Security Training Course – (In-class room) $199.99
                 </h1>
               </div>
               <ul class="text-gray-2 font-medium text-lg mb-6">
                 <li className="my-0.5">
-                  <span className="text-red-1 font-bold mr-2">✓</span> Course is five
-                  days (40 hours) Monday – Friday, 8:30am – 5:00pm
+                  <span className="text-red-1 font-bold mr-2">✓</span> Course is
+                  five days (40 hours) Monday – Friday, 8:30am – 5:00pm
                 </li>
                 <li>
-                  <span className="text-red-1 font-bold mr-2">✓</span> Comprehensive
-                  Security Manual is included{" "}
+                  <span className="text-red-1 font-bold mr-2">✓</span>{" "}
+                  Comprehensive Security Manual is included{" "}
                 </li>
                 <li className="my-0.5">
                   <span className="text-red-1 font-bold mr-2">✓</span> Exceeds
                   Ontario government standards
                 </li>
                 <li className="my-0.5">
-                  <span className="text-red-1 font-bold mr-2">✓</span> Our guarantee
-                  – if you fail the ministry test, you can retake the course for
-                  free!
+                  <span className="text-red-1 font-bold mr-2">✓</span> Our
+                  guarantee – if you fail the ministry test, you can retake the
+                  course for free!
                 </li>
                 <li className="my-0.5">
-                  <span className="text-red-1 font-bold mr-2">✓</span> Courses run
-                  weekly in Brampton.{" "}
+                  <span className="text-red-1 font-bold mr-2">✓</span> Courses
+                  run weekly in Brampton.{" "}
                 </li>
               </ul>
-              <button className="py-4 px-12 text-3xl font-bold text-white hover:bg-white border-3 bg-red-1 border-red-1 hover:text-red-1 rounded-lg mt-10 sm:mt-0 shadow-button-shadow-2">
+              <button className="mx-auto md:mx-0 font-bold text-white bg-red-1 py-4 px-8 md:px-16 hover:bg-white border-4 border-double  border-red-1 hover:text-red-1 rounded-lg text-2xl mt-10 sm:mt-0 hover:shadow-button-inner mb-8">
                 REGISTER
               </button>
 
               <div className="flex flex-row items-stretch w-full mt-8 mb-8">
                 <SideLine />
                 <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
-                Basic Security Training Course topics
+                  Basic Security Training Course topics
                 </h1>
               </div>
               <ul className="text-gray-2 font-medium text-lg flex flex-col md:flex-row mb-6">
                 <div className="">
                   <li className="my-0.5">
-                    <span className="text-red-1 font-bold mr-2">✓</span> Introduction
-                    to the Security Industry
+                    <span className="text-red-1 font-bold mr-2">✓</span>{" "}
+                    Introduction to the Security Industry
                   </li>
                   <li className="my-0.5">
                     <span className="text-red-1 font-bold mr-2">✓</span> Basic
                     Procedures{" "}
                   </li>
                   <li className="my-0.5">
-                    <span className="text-red-1 font-bold mr-2">✓</span> Regulations{" "}
+                    <span className="text-red-1 font-bold mr-2">✓</span>{" "}
+                    Regulations{" "}
                   </li>
                   <li className="my-0.5">
-                    <span className="text-red-1 font-bold mr-2">✓</span> Use of Force
-                    Theory
+                    <span className="text-red-1 font-bold mr-2">✓</span> Use of
+                    Force Theory
                   </li>
                   <li className="my-0.5">
-                    <span className="text-red-1 font-bold mr-2">✓</span> Emergencies{" "}
+                    <span className="text-red-1 font-bold mr-2">✓</span>{" "}
+                    Emergencies{" "}
                   </li>
                 </div>
                 <div className="md:mx-10">
                   <li className="my-0.5">
-                    <span className="text-red-1 font-bold mr-2">✓</span> Health &
-                    Safety
+                    <span className="text-red-1 font-bold mr-2">✓</span> Health
+                    & Safety
                   </li>
                   <li className="my-0.5">
-                    <span className="text-red-1 font-bold mr-2">✓</span> Canadian
-                    Legal System & Authorities{" "}
+                    <span className="text-red-1 font-bold mr-2">✓</span>{" "}
+                    Canadian Legal System & Authorities{" "}
                   </li>
                   <li className="my-0.5">
                     <span className="text-red-1 font-bold mr-2">✓</span>{" "}
                     Communication I & II{" "}
                   </li>
                   <li className="my-0.5">
-                    <span className="text-red-1 font-bold mr-2">✓</span> Conflict
-                    Resolution
+                    <span className="text-red-1 font-bold mr-2">✓</span>{" "}
+                    Conflict Resolution
                   </li>
                   <li className="my-0.5">
-                    <span className="text-red-1 font-bold mr-2">✓</span> Diversity &
-                    Sensitivity
+                    <span className="text-red-1 font-bold mr-2">✓</span>{" "}
+                    Diversity & Sensitivity
                   </li>
                 </div>
               </ul>
               <div className="flex flex-row items-stretch w-full mt-8 mb-8">
                 <SideLine />
                 <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
-                FAQ
+                  FAQ
                 </h1>
               </div>
               <p className="p-4 mb-2 border-2 border-gray-200 text-gray-2  w-full">

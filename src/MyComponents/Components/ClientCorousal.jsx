@@ -40,14 +40,15 @@ function SamplePrevArrow(props) {
 const ClientCorousal = () => {
   const clients = useSelector((state) => state.client.clients);
   const settings = {
-    speed: 4000,
+    infinite: true,
+    speed: 5000,
     autoplay: true,
     autoplaySpeed: 0,
     cssEase: "linear",
     pauseOnHover: true,
-    dots: true,
     slidesToShow: 5,
     arrows: false,
+    className: "slick-new",
     responsive: [
       {
         breakpoint: 1800,
@@ -151,7 +152,7 @@ const ClientCorousal = () => {
         <Slider {...settings}>
           {clients.map((client) => {
             return (
-              <div key={client._id}>
+              <div key={client._id} className="clientSlider">
                 <img
                   src={`${API}/client/get-photo/${client._id}`}
                   alt=""

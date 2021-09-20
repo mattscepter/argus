@@ -7,17 +7,12 @@ import Header from "./../../Partials/Header";
 import Header2 from "./../../Partials/Header2";
 import Stickynav from "./../../Partials/Stickynav";
 import MobileHeader from "./../../Partials/MobileHeader";
-import SideLine from "./../../Components/SideLine"
+import SideLine from "./../../Components/SideLine";
 
 class Communication extends Component {
   render() {
     return (
       <div className="font-for-para">
-        <Header />
-        <Header2 />
-        <Stickynav />
-        <MobileHeader />
-
         <div className="text-gray-600 body-font bg-no-repeat bg-cover bg-aboutbg">
           <div className="container mx-auto flex px-5 py-40 items-center justify-center flex-col">
             <div className="text-center lg:w-2/3 w-full">
@@ -32,13 +27,13 @@ class Communication extends Component {
           <div className="flex flex-wrap my-12">
             <div className=" md:w-1/2 lg:w-2/3 flex flex-col items-start">
               <img src={about_image} alt="About page" />
-              <div className="flex flex-row items-stretch w-full mt-8 mb-8">
+              <div className="flex flex-row items-stretch w-full mt-14 mb-8">
                 <SideLine />
                 <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
-                Highest Rated Industry Platform
+                  Highest Rated Industry Platform
                 </h1>
               </div>
-              <p className="leading-relaxed text-lg font-medium text-gray-2 mb-6">
+              <p className="leading-relaxed text-lg font-medium text-gray-2 mb-8">
                 When looking for a guard management solution, it’s important
                 that the features it offers line up with the goals of the
                 customer. But it’s also important that the software provides
@@ -48,34 +43,34 @@ class Communication extends Component {
                 benefits not found on any other guard management software:
               </p>
 
-              <div className="flex flex-row items-stretch w-full mt-8 mb-8">
+              <div className="flex flex-row items-stretch w-full mt-6 mb-8">
                 <SideLine />
                 <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
-                Online Resource Center
+                  Online Resource Center
                 </h1>
               </div>
-              <p className="leading-relaxed text-lg font-medium text-gray-2 mb-6">
+              <p className="leading-relaxed text-lg font-medium text-gray-2 mb-8">
                 Get full access to a comprehensive library of concise,
                 informative how-to videos and support articles to ensure
                 customers get whatever they need at any time
               </p>
 
-              <div className="flex flex-row items-stretch w-full mt-8 mb-8">
+              <div className="flex flex-row items-stretch w-full mt-6 mb-8">
                 <SideLine />
                 <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
-                “Show Me How”
+                  “Show Me How”
                 </h1>
               </div>
-              <p className="leading-relaxed text-lg font-medium text-gray-2 mb-6">
+              <p className="leading-relaxed text-lg font-medium text-gray-2 mb-8">
                 The Issue Monitor has “Show Me How” buttons everywhere so system
                 administrators & clients can get quick answers to questions in
                 one place and get back on track easily.
               </p>
 
-              <div className="flex flex-row items-stretch w-full mt-8 mb-8">
+              <div className="flex flex-row items-stretch w-full mt-6 mb-8">
                 <SideLine />
                 <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
-                Top-Tier, Canada-based Support Teams
+                  Top-Tier, Canada-based Support Teams
                 </h1>
               </div>
               <p className="leading-relaxed text-lg font-medium text-gray-2 mb-6">

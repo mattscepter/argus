@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import accountable from "./../../argus website/SVG/2. Accountable.svg";
 import { Link } from "react-router-dom";
@@ -10,7 +10,7 @@ import section6 from "./../../argus website/PNG/sdm.png";
 import section4img from "./../../argus website/PNG/raw-2_edited.png";
 import section5 from "./../../argus website/PNG/0000000.png";
 import image1 from "./../../argus website/PNG/raw-2_edited.png";
-import camera from "./../../argus website/SVG/3. camera.svg";
+import camera from "./../../argus website/SVG/3. Camera.svg";
 import Header from "./../Partials/Header";
 import HeaderHome from "../Partials/HeaderHome";
 import Stickynav from "./../Partials/Stickynav";
@@ -22,6 +22,12 @@ import { useSelector } from "react-redux";
 import SideLine from "../Components/SideLine";
 import { useRef } from "react";
 import useOnScreen from "../../helpers/onScreen";
+import siren from "./../../argus website/SVG/3. Light.svg";
+import {
+  disableBodyScroll,
+  enableBodyScroll,
+  clearAllBodyScrollLocks,
+} from "body-scroll-lock";
 
 export default function Home() {
   const contact = useSelector((state) => state.contact);
@@ -35,26 +41,26 @@ export default function Home() {
 
   return (
     <div className="font-for-para">
-      <Header />
-      <HeaderHome />
-      <Stickynav />
-      <MobileHeader />
-
       {/* Section 1 */}
       <div className="">
-        <div className="py-24 sm:py-64 px-4 sm:px-8 md:px-16 lg:px-32 xl:px-48 bg-center bg-no-repeat bg-hero bg-cover"></div>
+        <div className="py-24 sm:py-64 px-4 sm:px-8 md:px-16 lg:px-32 xl:px-48 bg-center sm:bg-left lg:bg-center bg-no-repeat bg-hero bg-cover"></div>
       </div>
 
       {/* Section 2 CAll Us */}
-      <div className="px-4 sm:px-8 md:px-12 2xl:px-0 mx-auto max-w-1366">
-        <div className="flex flex-col sm:flex-row sm:items-end mx-auto">
-          <h1 className="flex-grow sm:pr-16 text-4xl font-bold font-for-para text-gray-400">
+      <div className="px-4 sm:px-8 md:px-12 2xl:px-0 mx-auto max-w-1366 -mt-12 md:-mt-24">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between mx-auto">
+          <div className="">
+          <h1 className="flex-grow sm:pr-16 text-3xl sm:text-number font-bold font-for-para text-gray-400">
             Call Us <br />
-            <a className="text-red-1 text-4xl sm:text-6xl font-bold" href={`tel:${contact.phoneNumber}`}>
+          </h1>
+          <a
+              className="text-red-1 text-number md:text-4xl lg:text-6xl font-bold"
+              href={`tel:${contact.phoneNumber}`}
+            >
               {contact.phoneNumber}
             </a>
-          </h1>
-          <button className="flex-shrink-0 font-bold text-white bg-red-1 py-5 px-4 md:px-12 hover:bg-white border-4 border-double  border-red-1 hover:text-red-1 rounded-lg text-lg mt-10 sm:mt-0 hover:shadow-button-inner">
+            </div>
+          <button className="flex-shrink-0 font-bold text-white bg-red-1 py-5 px-4 md:px-12 hover:bg-white border-4 border-double  border-red-1 hover:text-red-1 rounded-lg text-lg mt-6 sm:mt-0 hover:shadow-button-inner">
             DISCOVER MORE
           </button>
         </div>
@@ -82,8 +88,8 @@ export default function Home() {
 
       {/* Section 4 Introducing Argus Security */}
       <div className="bg-contain bg-no-repeat bg-mapbg2 font-for-para">
-        <div className="px-4 sm:px-8 lg:px-12 2xl:px-0 mx-auto max-w-1366 pt-12 pb-28 font-for-para">
-          <div className="flex flex-wrap items-center">
+        <div className="px-4 sm:px-8 lg:px-12 2xl:px-0 mx-auto max-w-1366 pt-12 pb-12 md:pb-28 font-for-para">
+          <div className="flex flex-wrap items-start">
             <div className="items-end w-full md:w-1/2 flex flex-col md:pr-4 lg:pr-12">
               <img
                 src={section4_img1}
@@ -144,14 +150,14 @@ export default function Home() {
                     <img
                       src={quotes}
                       alt=""
-                     ref={ref2}
+                      ref={ref2}
                       className={`w-8 inline-block text-red-1 ml-4 -mb-6 ${
                         isQouteVisible
                           ? "transition ease-out delay-300 duration-500 transform origin-top scale-100"
                           : "transition ease-out delay-750 duration-500 transform origin-top scale-0"
                       }  motion-safe:animate-scaleIn`}
                     />
-                    <p className="leading-relaxed text-lg lg:text-xl font-medium text-gray-2 bg-gray-200 px-12 py-8 shadow-speech">
+                    <p className="leading-relaxed text-base lg:text-xl font-medium text-gray-2 bg-gray-200 px-6 py-6 lg:px-12 lg:py-8 shadow-speech">
                       Success is not result of the amount of time we put in,
                       instead its the quality of time we put in.
                     </p>
@@ -177,22 +183,22 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <img src={camera} alt="" className="w-40 h-40 ml-auto -mt-36" />
+        <img src={camera} alt="" className="w-40 h-40 mr-auto hidden md:block -mt-60 lg:-mt-48" />
       </div>
 
       {/* Section 5 Services */}
-      <div className="bg-repeat-x bg-siren bg-top bg-contain">
-        <div className="px-4 sm:px-8 lg:px-12 2xl:px-0 mx-auto max-w-1366 pt-24 pb-12 font-for-para">
-          <div className="flex flex-wrap pb-8">
+      <div className="bg-client">
+        <div className="px-4 sm:px-8 lg:px-12 2xl:px-0 mx-auto max-w-1366 pt-14 pb-6 md:pb-12 font-for-para">
+          <div className="flex flex-wrap">
             <div className="flex flex-wrap w-full items-baseline">
-              <div className="w-full flex flex-col md:flex-row items-center pb-5">
-                <div className="flex flex-row items-stretch pr-24">
+              <div className="w-full flex flex-col md:flex-row items-start md:items-center pb-8">
+                <div className="flex flex-row items-stretch md:pr-24">
                   <SideLine />
-                  <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
+                  <h1 className="leading-tight text-3xl lg:text-4xl font-bold text-gray-3">
                     Firsthand information to our operations
                   </h1>
                 </div>
-                <p className="leading-relaxed font-medium text-lg text-gray-2 pb-10 md:pb-0 ">
+                <p className="leading-relaxed font-medium text-lg text-gray-2 pt-10 md:pt-0 ">
                   As a client you will gain first hand access to day-today
                   operations and daily occurrence reposts.
                 </p>
@@ -200,109 +206,96 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="w-1/3 rounded-3xl mb-12 m-8 hover:shadow-button-shadow-3">
-              <div className="rounded-2xl bg-white">
-                <div className="flex flex-col items-center justify-around">
-                <div className="w-full">
-                    <img src={image1} alt="" className="rounded-2xl w-full mx-auto -mb-6"/>
-                  </div>
-                  <div className=" w-full text-center px-4 pb-6 border-t-4 border-r-4 border-l-4 border-gray-1">
-                    <h2 className="leading-tight text-2xl title-font font-bold text-white mb-6 bg-center bg-no-repeat bg-shape1 bg-contain md:bg-cover lg:bg-contain p-2">
-                      Gated Community
+          <div className="flex flex-wrap justify-center md:justify-between text-center mb-6 ">
+            
+            <div className="p-4 w-96 md:w-1/3">
+              <div className="h-full overflow-hidden ">
+                <div className="h-52 sm:h-80 md:h-56 lg:h-64 object-cover object-center rounded-2xl shadow-button-inner bg-callus bg-no-repeat bg-cover bg-center">
+                  <div className="shadow-services"></div>
+                </div>
+                <div className=" bg-client mx-3 md:mx-0 lg:mx-3">
+                  <div className="border-r-4 border-l-4 border-white">
+                    <h2 className="leading-tight text-base lg:text-lg title-font font-bold text-white mx-4 lg:mx-12 mb-3 bg-red-1 rounded-b-lg px-3 pt-2 pb-3">
+                      GATED COMMUNITY
                     </h2>
-                    <p className="leading-relaxed text-lg font-medium text-gray-2 mb-2">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor incididunt .
+                    <p className="leading-relaxed text-base text-gray-2 px-3 pt-3 pb-6">
+                      NFS marked vehicles, communication between residents &
+                      security staff and efficient use of technology
                     </p>
                   </div>
-                  <div className="bg-gray-200 w-full hover:bg-opacity-0">
-                  <button className="w-full p-4 rounded-lg text-black hover:bg-red-1 hover:text-white">
-                      Read More
-                  </button>
+                  <div className="bg-white rounded-b-lg">
+                    <Link to="/services">
+                      <button className="w-full p-4 text-gray-2 font-bold bg-white hover:bg-red-1 hover:text-white rounded-lg hover:shadow-button-inner">
+                        Read More
+                      </button>
+                    </Link>
                   </div>
                 </div>
               </div>
             </div>
 
-          <div className="flex flex-wrap justify-center text-center mb-16 ">
-            <div className="group p-4 sm:w-96">
+            <div className="p-4 w-96 md:w-1/3">
               <div className="h-full overflow-hidden ">
-                <img
-                  className="lg:h-72 md:h-36 w-full object-cover object-center rounded-2xl mb-10"
-                  src={image1}
-                  alt="blog"
-                />
-                <div className=" mx-2.5 -mt-10 z-10">
-                  <Link to="/services">
-                    <div className="bg-white border-4 rounded-xl group-hover:bg-gray-200 duration-300">
-                      <h1 className="title-font text-lg font-medium text-white p-3 mb-3 bg-center bg-no-repeat bg-shape1 bg-contain md:bg-cover lg:bg-contain z-auto -mt-7">
-                        GATED COMMUNITY
-                      </h1>
-                      <p className="leading-loose text-gray-2 px-6 py-6">
-                        NFS marked vehicles, communication between residents &
-                        security staff and efficient use of technology
-                      </p>
-                    </div>
-                    <button className="w-full p-4 text-black rounded-xl bg-gray-200 group-hover:bg-red-1 group-hover:text-white">
-                      Read More
-                    </button>
-                  </Link>
+                <div className="h-52 sm:h-80 md:h-56 lg:h-64 object-cover object-center rounded-2xl shadow-button-inner bg-callus bg-no-repeat bg-cover bg-center">
+                  <div className="shadow-services"></div>
+                </div>
+                <div className=" bg-client mx-3 md:mx-0 lg:mx-3">
+                  <div className="border-r-4 border-l-4 border-white">
+                    <h2 className="leading-tight text-base lg:text-lg title-font font-bold text-white mx-4 lg:mx-12 mb-3 bg-red-1 rounded-b-lg px-3 pt-2 pb-3">
+                      GATED COMMUNITY
+                    </h2>
+                    <p className="leading-relaxed text-base text-gray-2 px-3 pt-3 pb-6">
+                      NFS marked vehicles, communication between residents &
+                      security staff and efficient use of technology
+                    </p>
+                  </div>
+                  <div className="bg-white rounded-b-lg">
+                    <Link to="/services">
+                      <button className="w-full p-4 text-gray-2 font-bold bg-white hover:bg-red-1 hover:text-white rounded-lg hover:shadow-button-inner">
+                        Read More
+                      </button>
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
 
-            <div className="p-4 sm:w-96">
+            <div className="p-4 w-96 md:w-1/3">
               <div className="h-full overflow-hidden ">
-                <img
-                  className="lg:h-72 md:h-36 w-full object-cover object-center rounded-2xl -mb-4 "
-                  src={image1}
-                  alt="blog"
-                />
-                <div className="bg-white border-4 rounded-2xl hover:bg-gray-200 duration-300 mx-2.5 z-auto">
-                  <h1 className="title-font text-lg font-medium text-white p-3 bg-center bg-no-repeat bg-shape1 bg-contain md:bg-cover lg:bg-contain z-auto">
-                    GATED COMMUNITY
-                  </h1>
-                  <p className="leading-loose text-gray-2 px-6 py-6">
-                    NFS marked vehicles, communication between residents &
-                    security staff and efficient use of technology
-                  </p>
-                  <Link to="/services">
-                    <button className="w-full p-4 text-black rounded-xl bg-gray-200 hover:bg-red-1 hover:text-white">
-                      Read More
-                    </button>
-                  </Link>
+                <div className="h-52 sm:h-80 md:h-56 lg:h-64 object-cover object-center rounded-2xl shadow-button-inner bg-callus bg-no-repeat bg-cover bg-center">
+                  <div className="shadow-services"></div>
                 </div>
-              </div>
-            </div>
-
-            <div className="p-4 sm:w-96">
-              <div className="h-full overflow-hidden ">
-                <img
-                  className="lg:h-72 md:h-36 w-full object-cover object-center rounded-2xl mb-10"
-                  src={image1}
-                  alt="blog"
-                />
-                <div className="bg-white border-4 rounded-2xl hover:bg-gray-200 duration-300 mx-2.5 z-auto">
-                  <h1 className="title-font text-lg font-medium text-white p-3 mb-3 bg-center bg-no-repeat bg-shape1 bg-contain md:bg-cover lg:bg-contain z-auto -mt-7">
-                    GATED COMMUNITY
-                  </h1>
-                  <p className="leading-loose text-gray-2 px-6 py-6">
-                    NFS marked vehicles, communication between residents &
-                    security staff and efficient use of technology
-                  </p>
-                  <Link to="/services">
-                    <button className="w-full p-4 text-black rounded-xl bg-gray-200 hover:bg-red-1 hover:text-white">
-                      Read More
-                    </button>
-                  </Link>
+                <div className=" bg-client mx-3 md:mx-0 lg:mx-3">
+                  <div className="border-r-4 border-l-4 border-white">
+                    <h2 className="leading-tight text-base lg:text-lg title-font font-bold text-white mx-4 lg:mx-12 mb-3 bg-red-1 rounded-b-lg px-3 pt-2 pb-3">
+                      GATED COMMUNITY
+                    </h2>
+                    <p className="leading-relaxed text-base text-gray-2 px-3 pt-3 pb-6">
+                      NFS marked vehicles, communication between residents &
+                      security staff and efficient use of technology
+                    </p>
+                  </div>
+                  <div className="bg-white rounded-b-lg">
+                    <Link to="/services">
+                      <button className="w-full p-4 text-gray-2 font-bold bg-white hover:bg-red-1 hover:text-white rounded-lg hover:shadow-button-inner">
+                        Read More
+                      </button>
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+        </div>
+      </div>
 
-          <div className="w-full sm:w-9/12 mx-auto flex items-center py-3">
+      {/* Section 6 Call Us */}
+      <div className="w-full">
+        <img src={siren} alt="" className="w-40 h-40 mr-auto -mb-40" />
+        <div className="px-4 sm:px-8 lg:px-12 2xl:px-0 mx-auto max-w-1366 flex flex-col items-center justify-center py-14">
+          <div className="w-full sm:w-9/12 flex flex-row items-center justify-center mx-auto pt-32 sm:pt-0">
             <img src={section5} className="w-24 h-24" alt="" />
-            <div className="-mt-20 -ml-6">
+            <a href={`tel:${contact.phoneNumber}`} className="-mt-20 -ml-6">
               <svg
                 className="w-14 h-14 bg-white rounded-xl"
                 xmlns="http://www.w3.org/2000/svg"
@@ -330,36 +323,40 @@ export default function Home() {
                   </g>
                 </g>
               </svg>
-            </div>
-            <div className="mx-auto px-4 py-4">
-              <h2 className="leading-loose text-l font-medium text-gray-2">
-                24 HOURS SERVICE AVAILABLE
+            </a>
+              <h2 className="leading-relaxed text-lg font-medium text-gray-2 px-3">
+                24 HOURS <br/> SERVICE<br/> AVAILABLE
               </h2>
-              <p className="text-lg title-font font-bold text-gray-900">
-                Have any questions? Feel free to contact our office today at{" "}
-                <a className="text-red-1 text-2xl" href={`tel:${contact.phoneNumber}`}>{contact.phoneNumber}</a>
-              </p>
-            </div>
           </div>
+          <p className="text-lg title-font font-bold text-gray-900 text-center">
+                Have any questions? Feel free to contact our office today at{" "}
+                <a
+                  className="text-red-1 text-2xl"
+                  href={`tel:${contact.phoneNumber}`}
+                >
+                  {contact.phoneNumber}
+                </a>
+              </p>
         </div>
       </div>
 
-      {/* Section 6 Know you partners */}
-      <div className="bg-cover bg-black-1 overflow-hidden">
-        <div className="text-white body-font px-4 sm:px-8 lg:px-12 2xl:px-0 mx-auto max-w-1500 font-for-para pt-16 bg-triangles bg-no-repeat bg-left-top">
-          <div className="px-5">
+      {/* Section 7 Know you partners */}
+      <div className="bg-cover bg-black-1 font-for-para">
+        <div className="text-white body-font px-4 sm:px-8 lg:px-12 2xl:px-0 mx-auto max-w-1500 font-for-para pt-10 bg-triangles bg-no-repeat bg-left-top">
+          <div className="lg:px-5">
             <div className="flex flex-col-reverse md:flex-row items-stretch">
-              <div className="bg-handcuffs bg-contain bg-center bg-opacity-10 bg-no-repeat flex items-end">
+              <div className="bg-handcuffs bg-contain bg-center bg-opacity-10 bg-no-repeat flex flex-col lg:flex-row items-end overflow-hidden lg:overflow-visible">
                 <img
                   src={section6}
                   alt="Argus Security"
-                  className="object-fill"
+                  className="block md:hidden lg:block -mb-28 sm:-mb-32 lg:mb-0"
                 />
+                <img src={signature} alt="" className="block md:hidden lg:block w-9/12 mb-4 lg:-ml-72" />
               </div>
-              <div className="w-full lg:w-1/2 p-4 flex flex-col items-start">
+              <div className="w-full lg:w-1/2 lg:p-4 flex flex-col items-start">
                 <div className="flex flex-row items-stretch w-full mt-8 md:mt-0 mb-8">
                   <SideLine />
-                  <h1 className="leading-tight text-3xl lg:text-4xl font-bold text-white">
+                  <h1 className="leading-tight text-3xl xl:text-4xl font-bold text-white">
                     Know your
                     <br />
                     Partners-in-Protection
@@ -369,29 +366,29 @@ export default function Home() {
                   <button className="px-6 py-4 text-sm font-bold bg-red-1 border border-black-1 bg-opacity-100 hover:bg-opacity-40 rounded-lg">
                     OUR TEAM
                   </button>
-                  <button className="px-6 py-4 text-sm font-bold bg-red-1 border my-4 sm:m-4 border-black-1 bg-opacity-100 hover:bg-opacity-40 rounded-lg">
+                  <button className="px-6 py-4 text-sm font-bold bg-red-1 border my-4 md:my-0 sm:mx-4 border-black-1 bg-opacity-100 hover:bg-opacity-40 rounded-lg">
                     CONTACT US
                   </button>
                   <button className="px-6 py-4 text-sm font-bold bg-red-1 border border-black-1 bg-opacity-100 hover:bg-opacity-40 rounded-lg">
                     ARGUS HIERARCHY
                   </button>
                 </div>
-                <p className="leading-loose text-lg py-6 xl:pr-24 mb-2">
+                <p className="leading-relaxed font-medium text-lg pt-6 pb-7 lg:pb-3 lg:pr-0 2xl:pr-24 ">
                   At Argus Security Services we maintain a prominent level of
                   training for our guards in response to our highly sensitive
                   sites. We offer 24/7 fast and reliable security services.
                   Qualifications of our Directors are as follows:
                 </p>
-                <div className="flex items-center flex-wrap pb-4 mb-4 mt-auto w-full">
+                <div className="flex items-center flex-wrap pb-4 mb-4 lg:mb-0 w-full">
                   <div>
                     <img
                       src={section4img}
-                      className="w-44 lg:w-28 xl:w-40 mr-8"
+                      className="w-44 lg:w-28 xl:w-36 mr-8 block lg:hidden xl:block"
                       alt=""
                     />
                   </div>
                   <div>
-                    <ul className="py-4 text-sm font-bold">
+                    <ul className="py-4 text-sm lg:text-lg xl:text-sm xl:font-bold">
                       <li className="flex flex-row items-start py-1">
                         <span className="text-red-1 font-bold mr-2">✓</span>{" "}
                         Member of Law society of Ontario
@@ -419,16 +416,15 @@ export default function Home() {
                     </ul>
                   </div>
                 </div>
-                <img src={signature} alt="" className="w-96 lg:-ml-72" />
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Section 7 Covid 19 CTA */}
+      {/* Section 8 Covid 19 CTA */}
       <div className="bg-red-1 bg-repeat-y bg-cta-bg bg-top bg-stretch-x bg bg-blend-multiply">
-        <div className="px-4 sm:px-8 lg:px-12 2xl:px-0 mx-auto max-w-1366 py-4 md:py-12 flex flex-col md:flex-row justify-around items-stretch md:items-center font-for-para">
+        <div className="px-4 sm:px-8 lg:px-14 2xl:px-0 mx-auto max-w-1366 py-4 md:py-12 flex flex-col md:flex-row justify-around items-stretch md:items-center font-for-para">
           <div className="flex flex-row items-stretch w-full mt-8 md:mt-0 mb-2 md:mb-0">
             <span
               ref={ref1}
@@ -438,7 +434,7 @@ export default function Home() {
                   : "transition ease-out delay-750 duration-500 transform origin-top scale-0"
               }  motion-safe:animate-scaleIn`}
             ></span>
-            <h1 className="text-3xl lg:text-4xl lex-grow sm:pr-28 font-bold text-white leading-tight">
+            <h1 className="text-3xl lg:text-4xl lex-grow sm:pr-14 font-bold text-white leading-tight">
               Covid 19 Procedures and much more to safeguard your business.
             </h1>
           </div>
@@ -448,13 +444,13 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Section 8 Client Testimonial */}
+      {/* Section 9 Client Testimonial */}
       <ClientTestimonial testimonial={testimonial} />
 
-      {/* Section 9 Employee of the Month */}
+      {/* Section 10 Employee of the Month */}
       <EmployeeMonth />
 
-      {/* Section 10 Sponsors */}
+      {/* Section 11 Sponsors */}
       <ClientCorousal />
     </div>
   );

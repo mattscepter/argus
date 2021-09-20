@@ -44,7 +44,7 @@ import { getTestimonial } from "./context/actions/adminActions/testimonialAction
 import { getEOM } from "./context/actions/adminActions/eomAction";
 import { getClientCarousel } from "./context/actions/adminActions/clientsAction";
 import { getTeam } from "./context/actions/adminActions/teamAction";
-
+import HomeRoute from "./MyComponents/Main/homeRoutes";
 function App() {
   const dispatch = useDispatch();
   useEffect(() => {
@@ -54,32 +54,33 @@ function App() {
     dispatch(getClientCarousel());
     dispatch(getTeam());
   }, [dispatch]);
+
   return (
     <Router>
       <div className="App">
         <ScrollToTop />
         <switch>
-          <Route path="/react" exact component={Home} />
-          <Route path="/about" exact component={About} />
-          <Route path="/jobs" exact component={Jobs} />
-          <Route path="/contact" exact component={Contact} />
-          <Route path="/signup" component={SignUp} />
-          <Route path="/training" component={Training} />
-          <Route path="/services" component={Services} />
-          <Route path="/technology" component={Technology} />
+          <HomeRoute path="/" exact component={Home} />
+          <HomeRoute path="/about" exact component={About} />
+          <HomeRoute path="/jobs" exact component={Jobs} />
+          <HomeRoute path="/contact" exact component={Contact} />
+          <HomeRoute path="/signup" component={SignUp} />
+          <HomeRoute path="/courses" component={Training} />
+          <HomeRoute path="/services" component={Services} />
+          <HomeRoute path="/technology" component={Technology} />
 
-          <Route path="/incidentreporting" component={IncidentReporting} />
-          <Route path="/tours&checkpoints" component={ToursCheckpoints} />
-          <Route path="/dispatch&tasks" component={DispatchTasks} />
-          <Route path="/reports&data" component={ReportsData} />
-          <Route path="/communication" component={Communication} />
-          <Route path="/mobilepatrols" component={MobilePatrols} />
-          <Route
+          <HomeRoute path="/incidentreporting" component={IncidentReporting} />
+          <HomeRoute path="/tours&checkpoints" component={ToursCheckpoints} />
+          <HomeRoute path="/dispatch&tasks" component={DispatchTasks} />
+          <HomeRoute path="/reports&data" component={ReportsData} />
+          <HomeRoute path="/communication" component={Communication} />
+          <HomeRoute path="/mobilepatrols" component={MobilePatrols} />
+          <HomeRoute
             path="/organisationstructure"
             component={OrganisationStructure}
           />
-          <Route path="/harassementpolicy" component={HarassementPolicy} />
-          <Route path="/personell" component={Personell} />
+          <HomeRoute path="/harassementpolicy" component={HarassementPolicy} />
+          <HomeRoute path="/personell" component={Personell} />
 
           <StudentRoutes
             path="/dashboard/student/home"
