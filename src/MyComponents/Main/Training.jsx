@@ -26,7 +26,7 @@ class Training extends Component {
           <div className="flex flex-wrap my-12">
             <div className=" md:w-1/2 lg:w-2/3 flex flex-col items-start">
               <img src={about_image} alt="Training Page" className="w-full" />
-              <div className="flex flex-row items-stretch w-full mt-8 mb-8">
+              <div className="flex flex-row items-stretch w-full mt-14 mb-8">
                 <SideLine />
                 <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
                   Road to Success
@@ -46,24 +46,24 @@ class Training extends Component {
                 training.
               </p>
 
-              <div className="flex flex-row items-stretch w-full mt-8 mb-8">
+              <div className="flex flex-row items-stretch w-full mt-8 mb-6">
                 <SideLine />
                 <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
                   Basic Security Traning Course (online) $149.99
                 </h1>
               </div>
-              <p className="leading-relaxed text-lg font-medium text-gray-2 mb-8">
+              <p className="leading-relaxed text-lg font-medium text-gray-2 mb-6">
                 You can take advantage of our Online Learning Platform that
                 features Self-Paced Online Courses (SPOC), optional live
                 instructor-led sessions within our Virtual Training Room (VTR),
                 and 8 hours of in-classroom First Aid/CPR Level C certification
                 training.
               </p>
-              <button className="py-4 px-12 text-3xl font-bold text-white hover:bg-white border-3 bg-red-1 border-red-1 hover:text-red-1 rounded-lg mt-10 sm:mt-0 shadow-button-shadow-2">
+              <button className="mx-auto md:mx-0 font-bold text-white bg-red-1 py-4 px-8 md:px-16 hover:bg-white border-4 border-double  border-red-1 hover:text-red-1 rounded-lg text-2xl mt-10 sm:mt-0 hover:shadow-button-inner mb-8">
                 REGISTER
               </button>
 
-              <div className="flex flex-row items-stretch w-full mt-8 mb-8">
+              <div className="flex flex-row items-stretch w-full mt-8 mb-6">
                 <SideLine />
                 <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
                   Basic Security Training Course – (In-class room) $199.99
@@ -92,7 +92,7 @@ class Training extends Component {
                   run weekly in Brampton.{" "}
                 </li>
               </ul>
-              <button className="py-4 px-12 text-3xl font-bold text-white hover:bg-white border-3 bg-red-1 border-red-1 hover:text-red-1 rounded-lg mt-10 sm:mt-0 shadow-button-shadow-2">
+              <button className="mx-auto md:mx-0 font-bold text-white bg-red-1 py-4 px-8 md:px-16 hover:bg-white border-4 border-double  border-red-1 hover:text-red-1 rounded-lg text-2xl mt-10 sm:mt-0 hover:shadow-button-inner mb-8">
                 REGISTER
               </button>
 

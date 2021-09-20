@@ -13,8 +13,8 @@ class About extends Component {
   render() {
     return (
       <div className="font-for-para">
-        <div className="text-gray-600 body-font bg-no-repeat bg-cover bg-aboutbg">
-          <div className="container mx-auto flex px-5 py-40 items-center justify-center flex-col">
+        <div className="text-gray-600 body-font bg-no-repeat bg-cover bg-center bg-aboutbg">
+          <div className="container mx-auto flex px-5 py-20 md:py-40 items-center justify-center flex-col">
             <div className="text-center lg:w-2/3 w-full">
               <h1 className="title-font sm:text-6xl text-3xl mb-4 font-bold font-for-para text-white">
                 ABOUT US
@@ -25,14 +25,14 @@ class About extends Component {
 
         <div className="bg-no-repeat bg-mapbg bg-contain">
           <div className="px-4 sm:px-8 lg:px-12 xl:px-0 max-w-1366 mx-auto">
-            <div className="flex flex-wrap my-12">
+            <div className="flex flex-wrap mt-12">
               <div className=" md:w-1/2 lg:w-2/3 flex flex-col items-start">
                 <img
                   src={about_image}
                   alt="About page"
                   className="w-full h-full"
                 />
-                <div className="flex flex-row items-stretch w-full mt-8 mb-8">
+                <div className="flex flex-row items-stretch w-full mt-8 mb-6">
                   <SideLine />
                   <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
                     Objective
@@ -49,7 +49,7 @@ class About extends Component {
                   professionalism that enables us to successfully serve and
                   protect our clients.
                 </p>
-                <p className="leading-relaxed text-lg font-medium text-gray-2 mb-6">
+                <p className="leading-relaxed text-lg font-medium text-gray-2">
                   In an environment with growing rules and regulations, Argus
                   understands the importance of ensuring the team is adherent to
                   company rules and regulations. We ensure trust and integrity
@@ -64,7 +64,7 @@ class About extends Component {
 
                 <AboutPageButtons />
 
-                <div className="flex flex-row items-stretch w-full mt-8 mb-8">
+                <div className="flex flex-row items-stretch w-full mt-4 mb-6">
                   <SideLine />
                   <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
                     Why Us?
@@ -84,7 +84,7 @@ class About extends Component {
                   delivery management, parking enforcement, access control,
                   camera monitoring, and performing periodic patrols.
                 </p>
-                <ul className="text-gray-2 font-medium text-lg flex flex-col md:flex-row mb-8">
+                <ul className="text-gray-2 font-medium text-lg flex flex-col md:flex-row mb-8 md:mb-0">
                   <div className="">
                     <li className="my-0.5">
                       <span className="text-red-1 font-bold mr-2">✓</span>{" "}

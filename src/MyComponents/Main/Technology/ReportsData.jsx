@@ -28,7 +28,7 @@ class ReportsData extends Component {
             <div className=" md:w-1/2 lg:w-2/3 flex flex-col items-start">
               <img src={about_image} alt="About page" />
 
-              <div className="flex flex-row items-stretch w-full mt-8 mb-8">
+              <div className="flex flex-row items-stretch w-full mt-14 mb-8">
                 <SideLine />
                 <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
                   Digital Reporting Made Easy
@@ -58,7 +58,7 @@ class ReportsData extends Component {
                 available to help make better business decisions every day:{" "}
               </p>
 
-              <ul className="text-gray-2 text-lg">
+              <ul className="text-gray-2 text-lg mb-6">
                 <li className="my-0.5">
                   <span className="font-bold text-red-1 mr-2">✓</span> Daily
                   Activity Reports

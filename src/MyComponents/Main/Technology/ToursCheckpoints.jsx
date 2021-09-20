@@ -28,7 +28,7 @@ class ToursCheckpoints extends Component {
             <div className=" md:w-1/2 lg:w-2/3 flex flex-col items-start">
               <img src={about_image} alt="About page" />
 
-              <div className="flex flex-row items-stretch w-full mt-8 mb-8">
+              <div className="flex flex-row items-stretch w-full mt-14 mb-8">
                 <SideLine />
                 <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
                   Full Officer Accountability
@@ -54,7 +54,7 @@ class ToursCheckpoints extends Component {
                 complete story of every security guard tour with:
               </p>
 
-              <ul className="text-gray-2 text-lg">
+              <ul className="text-gray-2 text-lg mb-8">
                 <li className="my-0.5">
                   <span className="font-bold text-red-1 mr-2">✓</span> Custom
                   tour sequences
@@ -93,7 +93,7 @@ class ToursCheckpoints extends Component {
                 complete story of every security guard tour with:
               </p>
 
-              <ul className="text-gray-2 text-lg">
+              <ul className="text-gray-2 text-lg mb-8">
                 <li className="my-0.5">
                   <span className="font-bold text-red-1 mr-2">✓</span> Custom
                   tour sequences
@@ -132,7 +132,7 @@ class ToursCheckpoints extends Component {
                 mobile guard app that:
               </p>
 
-              <ul className="text-gray-2 text-lg">
+              <ul className="text-gray-2 text-lg mb-8">
                 <li className="my-0.5">
                   <span className="font-bold text-red-1 mr-2">✓</span> Scans
                   checkpoints using QR Codes, Barcodes, or NFC Tags

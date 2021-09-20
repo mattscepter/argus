@@ -25,7 +25,7 @@ export default function Personell() {
         <div className="flex flex-wrap my-12">
           <div className=" md:w-1/2 lg:w-2/3 flex flex-col items-start">
             <img src={about_image} alt="About page" />
-            <p className="leading-relaxed text-lg font-medium text-gray-2 my-6">
+            <p className="leading-relaxed text-lg font-medium text-gray-2 mt-14 mb-6">
               Argus Security has more than 5000 Guards available within our
               employment database and will be able to provide you with a
               licensed, insured, and bonded Security Guards service. We

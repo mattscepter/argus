@@ -8,7 +8,7 @@ const Hamburger = ({ open, setOpen }) => {
         className={
           open
             ? "z-50 flex flex-col items-center justify-around bg-transparent w-10 h-10 fixed top-3 right-5"
-            : "z-50 flex flex-col items-center justify-around bg-red-1 w-10 h-10 fixed top-3 right-5"
+            : "z-50 flex flex-col items-center justify-around w-10 h-10 fixed top-3 right-5"
         }
       >
         <div

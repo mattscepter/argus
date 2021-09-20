@@ -1,10 +1,6 @@
 import React, { Component } from "react";
 import about_image from "./../../argus website/PNG/Video.png";
 import SideBar from "./../Components/SideBar.jsx";
-import Header from "./../Partials/Header";
-import Header2 from "./../Partials/Header2";
-import Stickynav from "./../Partials/Stickynav";
-import MobileHeader from "../Partials/MobileHeader";
 import SideLine from "./../Components/SideLine";
 
 class About extends Component {
@@ -25,7 +21,7 @@ class About extends Component {
           <div className="flex flex-wrap my-12">
             <div className=" md:w-1/2 lg:w-2/3 flex flex-col items-start">
               <img src={about_image} alt="Jobs page" className="w-full" />
-              <div className="flex flex-row items-stretch w-full mt-8 mb-8">
+              <div className="flex flex-row items-stretch w-full mt-10 mb-6">
                 <SideLine />
                 <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
                   Scope of Service
@@ -68,7 +64,7 @@ class About extends Component {
                 </div>
               </ul>
 
-              <div className="flex flex-row items-stretch w-full mt-8 mb-8">
+              <div className="flex flex-row items-stretch w-full mt-10 mb-6">
                 <SideLine />
                 <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
                   Employment Requirements
@@ -117,7 +113,7 @@ class About extends Component {
                 If you do not have a valid Ontario Security Licence, we can help
                 you train and apply for one.
               </p>
-              <button className="mx-auto py-4 px-12 text-3xl font-bold text-white hover:bg-white border-3 bg-red-1 border-red-1 hover:text-red-1 rounded-lg mt-6 mb-8 sm:mt-0 shadow-button-shadow-2">
+              <button className="mx-auto md:mx-0 font-bold text-white bg-red-1 py-4 px-8 md:px-16 hover:bg-white border-4 border-double  border-red-1 hover:text-red-1 rounded-lg text-2xl mt-10 sm:mt-0 hover:shadow-button-inner">
                 APPLY NOW
               </button>
             </div>

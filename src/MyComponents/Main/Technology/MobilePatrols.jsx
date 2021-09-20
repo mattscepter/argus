@@ -28,7 +28,7 @@ class MobilePatrols extends Component {
             <div className=" md:w-1/2 lg:w-2/3 flex flex-col items-start">
               <img src={about_image} alt="About page" />
 
-              <div className="flex flex-row items-stretch w-full mt-8 mb-8">
+              <div className="flex flex-row items-stretch w-full mt-14 mb-8">
                 <SideLine />
                 <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
                   Optimized Mobile Patrols
@@ -41,7 +41,7 @@ class MobilePatrols extends Component {
                 means reducing time and cost spent in an operation. Silvertrac
                 helps optimize mobile patrols by:
               </p>
-              <ul className="text-gray-2 text-lg">
+              <ul className="text-gray-2 text-lg mb-8">
                 <li className="my-0.5">
                   <span className="font-bold text-red-1 mr-2">✓</span> Tracking
                   patrol productivity in real-time through checkpoints.
@@ -78,7 +78,7 @@ class MobilePatrols extends Component {
                 of detail that allows teams to further optimize how drivers
                 spend their time. When a checkpoint is hit, four things happen:
               </p>
-              <ul className="text-gray-2 text-lg">
+              <ul className="text-gray-2 text-lg mb-8">
                 <li className="my-0.5">
                   <span className="font-bold text-red-1 mr-2">✓</span> The
                   officer receives specific instructions for the current site.

@@ -10,16 +10,16 @@ const EmployeeMonth = () => {
   return (
     <div className="bg-cover bg-no-repeat bg-empofmon font-for-para overflow-hidden">
       <img src={medal} alt="" className="w-52 h-52 mr-auto -mb-52" />
-      <div className="px-4 sm:px-8 lg:px-12 2xl:px-0 mx-auto max-w-1366 py-16 ">
-        <div className="flex flex-wrap items-end">
-          <div className="md:px-12 w-full md:w-1/2 flex flex-col items-start">
-            <div className="flex flex-row items-stretch w-full mt-8 md:mt-0 mb-8">
-              <SideLine />
-              <h1 className="leading-tight text-3xl lg:text-4xl font-bold text-gray-3">
-                Employee of the <br />
-                Month
-              </h1>
-            </div>
+      <div className="px-4 sm:px-8 lg:px-12 2xl:px-0 mx-auto max-w-1366 pt-16">
+        <div className="flex flex-row items-stretch w-full mt-8 md:mt-0 mb-8">
+            <SideLine />
+            <h1 className="leading-tight text-3xl lg:text-4xl font-bold text-gray-3">
+              Employee of the <br />
+              Month
+            </h1>
+          </div>
+        <div className="flex flex-col-reverse md:flex-row items-center md:items-end md:justify-between">
+          <div className="w-full md:w-1/2 flex flex-col items-start mt-6 md:mt-0">
             <p className="leading-loose text-lg text-gray-2 mb-8">
               <span className="text-red-1 text-2xl font-semibold">
                 {emp?.empName}{" "}
@@ -53,9 +53,9 @@ const EmployeeMonth = () => {
                       <p className="leading-normal text-lg lg:text-xl font-medium text-gray-2 bg-gray-200 px-6 py-6 shadow-lg min-h-full">
                         {emp.description}
                       </p>
-                      <div class="w-11 overflow-hidden inline-block">
-                      <div class=" h-16 bg-gray-200 shadow-lg rotate-60 transform origin-top-right"></div>
-                    </div>
+                      <div class="w-11 inline-block overflow-hidden">
+                        <div class=" h-16 bg-gray-200 shadow-button-shadow-3 rotate-60 transform origin-top-right"></div>
+                      </div>
                       <div className="pt-6 flex items-center ">
                         <div className="w-20 h-20 p-1 border-2 border-red-1">
                           <Imagehelper
@@ -64,8 +64,8 @@ const EmployeeMonth = () => {
                           />
                         </div>
 
-                        <div className="ml-8">
-                          <div className="w-60">
+                        <div className="ml-8 mb-8">
+                          <div className="w-40 sm:w-60">
                             <Imagehelper
                               param="eom"
                               id={`instructorSign-${emp._id}`}
@@ -85,18 +85,16 @@ const EmployeeMonth = () => {
               ) : null}
             </div>
           </div>
-          <div className="items-end w-full md:w-1/2 lg:pl-12">
-            <div className="w-full h-full">
+          <div className="w-96 lg:pl-12">
               {emp?._id !== undefined ? (
                 <>
                   <Imagehelper
                     param="eom"
                     id={`empImage-${emp._id}`}
-                    className=""
+                    className="h-96"
                   />
                 </>
               ) : null}
-            </div>
           </div>
         </div>
       </div>

@@ -25,7 +25,7 @@ export default function OrganisationStructure() {
         <div className="flex flex-wrap my-12">
           <div className=" md:w-1/2 lg:w-2/3 flex flex-col items-start">
             <img src={about_image} alt="About page" />
-            <p className="leading-relaxed text-lg font-medium text-gray-2 mt-6 mb-6">
+            <p className="leading-relaxed text-lg font-medium text-gray-2 mt-14 mb-6">
               Argus Security is a customer-centric culture, and we are proud to
               put our customers first, in every area of our operation. All that
               we do revolves around our customers’ needs and expectations. Our

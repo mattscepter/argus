@@ -65,7 +65,7 @@ function App() {
           <HomeRoute path="/jobs" exact component={Jobs} />
           <HomeRoute path="/contact" exact component={Contact} />
           <HomeRoute path="/signup" component={SignUp} />
-          <HomeRoute path="/training" component={Training} />
+          <HomeRoute path="/courses" component={Training} />
           <HomeRoute path="/services" component={Services} />
           <HomeRoute path="/technology" component={Technology} />
 

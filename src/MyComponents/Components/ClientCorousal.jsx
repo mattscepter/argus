@@ -150,7 +150,7 @@ const ClientCorousal = () => {
                 <img
                   src={`${API}/client/get-photo/${client._id}`}
                   alt=""
-                  className="h-32 mx-auto object-contain pl-6 pr-6"
+                  className="h-32 mx-auto object-contain pl-10 pr-10"
                 />
               </div>
             );

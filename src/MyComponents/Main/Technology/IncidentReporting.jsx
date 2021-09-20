@@ -28,7 +28,7 @@ class IncidentReporting extends Component {
             <div className=" md:w-1/2 lg:w-2/3 flex flex-col items-start">
               <img src={about_image} alt="About page" />
 
-              <div className="flex flex-row items-stretch w-full mt-8 mb-8">
+              <div className="flex flex-row items-stretch w-full mt-14 mb-8">
                 <SideLine />
                 <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
                   Robust Incident Reporting
@@ -42,7 +42,7 @@ class IncidentReporting extends Component {
                 reporting makes producing a Daily Activity Report a hassle.
               </p>
 
-              <div className="flex flex-row items-stretch w-full mt-8 mb-8">
+              <div className="flex flex-row items-stretch w-full mt-6 mb-8">
                 <SideLine />
                 <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
                   Efficient Data Collection
@@ -59,7 +59,7 @@ class IncidentReporting extends Component {
                 criteria that can be included in any report, like:
               </p>
 
-              <ul className="text-gray-2 text-lg">
+              <ul className="text-gray-2 text-lg mb-7">
                 <li className="my-0.5">
                   <span className="font-bold text-red-1 mr-2">✓</span>{" "}
                   Time-stamped photos, audio files, and text notes.
@@ -74,7 +74,7 @@ class IncidentReporting extends Component {
                 </li>
               </ul>
 
-              <div className="flex flex-row items-stretch w-full mt-8 mb-8">
+              <div className="flex flex-row items-stretch w-full mt-6 mb-8">
                 <SideLine />
                 <h1 className="leading-tight text-3xl sm:text-4xl font-bold text-gray-3">
                   Filtered Reports

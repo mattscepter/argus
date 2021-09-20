@@ -26,7 +26,7 @@ export default function HarassementPolicy() {
         <div className="flex flex-wrap my-12">
           <div className=" md:w-1/2 lg:w-2/3 flex flex-col items-start">
             <img src={about_image} alt="About page" />
-            <p className="leading-relaxed text-lg font-medium text-gray-2 mt-6 mb-6">
+            <p className="leading-relaxed text-lg font-medium text-gray-2 mt-14 mb-6">
               The Harassment/Sexual Harassment/Discrimination policy shall apply
               to all employees, associates and Agents of Argus Security Services
               Corp.
@@ -528,20 +528,43 @@ export default function HarassementPolicy() {
             <p className="leading-relaxed text-lg font-medium text-gray-2 mb-6">
               This policy is based upon the following pieces of legislation and
               policies:
-              <br />
-              <span className="text-gray-3 font-bold mr-2">
-                Ontario Human Rights Code{" "}
-              </span>
-              <br />
-              <span className="text-gray-3 font-bold mr-2">
-                Occupational Health & Safety Act{" "}
-              </span>
-              <br />
-              <span className="text-gray-3 font-bold mr-2">
-                Workplace Anti-Violence Policy{" "}
-              </span>{" "}
-              <br />
             </p>
+            <ul className="text-gray-2 font-medium text-lg mb-6 ">
+              <li className="my-0.5">
+                <a
+                  href="https://www.ontario.ca/laws/statute/90h19"
+                  target="_blank"
+                >
+                  <span className="text-red-1 font-bold mr-2">✓</span>{" "}
+                  <span className="hover:underline">
+                    {" "}
+                    Ontario Human Rights Code{" "}
+                  </span>
+                </a>
+              </li>
+              <li className="my-0.5">
+                <a
+                  href="https://www.ontario.ca/laws/statute/90o01"
+                  target="_blank"
+                >
+                  <span className="text-red-1 font-bold mr-2">✓</span>{" "}
+                  <span className="hover:underline">
+                    Occupational Health & Safety Act
+                  </span>
+                </a>
+              </li>
+              <li className="my-0.5">
+                <a
+                  href="https://laws-lois.justice.gc.ca/eng/acts/c-46/"
+                  target="_blank"
+                >
+                  <span className="text-red-1 font-bold mr-2">✓</span>{" "}
+                  <span className="hover:underline">
+                    Criminal Court of Canda
+                  </span>
+                </a>
+              </li>
+            </ul>
 
             <AboutPageButtons />
           </div>

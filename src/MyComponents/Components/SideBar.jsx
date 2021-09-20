@@ -39,13 +39,13 @@ const SideBar = () => {
           </h1>
         </Link>
       </div>
-      <div className="w-full flex flex-col items-center text-center mx-auto px-10 py-10 bg-gray-200 mt-24 mb-8">
+      <div className="w-full flex flex-col items-center text-center mx-auto px-6 py-10 bg-gray-200 mt-24 mb-8">
         <img src={callus_logo} alt="" className="w-56 -mt-32 mb-2 " />
         <h1 className="text-xl leading-relaxed font-bold text-gray-2 p-2 mb-4">
           Professional Help to get back your peace of mind
         </h1>
         <a
-          className="w-full text-2xl lg:text-base xl:text-2xl p-4 text-white font-bold hover:bg-white border-4 bg-red-1 border-red-1 border-double hover:text-red-1 rounded-lg mt-10 sm:mt-0 hover:shadow-button-inner"
+          className="w-full text-2xl p-4 text-white font-bold hover:bg-white border-4 bg-red-1 border-red-1 border-double hover:text-red-1 rounded-lg mt-10 sm:mt-0 hover:shadow-button-inner"
           href={`tel:${contact.phoneNumber}`}
         >
           {contact.phoneNumber}
