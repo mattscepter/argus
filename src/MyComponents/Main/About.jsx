@@ -8,6 +8,7 @@ import Stickynav from "./../Partials/Stickynav";
 import MobileHeader from "../Partials/MobileHeader";
 import Teams from "../Components/TeamsSection";
 import SideLine from "./../Components/SideLine";
+import SideBarAbout from "../Components/SideBarAbout";
 
 class About extends Component {
   render() {
@@ -116,9 +117,7 @@ class About extends Component {
                 </ul>
                 <div></div>
               </div>
-              <div  className="hidden md:block">
-                <SideBar />
-              </div>
+              <SideBarAbout />
             </div>
           </div>
         </div>
