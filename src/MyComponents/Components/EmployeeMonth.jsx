@@ -26,7 +26,7 @@ const EmployeeMonth = () => {
               </span>
               {emp?.empDesc}
             </p>
-            {emp.skills ? (
+            {emp?.skills ? (
               <ul className="text-gray-2 font-medium text-lg">
                 <li className="py-1">
                   <span className="text-red-1 font-bold mr-2">✓ </span>
