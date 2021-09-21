@@ -90,7 +90,7 @@ const Teams = () => {
   };
 
   return (
-    <div className="py-12 font-for-para overflow-hidden">
+    <div className="py-12 font-for-para overflow-hidden" id="team">
       <div className="flex flex-col justify-center items-center">
         
         <div className="w-full bg-empofmon bg-cover bg-center bg-no-repeat">

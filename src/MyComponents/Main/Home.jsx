@@ -10,7 +10,7 @@ import section6 from "./../../argus website/PNG/sdm.png";
 import section4img from "./../../argus website/PNG/raw-2_edited.png";
 import section5 from "./../../argus website/PNG/0000000.png";
 import image1 from "./../../argus website/PNG/raw-2_edited.png";
-import camera from "./../../argus website/SVG/3. Camera.svg";
+import camera from "./../../argus website/SVG/3. camera.svg";
 import Header from "./../Partials/Header";
 import HeaderHome from "../Partials/HeaderHome";
 import Stickynav from "./../Partials/Stickynav";
@@ -50,19 +50,19 @@ export default function Home() {
       <div className="px-4 sm:px-8 md:px-12 2xl:px-0 mx-auto max-w-1366 -mt-12 md:-mt-24">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between mx-auto">
           <div className="">
-          <h1 className="flex-grow sm:pr-16 text-3xl sm:text-number font-bold font-for-para text-gray-400">
-            Call Us <br />
-          </h1>
-          <a
+            <h1 className="flex-grow sm:pr-16 text-3xl sm:text-number font-bold font-for-para text-gray-400">
+              Call Us <br />
+            </h1>
+            <a
               className="text-red-1 text-number md:text-4xl lg:text-6xl font-bold"
               href={`tel:${contact.phoneNumber}`}
             >
               {contact.phoneNumber}
             </a>
-            </div>
-          <button className="flex-shrink-0 font-bold text-white bg-red-1 py-5 px-4 md:px-12 hover:bg-white border-4 border-double  border-red-1 hover:text-red-1 rounded-lg text-lg mt-6 sm:mt-0 hover:shadow-button-inner">
+          </div>
+          <Link to="/services" className="flex-shrink-0 font-bold text-white bg-red-1 py-5 px-4 md:px-12 hover:bg-white border-4 border-double  border-red-1 hover:text-red-1 rounded-lg text-lg mt-6 sm:mt-0 hover:shadow-button-inner">
             DISCOVER MORE
-          </button>
+          </Link>
         </div>
       </div>
 
@@ -183,7 +183,11 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <img src={camera} alt="" className="w-40 h-40 mr-auto hidden md:block -mt-60 lg:-mt-48" />
+        <img
+          src={camera}
+          alt=""
+          className="w-40 h-40 mr-auto hidden md:block -mt-60 lg:-mt-44"
+        />
       </div>
 
       {/* Section 5 Services */}
@@ -207,7 +211,6 @@ export default function Home() {
           </div>
 
           <div className="flex flex-wrap justify-center md:justify-between text-center mb-6 ">
-            
             <div className="p-4 w-96 md:w-1/3">
               <div className="h-full overflow-hidden ">
                 <div className="h-52 sm:h-80 md:h-56 lg:h-64 object-cover object-center rounded-2xl shadow-button-inner bg-callus bg-no-repeat bg-cover bg-center">
@@ -293,9 +296,9 @@ export default function Home() {
       <div className="w-full">
         <img src={siren} alt="" className="w-40 h-40 mr-auto -mb-40" />
         <div className="px-4 sm:px-8 lg:px-12 2xl:px-0 mx-auto max-w-1366 flex flex-col items-center justify-center py-14">
-          <div className="w-full sm:w-9/12 flex flex-row items-center justify-center mx-auto pt-32 sm:pt-0">
+          <div className="w-full sm:w-9/12 flex flex-row items-end justify-center mx-auto pt-32 sm:pt-0">
             <img src={section5} className="w-24 h-24" alt="" />
-            <a href={`tel:${contact.phoneNumber}`} className="-mt-20 -ml-6">
+            <a href={`tel:${contact.phoneNumber}`} className="mb-14 -ml-6">
               <svg
                 className="w-14 h-14 bg-white rounded-xl"
                 xmlns="http://www.w3.org/2000/svg"
@@ -324,19 +327,20 @@ export default function Home() {
                 </g>
               </svg>
             </a>
-              <h2 className="leading-relaxed text-lg font-medium text-gray-2 px-3">
-                24 HOURS <br/> SERVICE<br/> AVAILABLE
-              </h2>
+            <h2 className="leading-relaxed text-lg font-bold text-gray-2 pl-7">
+              24 HOURS <br /> SERVICE
+              <br /> AVAILABLE
+            </h2>
           </div>
-          <p className="text-lg title-font font-bold text-gray-900 text-center">
-                Have any questions? Feel free to contact our office today at{" "}
-                <a
-                  className="text-red-1 text-2xl"
-                  href={`tel:${contact.phoneNumber}`}
-                >
-                  {contact.phoneNumber}
-                </a>
-              </p>
+          <p className="text-lg title-font font-bold text-gray-900 text-center pt-4">
+            Have any questions? Feel free to contact our office today at{" "}
+            <a
+              className="text-red-1 text-2xl"
+              href={`tel:${contact.phoneNumber}`}
+            >
+              {contact.phoneNumber}
+            </a>
+          </p>
         </div>
       </div>
 
@@ -351,7 +355,11 @@ export default function Home() {
                   alt="Argus Security"
                   className="block md:hidden lg:block -mb-28 sm:-mb-32 lg:mb-0"
                 />
-                <img src={signature} alt="" className="block md:hidden lg:block w-9/12 mb-4 lg:-ml-72" />
+                <img
+                  src={signature}
+                  alt=""
+                  className="block md:hidden lg:block w-9/12 mb-4 lg:-ml-72"
+                />
               </div>
               <div className="w-full lg:w-1/2 lg:p-4 flex flex-col items-start">
                 <div className="flex flex-row items-stretch w-full mt-8 md:mt-0 mb-8">
@@ -363,17 +371,17 @@ export default function Home() {
                   </h1>
                 </div>
                 <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between">
-                  <button className="px-6 py-4 text-sm font-bold bg-red-1 border border-black-1 bg-opacity-100 hover:bg-opacity-40 rounded-lg">
-                    OUR TEAM
-                  </button>
-                  <button className="px-6 py-4 text-sm font-bold bg-red-1 border my-4 md:my-0 sm:mx-4 border-black-1 bg-opacity-100 hover:bg-opacity-40 rounded-lg">
+                  <Link to="/about" className="px-6 py-4 text-sm font-bold bg-red-1 border border-black-1 bg-opacity-100 hover:bg-opacity-40 rounded-lg">
+                    ABOUT US
+                  </Link>
+                  <Link to="/contact" className="px-6 py-4 text-sm font-bold bg-red-1 border my-4 md:my-0 sm:mx-4 border-black-1 bg-opacity-100 hover:bg-opacity-40 rounded-lg">
                     CONTACT US
-                  </button>
-                  <button className="px-6 py-4 text-sm font-bold bg-red-1 border border-black-1 bg-opacity-100 hover:bg-opacity-40 rounded-lg">
+                  </Link>
+                  <Link to="/organisationstructure"className="px-6 py-4 text-sm font-bold bg-red-1 border border-black-1 bg-opacity-100 hover:bg-opacity-40 rounded-lg">
                     ARGUS HIERARCHY
-                  </button>
+                  </Link>
                 </div>
-                <p className="leading-relaxed font-medium text-lg pt-6 pb-7 lg:pb-3 lg:pr-0 2xl:pr-24 ">
+                <p className="leading-relaxed font-medium text-lg pt-6 sm:pb-10 lg:pb-3 lg:pr-0 2xl:pr-24 ">
                   At Argus Security Services we maintain a prominent level of
                   training for our guards in response to our highly sensitive
                   sites. We offer 24/7 fast and reliable security services.
@@ -383,33 +391,33 @@ export default function Home() {
                   <div>
                     <img
                       src={section4img}
-                      className="w-44 lg:w-28 xl:w-36 mr-8 block lg:hidden xl:block"
+                      className="w-44 lg:w-28 xl:w-36 mr-8 hidden sm:block lg:hidden xl:block"
                       alt=""
                     />
                   </div>
                   <div>
-                    <ul className="py-4 text-sm lg:text-lg xl:text-sm xl:font-bold">
-                      <li className="flex flex-row items-start py-1">
+                    <ul className="py-4 text-lg sm:text-sm lg:text-lg xl:text-sm xl:font-bold">
+                      <li className="flex flex-row items-start py-0.5 sm:py-1">
                         <span className="text-red-1 font-bold mr-2">✓</span>{" "}
                         Member of Law society of Ontario
                       </li>
-                      <li className="flex flex-row items-start py-1">
+                      <li className="flex flex-row items-start py-0.5 sm:py-1">
                         <span className="text-red-1 font-bold mr-2">✓</span>{" "}
                         Police Foundation Certified
                       </li>
-                      <li className="flex flex-row items-start py-1">
+                      <li className="flex flex-row items-start py-0.5 sm:py-1">
                         <span className="text-red-1 font-bold mr-2">✓</span> 7
                         Years of Security Experience
                       </li>
-                      <li className="flex flex-row items-start py-1">
+                      <li className="flex flex-row items-start py-0.5 sm:py-1">
                         <span className="text-red-1 font-bold mr-2">✓</span>{" "}
                         Sometimes buys me Coffee
                       </li>
-                      <li className="flex flex-row items-start py-1">
+                      <li className="flex flex-row items-start py-0.5 sm:py-1">
                         <span className="text-red-1 font-bold mr-2">✓</span>{" "}
                         Good Taste in Movies
                       </li>
-                      <li className="flex flex-row items-start py-1">
+                      <li className="flex flex-row items-start py-0.5 sm:py-1">
                         <span className="text-red-1 font-bold mr-2">✓</span>{" "}
                         Good Guy Though{" "}
                       </li>
@@ -438,9 +446,9 @@ export default function Home() {
               Covid 19 Procedures and much more to safeguard your business.
             </h1>
           </div>
-          <button className="flex-shrink-0 font-bold text-white py-5 px-12 focus:outline-none hover:bg-white border-4 border-double border-white hover:text-red-1 rounded-lg text-lg mt-6 mb-8 md:mt-0 md:mb-0 hover:shadow-button-inner">
+          <Link to="/covid" className="flex-shrink-0 font-bold text-white py-5 px-12 focus:outline-none hover:bg-white border-4 border-double border-white hover:text-red-1 rounded-lg text-lg mt-6 mb-8 md:mt-0 md:mb-0 hover:shadow-button-inner">
             DISCOVER MORE
-          </button>
+          </Link>
         </div>
       </div>
 

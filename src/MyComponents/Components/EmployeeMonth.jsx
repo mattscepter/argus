@@ -9,33 +9,33 @@ const EmployeeMonth = () => {
   const emp = useSelector((state) => state.eom.eom);
   return (
     <div className="bg-cover bg-no-repeat bg-empofmon font-for-para overflow-hidden">
-      <img src={medal} alt="" className="w-52 h-52 mr-auto -mb-52" />
+      <img src={medal} alt="" className="w-52 h-52 mr-auto -mb-52 " />
       <div className="px-4 sm:px-8 lg:px-12 2xl:px-0 mx-auto max-w-1366 pt-16">
         <div className="flex flex-row items-stretch w-full mt-8 md:mt-0 mb-8">
-            <SideLine />
-            <h1 className="leading-tight text-3xl lg:text-4xl font-bold text-gray-3">
-              Employee of the <br />
-              Month
-            </h1>
-          </div>
-        <div className="flex flex-col-reverse md:flex-row items-center md:items-end md:justify-between">
-          <div className="w-full md:w-1/2 flex flex-col items-start mt-6 md:mt-0">
-            <p className="leading-loose text-lg text-gray-2 mb-8">
+          <SideLine />
+          <h1 className="leading-tight text-3xl lg:text-4xl font-bold text-gray-3">
+            Employee of the <br />
+            Month
+          </h1>
+        </div>
+        <div className="flex flex-col-reverse md:flex-row items-center md:items-end">
+          <div className="w-full md:w-1/2 mt-6 md:mt-0 mb-auto">
+            <p className="leading-loose text-lg text-gray-2 mb-6">
               <span className="text-red-1 text-2xl font-semibold">
                 {emp?.empName}{" "}
               </span>
               {emp?.empDesc}
             </p>
-            <ul className="text-gray-2 font-medium text-lg">
-              <li className="py-1">
+            <ul className="text-gray-2 font-medium text-lg mb-6">
+              <li className="py-0.5">
                 <span className="text-red-1 font-bold mr-2">✓ </span>
                 {emp?.skills[0].split(",")[0]}
               </li>
-              <li className="py-1">
+              <li className="py-0.5">
                 <span className="text-red-1 font-bold mr-2">✓</span>
                 {emp?.skills[0].split(",")[1]}
               </li>
-              <li className="py-1">
+              <li className="py-0.5">
                 <span className="text-red-1 font-bold mr-2">✓</span>
                 {emp?.skills[0].split(",")[2]}
               </li>
@@ -50,13 +50,13 @@ const EmployeeMonth = () => {
                         alt=""
                         className="w-8 inline-block text-red-1 ml-4 -mb-4"
                       />
-                      <p className="leading-normal text-lg lg:text-xl font-medium text-gray-2 bg-gray-200 px-6 py-6 shadow-lg min-h-full">
+                      <p className="leading-relaxed text-base lg:text-xl font-medium text-gray-2 bg-gray-200 px-6 py-6 lg:px-12 lg:py-8 shadow-speech">
                         {emp.description}
                       </p>
                       <div class="w-11 inline-block overflow-hidden">
                         <div class=" h-16 bg-gray-200 shadow-button-shadow-3 rotate-60 transform origin-top-right"></div>
                       </div>
-                      <div className="pt-6 flex items-center ">
+                      <div className="flex items-end mb-4">
                         <div className="w-20 h-20 p-1 border-2 border-red-1">
                           <Imagehelper
                             param="eom"
@@ -64,8 +64,8 @@ const EmployeeMonth = () => {
                           />
                         </div>
 
-                        <div className="ml-8 mb-8">
-                          <div className="w-40 sm:w-60">
+                        <div className="ml-8">
+                          <div className="w-40">
                             <Imagehelper
                               param="eom"
                               id={`instructorSign-${emp._id}`}
@@ -85,16 +85,16 @@ const EmployeeMonth = () => {
               ) : null}
             </div>
           </div>
-          <div className="w-96 lg:pl-12">
-              {emp?._id !== undefined ? (
-                <>
-                  <Imagehelper
-                    param="eom"
-                    id={`empImage-${emp._id}`}
-                    className="h-96"
-                  />
-                </>
-              ) : null}
+          <div className="w-full md:w-1/2">
+            {emp?._id !== undefined ? (
+              <>
+                <Imagehelper
+                  param="eom"
+                  id={`empImage-${emp._id}`}
+                  className=""
+                />
+              </>
+            ) : null}
           </div>
         </div>
       </div>

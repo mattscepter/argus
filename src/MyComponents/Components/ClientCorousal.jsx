@@ -40,15 +40,16 @@ function SamplePrevArrow(props) {
 const ClientCorousal = () => {
   const clients = useSelector((state) => state.client.clients);
   const settings = {
-    infinite: true,
-    speed: 5000,
+    speed: 9000,
     autoplay: true,
     autoplaySpeed: 0,
     cssEase: "linear",
-    pauseOnHover: true,
-    slidesToShow: 5,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    variableWidth: true,
     arrows: false,
-    className: "slick-new",
+    centerMode: true,
+    centerPadding: "400px",
     responsive: [
       {
         breakpoint: 1800,
@@ -88,7 +89,6 @@ const ClientCorousal = () => {
         breakpoint: 950,
         settings: {
           centerPadding: "220px",
-          slidesToShow: 4,
         },
       },
 
@@ -96,7 +96,6 @@ const ClientCorousal = () => {
         breakpoint: 850,
         settings: {
           centerPadding: "180px",
-          slidesToShow: 4,
         },
       },
 
@@ -104,7 +103,6 @@ const ClientCorousal = () => {
         breakpoint: 750,
         settings: {
           centerPadding: "160px",
-          slidesToShow: 4,
         },
       },
 
@@ -112,7 +110,6 @@ const ClientCorousal = () => {
         breakpoint: 650,
         settings: {
           centerPadding: "140px",
-          slidesToShow: 3,
         },
       },
 
@@ -120,21 +117,18 @@ const ClientCorousal = () => {
         breakpoint: 600,
         settings: {
           centerPadding: "120px",
-          slidesToShow: 3,
         },
       },
       {
         breakpoint: 550,
         settings: {
           centerPadding: "90px",
-          slidesToShow: 3,
         },
       },
       {
         breakpoint: 480,
         settings: {
-          centerPadding: "70px",
-          slidesToShow: 3,
+          centerPadding: "0px",
         },
       },
     ],
@@ -142,21 +136,21 @@ const ClientCorousal = () => {
 
   return (
     <div className="bg-client">
-      <div className="px-4 sm:px-8 lg:px-12 2xl:px-0 mx-auto max-w-1366 py-12">
+      <div className="px-4 sm:px-8 lg:px-12 2xl:px-0 mx-auto max-w-1366 pt-14 pb-14">
         <div className="flex flex-row items-stretch w-full mt-8 md:mt-0 mb-8 lg:justify-center">
           <SideLine />
           <h1 className="leading-tight text-3xl lg:text-4xl font-bold text-gray-3">
             Clients
           </h1>
         </div>
-        <Slider {...settings}>
+        <Slider {...settings} className="pt-8 lg:pt-4 lg:pb-4">
           {clients.map((client) => {
             return (
               <div key={client._id} className="clientSlider">
                 <img
                   src={`${API}/client/get-photo/${client._id}`}
                   alt=""
-                  className="w-44 h-40 mx-auto object-contain pt-10"
+                  className="h-32 mx-auto object-contain pl-10 pr-10"
                 />
               </div>
             );

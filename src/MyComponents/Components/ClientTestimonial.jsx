@@ -47,7 +47,7 @@ const ClientTestimonial = ({ testimonial }) => {
     pauseOnHover: true,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
-    dots: true,
+    dots: false,
     responsive: [
       {
         breakpoint: 1700,
@@ -107,7 +107,7 @@ const ClientTestimonial = ({ testimonial }) => {
 
   return (
     <div className="bg-client">
-      <div className="px-4 sm:px-8 lg:px-12 2xl:px-0 mx-auto max-w-1366 py-14 font-for-para">
+      <div className="px-4 sm:px-8 lg:px-12 2xl:px-0 mx-auto max-w-1366 pt-14 font-for-para">
         <div className="flex justify-start">
           <div className="flex flex-row items-stretch w-full mt-8 md:mt-0 mb-12 lg:justify-center">
             <SideLine />
@@ -116,11 +116,14 @@ const ClientTestimonial = ({ testimonial }) => {
             </h1>
           </div>
         </div>
-        <div className="flex flex-wrap mb-16 w-full">
+        <div className="flex flex-wrap w-full">
           <Slider {...settings} className="w-full">
             {testimonial.map((data) => {
               return (
-                <div key={data._id} className="pt-10 px-2 pb-32 sm:pb-20 testimonialSlider">
+                <div
+                  key={data._id}
+                  className="pt-10 px-2 pb-32 sm:pb-20 testimonialSlider"
+                >
                   <div className="h-full bg-white shadow-lg flex flex-col">
                     <div className="bg-gray-1 px-10 py-6 ml-auto">
                       <img
@@ -129,9 +132,9 @@ const ClientTestimonial = ({ testimonial }) => {
                         className="w-8 h-12 text-red-1 ml-auto -mt-12"
                       />
                     </div>
-                    <div className="px-4 sm:px-8 pb-8 pt-2 w-full">
-                      <p className="leading-loose mb-6 text-gray-2">{data?.description}</p>
-                      <div className="inline-flex items-end">
+                    <div className="px-6 sm:px-6 md:px-10 pb-6 pt-2 w-full h-56">
+                      <p className="leading-loose mb-6">{data?.description}</p>
+                      <div className="inline-flex items-center">
                         <img
                           src={`${API}/testimonal/get-photo/${data._id}`}
                           alt=""

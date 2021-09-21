@@ -12,8 +12,8 @@ import SideLine from "./../Components/SideLine";
 export default function HarassementPolicy() {
   return (
     <div>
-      <div className="text-gray-600 body-font bg-no-repeat bg-cover bg-aboutbg">
-        <div className="container mx-auto flex px-5 py-40 items-center justify-center flex-col">
+      <div className="text-gray-600 body-font bg-no-repeat bg-cover bg-aboutbg bg-center">
+        <div className="container mx-auto flex px-5 py-20 md:py-40 items-center justify-center flex-col">
           <div className="text-center lg:w-2/3 w-full">
             <h1 className="title-font sm:text-6xl text-3xl mb-4 font-bold text-white">
               HARASSMENT POLICY
@@ -22,7 +22,8 @@ export default function HarassementPolicy() {
         </div>
       </div>
 
-      <div className="px-4 sm:px-8 lg:px-12 xl:px-0 max-w-1366 mx-auto bg-no-repeat bg-mapbg">
+    <div className="bg-no-repeat bg-mapbg bg-contain">
+      <div className="px-4 sm:px-8 lg:px-12 xl:px-0 max-w-1366 mx-auto">
         <div className="flex flex-wrap my-12">
           <div className=" md:w-1/2 lg:w-2/3 flex flex-col items-start">
             <img src={about_image} alt="About page" />
@@ -88,38 +89,38 @@ export default function HarassementPolicy() {
             </p>
 
             <ul className="text-gray-2 font-medium text-lg mb-6">
-              <li className="my-0.5">
+              <li className="flex flex-row items-start my-0.5">
                 <span className="text-red-1 font-bold mr-2">✓</span> Acts of
                 harassment can include, but are not limited to:
               </li>
-              <li className="my-0.5">
+              <li className="flex flex-row items-start my-0.5">
                 <span className="text-red-1 font-bold mr-2">✓</span> Profane
                 language and inappropriate comments or gestures;{" "}
               </li>
-              <li className="my-0.5">
+              <li className="flex flex-row items-start my-0.5">
                 <span className="text-red-1 font-bold mr-2">✓</span>{" "}
                 Inappropriate physical conduct;{" "}
               </li>
-              <li className="my-0.5">
+              <li className="flex flex-row items-start my-0.5">
                 <span className="text-red-1 font-bold mr-2">✓</span> Material or
                 offensive pictures that are displayed publicly, circulated, put
                 on someone’s work space or belongings, or on a computer or fax
                 machine
               </li>
-              <li className="my-0.5">
+              <li className="flex flex-row items-start my-0.5">
                 <span className="text-red-1 font-bold mr-2">✓</span> Any
                 inappropriate electronic or cyber activity used for the purpose
                 of violence, intimidation and/ or harassment{" "}
               </li>
-              <li className="my-0.5">
+              <li className="flex flex-row items-start my-0.5">
                 <span className="text-red-1 font-bold mr-2">✓</span> Creating an
                 intimidating or offensive working environment; or
               </li>
-              <li className="my-0.5">
+              <li className="flex flex-row items-start my-0.5">
                 <span className="text-red-1 font-bold mr-2">✓</span> Creating a
                 degrading, humiliating, or hostile work environment{" "}
               </li>
-              <li className="my-0.5">
+              <li className="flex flex-row items-start my-0.5">
                 <span className="text-red-1 font-bold mr-2">✓</span> Cyber
                 bullying, defined as any inappropriate electronic or cyber
                 activity used for the purpose of violence, intimidation and/or
@@ -139,50 +140,50 @@ export default function HarassementPolicy() {
             </p>
 
             <ul className="text-gray-2 font-medium text-lg mb-6 ">
-              <li className="my-0.5">
+              <li className="flex flex-row items-start my-0.5">
                 <span className="text-red-1 font-bold mr-2">✓</span> Requests
                 for sexual favors;
               </li>
-              <li className="my-0.5">
+              <li className="flex flex-row items-start my-0.5">
                 <span className="text-red-1 font-bold mr-2">✓</span> Verbal or
                 physical conduct of a sexual nature;
               </li>
-              <li className="my-0.5">
+              <li className="flex flex-row items-start my-0.5">
                 <span className="text-red-1 font-bold mr-2">✓</span> Physical
                 conduct of a sexual nature;
               </li>
-              <li className="my-0.5">
+              <li className="flex flex-row items-start my-0.5">
                 <span className="text-red-1 font-bold mr-2">✓</span> Offensive
                 sexual comments, abuse or innuendo about how someone talks,
                 dresses or acts;
               </li>
-              <li className="my-0.5">
+              <li className="flex flex-row items-start my-0.5">
                 <span className="text-red-1 font-bold mr-2">✓</span> Jokes or
                 gestures of a sexual nature;
               </li>
-              <li className="my-0.5">
+              <li className="flex flex-row items-start my-0.5">
                 <span className="text-red-1 font-bold mr-2">✓</span> Material or
                 offensive pictures that are displayed publicly, circulated, put
                 on someone’s work space or belongings, or on a computer or fax
                 machine; in neither print or electronic form
               </li>
-              <li className="my-0.5">
+              <li className="flex flex-row items-start my-0.5">
                 <span className="text-red-1 font-bold mr-2">✓</span> Staring or
                 leering in a sexual manner
               </li>
-              <li className="my-0.5">
+              <li className="flex flex-row items-start my-0.5">
                 <span className="text-red-1 font-bold mr-2">✓</span> CTelephone
                 calls or e-mail of a sexual nature.
               </li>
-              <li className="my-0.5">
+              <li className="flex flex-row items-start my-0.5">
                 <span className="text-red-1 font-bold mr-2">✓</span> Soliciting
                 sexual favors in exchange for a benefit
               </li>
-              <li className="my-0.5">
+              <li className="flex flex-row items-start my-0.5">
                 <span className="text-red-1 font-bold mr-2">✓</span> Unnecessary
                 physical contact, such as massages
               </li>
-              <li className="my-0.5">
+              <li className="flex flex-row items-start my-0.5">
                 <span className="text-red-1 font-bold mr-2">✓</span> Asking for
                 dates or personal contact when the person has already indicated
                 they are not interested
@@ -376,23 +377,23 @@ export default function HarassementPolicy() {
             </p>
 
             <ul className="text-gray-2 font-medium text-lg mb-6">
-              <li className="my-0.5">
+              <li className="flex flex-row items-start my-0.5">
                 <span className="text-red-1 font-bold mr-2">✓</span> the
                 complaint does not fall within the definitions outlined in the
                 policy, is not subject to this policy, and should be pursued
                 through an alternate mechanism;
               </li>
-              <li className="my-0.5">
+              <li className="flex flex-row items-start my-0.5">
                 <span className="text-red-1 font-bold mr-2">✓</span> the subject
                 matter has been found to be frivolous, vexatious or in bad
                 faith;
               </li>
-              <li className="my-0.5">
+              <li className="flex flex-row items-start my-0.5">
                 <span className="text-red-1 font-bold mr-2">✓</span> the
                 complaint appears to be outside the jurisdiction of Argus
                 Security; or
               </li>
-              <li className="my-0.5">
+              <li className="flex flex-row items-start my-0.5">
                 <span className="text-red-1 font-bold mr-2">✓</span> the
                 complaint cannot be supported or substantiated.
               </li>
@@ -530,23 +531,41 @@ export default function HarassementPolicy() {
               policies:
             </p>
             <ul className="text-gray-2 font-medium text-lg mb-6 ">
-              <li className="my-0.5">
-              <a href="https://www.ontario.ca/laws/statute/90h19" target="_blank">
-                <span className="text-red-1 font-bold mr-2">✓</span> <span className="hover:underline"> Ontario Human Rights Code </span>
-              </a>
+              <li className="flex flex-row items-start my-0.5">
+                <a
+                  href="https://www.ontario.ca/laws/statute/90h19"
+                  target="_blank"
+                >
+                  <span className="text-red-1 font-bold mr-2">✓</span>{" "}
+                  <span className="hover:underline">
+                    {" "}
+                    Ontario Human Rights Code{" "}
+                  </span>
+                </a>
               </li>
-              <li className="my-0.5">
-              <a href="https://www.ontario.ca/laws/statute/90o01" target="_blank">
-                <span className="text-red-1 font-bold mr-2">✓</span> <span className="hover:underline">Occupational Health & Safety Act</span>
-              </a>
+              <li className="flex flex-row items-start my-0.5">
+                <a
+                  href="https://www.ontario.ca/laws/statute/90o01"
+                  target="_blank"
+                >
+                  <span className="text-red-1 font-bold mr-2">✓</span>{" "}
+                  <span className="hover:underline">
+                    Occupational Health & Safety Act
+                  </span>
+                </a>
               </li>
-              <li className="my-0.5">
-              <a href="https://laws-lois.justice.gc.ca/eng/acts/c-46/" target="_blank">
-                <span className="text-red-1 font-bold mr-2">✓</span> <span className="hover:underline">Criminal Court of Canda</span>
-              </a>
+              <li className="flex flex-row items-start my-0.5">
+                <a
+                  href="https://laws-lois.justice.gc.ca/eng/acts/c-46/"
+                  target="_blank"
+                >
+                  <span className="text-red-1 font-bold mr-2">✓</span>{" "}
+                  <span className="hover:underline">
+                    Criminal Court of Canda
+                  </span>
+                </a>
               </li>
             </ul>
-            
 
             <AboutPageButtons />
           </div>
@@ -554,5 +573,6 @@ export default function HarassementPolicy() {
         </div>
       </div>
     </div>
+  </div>
   );
 }

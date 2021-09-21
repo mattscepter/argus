@@ -114,14 +114,13 @@
   }
 }
 
-.slick-new > div > div > div > div > div {
+.slick-slide > div > .clientSlider {
   transition: all 1s ease-out;
-  transition-delay: 0s;
+  transition-delay: 10s;
   opacity: 0.4;
 }
 
 .slick-active > div > .clientSlider {
   transition: all 1s ease-out;
-  transition-delay: 5s;
   opacity: 1 !important;
 }

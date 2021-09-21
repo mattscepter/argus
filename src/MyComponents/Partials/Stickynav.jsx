@@ -39,13 +39,7 @@ const Stickynav = () => {
               : "transition-all opacity-0 duration-500"
           }
         >
-          <div
-            className={
-              open
-                ? "block"
-                : "hidden"
-            }
-          >
+          <div className={open ? "block" : "hidden"}>
             <div className="bg-red-1 w-full fixed top-0 z-50">
               <div className="hidden lg:block w-full px-4 sm:px-8 lg:px-12 2xl:px-0 mx-auto max-w-1366 text-lg bg-red-1 font-for-para shadow-lg z-50 bg-no-repeat bg-header-bg bg-center bg-cover bg-blend-multiply">
                 <Link to="/">
@@ -101,13 +95,7 @@ const Stickynav = () => {
               : "transition opacity-0 duration-500 transform -translate-y-full"
           }
         >
-          <div
-            className={
-              open
-                ? "block"
-                : "hidden"
-            }
-          >
+          <div className={open ? "block" : "hidden"}>
             <button onClick={scrollToTop}>
               <img src={Scroll} alt="" className="w-12 shadow-lg" />
             </button>
