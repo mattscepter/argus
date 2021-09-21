@@ -17,6 +17,9 @@ const validate = (values) => {
   if (!values.name) {
     errors.name = "*Required";
   }
+  if (!values.url) {
+    errors.url = "*Required";
+  }
   return errors;
 };
 
@@ -56,8 +59,8 @@ export default function ClientControls() {
   const handleCompressedUpload = (e) => {
     const image = e.target.files[0];
     new Compressor(image, {
-      quality: 0.5,
-      maxWidth: 2000,
+      quality: 0.4,
+      maxWidth: 1500,
       success: (compressedResult) => {
         setclientImg(compressedResult);
       },
@@ -68,6 +71,7 @@ export default function ClientControls() {
     useFormik({
       initialValues: {
         name: "",
+        url: "",
       },
       validate,
       onSubmit: async (values, { resetForm }) => {
@@ -75,6 +79,7 @@ export default function ClientControls() {
         resetForm();
         const formdata = new FormData();
         formdata.append("name", values.name);
+        formdata.append("url", values.url);
         formdata.append("logo", clientImg);
         setclientImg(null);
         if (update.state) {
@@ -89,6 +94,7 @@ export default function ClientControls() {
     if (update.state) {
       setValues({
         name: update.data.name,
+        url: update.data.url,
       });
     }
   }, [setValues, update]);
@@ -127,8 +133,19 @@ export default function ClientControls() {
         {errors.name ? (
           <div className="w-full text-xs text-red-400">{errors.name}</div>
         ) : null}
+        <input
+          className={`w-full ${
+            errors.url ? "border-b-2 border-red-600" : "border-b border-black"
+          } focus:outline-none mt-4 p-1`}
+          type="text"
+          placeholder="URL for the company website"
+          {...getFieldProps("url")}
+        />
+        {errors.url ? (
+          <div className="w-full text-xs text-red-400">{errors.url}</div>
+        ) : null}
 
-        <lable className="text-gray-2 mb-1">
+        <lable className="text-gray-2 mb-1 mt-4">
           Upload Logo of the Client's Company
         </lable>
         <input

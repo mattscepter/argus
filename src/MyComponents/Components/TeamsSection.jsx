@@ -70,12 +70,21 @@ const Teams = () => {
         breakpoint: 650,
         settings: {
           arrows: false,
+          centerPadding: "10px",
         },
       },
       {
         breakpoint: 500,
         settings: {
           arrows: false,
+          centerPadding: "0px",
+        },
+      },
+      {
+        breakpoint: 468,
+        settings: {
+          arrows: false,
+          slidesToShow: 2,
           centerPadding: "10px",
         },
       },
@@ -87,20 +96,27 @@ const Teams = () => {
     centerMode: true,
     speed: 600,
     arrows: false,
+    responsive: [
+      {
+        breakpoint: 450,
+        settings: {
+          centerPadding: "40px",
+        },
+      },
+    ],
   };
 
   return (
     <div className="py-12 font-for-para overflow-hidden">
       <div className="flex flex-col justify-center items-center">
-        
         <div className="w-full bg-empofmon bg-cover bg-center bg-no-repeat">
           <div className="w-screen h-auto px-0 mx-auto bg-cover bg-center bg-no-repeat flex flex-col items-center justify-around">
-          <div className="flex flex-row items-stretch w-full pt-16 md:mt-0 mb-12 lg:justify-center">
-          <SideLine />
-          <h1 className="leading-tight text-3xl lg:text-4xl font-bold text-gray-3">
-            Our Team
-          </h1>
-        </div>
+            <div className="flex flex-row items-stretch w-full pt-16 md:mt-0 mb-12 lg:justify-center">
+              <SideLine />
+              <h1 className="leading-tight text-3xl lg:text-4xl font-bold text-gray-3">
+                Our Team
+              </h1>
+            </div>
 
             <div className="w-full h-full xl:w-3/5 ">
               <Slider
@@ -132,7 +148,7 @@ const Teams = () => {
             {team.map((teammember) => {
               return (
                 <div className="teamDetail" key={teammember._id}>
-                  <div className="w-full p-4 mt-2">
+                  <div className="w-full pt-10 sm:p-4 mt-2">
                     <h1 className="text-3xl title-font font-bold text-gray-900 mb-2 border-b-6 p-2 pt-0 pl-0 border-red-1 inline-block">
                       {teammember.name}
                     </h1>

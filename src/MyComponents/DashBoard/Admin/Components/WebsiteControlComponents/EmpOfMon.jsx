@@ -11,32 +11,6 @@ import {
 } from "../../../../../context/actions/adminActions/eomAction";
 import Loader from "react-loader-spinner";
 
-const validate = (values) => {
-  const errors = {};
-  if (!values.name) {
-    errors.name = "*Required";
-  }
-  if (!values.empdescription) {
-    errors.empdescription = "*Required";
-  }
-  if (!values.description) {
-    errors.description = "*Required";
-  }
-  if (!values.quality1) {
-    errors.quality1 = "*Required";
-  }
-  if (!values.quality2) {
-    errors.quality2 = "*Required";
-  }
-  if (!values.quality3) {
-    errors.quality3 = "*Required";
-  }
-  if (!values.seniorName) {
-    errors.seniorName = "*Required";
-  }
-  return errors;
-};
-
 const EmpOfMon = () => {
   const [showAlert, setShowAlert] = useState({
     show: false,
@@ -89,6 +63,7 @@ const EmpOfMon = () => {
   const { getFieldProps, handleSubmit, errors, setValues, resetForm } =
     useFormik({
       initialValues: {
+        title: "",
         name: "",
         empdescription: "",
         description: "",
@@ -97,7 +72,6 @@ const EmpOfMon = () => {
         quality3: "",
         seniorName: "",
       },
-      validate,
       onSubmit: async (values, { resetForm }) => {
         empImgRef.current.value = "";
         insImgRef.current.value = "";
@@ -117,6 +91,7 @@ const EmpOfMon = () => {
         formdata.append("empImage", empImg);
         formdata.append("instructorImage", instructorImg);
         formdata.append("instructorSign", instructorSign);
+        formdata.append("title", values.title);
         setempImg(null);
         setinstructorImg(null);
         setinstructorSign(null);
@@ -132,13 +107,14 @@ const EmpOfMon = () => {
   useEffect(() => {
     if (update.state) {
       setValues({
-        name: update.data.empName,
-        empdescription: update.data.empDesc,
-        description: update.data.description,
-        quality1: update.data.skills[0].split(",")[0],
-        quality2: update.data.skills[0].split(",")[1],
-        quality3: update.data.skills[0].split(",")[2],
-        seniorName: update.data.instructorName,
+        title: update?.data?.title,
+        name: update?.data?.empName,
+        empdescription: update?.data?.empDesc,
+        description: update?.data?.description,
+        quality1: update?.data?.skills[0].split(",")[0],
+        quality2: update?.data?.skills[0].split(",")[1],
+        quality3: update?.data?.skills[0].split(",")[2],
+        seniorName: update?.data?.instructorName,
       });
     }
   }, [setValues, update]);
@@ -169,6 +145,18 @@ const EmpOfMon = () => {
         {showAlert.show ? (
           <Alert alert={showAlert} rmAlert={setShowAlert} />
         ) : null}
+        <input
+          className={`w-full ${
+            errors.name ? "border-b-2 border-red-600" : "border-b border-black"
+          } focus:outline-none mt-4 p-1`}
+          type="text"
+          placeholder="Title of section"
+          {...getFieldProps("title")}
+        />
+        {errors.title ? (
+          <div className="w-full text-xs text-red-400">{errors.title}</div>
+        ) : null}
+
         <input
           className={`w-full ${
             errors.name ? "border-b-2 border-red-600" : "border-b border-black"

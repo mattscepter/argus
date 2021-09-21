@@ -35,7 +35,7 @@ const Stickynav = () => {
         <div
           className={
             open
-              ? "transition-all opacity-100 duration-700"
+              ? "transition-all opacity-100 duration-700 "
               : "transition-all opacity-0 duration-500"
           }
         >

@@ -41,8 +41,8 @@ export default function TeamControl() {
   const handleCompressedUpload = (e) => {
     const image = e.target.files[0];
     new Compressor(image, {
-      quality: 0.5,
-      maxWidth: 2000,
+      quality: 0.4,
+      maxWidth: 1500,
       success: (compressedResult) => {
         setTeamImg(compressedResult);
       },
