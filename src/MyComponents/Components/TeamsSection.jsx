@@ -88,6 +88,14 @@ const Teams = () => {
           centerPadding: "10px",
         },
       },
+      {
+        breakpoint: 330,
+        settings: {
+          arrows: false,
+          slidesToShow: 1,
+          centerPadding: "0px",
+        },
+      },
     ],
   };
 
@@ -111,9 +119,9 @@ const Teams = () => {
       <div className="flex flex-col justify-center items-center">
         <div className="w-full bg-empofmon bg-cover bg-center bg-no-repeat">
           <div className="w-screen h-auto px-0 mx-auto bg-cover bg-center bg-no-repeat flex flex-col items-center justify-around">
-            <div className="flex flex-row items-stretch w-full pt-16 md:mt-0 mb-12 lg:justify-center">
+            <div className="flex flex-row items-stretch w-full pt-16 md:mt-0 mb-12 lg:justify-center px-4">
               <SideLine />
-              <h1 className="leading-tight text-3xl lg:text-4xl font-bold text-gray-3">
+              <h1 className="leading-tight text-3xl lg:text-4xl font-bold text-gray-3 ">
                 Our Team
               </h1>
             </div>
