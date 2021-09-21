@@ -11,9 +11,9 @@ const Mobilenav = ({ open, setOpen }) => {
             : "transition-all opacity-0 duration-500 transform scale-x-0 origin-right"
         }`}
       >
-        <div className="h-screen w-screen flex flex-row items-stretch overflow-hidden font-for-para">
+        <div className="min-h-screen h-full w-screen flex flex-row overflow-scroll font-for-para">
           <div className="sm:w-1/2 md:w-7/12 h-auto bg-red-1 bg-opacity-50"></div>
-          <div className="w-full sm:w-1/2 md:w-5/12 bg-gray-3 h-full">
+          <div className="w-full sm:w-1/2 md:w-5/12 bg-gray-3 h-screen overflow-scroll">
             <nav className="list-none text-lg mt-16">
               <li className="border-b border-mobile-nav-border hover:border-white text-white">
                 <Link to="/about" onClick={() => setOpen(false)}>
@@ -90,7 +90,6 @@ const Mobilenav = ({ open, setOpen }) => {
                 </Link>
               </li>
             </nav>
-            <div className="py-1 bg-gray-3"></div>
           </div>
         </div>
       </div>

@@ -6,7 +6,7 @@ module.exports = {
       backgroundImage: (theme) => ({
         hero: "url('argus website/PNG/Insta Argus12.png')",
         footer: "url('argus website/SVG/1. LOGO Vectorssmall 2.svg')",
-        mapbg: "url('argus website/PNG/World Map.png')",
+        mapbg: "url('argus website/SVG/3. World Map.svg')",
         mapbg2: "url('argus website/PNG/World Map Home.png')",
         aboutbg: "url('argus website/PNG/Image Thumbnail2.png')",
         servicesbg: "url('argus website/PNG/Image Thumbnail.png')",
@@ -84,7 +84,7 @@ module.exports = {
       },
       width: {
         "8-px": "8px",
-      },
+        },
       boxShadow: {
         "header-outer-shadow": "3px 3px 6px 1px rgba(0, 0, 0, 0.2)",
         "button-shadow": "3px 3px 6px 1px rgba(0, 0, 0, 0.4)",

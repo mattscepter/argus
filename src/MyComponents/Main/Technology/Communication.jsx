@@ -13,8 +13,8 @@ class Communication extends Component {
   render() {
     return (
       <div className="font-for-para">
-        <div className="text-gray-600 body-font bg-no-repeat bg-cover bg-aboutbg">
-          <div className="container mx-auto flex px-5 py-40 items-center justify-center flex-col">
+        <div className="text-gray-600 body-font bg-no-repeat bg-cover bg-aboutbg bg-center">
+          <div className="container mx-auto flex px-5 py-20 md:py-40 items-center justify-center flex-col">
             <div className="text-center lg:w-2/3 w-full">
               <h1 className="title-font sm:text-6xl text-3xl mb-4 font-bold font-for-para text-white">
                 COMMUNICATIONS
@@ -23,7 +23,8 @@ class Communication extends Component {
           </div>
         </div>
 
-        <div className="px-4 sm:px-8 lg:px-12 xl:px-0 max-w-1366 mx-auto bg-no-repeat bg-mapbg">
+      <div className=" bg-no-repeat bg-mapbg bg-contain">
+        <div className="px-4 sm:px-8 lg:px-12 xl:px-0 max-w-1366 mx-auto">
           <div className="flex flex-wrap my-12">
             <div className=" md:w-1/2 lg:w-2/3 flex flex-col items-start">
               <img src={about_image} alt="About page" />
@@ -88,6 +89,7 @@ class Communication extends Component {
           </div>
         </div>
       </div>
+    </div>
     );
   }
 }

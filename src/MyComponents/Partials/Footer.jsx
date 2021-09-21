@@ -58,13 +58,13 @@ const Footer = () => {
         <div className="container px-4 sm:px-8 lg:px-12 2xl:px-0 max-w-1366 mx-auto">
           <div className="flex flex-col lg:flex-row text-left md:text-center order-first items-start">
             <div className="w-full md:w-3/4 flex flex-wrap md:text-left text-center order-first mx-auto">
-              <div className="lg:w-1/3 w-full md:pl-3 pt-4">
+              <div className="lg:w-1/3 w-full md:px-8 lg:px-0 pt-4">
                 <img
                   src={Logo}
                   className="w-28 mx-auto lg:mx-0 my-2"
                   alt="Logo "
                 />
-                <p className="text-white leading-loose">
+                <p className="text-white leading-loose text-center lg:text-left">
                   Your protection is Our Mission. Proudly serving business and
                   residential sector in Ontario.
                 </p>
@@ -73,7 +73,7 @@ const Footer = () => {
                   <CompanyContact />
                 </div>
               </div>
-              <div className="lg:w-1/3 md:w-1/2 w-full px-10 lg:px-8 md:px-8 pt-10 lg:pt-32">
+              <div className="lg:w-1/3 md:w-1/2 w-full px-0 lg:px-8 md:px-8 pt-10 lg:pt-32">
                 <h2 className="title-font font-bold text-white tracking-widest text-2xl md:text-sm mb-7 text-left">
                   EXPLORE
                 </h2>
@@ -146,7 +146,7 @@ const Footer = () => {
                   </li>
                 </nav>
               </div>
-              <div className="lg:w-1/3 md:w-1/2 w-full px-10 lg:px-8 md:px-8 pt-10 lg:pt-32">
+              <div className="lg:w-1/3 md:w-1/2 w-full px-0 lg:px-4 md:px-8 pt-10 lg:pt-32">
                 <h2 className="title-font font-bold text-white tracking-widest text-2xl md:text-sm mb-7 text-left">
                   SERVICES
                 </h2>

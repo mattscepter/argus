@@ -12,8 +12,8 @@ class Training extends Component {
   render() {
     return (
       <div className="font-for-para">
-        <div className="text-gray-600 body-font bg-no-repeat bg-cover bg-servicesbg">
-          <div className="container mx-auto flex px-5 py-40 items-center justify-center flex-col">
+        <div className="text-gray-600 body-font bg-no-repeat bg-cover bg-servicesbg bg-center">
+          <div className="container mx-auto flex px-5 py-20 md:py-40 items-center justify-center flex-col">
             <div className="text-center lg:w-2/3 w-full">
               <h1 className="title-font sm:text-6xl text-3xl mb-4 font-bold font-for-para text-white">
                 COURSES
@@ -22,7 +22,8 @@ class Training extends Component {
           </div>
         </div>
 
-        <div className="px-4 sm:px-8 lg:px-12 xl:px-0 max-w-1366 mx-auto bg-no-repeat bg-mapbg">
+      <div className="bg-no-repeat bg-mapbg bg-contain">
+        <div className="px-4 sm:px-8 lg:px-12 xl:px-0 max-w-1366 mx-auto">
           <div className="flex flex-wrap my-12">
             <div className=" md:w-1/2 lg:w-2/3 flex flex-col items-start">
               <img src={about_image} alt="Training Page" className="w-full" />
@@ -70,7 +71,7 @@ class Training extends Component {
                 </h1>
               </div>
               <ul class="text-gray-2 font-medium text-lg mb-6">
-                <li className="my-0.5">
+                <li className="flex flex-row items-start my-0.5">
                   <span className="text-red-1 font-bold mr-2">✓</span> Course is
                   five days (40 hours) Monday – Friday, 8:30am – 5:00pm
                 </li>
@@ -78,16 +79,16 @@ class Training extends Component {
                   <span className="text-red-1 font-bold mr-2">✓</span>{" "}
                   Comprehensive Security Manual is included{" "}
                 </li>
-                <li className="my-0.5">
+                <li className="flex flex-row items-start my-0.5">
                   <span className="text-red-1 font-bold mr-2">✓</span> Exceeds
                   Ontario government standards
                 </li>
-                <li className="my-0.5">
+                <li className="flex flex-row items-start my-0.5">
                   <span className="text-red-1 font-bold mr-2">✓</span> Our
                   guarantee – if you fail the ministry test, you can retake the
                   course for free!
                 </li>
-                <li className="my-0.5">
+                <li className="flex flex-row items-start my-0.5">
                   <span className="text-red-1 font-bold mr-2">✓</span> Courses
                   run weekly in Brampton.{" "}
                 </li>
@@ -104,45 +105,45 @@ class Training extends Component {
               </div>
               <ul className="text-gray-2 font-medium text-lg flex flex-col md:flex-row mb-6">
                 <div className="">
-                  <li className="my-0.5">
+                  <li className="flex flex-row items-start my-0.5">
                     <span className="text-red-1 font-bold mr-2">✓</span>{" "}
                     Introduction to the Security Industry
                   </li>
-                  <li className="my-0.5">
+                  <li className="flex flex-row items-start my-0.5">
                     <span className="text-red-1 font-bold mr-2">✓</span> Basic
                     Procedures{" "}
                   </li>
-                  <li className="my-0.5">
+                  <li className="flex flex-row items-start my-0.5">
                     <span className="text-red-1 font-bold mr-2">✓</span>{" "}
                     Regulations{" "}
                   </li>
-                  <li className="my-0.5">
+                  <li className="flex flex-row items-start my-0.5">
                     <span className="text-red-1 font-bold mr-2">✓</span> Use of
                     Force Theory
                   </li>
-                  <li className="my-0.5">
+                  <li className="flex flex-row items-start my-0.5">
                     <span className="text-red-1 font-bold mr-2">✓</span>{" "}
                     Emergencies{" "}
                   </li>
                 </div>
                 <div className="md:mx-10">
-                  <li className="my-0.5">
+                  <li className="flex flex-row items-start my-0.5">
                     <span className="text-red-1 font-bold mr-2">✓</span> Health
                     & Safety
                   </li>
-                  <li className="my-0.5">
+                  <li className="flex flex-row items-start my-0.5">
                     <span className="text-red-1 font-bold mr-2">✓</span>{" "}
                     Canadian Legal System & Authorities{" "}
                   </li>
-                  <li className="my-0.5">
+                  <li className="flex flex-row items-start my-0.5">
                     <span className="text-red-1 font-bold mr-2">✓</span>{" "}
                     Communication I & II{" "}
                   </li>
-                  <li className="my-0.5">
+                  <li className="flex flex-row items-start my-0.5">
                     <span className="text-red-1 font-bold mr-2">✓</span>{" "}
                     Conflict Resolution
                   </li>
-                  <li className="my-0.5">
+                  <li className="flex flex-row items-start my-0.5">
                     <span className="text-red-1 font-bold mr-2">✓</span>{" "}
                     Diversity & Sensitivity
                   </li>
@@ -212,6 +213,7 @@ class Training extends Component {
           </div>
         </div>
       </div>
+    </div>
     );
   }
 }

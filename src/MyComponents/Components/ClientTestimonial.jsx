@@ -47,7 +47,7 @@ const ClientTestimonial = ({ testimonial }) => {
     pauseOnHover: true,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
-    dots: true,
+    dots: false,
     responsive: [
       {
         breakpoint: 1700,
@@ -107,7 +107,7 @@ const ClientTestimonial = ({ testimonial }) => {
 
   return (
     <div className="bg-client">
-      <div className="px-4 sm:px-8 lg:px-12 2xl:px-0 mx-auto max-w-1366 py-14 font-for-para">
+      <div className="px-4 sm:px-8 lg:px-12 2xl:px-0 mx-auto max-w-1366 pt-14 font-for-para">
         <div className="flex justify-start">
           <div className="flex flex-row items-stretch w-full mt-8 md:mt-0 mb-12 lg:justify-center">
             <SideLine />
@@ -116,7 +116,7 @@ const ClientTestimonial = ({ testimonial }) => {
             </h1>
           </div>
         </div>
-        <div className="flex flex-wrap mb-16 w-full">
+        <div className="flex flex-wrap w-full">
           <Slider {...settings} className="w-full">
             {testimonial.map((data) => {
               return (

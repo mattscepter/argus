@@ -136,14 +136,14 @@ const ClientCorousal = () => {
 
   return (
     <div className="bg-client">
-      <div className="px-4 sm:px-8 lg:px-12 2xl:px-0 mx-auto max-w-1366 py-12">
+      <div className="px-4 sm:px-8 lg:px-12 2xl:px-0 mx-auto max-w-1366 pt-14 pb-14">
         <div className="flex flex-row items-stretch w-full mt-8 md:mt-0 mb-8 lg:justify-center">
           <SideLine />
           <h1 className="leading-tight text-3xl lg:text-4xl font-bold text-gray-3">
             Clients
           </h1>
         </div>
-        <Slider {...settings}>
+        <Slider {...settings} className="pt-8 lg:pt-4 lg:pb-4">
           {clients.map((client) => {
             return (
               <div key={client._id} className="clientSlider">

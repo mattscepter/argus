@@ -4,6 +4,7 @@ import "./MyComponents/Components/FontAwesomeIcons";
 import AdminRoute from "./MyComponents/DashBoard/Admin/Components/AdminRoutes";
 import StudentRoutes from "./MyComponents/DashBoard/Student/Components/StudentRoutes";
 
+import Covid from "./MyComponents/Main/Covid"
 import Footer from "./MyComponents/Partials/Footer.jsx";
 import Home from "./MyComponents/Main/Home.jsx";
 import SignUp from "./MyComponents/User/SignUp.jsx";
@@ -68,6 +69,8 @@ function App() {
           <HomeRoute path="/courses" component={Training} />
           <HomeRoute path="/services" component={Services} />
           <HomeRoute path="/technology" component={Technology} />
+
+          <HomeRoute path="/covid" component={Covid} />
 
           <HomeRoute path="/incidentreporting" component={IncidentReporting} />
           <HomeRoute path="/tours&checkpoints" component={ToursCheckpoints} />

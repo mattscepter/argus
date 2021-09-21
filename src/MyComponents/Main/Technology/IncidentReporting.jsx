@@ -13,8 +13,8 @@ class IncidentReporting extends Component {
   render() {
     return (
       <div className="font-for-para">
-        <div className="text-gray-600 body-font bg-no-repeat bg-cover bg-aboutbg">
-          <div className="container mx-auto flex px-5 py-40 items-center justify-center flex-col">
+        <div className="text-gray-600 body-font bg-no-repeat bg-cover bg-aboutbg bg-center">
+          <div className="container mx-auto flex px-5 py-20 md:py-40 items-center justify-center flex-col">
             <div className="text-center lg:w-2/3 w-full">
               <h1 className="title-font sm:text-6xl text-3xl mb-4 font-bold font-for-para text-white">
                 INCIDENT REPORTING
@@ -23,7 +23,8 @@ class IncidentReporting extends Component {
           </div>
         </div>
 
-        <div className="px-4 sm:px-8 lg:px-12 xl:px-0 max-w-1366 mx-auto bg-no-repeat bg-mapbg">
+      <div className="bg-no-repeat bg-mapbg bg-contain">
+        <div className="px-4 sm:px-8 lg:px-12 xl:px-0 max-w-1366 mx-auto">
           <div className="flex flex-wrap my-12">
             <div className=" md:w-1/2 lg:w-2/3 flex flex-col items-start">
               <img src={about_image} alt="About page" />
@@ -60,15 +61,15 @@ class IncidentReporting extends Component {
               </p>
 
               <ul className="text-gray-2 text-lg mb-7">
-                <li className="my-0.5">
+                <li className="flex flex-row items-start my-0.5">
                   <span className="font-bold text-red-1 mr-2">✓</span>{" "}
                   Time-stamped photos, audio files, and text notes.
                 </li>
-                <li className="my-0.5">
+                <li className="flex flex-row items-start my-0.5">
                   <span className="font-bold text-red-1 mr-2">✓</span> Priority
                   levels and notification settings for any issue type.{" "}
                 </li>
-                <li className="my-0.5">
+                <li className="flex flex-row items-start my-0.5">
                   <span className="font-bold text-red-1 mr-2">✓</span>{" "}
                   Property-specific issue types{" "}
                 </li>
@@ -99,6 +100,7 @@ class IncidentReporting extends Component {
           </div>
         </div>
       </div>
+    </div>
     );
   }
 }

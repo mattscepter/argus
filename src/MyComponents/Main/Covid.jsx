@@ -9,7 +9,7 @@ import MobileHeader from "../Partials/MobileHeader";
 import Teams from "../Components/TeamsSection";
 import SideLine from "./../Components/SideLine";
 
-class About extends Component {
+class Covid extends Component {
   render() {
     return (
       <div className="font-for-para">
@@ -17,7 +17,7 @@ class About extends Component {
           <div className="container mx-auto flex px-5 py-20 md:py-40 items-center justify-center flex-col">
             <div className="text-center lg:w-2/3 w-full">
               <h1 className="title-font sm:text-6xl text-3xl mb-4 font-bold font-for-para text-white">
-                ABOUT US
+                Covid 19 Help
               </h1>
             </div>
           </div>
@@ -84,7 +84,7 @@ class About extends Component {
                   delivery management, parking enforcement, access control,
                   camera monitoring, and performing periodic patrols.
                 </p>
-                <ul className="text-gray-2 font-medium text-lg flex flex-col md:flex-row mb-8 md:mb-0">
+                <ul className="text-gray-2 font-medium text-lg flex flex-col md:flex-row mb-8">
                   <div className="">
                     <li className="flex flex-row items-start my-0.5">
                       <span className="text-red-1 font-bold mr-2">✓</span>{" "}
@@ -116,19 +116,13 @@ class About extends Component {
                 </ul>
                 <div></div>
               </div>
-              <div  className="hidden md:block">
-                <SideBar />
-              </div>
+              <SideBar />
             </div>
           </div>
-        </div>
-        <Teams />
-        <div className="block md:hidden px-4 sm:px-8 pb-8">
-          <SideBar />
         </div>
       </div>
     );
   }
 }
 
-export default About;
+export default Covid;

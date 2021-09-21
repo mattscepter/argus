@@ -26,7 +26,7 @@ const EmployeeMonth = () => {
               </span>
               {emp?.empDesc}
             </p>
-            {emp?.skills[0].split(",")[0].length !== 0 ? (
+            {emp.skills ? (
               <ul className="text-gray-2 font-medium text-lg">
                 <li className="py-1">
                   <span className="text-red-1 font-bold mr-2">✓ </span>
@@ -47,22 +47,17 @@ const EmployeeMonth = () => {
                 <>
                   <div className="px-2 py-2">
                     <div className="w-full text-left">
-                      {emp.description ? (
-                        <>
-                          {" "}
-                          <img
-                            src={quotes}
-                            alt=""
-                            className="w-8 inline-block text-red-1 ml-4 -mb-4"
-                          />
-                          <p className="leading-normal text-lg lg:text-xl font-medium text-gray-2 bg-gray-200 px-6 py-6 shadow-lg min-h-full">
-                            {emp.description}
-                          </p>
-                          <div class="w-11 inline-block overflow-hidden">
-                            <div class=" h-16 bg-gray-200 shadow-button-shadow-3 rotate-60 transform origin-top-right"></div>
-                          </div>
-                        </>
-                      ) : null}
+                      <img
+                        src={quotes}
+                        alt=""
+                        className="w-8 inline-block text-red-1 ml-4 -mb-4"
+                      />
+                      <p className="leading-normal text-lg lg:text-xl font-medium text-gray-2 bg-gray-200 px-6 py-6 shadow-lg min-h-full">
+                        {emp.description}
+                      </p>
+                      <div class="w-11 inline-block overflow-hidden">
+                        <div class=" h-16 bg-gray-200 shadow-button-shadow-3 rotate-60 transform origin-top-right"></div>
+                      </div>
                       <div className="pt-6 flex items-center ">
                         <div className="w-20 h-20 p-1 border-2 border-red-1">
                           <Imagehelper

@@ -10,11 +10,11 @@ import SideLine from "./../Components/SideLine";
 
 const Contact = () => {
   return (
-    <div>
+    <div className="font-for-para">
       <div className="text-gray-600 body-font bg-no-repeat bg-cover bg-jobsbg">
         <div className="container mx-auto flex px-5 py-40 items-center justify-center flex-col">
           <div className="text-center lg:w-2/3 w-full">
-            <h1 className="title-font sm:text-6xl text-3xl mb-4 font-medium text-white">
+            <h1 className="title-font sm:text-6xl text-3xl mb-4 font-bold text-white">
               CONTACT
             </h1>
           </div>
@@ -22,9 +22,9 @@ const Contact = () => {
       </div>
 
       <div className="overflow-hidden bg-no-repeat bg-mapbg">
-        <div className="px-4 sm:px-8 lg:px-12 xl:px-0 max-w-1366 mx-auto py-12">
+        <div className="px-4 sm:px-8 lg:px-12 xl:px-0 max-w-1366 mx-auto py-14">
           <img src={fleet} alt="Security Cars" className="w-full" />
-          <div className="flex items-start mt-12 ">
+          <div className="flex flex-col md:flex-row items-start mt-14 ">
             <div className="p-2 md:p-0 md:pr-6 md:w-1/3 flex flex-col items-start text-lg font-medium text-gray-2">
               <div className="flex flex-row items-stretch w-full mb-6">
                 <SideLine />
@@ -32,16 +32,15 @@ const Contact = () => {
                   How can we help?
                 </h1>
               </div>
-              <p className="leading-normal text-lg font-medium text-gray-2 mb-6">
-                We are experiencing longer than usual response times due to
-                Covid-19. We appreciate your patience and apologize in advance
+              <p className="leading-relaxed text-lg font-medium text-gray-2 mb-6">
+                We are experiencing longer than usual response times due to <span className="text-red-1 underline"> Covid-19</span>. We appreciate your patience and apologize in advance
                 for any delays in responding to your message.{" "}
               </p>
-              <hr class="border-1 border-gray-600 w-11/12 my-3" />
+              <hr class="border-1 border-gray-2 w-full mb-6" />
 
               <CompanyContact />
             </div>
-            <ContactForm width="w-2/3" />
+            <ContactForm width="w-full md:w-2/3 mt-5 md:mt-0" />
           </div>
         </div>
       </div>
