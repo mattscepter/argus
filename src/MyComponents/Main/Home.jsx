@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 import accountable from "./../../argus website/SVG/2. Accountable.svg";
 import { Link } from "react-router-dom";
@@ -9,12 +9,7 @@ import signature from "./../../argus website/SVG/01.svg";
 import section6 from "./../../argus website/PNG/sdm.png";
 import section4img from "./../../argus website/PNG/raw-2_edited.png";
 import section5 from "./../../argus website/PNG/0000000.png";
-import image1 from "./../../argus website/PNG/raw-2_edited.png";
 import camera from "./../../argus website/SVG/3. camera.svg";
-import Header from "./../Partials/Header";
-import HeaderHome from "../Partials/HeaderHome";
-import Stickynav from "./../Partials/Stickynav";
-import MobileHeader from "../Partials/MobileHeader";
 import EmployeeMonth from "../Components/EmployeeMonth";
 import ClientTestimonial from "../Components/ClientTestimonial";
 import ClientCorousal from "../Components/ClientCorousal";
@@ -23,11 +18,6 @@ import SideLine from "../Components/SideLine";
 import { useRef } from "react";
 import useOnScreen from "../../helpers/onScreen";
 import siren from "./../../argus website/SVG/3. Light.svg";
-import {
-  disableBodyScroll,
-  enableBodyScroll,
-  clearAllBodyScrollLocks,
-} from "body-scroll-lock";
 
 export default function Home() {
   const contact = useSelector((state) => state.contact);

@@ -8,6 +8,7 @@ import {
   updateContact,
 } from "../../../../../context/actions/adminActions/contactAction";
 import { useSelector } from "react-redux";
+import Loader from "react-loader-spinner";
 
 const validate = (values) => {
   const errors = {};
@@ -41,6 +42,7 @@ const FooterControl = () => {
 
   const dispatch = useDispatch();
   const contactalert = useSelector((state) => state.contact.contactalert);
+  const loading = useSelector((state) => state.contact.loading);
 
   useEffect(() => {
     if (contactalert.success !== null) {
@@ -146,7 +148,18 @@ const FooterControl = () => {
             className="w-2/3 mx-auto mt-6 p-4 border text-white bg-red-700 hover:bg-white hover:text-red-700 hover:border-red-700"
             type="submit"
           >
-            Update
+            {loading ? (
+              <div className="w-full flex items-center justify-center">
+                <Loader
+                  type="TailSpin"
+                  color="lightgray"
+                  height={30}
+                  width={30}
+                />
+              </div>
+            ) : (
+              "Update"
+            )}
           </button>
         </form>
         <div className="w-full md:w-6/12 px-6 border-2 border-red-1 mx-auto">

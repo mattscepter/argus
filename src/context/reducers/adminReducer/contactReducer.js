@@ -1,4 +1,8 @@
-const { SET_CONTACTS, CONTACT_ALERT } = require("../../actionTypes");
+const {
+  SET_CONTACTS,
+  CONTACT_ALERT,
+  CONTACT_LOADING,
+} = require("../../actionTypes");
 
 const initialState = {
   email: "",
@@ -8,6 +12,7 @@ const initialState = {
     success: null,
     message: "",
   },
+  loading: false,
 };
 
 const contactReducer = (state = initialState, action) => {
@@ -23,6 +28,11 @@ const contactReducer = (state = initialState, action) => {
       return {
         ...state,
         contactalert: action.payload,
+      };
+    case CONTACT_LOADING:
+      return {
+        ...state,
+        loading: action.payload,
       };
     default:
       return state;

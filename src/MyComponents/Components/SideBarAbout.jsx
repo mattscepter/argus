@@ -8,7 +8,7 @@ function SideBarAbout() {
   const contact = useSelector((state) => state.contact);
 
   return (
-    <div className=" lg:w-1/3 md:w-1/2 md:pl-6 lg:pl-8 xl:pl-12 flex flex-col md:ml-auto w-full md:mt-0 hidden md:block">
+    <div className=" lg:w-1/3 md:w-1/2 md:pl-6 lg:pl-8 xl:pl-12  flex-col md:ml-auto w-full md:mt-0 hidden md:block">
       <div className="text-gray-2 text-xl font-bold bg-gray-200 mb-8">
         <h1 className="font-bold bg-gray-3 text-white text-xl p-5">
           <span className="ml-8">Services</span>

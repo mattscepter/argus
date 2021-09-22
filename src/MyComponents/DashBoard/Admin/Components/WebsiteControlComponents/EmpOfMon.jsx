@@ -10,6 +10,7 @@ import {
   updateEOM,
 } from "../../../../../context/actions/adminActions/eomAction";
 import Loader from "react-loader-spinner";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const EmpOfMon = () => {
   const [showAlert, setShowAlert] = useState({
@@ -17,9 +18,6 @@ const EmpOfMon = () => {
     message: "",
     success: false,
   });
-  const [empImg, setempImg] = useState();
-  const [instructorImg, setinstructorImg] = useState();
-  const [instructorSign, setinstructorSign] = useState();
 
   const dispatch = useDispatch();
   const eomalert = useSelector((state) => state.eom.eomalert);
@@ -49,18 +47,43 @@ const EmpOfMon = () => {
     }
   }, [dispatch, eomalert]);
 
-  const handleCompressedUpload = (e, cb) => {
+  const handleCompressedUpload = (e, field) => {
     const image = e.target.files[0];
     new Compressor(image, {
       quality: 0.3,
       maxWidth: 1500,
       success: (compressedResult) => {
-        cb(compressedResult);
+        setValues({ ...values, [field]: compressedResult });
       },
     });
   };
 
-  const { getFieldProps, handleSubmit, errors, setValues, resetForm } =
+  const validate = (values) => {
+    const errors = {};
+    if (!values.title) {
+      errors.title = "*Required";
+    }
+    if (!values.name) {
+      errors.name = "*Required";
+    }
+    if (!values.seniorName) {
+      errors.seniorName = "*Required";
+    }
+    if (!update.state) {
+      if (!values.empImg) {
+        errors.empImg = "*Required";
+      }
+      if (!values.instructorImg) {
+        errors.instructorImg = "*Required";
+      }
+      if (!values.instructorSign) {
+        errors.instructorSign = "*Required";
+      }
+    }
+    return errors;
+  };
+
+  const { getFieldProps, handleSubmit, errors, setValues, resetForm, values } =
     useFormik({
       initialValues: {
         title: "",
@@ -71,7 +94,11 @@ const EmpOfMon = () => {
         quality2: "",
         quality3: "",
         seniorName: "",
+        empImg: null,
+        instructorImg: null,
+        instructorSign: null,
       },
+      validate,
       onSubmit: async (values, { resetForm }) => {
         empImgRef.current.value = "";
         insImgRef.current.value = "";
@@ -88,13 +115,10 @@ const EmpOfMon = () => {
         formdata.append("skills", arr);
         formdata.append("instructorName", values.seniorName);
         formdata.append("instructorRole", "Area Manager");
-        formdata.append("empImage", empImg);
-        formdata.append("instructorImage", instructorImg);
-        formdata.append("instructorSign", instructorSign);
+        formdata.append("empImage", values.empImg);
+        formdata.append("instructorImage", values.instructorImg);
+        formdata.append("instructorSign", values.instructorSign);
         formdata.append("title", values.title);
-        setempImg(null);
-        setinstructorImg(null);
-        setinstructorSign(null);
 
         if (update.state) {
           dispatch(updateEOM(formdata, update.data._id));
@@ -147,7 +171,7 @@ const EmpOfMon = () => {
         ) : null}
         <input
           className={`w-full ${
-            errors.name ? "border-b-2 border-red-600" : "border-b border-black"
+            errors.title ? "border-b-2 border-red-600" : "border-b border-black"
           } focus:outline-none mt-4 p-1`}
           type="text"
           placeholder="Title of section"
@@ -223,16 +247,36 @@ const EmpOfMon = () => {
         {errors.quality3 ? (
           <div className="w-full text-xs text-red-400">{errors.quality3}</div>
         ) : null}
-        <lable className="text-gray-2 mt-4 mb-1">
-          Upload Image of the Employee
-        </lable>
-        <input
-          className="p-4 border border-black"
-          type="file"
-          accept="image/png, image/jpeg"
-          ref={empImgRef}
-          onChange={(e) => handleCompressedUpload(e, setempImg)}
-        />
+        <div className="flex flex-col items-center">
+          <lable className="text-gray-2 mt-4 mb-1">
+            Upload Image of the Employee
+          </lable>
+          <div>
+            <input
+              className="p-4 border border-black"
+              type="file"
+              accept="image/png, image/jpeg"
+              ref={empImgRef}
+              onChange={(e) => handleCompressedUpload(e, "empImg")}
+            />
+            {values.empImg ? (
+              <button
+                onClick={() => {
+                  empImgRef.current.value = "";
+                  setValues({ ...values, empImg: null });
+                }}
+              >
+                <FontAwesomeIcon
+                  icon="window-close"
+                  className="text-2xl ml-2"
+                />
+              </button>
+            ) : null}
+          </div>
+          {errors.empImg ? (
+            <div className="w-full text-xs text-red-400">{errors.empImg}</div>
+          ) : null}
+        </div>
         <input
           className={`w-full ${
             errors.seniorName
@@ -267,25 +311,65 @@ const EmpOfMon = () => {
             <lable className="text-gray-2 mt-4 mb-1">
               Upload Image of the Area Manager
             </lable>
-            <input
-              className="p-4 border border-black"
-              type="file"
-              accept="image/png, image/jpeg"
-              ref={insImgRef}
-              onChange={(e) => handleCompressedUpload(e, setinstructorImg)}
-            />
+            <div>
+              <input
+                className="p-4 border border-black"
+                type="file"
+                accept="image/png, image/jpeg"
+                ref={insImgRef}
+                onChange={(e) => handleCompressedUpload(e, "instructorImg")}
+              />
+              {values.instructorImg ? (
+                <button
+                  onClick={() => {
+                    insImgRef.current.value = "";
+                    setValues({ ...values, instructorImg: null });
+                  }}
+                >
+                  <FontAwesomeIcon
+                    icon="window-close"
+                    className="text-2xl ml-2"
+                  />
+                </button>
+              ) : null}
+            </div>
+            {errors.instructorImg ? (
+              <div className="w-full text-xs text-red-400">
+                {errors.instructorImg}
+              </div>
+            ) : null}
           </div>
           <div className="flex flex-col items-center">
             <lable className="text-gray-2 mt-4 mb-1">
               Upload Image of the Area Manager signature
             </lable>
-            <input
-              className="p-4  border border-black "
-              type="file"
-              accept="image/png, image/jpeg"
-              ref={insSignRef}
-              onChange={(e) => handleCompressedUpload(e, setinstructorSign)}
-            />
+            <div>
+              <input
+                className="p-4  border border-black "
+                type="file"
+                accept="image/png, image/jpeg"
+                ref={insSignRef}
+                onChange={(e) => handleCompressedUpload(e, "instructorSign")}
+              />
+              {values.instructorSign ? (
+                <button
+                  onClick={() => {
+                    insSignRef.current.value = "";
+                    setValues({ ...values, instructorSign: null });
+                  }}
+                >
+                  <FontAwesomeIcon
+                    icon="window-close"
+                    className="text-2xl ml-2"
+                  />
+                </button>
+              ) : null}
+            </div>
+            {errors.instructorSign ? (
+              <div className="w-full text-xs text-red-400">
+                {errors.instructorSign}
+              </div>
+            ) : null}
           </div>
         </div>
         <button
@@ -312,9 +396,6 @@ const EmpOfMon = () => {
               empImgRef.current.value = "";
               insImgRef.current.value = "";
               insSignRef.current.value = "";
-              setempImg(null);
-              setinstructorImg(null);
-              setinstructorSign(null);
               resetForm();
               dispatch(setupdateeom({ state: false, data: null }));
             }}

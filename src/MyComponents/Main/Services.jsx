@@ -1,11 +1,6 @@
 import React, { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import image1 from "./../../argus website/PNG/raw-2_edited.png";
-import Header from "./../Partials/Header";
-import Header2 from "./../Partials/Header2";
-import Stickynav from "./../Partials/Stickynav";
-import MobileHeader from "../Partials/MobileHeader";
 import SideLine from "../Components/SideLine";
 
 const Services = () => {

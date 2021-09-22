@@ -1,12 +1,7 @@
 import React from "react";
 import about_image from "./../../argus website/PNG/Video.png";
-import { Link } from "react-router-dom";
 import SideBar from "./../Components/SideBar.jsx";
 import AboutPageButtons from "../Components/AboutPageButtons";
-import Header from "./../Partials/Header";
-import Header2 from "./../Partials/Header2";
-import Stickynav from "./../Partials/Stickynav";
-import MobileHeader from "../Partials/MobileHeader";
 import SideLine from "./../Components/SideLine";
 
 export default function HarassementPolicy() {

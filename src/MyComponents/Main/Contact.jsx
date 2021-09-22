@@ -1,8 +1,4 @@
 import React from "react";
-import Header from "./../Partials/Header";
-import Header2 from "./../Partials/Header2";
-import Stickynav from "./../Partials/Stickynav";
-import MobileHeader from "../Partials/MobileHeader";
 import fleet from "./../../argus website/PNG/use copy 3.jpg";
 import CompanyContact from "./../Components/CompanyContact";
 import ContactForm from "../Components/Contact";
@@ -33,8 +29,10 @@ const Contact = () => {
                 </h1>
               </div>
               <p className="leading-relaxed text-lg font-medium text-gray-2 mb-6">
-                We are experiencing longer than usual response times due to <span className="text-red-1 underline"> Covid-19</span>. We appreciate your patience and apologize in advance
-                for any delays in responding to your message.{" "}
+                We are experiencing longer than usual response times due to{" "}
+                <span className="text-red-1 underline"> Covid-19</span>. We
+                appreciate your patience and apologize in advance for any delays
+                in responding to your message.{" "}
               </p>
               <hr class="border-1 border-gray-2 w-full mb-6" />
 
