@@ -25,9 +25,9 @@ const EmployeeMonth = () => {
             {emp?.title}
           </h1>
         </div>
-        <div className="flex flex-col-reverse md:flex-row items-center md:items-end md:justify-between">
-          <div className="w-full md:w-1/2 flex flex-col items-start mt-6 md:mt-0">
-            <p className="leading-loose text-lg text-gray-2 mb-8">
+        <div className="flex flex-col-reverse md:flex-row items-center md:items-end">
+          <div className="w-full md:w-1/2 mt-6 md:mt-0 mb-auto">
+            <p className="leading-loose text-lg text-gray-2 mb-6">
               <span className="text-red-1 text-2xl font-semibold">
                 {emp?.empName}
               </span>
@@ -37,7 +37,7 @@ const EmployeeMonth = () => {
               <>
                 <ul className="text-gray-2 font-medium text-lg mb-6">
                   {empSkills.map((skills, index) => (
-                    <li key={index} className="py-1">
+                    <li key={index} className="py-0.5">
                       {skills.length !== 0 ? (
                         <>
                           <span className="text-red-1 font-bold mr-2">✓ </span>
@@ -98,10 +98,14 @@ const EmployeeMonth = () => {
               ) : null}
             </div>
           </div>
-          <div className="w-full lg:pl-12">
+          <div className="w-full md:w-1/2">
             {emp?._id !== undefined ? (
               <>
-                <Imagehelper param="eom" id={`empImage-${emp._id}`} />
+                <Imagehelper
+                  param="eom"
+                  id={`empImage-${emp._id}`}
+                  className=""
+                />
               </>
             ) : null}
           </div>
